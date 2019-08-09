@@ -9,6 +9,9 @@
     "cy:open": "cypress open",
     "test": "run-p --race dev cy:run"
   },
+  "bugs": {
+    "url": "https://github.com/dev-cprice/codyaprice.com/issues"
+  },
   "dependencies": {
     "compression": "^1.7.1",
     "polka": "next",
