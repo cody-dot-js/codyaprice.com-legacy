@@ -1,5 +1,5 @@
 <style>
-  h1, figure, p {
+  h1, h2, p {
     text-align: center;
     margin: 0 auto;
   }
@@ -11,14 +11,8 @@
     margin: 0 0 0.5em 0;
   }
 
-  figure {
-    margin: 0 0 1em 0;
-  }
-
-  img {
-    width: 100%;
-    max-width: 400px;
-    margin: 0 0 1em 0;
+  h2 {
+    margin: 1em auto;
   }
 
   p {
@@ -33,14 +27,11 @@
 </style>
 
 <svelte:head>
-  <title>Sapper project template</title>
+  <title>Cody A. Price</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<h1>Hi, I'm Cody A. Price. I'm a creator and developer.</h1>
 
-<figure>
-  <img alt='Borat' src='great-success.png'>
-  <figcaption>HIGH FIVE!</figcaption>
-</figure>
+<h2>// TODO: finish this website..</h2>
 
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+<p>render(content, here)</p>

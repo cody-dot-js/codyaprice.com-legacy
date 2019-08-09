@@ -11,7 +11,7 @@
 
   ul {
     margin: 0;
-    padding: 0;
+    padding: 1rem 0;
   }
 
   /* clearfix */
@@ -43,13 +43,41 @@
 
   a {
     text-decoration: none;
-    padding: 1em 0.5em;
+    padding: 0.5em 0.5em;
     display: block;
+  }
+
+  .avatar {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0;
+  }
+
+  .avatar-icon {
+    max-width: 50px;
+    /* position: absolute; */
+    border-radius: 100%;
+    background: rgba(40, 28, 77, 0.7);
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    border-style: none;
+  }
+
+  .avatar-text {
+    padding: 0 0.5rem;
   }
 </style>
 
 <nav>
   <ul>
+    <li>
+      <a aria-label="go to homepage" href="/" class="avatar">
+        <img class="avatar-icon" src="avatar.jpeg" alt="Cody A. Price" />
+        <div class="avatar-text">Cody A. Price</div>
+      </a>
+    </li>
     <li><a class='{segment === undefined ? "selected" : ""}' href='.'>home</a></li>
     <li><a class='{segment === "about" ? "selected" : ""}' href='about'>about</a></li>
 
