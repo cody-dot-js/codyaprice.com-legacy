@@ -9,6 +9,7 @@
     { id: 'instagram', url: 'https://www.instagram.com/lokcal_styles/', display: 'Instagram' },
     { id: 'facebook', url: 'https://fb.me/lokcal.styles', display: 'Facebook' },
     { id: 'twitter', url: 'https://twitter.com/lokcal_styles', display: 'Twitter' },
+    { id: 'medium', url: 'https://medium.com/@dev.cprice', display: 'Medium' },
   ];
 
   let cal;
