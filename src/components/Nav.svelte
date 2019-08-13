@@ -1,5 +1,16 @@
 <script>
   export let segment;
+
+  const routes = [
+    { path: 'is', display: 'is' },
+    { path: 'blog', display: 'blog', prefetch: true },
+    { path: 'has-made', display: 'has made' },
+    { path: 'found-at', display: 'found at' }
+  ];
+
+  function selected(slug, path) {
+    return slug === path ? 'selected' : '';
+  }
 </script>
 
 <style>
@@ -10,6 +21,8 @@
   }
 
   ul {
+    display: flex;
+    align-items: center;
     margin: 0;
     padding: 1rem 0;
   }
@@ -43,7 +56,8 @@
 
   a {
     text-decoration: none;
-    padding: 0.5em 0.5em;
+    padding: 0.5rem 0.5rem;
+    margin-right: 0.25rem;
     display: block;
   }
 
@@ -78,11 +92,13 @@
         <div class="avatar-text">Cody A. Price</div>
       </a>
     </li>
-    <li><a class='{segment === undefined ? "selected" : ""}' href='.'>home</a></li>
-    <li><a class='{segment === "about" ? "selected" : ""}' href='about'>about</a></li>
-
-    <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-         the blog data when we hover over the link or tap it on a touchscreen -->
-    <li><a rel=prefetch class='{segment === "blog" ? "selected" : ""}' href='blog'>blog</a></li>
+    <li><a class={selected(segment, undefined)} href='.'>home</a></li>
+    {#each routes as { path, display, prefetch }}
+      <li>
+        <a rel={prefetch ? 'prefetch' : undefined} class={selected(segment, path)} href={path}>
+          {display}
+        </a>
+      </li>
+    {/each}
   </ul>
 </nav>
