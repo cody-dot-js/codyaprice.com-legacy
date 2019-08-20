@@ -1,23 +1,21 @@
-# codyaprice.com
+# Gatsby Example
 
-WIP. Bootstrapped with [ZEIT Now](https://zeit.co) and [Sapper](https://sapper.svelte.dev/)
+This directory is a brief example of a [Gatsby](https://www.gatsbyjs.org/) app with serverless functions that can be deployed to ZEIT Now with zero configuration.
 
 ## How we created this example
 
-To get started with Sapper on Now, you can use [degit](https://github.com/Rich-Harris/degit) to initialize the project:
+To get started with Gatsby on Now, you can use the [Gatsby CLI](https://www.gatsbyjs.org/docs/gatsby-cli/) to initialize the project:
 
-```sh
-npx degit "sveltejs/sapper-template#webpack" my-sapper-app
+```shell
+$ gatsby new gatsby-site
 ```
-
-> The only change made is to change the build script in `package.json` to be `"sapper export"`.
 
 ## Deploying this Example
 
-Once initialized, you can deploy the Sapper example with just a single command:
+Once initialized, you can deploy the Gatsby example with just a single command:
 
-```sh
-now
+```shell
+$ now
 ```
 
 ## Browser Support
@@ -40,6 +38,6 @@ I've built *codyprice.com* with progressive enhancement in mind to work on a wid
 
 Cross browser tested with [BrowserStack](https://www.browserstack.com/).
 
-[![BrowserStack](./static/browserstack-logo-600x315.png)](https://www.browserstack.com/)
+[![BrowserStack](content/assets/browserstack-logo-600x315.png)](https://www.browserstack.com/)
 
 If you come across any bugs, or have any other issues with the site, please open an issue here on GitHub.
