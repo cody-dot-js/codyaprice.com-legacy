@@ -32,26 +32,32 @@ Yes, even you, object oriented peeps. 🐤😉
 I’m so into the idea of testing code well right now, especially when it comes to
 best practices, methodologies, and philosophies. A lot of what I do on the daily
 revolves around presentational (UI) code, specifically React. My org at work has
-standardized around using [enzyme](https://github.com/airbnb/enzyme) and [jest](https://jestjs.io/).
-While I enjoy using jest, enzyme and I have a complicated relationship (read as:
-I strongly dislike enzyme). So, I’ve been on the lookout for better tools and
-methods to test our UI code so we can have confidence that it does what we want.
-I’m currently writing up an initiative to switch over to [react-testing-library](https://github.com/testing-library/react-testing-library)
-because it allows us to [write tests that resemble the way our software is used](https://twitter.com/kentcdodds/status/977018512689455106)
+standardized around using [enzyme](https://github.com/airbnb/enzyme) and
+[jest](https://jestjs.io/). While I enjoy using jest, enzyme and I have a
+complicated relationship (read as: I strongly dislike enzyme). So, I’ve been on
+the lookout for better tools and methods to test our UI code so we can have
+confidence that it does what we want. I’m currently writing up an initiative to
+switch over to
+[react-testing-library](https://github.com/testing-library/react-testing-library)
+because it allows us to
+[write tests that resemble the way our software is used](https://twitter.com/kentcdodds/status/977018512689455106)
 and it makes it difficult to test implementation details, unlike enzyme which
 often encourages it. **In this article, this second point is what I want to
 focus on.**
 
-https://twitter.com/kentcdodds/status/977018512689455106
+<https://twitter.com/kentcdodds/status/977018512689455106>
 
-<figcaption class="tweet">Write your tests the way it's used</figcaption>
+<figcaption class="tweet">
+  Write your tests the way it's used
+</figcaption>
 
-## Don’t write tests that are coupled to or leak out your implementation details.
+## Don’t write tests that are coupled to or leak out your implementation details
 
 In my quest for improving my org’s tests and testing practice, I’ve come across
 many great articles/blog posts on testing ideologies, like:
 
-- Eric Elliot: [Mocking is a Code Smell](https://medium.com/javascript-scene/mocking-is-a-code-smell-944a70c90a6a) (preach! 🙏🗣)
+- Eric Elliot: [Mocking is a Code Smell](https://medium.com/javascript-scene/mocking-is-a-code-smell-944a70c90a6a)
+(preach! 🙏🗣)
 - Kent C. Dodds: [Testing Implementation Details](https://kentcdodds.com/blog/testing-implementation-details).
 
 A common theme in these posts is that your tests should be black box tests that
@@ -73,7 +79,9 @@ imperative that you get to market quickly so you can get paid.
 
 ![Gotta go fast!](./gotta-go-fast.gif)
 
-<figcaption>Gotta go fast!</figcaption>
+<figcaption>
+  Gotta go fast!
+</figcaption>
 
 Seeing as you are broke and you need to get to market first, you choose the
 cheapest microprocessor available, but the catch is it doesn’t have a
@@ -94,7 +102,9 @@ function multiply(a, b) {
 }
 ```
 
-<figcaption>Looping multiplication function between two numbers</figcaption>
+<figcaption>
+  Looping multiplication function between two numbers
+</figcaption>
 
 You’re a sane developer who follows TDD, so you write some tests for this as
 well.
@@ -163,7 +173,9 @@ test('given any two negative numbers, it returns the positive expected result re
 });
 ```
 
-<figcaption>Testing multiplication module</figcaption>
+<figcaption>
+  Testing multiplication module
+</figcaption>
 
 But wait ✋! Your boss comes back and is furious 😡 because you don’t have
 [100% test coverage](https://martinfowler.com/bliki/TestCoverage.html)! So,
@@ -188,20 +200,24 @@ test('given 2 and 5, it should loop 5 times', () => {
 });
 ```
 
-<figcaption>Testing multiplication module implementation details</figcaption>
+<figcaption>
+  Testing multiplication module implementation details
+</figcaption>
 
 Hurray! We’ve hit 💯% coverage! Surely this isn’t foreshadowing! Now, you can
 finally release to prod, get clients, and that first paycheck you’ve been
 promised. 😎
 
-## Enter competitor B, who promises the same features as your application, but with huge performance benefits (especially when it comes to multiplication).
+## Enter competitor B
 
-Oh no 😰! Well, at least your company can now afford to purchase a beefier
-microprocessor that has hardware accelerated multiplication built in. So, you
-convince your boss to buy new silicon, build up a prototype, and load your
-existing code on it. Initially, itdoesn’t run any faster though. No worries, we
-just need to change out the implementation of `multiply` so that it utilizes
-that hot new `*` operator!
+Competitor B promises the same features as your application, but with huge
+performance benefits (especially when it comes to multiplication). Oh no 😰!
+Well, at least your company can now afford to purchase a beefier microprocessor
+that has hardware accelerated multiplication built in. So, you convince your
+boss to buy new silicon, build up a prototype, and load your existing code on
+it. Initially, itdoesn’t run any faster though. No worries, we just need to
+change out the implementation of `multiply` so that it utilizes that hot new `*`
+operator!
 
 ```js
 function multiply(a, b) {
@@ -209,7 +225,9 @@ function multiply(a, b) {
 }
 ```
 
-<figcaption>Simple (typical) multiply function between two numbers</figcaption>
+<figcaption>
+  Simple (typical) multiply function between two numbers
+</figcaption>
 
 Easy. Clean. Solid. It runs beautifully on the new hardware. So fast!
 
@@ -222,7 +240,7 @@ What?? _It’s just multiplication_. The test that failed? The last one we wrote
 The one that tested and leaked implementation details. _**This was a false
 negative**_. So long 100% test coverage.. 😩
 
-## What value did the test that leaked implementation details give us? None.
+## What value did the test that leaked implementation details give us? None
 
 Actually, you can argue that it gave you _**negative value**_, or in other
 words, it cost you. It cost you because it added noise to your tests and wasn’t

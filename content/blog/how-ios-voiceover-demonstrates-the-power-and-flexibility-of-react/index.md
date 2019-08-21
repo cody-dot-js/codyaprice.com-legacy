@@ -16,7 +16,9 @@ tags:
 
 ![React.js Logo](react-logo.png)
 
-<figcaption>React.js Logo</figcaption>
+<figcaption>
+  React.js Logo
+</figcaption>
 
 I was recently blessed with the opportunity to work on an extremely
 high-priority project which aimed to fix an accessibility bug in a multi-select
@@ -41,7 +43,9 @@ component in question was actually using a
 
 ![select2 MultiSelect Example](select-2-multiselect-example.png)
 
-<figcaption>Select2 MultiSelect Example</figcaption>
+<figcaption>
+  Select2 MultiSelect Example
+</figcaption>
 
 The problem is that Select2 doesn’t provide a good user experience for iOS
 VoiceOver users. Why is this? Well, it all comes down to two things: Apple’s
@@ -80,7 +84,9 @@ like:
 const data = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
 ```
 
-<figcaption>Example list of colors</figcaption>
+<figcaption>
+  Example list of colors
+</figcaption>
 
 Given this list, in a simplified world, when you render a Select2 multi-select
 around a hidden input (used for your form submission), your screen will look
@@ -88,7 +94,9 @@ like:
 
 ![select2 Example Rendering with List of Colors](select2-example-rendering-with-colors.png)
 
-<figcaption>Example Select2 rendering given the data list of colors above</figcaption>
+<figcaption>
+  Example Select2 rendering given the data list of colors above
+</figcaption>
 
 And your corresponding DOM may look like the following:
 
@@ -131,7 +139,9 @@ And your corresponding DOM may look like the following:
 </html>
 ```
 
-<figcaption>DOM layout of a trivial Select2 Example</figcaption>
+<figcaption>
+  DOM layout of a trivial Select2 Example
+</figcaption>
 
 Notice that the Select2 results aren’t a direct sibling of the Select2
 container. This is the part that iOS VoiceOver trips up on.
@@ -145,7 +155,9 @@ then you are sadly mistaken my friend 😢.
 
 ![This is NOT what iOS VoiceOver navigates to next when focused on the input](not-what-voiceover-navigates-to-next.png)
 
-<figcaption>This is NOT what iOS VoiceOver navigates to next when focused on the input</figcaption>
+<figcaption>
+  This is NOT what iOS VoiceOver navigates to next when focused on the input
+</figcaption>
 
 A keen eye will notice that there’s another focusable element between the
 Select2 container div and the Select2 dropdown div: ***the submit button***. In
@@ -201,7 +213,9 @@ window.addEventListener('load', () => {
 });
 ```
 
-<figcaption>Get all the dynamic and dropdown lists on the page</figcaption>
+<figcaption>
+  Get all the dynamic and dropdown lists on the page
+</figcaption>
 
 Now that we have each of the lists on the page, we can replace them with a
 container and render our custom React code inside them! Notice that this will
@@ -222,7 +236,9 @@ const {
 } = dataset;
 ```
 
-<figcaption>Extracting the container's metadata from its dataset</figcaption>
+<figcaption>
+  Extracting the container's metadata from its dataset
+</figcaption>
 
 And now, since we want full control of the tree and therefore the hidden input
 or select that is used for form submission, we can replace it with our
@@ -240,7 +256,9 @@ export default function replaceNodeWithContainer(node) {
 }
 ```
 
-<figcaption>Replace the given node with a React tree container</figcaption>
+<figcaption>
+  Replace the given node with a React tree container
+</figcaption>
 
 Now all that’s left to do is put it all together and render our custom
 component.
@@ -283,7 +301,9 @@ export default function dynamicList(node) {
 }
 ```
 
-<figcaption>Render Our Custom React Select2 Dynamic List Replacement</figcaption>
+<figcaption>
+  Render Our Custom React Select2 Dynamic List Replacement
+</figcaption>
 
 With this full control, we can use the magic of
 [refs](https://reactjs.org/docs/refs-and-the-dom.html) to manipulate the hidden
@@ -302,7 +322,9 @@ accessible multi-select asynchronous dropdown!
 
 ![Responsive and Accessible Asynchronous MultiSelect Dropdown](responsive-a11y-dropdown-select.png)
 
-<figcaption>Responsive and Accessible Asynchronous MultiSelect Dropdown</figcaption>
+<figcaption>
+  Responsive and Accessible Asynchronous MultiSelect Dropdown
+</figcaption>
 
 We ended up responsively rendering a modal where the dropdown options are a
 direct sibling of the search input. There are a few interesting gotchas that we
@@ -377,7 +399,9 @@ Modal.defaultProps = defaultProps;
 export default Modal;
 ```
 
-<figcaption>Handling Local Modal State</figcaption>
+<figcaption>
+  Handling Local Modal State
+</figcaption>
 
 ---
 
