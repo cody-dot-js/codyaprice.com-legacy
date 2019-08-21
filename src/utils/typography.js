@@ -1,7 +1,12 @@
 import Typography from "typography"
-import sutro from 'typography-theme-sutro'
+import type from "typography-theme-noriega"
+import blockquote from "./blockquote.css"
 
-const typography = new Typography(sutro)
+type.overrideThemeStyles = ({ rhythm }, options) => ({
+  blockquote,
+})
+
+const typography = new Typography(type)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {

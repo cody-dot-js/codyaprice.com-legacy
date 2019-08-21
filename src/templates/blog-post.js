@@ -5,12 +5,15 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import formatReadingTime from "../utils/formatReadingTime"
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+
+    console.warn({ post })
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -36,6 +39,7 @@ class BlogPostTemplate extends React.Component {
               }}
             >
               {post.frontmatter.date}
+              {` • ${formatReadingTime(post.timeToRead)}`}
             </p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -94,6 +98,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      timeToRead
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
