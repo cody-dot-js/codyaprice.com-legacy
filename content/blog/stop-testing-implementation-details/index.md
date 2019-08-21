@@ -44,7 +44,7 @@ focus on.**
 
 https://twitter.com/kentcdodds/status/977018512689455106
 
-<figcaption>Write your tests the way it's used</figcaption>
+<figcaption class="tweet">Write your tests the way it's used</figcaption>
 
 ## Don’t write tests that are coupled to or leak out your implementation details.
 

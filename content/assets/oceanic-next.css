@@ -172,3 +172,7 @@ figcaption {
   margin-top: -1rem;
   margin-bottom: 1.5rem;
 }
+
+.tweet {
+  margin-top: 0;
+}
