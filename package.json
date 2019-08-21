@@ -8,6 +8,7 @@
     "url": "https://github.com/dev-cprice/codyaprice.com/issues"
   },
   "dependencies": {
+    "@weknow/gatsby-remark-twitter": "^0.2.3",
     "gatsby": "^2.13.67",
     "gatsby-image": "^2.2.8",
     "gatsby-plugin-feed": "^2.3.6",

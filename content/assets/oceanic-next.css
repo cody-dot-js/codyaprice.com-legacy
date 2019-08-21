@@ -164,3 +164,11 @@ pre > code.highlight {
   display: block;
   background-color: rgb(51, 66, 76);
 }
+
+figcaption {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+}
