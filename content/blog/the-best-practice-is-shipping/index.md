@@ -87,11 +87,11 @@ got a beautiful API and is performant enough to run on
 
 That's incredible. I mean, I went to school for Electrical and Computer
 Engineering and cut my programming teeth on C and microcontrollers. Before
-becoming a full time web developer, I was an Embedded Systems Engineer working
-on extremely (to today's consumer compute standards)
-memory-and-power-constrained microprocessors (32kB and 32MHz 💃) that didn't
-even have a heap: everything on the stack 📚, bb 😘. By definition, I'm a perf
-nerd 🤓.
+becoming a full time web developer, I was an Embedded Systems Engineer who
+worked on extremely memory-and-power-constrained microprocessors. Some of them
+had 32kB of memory, operated at 32MHz on a good day, and didn't even have a
+heap! We did everything on the stack 📚! So, with that background, I can
+confidently say that by definition, I'm a perf nerd 🤓.
 
 I was sold enough on svelte to use zeit's [sapper](https://sapper.svelte.dev/)
 template. At least at first.
@@ -133,7 +133,7 @@ producing nor hosting any meaningful content.
 ![naked website](./naked-svelte-website.png)
 
 <figcaption>
-  My website was dorment, vacant, and quite naked. 🙈
+  My website was dormant, vacant, and quite naked. 🙈
 </figcaption>
 
 I was getting kind of frustrated and felt like I wasn't moving fast enough. I
@@ -209,7 +209,7 @@ now.
 
 In one of Rich Harris' tweet
 [threads](https://twitter.com/Rich_Harris/status/1120736046357131271?s=20)
-about his rethinking reactivity talk, he explains the ideas behind what make
+about his rethinking reactivity talk, he explains the ideas behind what makes
 svelte so great. Dan Abramov
 [replied](https://twitter.com/dan_abramov/status/1120771116312690688?s=20)
 with some insights into what's to come with React + Suspense and the caveats/
@@ -226,17 +226,17 @@ for the near future.
 </figcaption>
 
 That being said, I believe that the direction svelte took is the future of web
-development. In my spare time (lol 😂), I can revisit using svelte and sapper.
-Maybe they'll have more support and features by then? Maybe then I'll have
-enough time and experience to roll my own solutions that mimic what the Gatsby
-starter blog gives you out of the box. 🤷‍♂️
+development. In my spare time, I can revisit using svelte and sapper. Maybe
+they'll have more support and features by then? Maybe then I'll have enough time
+and experience to roll my own solutions that mimic what the Gatsby starter blog
+gives you out of the box. 🤷‍♂️
 
 I'm still working on my personal website, but it's deployed live now and it has
 (some) content on it. I can quickly add more without fighting a learning curve
 and that's the most important thing right now. Who knows, maybe React and
 Gatsby will satisfy my needs for years to come? One thing's for sure, knowing
-the JavaScript scene, there'll always be a new hot thing to try out. Today it's
-svelte, tomorrow it's `${hotNewJavaScriptFramework}`. As long as I'm learning
-and growing along the way, that's all I can ask for!
+the JavaScript scene, there will always be a new hot thing to try out. Today
+it's svelte, tomorrow it's `${hotNewJavaScriptFramework}`. As long as I'm
+learning and growing along the way, that's all I can ask for!
 
 Thanks for reading! ✌️
