@@ -155,8 +155,9 @@ And that's when I decided I needed to move on from svelte and sapper.
 
 > “And so with the sunshine and the great bursts of leaves growing on the trees,
 > just as things grow in fast movies, I had that familiar conviction that life
-> was beginning over again with the summer.” -F. Scott Fitzgerald,
-> The Great Gatsby
+> was beginning over again with the summer.”
+>
+> -F. Scott Fitzgerald, The Great Gatsby
 
 I can ship something that is _good enough_  now and iterate on it quickly. If I
 use what I'm familiar with and make my content framework agnostic, I can produce
