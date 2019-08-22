@@ -99,6 +99,10 @@ a factor in how fast I can iterate on features and development for my website.
 
 <https://twitter.com/veneficaultrix/status/1003039904346132481?s=20>
 
+<figcaption class="tweet">
+  Why aren't we talking about the mouthfeel, y'all? 🤔
+</figcaption>
+
 At the beginning of this post, I mentioned what I want my website to contain:
 blog posts, tutorials and knowledge sharing, projects, portfolio, content, etc.
 Blog posts are great to pad websites with when fresh. Generally, they're just
@@ -141,6 +145,11 @@ And that's when I decided I needed to move on from svelte and sapper.
 
 ## Great Gatsby
 
+> “And so with the sunshine and the great bursts of leaves growing on the trees,
+> just as things grow in fast movies, I had that familiar conviction that life
+> was beginning over again with the summer.” -F. Scott Fitzgerald,
+> The Great Gatsby
+
 I can ship something that is _good enough_  now and iterate on it quickly. If I
 use what I'm familiar with and make my content framework agnostic, I can produce
 a working, non-naked website while leaving the future open for
@@ -154,6 +163,10 @@ template. All it took was:
 ```shell
 gatsby new codyaprice.com https://github.com/gatsbyjs/gatsby-starter-blog
 ```
+
+<figcaption>
+  Can’t repeat the past?…Why of course you can!
+</figcaption>
 
 and I was up and running 🏃‍♂️. Even though svelte is more
 [performant than React](https://svelte.dev/blog/write-less-code),
