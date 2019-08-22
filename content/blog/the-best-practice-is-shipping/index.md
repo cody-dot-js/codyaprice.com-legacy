@@ -24,6 +24,14 @@ tags:
 
 ---
 
+**TLDR:**: I'm pivoting.
+
+![Which framework? Which one?](./which-one.gif)
+
+<figcaption>
+  I'm pivoting to a new framework. Which one? Which one?
+</figcaption>
+
 I've always wanted to have my own lil' corner on the web. A spot to show off my
 accomplishments and projects, share knowledge and insights, occasionally blog,
 and house my portfolio. About two weeks ago, August 8th to be exact, I pulled the
@@ -209,6 +217,12 @@ nuances of his incredible and jaw-dropping
 Sounds like React, like JavaScript, will be a safe
 [bet](http://brendaneich.github.io/ModernWeb.tw-2015/#74)
 for the near future.
+
+<https://twitter.com/horse_js/status/1164512598454394881?s=21>
+
+<figcaption class="tweet">
+  Svelte is probably maybe better.. at some things.
+</figcaption>
 
 That being said, I believe that the direction svelte took is the future of web
 development. In my spare time (lol 😂), I can revisit using svelte and sapper.
