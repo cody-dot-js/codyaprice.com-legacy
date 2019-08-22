@@ -24,7 +24,7 @@ tags:
 
 ---
 
-**TLDR:**: I'm pivoting.
+**TLDR:** I'm pivoting.
 
 ![Which framework? Which one?](./which-one.gif)
 
