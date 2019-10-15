@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import formatReadingTime from "../utils/formatReadingTime"
+import formatModifiedTime from "../utils/formatModifiedTime"
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -33,11 +34,20 @@ class BlogPostTemplate extends React.Component {
               style={{
                 ...scale(-1 / 5),
                 display: `block`,
-                marginBottom: rhythm(1),
+                marginBottom: 0,
               }}
             >
               {post.frontmatter.date}
               {` • ${formatReadingTime(post.timeToRead)}`}
+            </p>
+            <p
+              style={{
+                ...scale(-1 / 2),
+                display: `block`,
+                marginBottom: rhythm(1),
+              }}
+            >
+              {formatModifiedTime(post.fields.modifiedTime)}
             </p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -97,6 +107,9 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       timeToRead
+      fields {
+        modifiedTime
+      }
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

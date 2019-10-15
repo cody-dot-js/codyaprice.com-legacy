@@ -20,6 +20,11 @@ exports.createPages = async ({ graphql, actions }) => {
               frontmatter {
                 title
               }
+              parent {
+                ... on File {
+                  mtime
+                }
+              }
             }
           }
         }
@@ -60,5 +65,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     })
+
+    const { mtime: modifiedTime } = getNode(node.parent);
+    createNodeField({
+      node,
+      name: 'modifiedTime',
+      value: modifiedTime
+    });
   }
 }
