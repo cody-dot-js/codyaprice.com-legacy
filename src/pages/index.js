@@ -4,8 +4,9 @@ import { Link, graphql } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
+import { rhythm, scale } from "../utils/typography"
 import formatReadingTime from "../utils/formatReadingTime"
+import formatModifiedTime from "../utils/formatModifiedTime"
 
 class BlogIndex extends React.Component {
   render() {
@@ -31,17 +32,27 @@ class BlogIndex extends React.Component {
                     {title}
                   </Link>
                 </h3>
-                <small>
+                <small style={{ display: "block" }}>
                   {node.frontmatter.date}
                   {` • ${formatReadingTime(node.timeToRead)}`}
                 </small>
               </header>
               <section>
                 <p
+                  style={{ margin: 0 }}
                   dangerouslySetInnerHTML={{
                     __html: node.frontmatter.description || node.excerpt,
                   }}
                 />
+                <p
+                  style={{
+                    ...scale(-1 / 2),
+                    display: `block`,
+                    marginBottom: rhythm(1),
+                  }}
+                >
+                  {formatModifiedTime(node.fields.modifiedTime)}
+                </p>
               </section>
             </article>
           )
@@ -66,6 +77,7 @@ export const pageQuery = graphql`
           excerpt
           fields {
             slug
+            modifiedTime
           }
           timeToRead
           frontmatter {
