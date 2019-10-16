@@ -10,6 +10,8 @@ tags:
   - Commitment
   - Blog
   - Backlog
+  - Personal
+  - Accountability
 ---
 
 It's about time. ⏳

@@ -9,6 +9,8 @@ tags:
   - Electricity
   - Wiring
   - Safety
+  - Ethics
+  - Integrity
 ---
 
 Currently reflecting on how thankful I am for all the opportunities I've been blessed with.
@@ -24,7 +26,7 @@ I was reading up on electrical subpanels on my lunch break since our home has on
 
 ## WHAT I LEARNED WILL SHOCK YOU!!!
 
-With what I learned , well just call me shocked (pun intended ⚡️) that we haven't had an _unfortunate incident_ ☠️.
+With what I learned, well just call me shocked (pun intended ⚡️) that we haven't had an _unfortunate incident_ ☠️.
 Such an incident where, as someone online so eloquently put:
 
 > "All it takes is a preexisting fault, one rainstorm, or wet feet, whatever... and you touching something energized - and you're doing the 60 cycle shuffle."
@@ -35,7 +37,7 @@ Arcing. Electrocution. **_Bad shocky things._**
 
 ⚡️️️️️️️️️⚡️⚡️
 
-I've been shocked (embarassingly, multiple times) from being careless around my main panel.
+I've been shocked (embarrassingly, multiple times) from being careless around my main panel.
 It's not fun.
 
 Our home's basement, an ill-planned afterthought-addition, prefers to remain wet.
