@@ -12,6 +12,9 @@ tags:
   - Communication
 ---
 
+> Update: I have a working MDX configuration on a feature branch!
+> Interactive examples are coming! 💪💪💪
+
 Turns out good content takes a lot of time and effort. Who knew? 🤷‍♂️ 😂
 
 ![Time for excuses... ⌚️](./hero-image.jpg)
