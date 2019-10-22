@@ -1,43 +1,38 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const BlogPost = path.resolve(`./src/templates/blog-post.js`)
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  const result = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
-              parent {
-                ... on File {
-                  mtime
-                }
-              }
+  const { data, errors } = await graphql(`
+    query {
+      allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+              modifiedTime
+            }
+            frontmatter {
+              title
+              date
+              categories
+              tags
             }
           }
         }
       }
-    `
-  )
+    }
+  `)
 
-  if (result.errors) {
-    throw result.errors
+  if (errors) {
+    throw errors
   }
 
   // Create blog posts pages.
-  const posts = result.data.allMarkdownRemark.edges
+  const { edges: posts } = data.allMdx
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
@@ -45,7 +40,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     createPage({
       path: post.node.fields.slug,
-      component: blogPost,
+      component: BlogPost,
       context: {
         slug: post.node.fields.slug,
         previous,
@@ -55,22 +50,32 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, "src"), "node_modules"],
+    },
+  })
+}
 
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+exports.onCreateNode = ({ actions, getNode, node }) => {
+  const { createNodeField } = actions
+  const { type } = node.internal
+
+  if (type === "Mdx") {
+    const slug = createFilePath({ node, getNode })
+    const { modifiedTime } = getNode(node.parent)
+
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: slug,
     })
 
-    const { mtime: modifiedTime } = getNode(node.parent);
     createNodeField({
       node,
-      name: 'modifiedTime',
-      value: modifiedTime
-    });
+      name: "modifiedTime",
+      value: modifiedTime,
+    })
   }
 }

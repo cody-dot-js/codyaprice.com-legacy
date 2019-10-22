@@ -19,8 +19,10 @@ tags:
 
 <figcaption>
   The writing is on the wall
-  <a href="https://www.pexels.com/photo/man-wearing-black-and-white-stripe-shirt-looking-at-white-printer-papers-on-the-wall-212286/
-">
+  <a
+    href="https://www.pexels.com/photo/man-wearing-black-and-white-stripe-shirt-looking-at-white-printer-papers-on-the-wall-212286/
+"
+  >
     © pexels
   </a>
 </figcaption>
@@ -47,9 +49,7 @@ focus on.**
 
 <https://twitter.com/kentcdodds/status/977018512689455106>
 
-<figcaption class="tweet">
-  Write your tests the way it's used
-</figcaption>
+<figcaption class="tweet">Write your tests the way it's used</figcaption>
 
 ## Don’t write tests that are coupled to or leak out your implementation details
 
@@ -57,7 +57,7 @@ In my quest for improving my org’s tests and testing practice, I’ve come acr
 many great articles/blog posts on testing ideologies, like:
 
 - Eric Elliot: [Mocking is a Code Smell](https://medium.com/javascript-scene/mocking-is-a-code-smell-944a70c90a6a)
-(preach! 🙏🗣)
+  (preach! 🙏🗣)
 - Kent C. Dodds: [Testing Implementation Details](https://kentcdodds.com/blog/testing-implementation-details).
 
 A common theme in these posts is that your tests should be black box tests that
@@ -79,9 +79,7 @@ imperative that you get to market quickly so you can get paid.
 
 ![Gotta go fast!](./gotta-go-fast.gif)
 
-<figcaption>
-  Gotta go fast!
-</figcaption>
+<figcaption>Gotta go fast!</figcaption>
 
 Seeing as you are broke and you need to get to market first, you choose the
 cheapest microprocessor available, but the catch is it doesn’t have a
@@ -91,91 +89,87 @@ numbers using loops and addition:
 
 ```js
 function multiply(a, b) {
-  let acc = 0;
-  const sign = Math.sign(b);
-  const N = Math.abs(b);
+  let acc = 0
+  const sign = Math.sign(b)
+  const N = Math.abs(b)
   for (let i = 0; i < N; ++i) {
-    acc += a;
+    acc += a
   }
 
-  return acc;
+  return acc
 }
 ```
 
-<figcaption>
-  Looping multiplication function between two numbers
-</figcaption>
+<figcaption>Looping multiplication function between two numbers</figcaption>
 
 You’re a sane developer who follows TDD, so you write some tests for this as
 well.
 
 ```js
-import multiply from './multiply';
+import multiply from "./multiply"
 
-test('given any number and 0, it returns 0 regardless of order', () => {
+test("given any number and 0, it returns 0 regardless of order", () => {
   const a = 0
-  const b = 1;
-  const expected = 0;
+  const b = 1
+  const expected = 0
 
-  let result = multiply(a, b);
-  expect(result).toEqual(expected);
+  let result = multiply(a, b)
+  expect(result).toEqual(expected)
 
-  result = multiply(b, a);
-  expect(result).toEqual(expected);
-});
+  result = multiply(b, a)
+  expect(result).toEqual(expected)
+})
 
-test('given any number and 1, it returns the other number regardless of order', () => {
+test("given any number and 1, it returns the other number regardless of order", () => {
   const a = 5
-  const b = 1;
-  const expected = 5;
+  const b = 1
+  const expected = 5
 
-  let result = multiply(a, b);
-  expect(result).toEqual(expected);
+  let result = multiply(a, b)
+  expect(result).toEqual(expected)
 
-  result = multiply(b, a);
-  expect(result).toEqual(expected);
-});
+  result = multiply(b, a)
+  expect(result).toEqual(expected)
+})
 
-test('given any two positive numbers, it returns the positive expected result regardless of order', () => {
+test("given any two positive numbers, it returns the positive expected result regardless of order", () => {
   const a = 5
-  const b = 2;
-  const expected = 10;
+  const b = 2
+  const expected = 10
 
-  let result = multiply(a, b);
-  expect(result).toEqual(expected);
+  let result = multiply(a, b)
+  expect(result).toEqual(expected)
 
-  result = multiply(b, a);
-  expect(result).toEqual(expected);
-});
+  result = multiply(b, a)
+  expect(result).toEqual(expected)
+})
 
-test('given one positive and one negative number, it returns the negative expected result regardless of order', () => {
+test("given one positive and one negative number, it returns the negative expected result regardless of order", () => {
   const a = 2
-  const b = -10;
-  const expected = -20;
+  const b = -10
+  const expected = -20
 
-  let result = multiply(a, b);
-  expect(result).toEqual(expected);
+  let result = multiply(a, b)
+  expect(result).toEqual(expected)
 
-  result = multiply(b, a);
-  expect(result).toEqual(expected);
-});
+  result = multiply(b, a)
+  expect(result).toEqual(expected)
+})
 
-test('given any two negative numbers, it returns the positive expected result regardless of order', () => {
+test("given any two negative numbers, it returns the positive expected result regardless of order", () => {
   const a = -3
-  const b = -4;
-  const expected = 12;
+  const b = -4
+  const expected = 12
 
-  let result = multiply(a, b);
-  expect(result).toEqual(expected);
+  let result = multiply(a, b)
+  expect(result).toEqual(expected)
 
-  result = multiply(b, a);
-  expect(result).toEqual(expected);
-});
+  result = multiply(b, a)
+  expect(result).toEqual(expected)
+})
 ```
 
-<figcaption>
-  Testing multiplication module
-</figcaption>
+<figcaption>Testing multiplication module</figcaption>
 
 But wait ✋! Your boss comes back and is furious 😡 because you don’t have
 [100% test coverage](https://martinfowler.com/bliki/TestCoverage.html)! So,
@@ -200,9 +194,7 @@ test('given 2 and 5, it should loop 5 times', () => {
 });
 ```
 
-<figcaption>
-  Testing multiplication module implementation details
-</figcaption>
+<figcaption>Testing multiplication module implementation details</figcaption>
 
 Hurray! We’ve hit 💯% coverage! Surely this isn’t foreshadowing! Now, you can
 finally release to prod, get clients, and that first paycheck you’ve been
@@ -221,13 +213,11 @@ operator!
 
 ```js
 function multiply(a, b) {
-  return a * b;
+  return a * b
 }
 ```
 
-<figcaption>
-  Simple (typical) multiply function between two numbers
-</figcaption>
+<figcaption>Simple (typical) multiply function between two numbers</figcaption>
 
 Easy. Clean. Solid. It runs beautifully on the new hardware. So fast!
 

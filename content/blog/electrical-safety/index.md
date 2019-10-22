@@ -18,9 +18,7 @@ Specifically, the ability to recognize subpar electrical work and the capability
 
 ![Leave a light on...💡](./hero-image.jpg)
 
-<figcaption>
-  © Rahul @ pexels
-</figcaption>
+<figcaption>© Rahul @ pexels</figcaption>
 
 I was reading up on electrical subpanels on my lunch break since our home has one in the basement.
 

@@ -1,7 +1,7 @@
 ---
 title: The Best Practice is Shipping
 date: "2019-08-22T05:56:08.689Z"
-description: "It'll never be \"perfect\" so just ship it now. 🚢"
+description: 'It''ll never be "perfect" so just ship it now. 🚢'
 categories:
   - Development
   - Delivery
@@ -18,9 +18,7 @@ tags:
 
 ![Ship it, my guy](./hero-image.jpeg)
 
-<figcaption>
-  It'll never be "perfect" so just ship it now. 🚢
-</figcaption>
+<figcaption>It'll never be "perfect" so just ship it now. 🚢</figcaption>
 
 ---
 
@@ -28,9 +26,7 @@ tags:
 
 ![Which framework? Which one?](./which-one.gif)
 
-<figcaption>
-  I'm pivoting to a new framework. Which one? Which one?
-</figcaption>
+<figcaption>I'm pivoting to a new framework. Which one? Which one?</figcaption>
 
 I've always wanted to have my own lil' corner on the web. A spot to show off my
 accomplishments and projects, share knowledge and insights, occasionally blog,
@@ -43,9 +39,7 @@ dollars later, I had a domain and deployment/cdn service. Awesome!
 
 ![Now what?](./now-what.gif)
 
-<figcaption>
-  I have a domain.. now what?
-</figcaption>
+<figcaption>I have a domain.. now what?</figcaption>
 
 ## GET /framework
 
@@ -65,9 +59,7 @@ DOM
 
 ![node_modules... oof](./node-modules.png)
 
-<figcaption>
-  Just give it another `rm -rf` for good measure.
-</figcaption>
+<figcaption>Just give it another `rm -rf` for good measure.</figcaption>
 
 > React needs to figure out how to efficiently update the UI to match the most
 > recent tree...[and] implements a heuristic `O(n)` algorithm.
@@ -132,9 +124,7 @@ producing nor hosting any meaningful content.
 
 ![naked website](./naked-svelte-website.png)
 
-<figcaption>
-  My website was dormant, vacant, and quite naked. 🙈
-</figcaption>
+<figcaption>My website was dormant, vacant, and quite naked. 🙈</figcaption>
 
 I was getting kind of frustrated and felt like I wasn't moving fast enough. I
 just wanted to start with my
@@ -159,7 +149,7 @@ And that's when I decided I needed to move on from svelte and sapper.
 >
 > -F. Scott Fitzgerald, The Great Gatsby
 
-I can ship something that is _good enough_  now and iterate on it quickly. If I
+I can ship something that is _good enough_ now and iterate on it quickly. If I
 use what I'm familiar with and make my content framework agnostic, I can produce
 a working, non-naked website while leaving the future open for
 [change](https://overreacted.io/optimized-for-change/).
@@ -173,9 +163,7 @@ template. All it took was:
 gatsby new codyaprice.com https://github.com/gatsbyjs/gatsby-starter-blog
 ```
 
-<figcaption>
-  Can’t repeat the past?…Why of course you can!
-</figcaption>
+<figcaption>Can’t repeat the past?…Why of course you can!</figcaption>
 
 and I was up and running 🏃‍♂️. Even though svelte is more
 [performant than React](https://svelte.dev/blog/write-less-code),
@@ -198,9 +186,7 @@ cartoon pinned on his office door and I think it's a perfect metaphor for this:
 
 ![Agile, like this](./agile-like-this.png)
 
-<figcaption>
-  Agile, but like this: 🛹➡️🚲️️➡️🏎
-</figcaption>
+<figcaption>Agile, but like this: 🛹➡️🚲️️➡️🏎</figcaption>
 
 In this scenario, you develop, ship, and demo to the client over and over
 (iterate) until you arrive at what they want. The key is speed and you can't go
