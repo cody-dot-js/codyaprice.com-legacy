@@ -12,8 +12,12 @@ tags:
   - Communication
 ---
 
+import Counter from "./Counter";
+
 > Update: I have a working MDX configuration on a feature branch!
 > Interactive examples are coming! 💪💪💪
+
+<Counter />
 
 Turns out good content takes a lot of time and effort. Who knew? 🤷‍♂️ 😂
 
