@@ -19,17 +19,13 @@ Turns out good content takes a lot of time and effort. Who knew? 🤷‍♂️ �
 
 ![Time for excuses... ⌚️](./hero-image.jpg)
 
-<figcaption>
-  Time for excuses... ⌚️ © Marius Mann @ pexels
-</figcaption>
+<figcaption>Time for excuses... ⌚️ © Marius Mann @ pexels</figcaption>
 
 **TLDR:** _It's coming...**soon**_
 
 ![Soon... 🦉](./soon.gif)
 
-<figcaption>
-  Soon... 🦉
-</figcaption>
+<figcaption>Soon... 🦉</figcaption>
 
 So what's the deal? Why didn't the article drop at 11am local time?
 _**It's Thursday after all**_.
@@ -40,9 +36,7 @@ A lot of concepts related to the JavaScript event loop are much easier to explai
 
 ![Excuses, excuses... 😒](./excuses.gif)
 
-<figcaption>
-  Excuses, excuses... 😒
-</figcaption>
+<figcaption>Excuses, excuses... 😒</figcaption>
 
 I want to have the ability to give you, the reader, an opportunity to really understand what is going on with each, transient step in the event loop workflow.
 Things like describing a stack, queue, and what a specific function call did are much easier with dynamic content (animations and interactive content).
