@@ -40,7 +40,13 @@
     "typography-theme-noriega": "^0.16.19"
   },
   "devDependencies": {
+    "@babel/core": "^7.6.4",
     "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-links": "^5.2.5",
+    "@storybook/addons": "^5.2.5",
+    "@storybook/react": "^5.2.5",
+    "babel-loader": "^8.0.6",
     "babel-preset-gatsby": "^0.2.8",
     "markdownlint-cli": "^0.18.0",
     "prettier": "^1.18.2"
@@ -61,6 +67,8 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   }
 }
