@@ -10,6 +10,9 @@ tags:
   - JavaScript
   - iOS
   - VoiceOver
+redirect_from:
+  - /how-ios-voiceover-demonstrates-the-power-and-flexibility-of-react/
+
 ---
 
 > This was originally posted on [Medium on June 7, 2019](https://medium.com/swlh/how-ios-voiceover-demonstrates-the-power-and-flexibility-of-react-5369679b6a6b)

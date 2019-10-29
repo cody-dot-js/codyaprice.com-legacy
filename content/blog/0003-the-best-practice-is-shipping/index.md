@@ -14,6 +14,8 @@ tags:
   - Framework
   - Delivery
   - Iteration
+redirect_from:
+  - /the-best-practice-is-shipping/
 ---
 
 ![Ship it, my guy](./hero-image.jpeg)
