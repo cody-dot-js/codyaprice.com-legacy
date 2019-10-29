@@ -58,13 +58,33 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   })
 }
 
+function getSlugBase(dir) {
+  return path.parse(path.dirname(dir)).base
+}
+
+function getSlugPath({ node, getNode, parentNode }) {
+  // get the slug base path, e.g. 'blog'
+  const slugBase = getSlugBase(parentNode.dir)
+
+  // resources will begin with a number 'xxxx-', just for sorting order in their
+  // respective dirs, strip it off
+  const resourceName = createFilePath({ node, getNode })
+    .split("-")
+    .slice(1)
+    .join("-")
+
+  return `/${slugBase}/${resourceName}`
+}
+
 exports.onCreateNode = ({ actions, getNode, node }) => {
   const { createNodeField } = actions
   const { type } = node.internal
 
   if (type === "Mdx") {
-    const slug = createFilePath({ node, getNode })
-    const { modifiedTime } = getNode(node.parent)
+    const parentNode = getNode(node.parent)
+    const { modifiedTime } = parentNode
+
+    const slug = getSlugPath({ node, getNode, parentNode })
 
     createNodeField({
       name: `slug`,

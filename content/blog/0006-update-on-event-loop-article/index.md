@@ -10,6 +10,8 @@ tags:
   - Update
   - Commitment
   - Communication
+redirect_from:
+  - /update-on-event-loop-article/
 ---
 
 import Counter from "./Counter";

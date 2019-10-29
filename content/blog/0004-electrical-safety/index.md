@@ -11,6 +11,8 @@ tags:
   - Safety
   - Ethics
   - Integrity
+redirect_from:
+  - /electrical-safety/
 ---
 
 Currently reflecting on how thankful I am for all the opportunities I've been blessed with.

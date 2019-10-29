@@ -12,6 +12,8 @@ tags:
   - Backlog
   - Personal
   - Accountability
+redirect_from:
+  - /git-commit-m-write-more/
 ---
 
 It's about time. ⏳

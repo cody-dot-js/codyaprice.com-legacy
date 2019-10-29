@@ -11,6 +11,8 @@ tags:
   - JavaScript
   - TDD
   - Best Practices
+redirect_from:
+  - /stop-testing-implementation-details/
 ---
 
 > This was originally posted on [Medium on August 8, 2019](https://medium.com/@dev.cprice/stop-testing-implementation-details-77a3528336af)
