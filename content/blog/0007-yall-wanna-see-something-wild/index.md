@@ -134,6 +134,13 @@ Notice however, that it doesn't care about the first argument returned in the `u
 We will soon see that this is okay though, because our initial state is `falsey`, which is just a funny way of saying that it evaluates to `false`.
 It's important to note that we've effectively make the state variable ***private*** to the custom hook, or ***hidden*** to the outside users.
 The state variable still exists, but *we just don't expose it for use*.
+Here's what happens in [React DevTools](https://github.com/facebook/react/tree/master/packages/react-devtools-extensions#installation):
+
+![useForceUpdate in React DevTools ⚛️](./useForceUpdate-in-react-devtools.gif)
+
+<figcaption>
+  useForceUpdate in React DevTools ⚛️
+</figcaption>
 
 The last thing that the `useForceUpdate` hook does is return a memoized callback that simply toggles the unnamed state variable.
 Just like in the React class component method [setState](https://reactjs.org/docs/react-component.html#setstate), you can pass an *updater function* to the `React.useState` setter, as I've done here.
