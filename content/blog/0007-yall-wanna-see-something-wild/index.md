@@ -34,9 +34,9 @@ As the React docs state,
 > By default, when your component’s state or props change, your component will re-render.
 > If your `render()` method depends on some other data, you can tell React that the component needs re-rendering by calling `forceUpdate()`
 
-In a normal React application, changes to `props`, `state`, and even `context` drive component render cycles.
+In a normal React application, changes to `props`, `state`, and even `context` is the main driver of component render cycles.
 However, you ***can*** tell React to re-render your component without updating any of those things.
-And the way to do that is to call `forceUpdate()`.
+And one special way to do that is to call `forceUpdate()`.
 
 Let's take a glance at what this may look like:
 
@@ -106,6 +106,9 @@ If you've used React [hooks](https://reactjs.org/docs/hooks-intro.html), you've 
 Alright, well maybe you ***haven't*** noticed point #2.
 That's *alright, alright, alright*.
 
+It may not exist as a first class hook, but that can't stop us!
+Let's write a custom hook!
+
 ```jsx
 function useForceUpdate() {
   const [, forceUpdate] = React.useState();
@@ -144,7 +147,7 @@ But, before I reveal the code we will be running, I want to talk about a couple 
 First, let's touch back on what causes a React component to re-render.
 As I mentioned before, a component will re-render if:
 
-* a parent re-renders
+* your `shouldComponentUpdate` returns `true`
 * its own internal state changes
 * it receives new props
 * the context it hooks into changes
