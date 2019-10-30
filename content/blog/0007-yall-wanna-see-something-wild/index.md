@@ -251,9 +251,9 @@ A simple click handler is necessary for the `<button>`:
 
 ```jsx
 // When I click, you... don't click, just force the update!
-  const onClick = React.useCallback(() => {
-    forceUpdate()
-  }, [forceUpdate])
+const onClick = React.useCallback(() => {
+  forceUpdate()
+}, [forceUpdate])
 ```
 
 <figcaption>
