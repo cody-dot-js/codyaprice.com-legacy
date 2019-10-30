@@ -14,6 +14,7 @@ tags:
   - Development
 ---
 
+import BadExample from "./BadExample";
 import UseTheForce from "./UseTheForce";
 
 ![You ain't wild, ya mild. Photo: © pixabay @ pexels](./hero-image.jpg)
@@ -42,19 +43,21 @@ Let's take a glance at what this may look like:
 
 ```jsx
 class BadExample extends React.Component {
-  iNeedCacheNow = () => {
-    // call J.G. Wentworth, or just tell React we need it now
-    this.forceUpdate();
+  callJGWentworth = () => {
+    // call J.G. Wentworth, or just tell React we need it now 👇
+    this.forceUpdate()
   }
-
   render() {
-    console.log('877-CASH-NOW!!!');
+    console.log("877-CASH-NOW!!!")
 
     return (
-      <button type="button" onClick={this.iNeedCacheNow}>
-        I have a structured settlement
-      </button>
-    );
+      <>
+        <h2>I have a structured settlement</h2>
+        <button type="button" onClick={this.callJGWentworth}>
+          AND I NEED CASH NOW
+        </button>
+      </>
+    )
   }
 }
 ```
@@ -74,7 +77,8 @@ Yeah, I know the code is bad, but it's only ~~a reflection of my daily code prod
 
 Here's what running the above code looks like:
 
-![🎶 877-CASH-NOW!!! 🎶](./bad-example.gif)
+<BadExample />
+<br />
 
 <figcaption>
   🎶 877-CASH-NOW!!! 🎶
