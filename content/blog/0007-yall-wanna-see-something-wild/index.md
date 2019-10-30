@@ -132,6 +132,9 @@ function useForceUpdate() {
 Well, it first calls `React.useState()` and passes nothing, or `undefined`, to the initial state.
 Notice however, that it doesn't care about the first argument returned in the `useState` tuple, which is the ***state variable***.
 We will soon see that this is okay though, because our initial state is `falsey`, which is just a funny way of saying that it evaluates to `false`.
+It's important to note that we've effectively make the state variable ***private*** to the custom hook, or ***hidden*** to the outside users.
+The state variable still exists, but *we just don't expose it for use*.
+
 The last thing that the `useForceUpdate` hook does is return a memoized callback that simply toggles the unnamed state variable.
 Just like in the React class component method [setState](https://reactjs.org/docs/react-component.html#setstate), you can pass an *updater function* to the `React.useState` setter, as I've done here.
 This updater function just happens to return the inverse of what the unnamed state variable currently is, e.g. `false` ➡️ `true`.
@@ -142,6 +145,11 @@ So, we're caching, or remembering, what the function is, even across separate ca
 If you're curious for more info on memoization, check out this [wikipedia article](https://en.wikipedia.org/wiki/Memoization).
 
 To answer the question ***"What does this hook do?"***, it allows you to force a re-render in your functional component without actually changing `props`, `state`, or `context`.
+
+I have mislead you a bit, however.
+The `useForceUpdate()` hook isn't quite a 1-to-1 comparison with the `forceUpdate()` class component usage above.
+That's because there's no [shouldComponentUpdate hook](https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-shouldcomponentupdate).
+Hooks require a ***different*** [mental model of React](https://kentcdodds.com/chats-with-kent-podcast/seasons/01/episodes/realigning-your-model-of-react-after-hooks-with-dan-abramov).
 
 ## Example Time! ⏰
 
@@ -296,6 +304,8 @@ If nothing in the DOM will change by forcing a re-render, then you've done some 
 The UI thread is a precious resource and we should be using it as little as possible for maximum performance.
 
 ***Again, use*** `forceUpdate()` ***sparingly and with intention.***
+
+And if you're thinking about reaching for something like the custom `useForceUpdate()` hook above, then you're probably [holding it wrong](https://www.engadget.com/2010/06/24/apple-responds-over-iphone-4-reception-issues-youre-holding-th/).
 
 Thanks for coming to my TED talk. After all, [all the cool kids are doing it](https://twitter.com/dan_abramov/status/1120987501072650240).
 
