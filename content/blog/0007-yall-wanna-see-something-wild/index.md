@@ -1,5 +1,5 @@
 ---
-title: "React useForce 👋 (Update)"
+title: "Wild React 🦒: useForceUpdate()"
 date: "2019-10-30T04:14:10.009Z"
 description: "Y'all wanna see something wild? 🦒👀"
 categories:
