@@ -147,7 +147,7 @@ But, before I reveal the code we will be running, I want to talk about a couple 
 First, let's touch back on what causes a React component to re-render.
 As I mentioned before, a component will re-render if:
 
-* your `shouldComponentUpdate` returns `true`
+* its `shouldComponentUpdate` returns `true`
 * its own internal state changes
 * it receives new props
 * the context it hooks into changes
