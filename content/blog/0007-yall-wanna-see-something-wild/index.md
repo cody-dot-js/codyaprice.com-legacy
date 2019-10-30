@@ -100,7 +100,7 @@ If nothing in the DOM will change by forcing a re-render, then you've done some 
 
 ---
 
-## forceUpdate, the React hooks hway
+## forceUpdate(), the React hooks hway
 
 If you've used React [hooks](https://reactjs.org/docs/hooks-intro.html), you've probably noticed that:
 
@@ -124,55 +124,55 @@ function useForceUpdate() {
 ```
 
 <figcaption>
-  forceUpdate(), but as a hook: useForceUpdate
+  forceUpdate(), but as a hook: useForceUpdate()
 </figcaption>
 
 ### So, what does this hook do?
 
 Well, it first calls `React.useState()` and passes nothing, or `undefined`, to the initial state.
-Notice however, that it doesn't care about the first argument returned in the `useState` tuple, which is the ***state variable***.
+Notice however, that it doesn't care about the first argument returned in the `useState()` tuple, which is the ***state variable***.
 We will soon see that this is okay though, because our initial state is `falsey`, which is just a funny way of saying that it evaluates to `false`.
-It's important to note that we've effectively make the state variable ***private*** to the custom hook, or ***hidden*** to the outside users.
+It's important to note that we've effectively made the state variable ***private*** to the custom hook, or ***hidden*** to the outside users.
 The state variable still exists, but *we just don't expose it for use*.
 Here's what happens in [React DevTools](https://github.com/facebook/react/tree/master/packages/react-devtools-extensions#installation):
 
 ![useForceUpdate in React DevTools ⚛️](./useForceUpdate-in-react-devtools.gif)
 
 <figcaption>
-  useForceUpdate in React DevTools ⚛️
+  useForceUpdate() in React DevTools ⚛️
 </figcaption>
 
 The last thing that the `useForceUpdate` hook does is return a memoized callback that simply toggles the unnamed state variable.
-Just like in the React class component method [setState](https://reactjs.org/docs/react-component.html#setstate), you can pass an *updater function* to the `React.useState` setter, as I've done here.
+Just like in the React class component method [setState](https://reactjs.org/docs/react-component.html#setstate), you can pass an *updater function* to the `React.useState()` setter, as I've done here.
 This updater function just happens to return the inverse of what the unnamed state variable currently is, e.g. `false` ➡️ `true`.
 
 If you're unsure about what I mean by ***"memoized callback"***, that's okay.
 In this case, we just want the function `() => { forceUpdate(); }` to always refer to the same underlying object reference.
 So, we're caching, or remembering, what the function is, even across separate calls to `useForceUpdate`.
-If you're curious for more info on memoization, check out this [wikipedia article](https://en.wikipedia.org/wiki/Memoization).
+If you're curious for more info on memoization, check out this [Wikipedia article](https://en.wikipedia.org/wiki/Memoization).
 
 To answer the question ***"What does this hook do?"***, it allows you to force a re-render in your functional component without actually changing `props`, `state`, or `context`.
 
-I have mislead you a bit, however.
+I have misled you a bit, however.
 The `useForceUpdate()` hook isn't quite a 1-to-1 comparison with the `forceUpdate()` class component usage above.
-That's because there's no [shouldComponentUpdate hook](https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-shouldcomponentupdate).
+That's because there's no [shouldComponentUpdate() hook](https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-shouldcomponentupdate).
 Hooks require a ***different*** [mental model of React](https://kentcdodds.com/chats-with-kent-podcast/seasons/01/episodes/realigning-your-model-of-react-after-hooks-with-dan-abramov).
 
 ## Example Time! ⏰
 
 Here's the part I've been wanting to show you.
-But, before I reveal the code we will be running, I want to talk about a couple things.
+But, before I reveal the code we will be running, I want to talk about a couple of things.
 
 First, let's touch back on what causes a React component to re-render.
 As I mentioned before, a component will re-render if:
 
-* its `shouldComponentUpdate` returns `true`
+* its `shouldComponentUpdate()` returns `true`
 * its own internal state changes
 * it receives new props
 * the context it hooks into changes
 * it's a class component that calls `forceUpdate()`
 
-Notice that changing React [refs](https://reactjs.org/docs/refs-and-the-dom.html) doesn't cause a re-render.
+Notice that changing React [refs](https://reactjs.org/docs/refs-and-the-dom.html) don't cause a re-render.
 Refs are nice for imperatively mutating DOM nodes.
 I primarily use them for focus management: `ref.current.focus()`.
 But, you can also use them to store instance-like-variables, even in functional components!
@@ -181,7 +181,7 @@ Keep in mind that changing these kinds of instance-like-variables ***won't trigg
 Next, I wanna briefly talk about one of my favorite hooks: `React.useEffect()`.
 And by briefly talk about, I really just mean referencing a tweet from [@ryanflorence](https://twitter.com/ryanflorence).
 
-A quick and helpful guide on `React.useEffect`:
+A quick and helpful guide on `React.useEffect()`:
 
 https://twitter.com/ryanflorence/status/1125041041063665666?lang=en
 
@@ -233,30 +233,30 @@ The oddball `UseTheForce` component, rendered in all its glory.
 
 ## Let's break it down 💃
 
-First, we get our `forceUpdate` callback:
+First, we get our `forceUpdate()` callback:
 
 ```jsx
-// get the forceUpdate callback by calling the useForceUpdate hook
+// get the forceUpdate() callback by calling the useForceUpdate() hook
 const forceUpdate = useForceUpdate()
 ```
 
 <figcaption>
-  Get the forceUpdate callback by calling the useForceUpdate hook
+  Get the forceUpdate() callback by calling the useForceUpdate() hook
 </figcaption>
 
 Now, let's grab a `ref` to a *pseudo-instance-variable* counter, initialized to `0`:
 
 ```jsx
-// let's retain some counting state without useState... with refs!
+// let's retain some counting state without useState()... with refs!
 // initialize the ref.current value to 0
 const renderCount = React.useRef(0)
 ```
 
 <figcaption>
-  Use state without useState, ya dig?
+  Use state without useState(), ya dig?
 </figcaption>
 
-Using our handy dandy ~~notebook 📕~~ `React.useEffect` guide from Ryan Florence, let's increment the counter ***on each render***:
+Using our handy dandy ~~notebook 📕~~ `React.useEffect()` guide from Ryan Florence, let's increment the counter ***on each render***:
 
 ```jsx
 // add one to the render count ref's current value on each render
