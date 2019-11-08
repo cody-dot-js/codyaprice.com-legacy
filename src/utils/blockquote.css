@@ -11,6 +11,5 @@ blockquote {
   line-height: 2rem;
   background: hsla(0, 0%, 0%, 0.03);
   color: hsla(0, 0%, 0%, 0.69);
-  /* border-left: 0.20833rem solid hsla(0, 0%, 0%, 0.2); */
   border-left: 0.25rem solid #a44fb6;
 }

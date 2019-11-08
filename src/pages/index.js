@@ -40,7 +40,7 @@ function BlogIndex({ data, location }) {
             <small
               css={{
                 display: "block",
-                marginBottom: "0.5rem",
+                marginBottom: "0",
                 color: "rgba(0, 0, 0, 0.54)"
               }}
             >
@@ -63,7 +63,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+    allMdx(
+      sort: { fields: frontmatter___date, order: DESC }
+      filter: { frontmatter: { seriesId: { eq: null } } }
+    ) {
       edges {
         node {
           excerpt

@@ -17,9 +17,9 @@ const style = css`
   padding: 1rem;
 `
 
-function Card({ children, ...otherProps }) {
+function Card({ children, ...extraProps }) {
   return (
-    <div {...otherProps} css={style}>
+    <div css={style} {...extraProps}>
       {children}
     </div>
   )
