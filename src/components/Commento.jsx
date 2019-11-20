@@ -46,7 +46,7 @@ function Commento({ id, commentoSrc, commentoScriptId }) {
     }
 
     return () => removeScript(commentoScriptId, document.body)
-  }, [id])
+  }, [id, commentoSrc, commentoScriptId])
 
   return (
     <div>

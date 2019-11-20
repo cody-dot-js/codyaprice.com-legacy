@@ -9,6 +9,7 @@ module.exports = {
     },
   },
   plugins: [
+    "gatsby-plugin-sass",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
@@ -132,11 +133,11 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-redirect-from',
+      resolve: "gatsby-redirect-from",
       options: {
-        query: 'allMdx'
-      }
+        query: "allMdx",
+      },
     },
-    'gatsby-plugin-meta-redirect' // make sure this is always the last one
+    "gatsby-plugin-meta-redirect", // make sure this is always the last one
   ],
 }
