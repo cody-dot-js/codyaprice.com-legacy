@@ -87,6 +87,8 @@ function BlogPost({ data, location, pageContext }) {
           </li>
         </ul>
       </nav>
+      <div id="commento" />
+      <script src="https://cdn.commento.io/js/commento.js" />
     </Layout>
   )
 }
