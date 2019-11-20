@@ -8,6 +8,7 @@ import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import formatReadingTime from "../utils/formatReadingTime"
 import formatModifiedTime from "../utils/formatModifiedTime"
+import Commento from "../components/Commento"
 
 function BlogPost({ data, location, pageContext }) {
   const { mdx: post } = data
@@ -87,7 +88,7 @@ function BlogPost({ data, location, pageContext }) {
           </li>
         </ul>
       </nav>
-      <div id="commento" />
+      <Commento id={post.fields.slug} />
     </Layout>
   )
 }
@@ -109,6 +110,7 @@ export const pageQuery = graphql`
       timeToRead
       fields {
         modifiedTime
+        slug
       }
       frontmatter {
         title
