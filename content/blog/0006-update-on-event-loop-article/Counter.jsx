@@ -45,7 +45,12 @@ export default function Counter() {
       >
         -
       </button>
-      <small>This is rendered inside markdown (using MDX!) 🤓</small>
+      <small>
+        This is rendered inside markdown (using MDX!){" "}
+        <span role="img" aria-label="nerdy face emoji">
+          🤓
+        </span>
+      </small>
     </div>
   )
 }
