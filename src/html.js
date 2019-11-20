@@ -11,11 +11,7 @@ export default function HTML(props) {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <script
-          defer
-          src="http://commento.example.com/js/commento.js"
-          data-auto-init="true"
-        ></script>
+        <script defer src="https://cdn.commento.io/js/commento.js"></script>
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
