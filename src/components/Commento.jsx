@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import HeaderLink from "./HeaderLink"
 
 function insertScript(src, id, parent) {
   const script = document.createElement("script")
@@ -47,7 +48,12 @@ function Commento({ id, commentoSrc, commentoScriptId }) {
     return () => removeScript(commentoScriptId, document.body)
   }, [id])
 
-  return <div ref={commentoRef} id="commento" />
+  return (
+    <div>
+      <HeaderLink id="comments">Comments</HeaderLink>
+      <div ref={commentoRef} id="commento" />
+    </div>
+  )
 }
 
 Commento.propTypes = propTypes
