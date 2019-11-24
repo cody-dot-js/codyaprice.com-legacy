@@ -1,7 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import { css } from "@emotion/core"
 import { rhythm, scale } from "../utils/typography"
+import StarrySection from "./StarrySection"
+import Navigation from "./navigation/Navigation"
+import Card from "./Card"
 
 function Layout({ children, location, title }) {
   const rootPath = `${__PATH_PREFIX__}/`
@@ -52,16 +56,44 @@ function Layout({ children, location, title }) {
 
   return (
     <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
+      css={css`
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-height: 100vh;
+      `}
     >
-      <header>{header}</header>
-      <main>{children}</main>
-      <footer>
+      <StarrySection />
+      <Navigation />
+      <div
+        css={css`
+          flex: 1;
+          margin: 0 auto;
+          max-width: 50rem;
+          padding: 1rem 0.5rem;
+          position: relative;
+          width: 100%;
+        `}
+      >
+        <Card
+          css={css`
+            background-color: white;
+            margin-top: 5rem;
+            margin-bottom: -4rem;
+          `}
+        >
+          <header>{header}</header>
+          <main>{children}</main>
+        </Card>
+      </div>
+      <footer
+        css={{
+          color: "white",
+          minHeight: "8rem",
+          backgroundColor: "#574b90",
+          width: "100%",
+        }}
+      >
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>

@@ -1,10 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import classNames from "classnames/bind"
+import { css } from "@emotion/core"
 import ProgressBar from "./ProgressBar"
-import styles from "./ReadingProgress.module.scss"
-
-const cx = classNames.bind(styles)
 
 const propTypes = {
   targetRef: PropTypes.shape({
@@ -14,6 +11,18 @@ const propTypes = {
 
 const defaultProps = {
   targetRef: null,
+}
+
+// const style = css`
+//   position: sticky;
+//   top: 0;
+//   z-index: 9001;
+// `
+
+const style = {
+  position: "sticky",
+  top: 0,
+  zIndex: 9001,
 }
 
 function ReadingProgress({ targetRef }) {
@@ -51,7 +60,7 @@ function ReadingProgress({ targetRef }) {
     return () => window.removeEventListener("scroll", scrollListener)
   }, [scrollListener])
 
-  return <ProgressBar className={cx("readingProgress")} value={progress} />
+  return <ProgressBar css={style} value={progress} />
 }
 
 ReadingProgress.propTypes = propTypes

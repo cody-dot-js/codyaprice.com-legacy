@@ -55,7 +55,7 @@ function BlogPost({ data, location, pageContext }) {
               {formatModifiedTime(post.fields.modifiedTime)}
             </p>
           </header>
-          <div ref={postRef}>
+          <div css={{ padding: "0 1rem" }} ref={postRef}>
             <MDXRenderer>{post.body}</MDXRenderer>
           </div>
           <hr
