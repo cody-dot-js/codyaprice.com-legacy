@@ -4,13 +4,13 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-function AboutPage({ data, location }) {
+function ProjectsPage({ data, location }) {
   const siteTitle = data.site.siteMetadata.title
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="About Me" />
-      <h1>About Me</h1>
+      <SEO title="Projects" />
+      <h1>Projects</h1>
       <p>
         <span role="img" aria-label="construction sign">
           🚧
@@ -26,7 +26,7 @@ function AboutPage({ data, location }) {
   )
 }
 
-export default AboutPage
+export default ProjectsPage
 
 export const pageQuery = graphql`
   query {

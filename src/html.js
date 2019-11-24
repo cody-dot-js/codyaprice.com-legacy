@@ -12,6 +12,10 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
+        <script
+          src="https://kit.fontawesome.com/65adeb5d69.js"
+          crossOrigin="anonymous"
+        ></script>
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
@@ -20,9 +24,7 @@ export default function HTML(props) {
         </noscript>
         <div
           css={{
-            // display: "flex",
             minHeight: "100vh",
-            // flexDirection: "column",
           }}
           key={`body`}
           id="___gatsby"

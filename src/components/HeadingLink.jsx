@@ -12,10 +12,10 @@ const defaultProps = {
   children: null,
 }
 
-function HeaderLink({ level, id, children }) {
-  const Header = `h${level}`
+function HeadingLink({ level, id, children }) {
+  const Heading = `h${level}`
   return (
-    <Header id={id}>
+    <Heading id={id}>
       <a href={`#${id}`} aria-label={`${id} permalink`} className="anchor">
         <svg
           aria-hidden="true"
@@ -32,11 +32,11 @@ function HeaderLink({ level, id, children }) {
         </svg>
       </a>
       {children}
-    </Header>
+    </Heading>
   )
 }
 
-HeaderLink.propTypes = propTypes
-HeaderLink.defaultProps = defaultProps
+HeadingLink.propTypes = propTypes
+HeadingLink.defaultProps = defaultProps
 
-export default HeaderLink
+export default HeadingLink

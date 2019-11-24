@@ -22,10 +22,10 @@ export default function UseTheForce() {
 
   return (
     <div
-      style={{
+      css={{
         textAlign: "center",
-        padding: 10,
-        border: "3px dashed",
+        padding: "0.5rem",
+        border: "0.25rem dashed",
       }}
     >
       <button type="button" onClick={onClick}>

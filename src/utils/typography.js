@@ -1,5 +1,4 @@
 import Typography from "typography"
-// import type from "typography-theme-noriega"
 import blockquote from "./blockquote.css"
 
 const fonts = [
@@ -26,12 +25,6 @@ const typography = new Typography({
     blockquote,
   }),
 })
-
-// type.overrideThemeStyles = ({ rhythm }, options) => ({
-//   blockquote,
-// })
-
-// const typography = new Typography(type)
 
 // Hot reload typography in development.
 if (process.env.NODE_ENV !== `production`) {

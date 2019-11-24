@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 import Particles from "react-particles-js"
 
@@ -16,7 +15,7 @@ const propTypes = {}
 
 const defaultProps = {}
 
-function StarrySection({}) {
+function StarrySection() {
   return (
     <section css={style}>
       <Particles

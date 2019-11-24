@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { css } from "@emotion/core"
 import ProgressBar from "./ProgressBar"
 
 const propTypes = {
@@ -12,12 +11,6 @@ const propTypes = {
 const defaultProps = {
   targetRef: null,
 }
-
-// const style = css`
-//   position: sticky;
-//   top: 0;
-//   z-index: 9001;
-// `
 
 const style = {
   position: "sticky",

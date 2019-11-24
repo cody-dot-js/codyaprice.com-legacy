@@ -17,10 +17,10 @@ export default class BadExample extends React.Component {
   render() {
     return (
       <div
-        style={{
+        css={{
           textAlign: "center",
-          padding: 10,
-          border: "3px dashed",
+          padding: "0.5rem",
+          border: "0.25rm dashed",
         }}
       >
         <h2>I have a structured settlement</h2>

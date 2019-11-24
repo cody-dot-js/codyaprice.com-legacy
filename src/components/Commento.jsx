@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import HeaderLink from "./HeaderLink"
+import HeadingLink from "./HeadingLink"
 
 function insertScript(src, id, parent) {
   const script = document.createElement("script")
@@ -50,7 +50,7 @@ function Commento({ id, commentoSrc, commentoScriptId }) {
 
   return (
     <div>
-      <HeaderLink id="comments">Comments</HeaderLink>
+      <HeadingLink id="comments">Comments</HeadingLink>
       <div ref={commentoRef} id="commento" />
     </div>
   )

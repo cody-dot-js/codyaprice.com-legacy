@@ -7,37 +7,27 @@ import Commento from "../components/Commento"
 import Layout from "../components/layout"
 import ReadingProgress from "../components/ReadingProgress"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 import formatReadingTime from "../utils/formatReadingTime"
 import formatModifiedTime from "../utils/formatModifiedTime"
 
 function BlogPost({ data, location, pageContext }) {
   const { mdx: post } = data
-  const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
   const postRef = React.useRef(null)
 
   return (
     <>
       <ReadingProgress targetRef={postRef} />
-      <Layout location={location} title={siteTitle}>
+      <Layout location={location} title={post.frontmatter.title}>
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
         <article>
           <header>
-            <h1
-              style={{
-                marginTop: rhythm(1),
-                marginBottom: 0,
-              }}
-            >
-              {post.frontmatter.title}
-            </h1>
             <p
-              style={{
-                ...scale(-1 / 5),
+              css={{
                 display: `block`,
                 marginBottom: 0,
               }}
@@ -45,21 +35,21 @@ function BlogPost({ data, location, pageContext }) {
               {post.frontmatter.date}
               {` • ${formatReadingTime(post.timeToRead)}`}
             </p>
-            <p
-              style={{
-                ...scale(-1 / 2),
-                display: `block`,
-                marginBottom: rhythm(1),
+            <small
+              css={{
+                display: "block",
+                marginBottom: "1rem",
+                color: "rgba(0, 0, 0, 0.54)",
               }}
             >
               {formatModifiedTime(post.fields.modifiedTime)}
-            </p>
+            </small>
           </header>
-          <div css={{ padding: "0 1rem" }} ref={postRef}>
+          <div ref={postRef}>
             <MDXRenderer>{post.body}</MDXRenderer>
           </div>
           <hr
-            style={{
+            css={{
               marginBottom: rhythm(1),
             }}
           />
@@ -70,11 +60,11 @@ function BlogPost({ data, location, pageContext }) {
 
         <nav>
           <ul
-            style={{
-              display: `flex`,
-              flexWrap: `wrap`,
-              justifyContent: `space-between`,
-              listStyle: `none`,
+            css={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "space-between",
+              listStyle: "none",
               padding: 0,
             }}
           >

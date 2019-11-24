@@ -1,10 +1,7 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import { Bio, Layout, Link, SEO } from "../components"
 import formatReadingTime from "../utils/formatReadingTime"
 import formatModifiedTime from "../utils/formatModifiedTime"
 
@@ -20,35 +17,38 @@ function BlogIndex({ data, location }) {
         <article key={node.fields.slug}>
           <header>
             <h3
-              style={{
-                marginBottom: rhythm(1 / 4),
+              css={{
+                marginBottom: "0.5rem",
               }}
             >
-              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+              <Link
+                css={{ color: "#fc85ae", "&:visited": { color: "#9e579d" } }}
+                to={node.fields.slug}
+              >
                 {node.frontmatter.title || node.fields.slug}
               </Link>
             </h3>
-            <small style={{ display: "block" }}>
+            <small css={{ display: "block" }}>
               {node.frontmatter.date}
               {` • ${formatReadingTime(node.timeToRead)}`}
             </small>
           </header>
           <section>
             <p
-              style={{ margin: 0 }}
+              css={{ margin: 0 }}
               dangerouslySetInnerHTML={{
                 __html: node.frontmatter.description || node.excerpt,
               }}
             />
-            <p
-              style={{
-                ...scale(-1 / 2),
-                display: `block`,
-                marginBottom: rhythm(1),
+            <small
+              css={{
+                display: "block",
+                marginBottom: "1rem",
+                color: "rgba(0, 0, 0, 0.54)",
               }}
             >
               {formatModifiedTime(node.fields.modifiedTime)}
-            </p>
+            </small>
           </section>
         </article>
       ))}

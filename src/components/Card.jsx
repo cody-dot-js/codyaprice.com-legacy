@@ -1,7 +1,6 @@
 import React from "react"
 import { css } from "@emotion/core"
 import PropTypes from "prop-types"
-// import styles from "./Card.module.scss"
 
 const propTypes = {
   children: PropTypes.node,

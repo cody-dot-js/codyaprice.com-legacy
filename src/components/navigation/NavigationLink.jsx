@@ -1,16 +1,17 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { css } from "@emotion/core"
 import Link from "../Link"
 
 const propTypes = {
   to: PropTypes.string,
   children: PropTypes.node,
+  activeClassName: PropTypes.string,
 }
 
 const defaultProps = {
   to: "#",
   children: null,
+  activeClassName: "active",
 }
 
 const style = {
