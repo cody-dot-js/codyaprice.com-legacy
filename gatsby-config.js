@@ -1,15 +1,67 @@
 module.exports = {
   siteMetadata: {
-    title: "Cody A Price",
-    author: "Cody Price",
+    title: "Cody A. Price",
+    author: "Cody A. Price",
     description: "My personal website.",
     siteUrl: "https://codyaprice.com/",
-    social: {
-      twitter: "lokcal_styles",
-    },
+    topNavigationRoutes: [
+      {
+        to: "/blog",
+        display: "Blog",
+      },
+      {
+        to: "/essays",
+        display: "Essays",
+      },
+      {
+        to: "/projects",
+        display: "Projects",
+      },
+      {
+        to: "/about",
+        display: "About",
+      },
+    ],
+    socials: [
+      {
+        id: "github",
+        user: "dev-cprice",
+        url: "https://github.com/dev-cprice",
+      },
+      {
+        id: "linkedin",
+        user: "cody-price-56889b108",
+        url: "https://www.linkedin.com/in/cody-price-56889b108/",
+      },
+      {
+        id: "twitter",
+        user: "lokcal_styles",
+        url: "https://twitter.com/lokcal_styles",
+      },
+      {
+        id: "medium",
+        user: "@dev.cprice",
+        url: "https://medium.com/@dev.cprice",
+      },
+      {
+        id: "instagram",
+        user: "lokcal_styles",
+        url: "https://www.instagram.com/lokcal_styles/",
+      },
+      {
+        id: "facebook",
+        user: "lokcal.styles",
+        url: "https://fb.me/lokcal.styles",
+      },
+      {
+        id: "dribbble",
+        user: "styles_",
+        url: "https://dribbble.com/styles_",
+      },
+    ],
   },
   plugins: [
-    "gatsby-plugin-sass",
+    "gatsby-plugin-emotion",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {

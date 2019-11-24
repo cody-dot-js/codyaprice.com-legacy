@@ -18,27 +18,27 @@ export default function Counter() {
 
   return (
     <div
-      style={{
+      css={{
         textAlign: "center",
-        padding: 10,
-        border: "3px dashed",
+        padding: "0.5rem",
+        border: "0.25rem dashed",
       }}
     >
       <h1>React Counter Component</h1>
       <h2>Count: {count}</h2>
       <button
-        style={{ display: "block", width: "40%", margin: "auto" }}
+        css={{ display: "block", width: "40%", margin: "auto" }}
         type="button"
         onClick={() => dispatch({ type: "increment" })}
       >
         +
       </button>
       <button
-        style={{
+        css={{
           display: "block",
           width: "40%",
           margin: "auto",
-          marginBottom: 15,
+          marginBottom: "1rem",
         }}
         type="button"
         onClick={() => dispatch({ type: "decrement" })}

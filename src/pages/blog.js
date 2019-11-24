@@ -1,18 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { Bio, Layout, Link, SEO } from "../components"
+import { Layout, SEO, Link } from "../components"
 import formatReadingTime from "../utils/formatReadingTime"
 import formatModifiedTime from "../utils/formatModifiedTime"
 
-function BlogIndex({ data, location }) {
-  const siteTitle = data.site.siteMetadata.title
+function BlogPage({ data, location }) {
   const posts = data.allMdx.edges
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Bio />
+    <Layout location={location} title="All Blog Posts">
+      <SEO title="All Blog Posts" />
       {posts.map(({ node }) => (
         <article key={node.fields.slug}>
           <header>
@@ -56,7 +54,7 @@ function BlogIndex({ data, location }) {
   )
 }
 
-export default BlogIndex
+export default BlogPage
 
 export const pageQuery = graphql`
   query {
