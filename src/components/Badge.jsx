@@ -11,11 +11,6 @@ const defaultProps = {
   color: "#a44fb6",
 }
 
-const style = {
-  padding: "0.5rem",
-  borderRadius: "50%",
-}
-
 function Badge({ children, color, ...extraProps }) {
   return (
     <div
