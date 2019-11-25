@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { Bio, Layout, Link, SEO } from "../components"
+import { Bio, Layout, Link, SEO, Tags } from "../components"
 import formatReadingTime from "../utils/formatReadingTime"
 import formatModifiedTime from "../utils/formatModifiedTime"
 
@@ -40,12 +40,13 @@ function BlogIndex({ data, location }) {
             <small
               css={{
                 display: "block",
-                marginBottom: "1rem",
+                marginBottom: "0.5rem",
                 color: "rgba(0, 0, 0, 0.54)",
               }}
             >
               {formatModifiedTime(node.fields.modifiedTime)}
             </small>
+            <Tags list={node.frontmatter.tags} />
           </section>
         </article>
       ))}
@@ -71,6 +72,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            tags
           }
           fields {
             modifiedTime

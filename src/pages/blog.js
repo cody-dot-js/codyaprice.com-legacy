@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { Layout, SEO, Link } from "../components"
+import { Layout, Link, SEO, Tags } from "../components"
 import formatReadingTime from "../utils/formatReadingTime"
 import formatModifiedTime from "../utils/formatModifiedTime"
 
@@ -44,6 +44,7 @@ function BlogPage({ data, location }) {
             >
               {formatModifiedTime(node.fields.modifiedTime)}
             </small>
+            <Tags list={node.frontmatter.tags} />
           </section>
         </article>
       ))}
@@ -69,6 +70,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            tags
           }
           fields {
             modifiedTime

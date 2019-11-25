@@ -2,11 +2,14 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import Bio from "../components/bio"
-import Commento from "../components/Commento"
-import Layout from "../components/layout"
-import ReadingProgress from "../components/ReadingProgress"
-import SEO from "../components/seo"
+import {
+  Bio,
+  Commento,
+  Layout,
+  ReadingProgress,
+  SEO,
+  Tags,
+} from "../components"
 import { rhythm } from "../utils/typography"
 import formatReadingTime from "../utils/formatReadingTime"
 import formatModifiedTime from "../utils/formatModifiedTime"
@@ -44,6 +47,7 @@ function BlogPost({ data, location, pageContext }) {
             >
               {formatModifiedTime(post.fields.modifiedTime)}
             </small>
+            <Tags list={post.frontmatter.tags} />
           </header>
           <div ref={postRef}>
             <MDXRenderer>{post.body}</MDXRenderer>
@@ -113,6 +117,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
     }
   }

@@ -13,7 +13,7 @@ const defaultProps = {
   className: undefined,
 }
 
-const barColor = "#9e579d"
+const barColor = "#a44fb6"
 
 const style = {
   backgroundColor: "transparent",

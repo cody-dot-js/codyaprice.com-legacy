@@ -23,7 +23,7 @@ const style = {
     background: "#574b90",
   },
   "&.active": {
-    background: "#9e579d",
+    background: "#a44fb6",
   },
 }
 
