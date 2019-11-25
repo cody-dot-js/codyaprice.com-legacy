@@ -20,21 +20,21 @@ $ now
 
 ## Browser Support
 
-I've built *codyprice.com* with progressive enhancement in mind to work on a wide range of browsers.
+I've built _codyprice.com_ with progressive enhancement in mind to work on a wide range of browsers.
 
-* Cross-browser support
-  * Latest stable release of the following browsers:
-    * Chrome
-    * Firefox
-    * Edge
-    * Safari
-    * Mobile Safari
-    * Chrome for Android
-  * Legacy IE browsers:
-    * Internet Explorer 11\*
-    * Internet Explorer 10\*
-* Responsive support
-* Mobile support
+- Cross-browser support
+  - Latest stable release of the following browsers:
+    - Chrome
+    - Firefox
+    - Edge
+    - Safari
+    - Mobile Safari
+    - Chrome for Android
+  - Legacy IE browsers:
+    - Internet Explorer 11\*
+    - Internet Explorer 10\*
+- Responsive support
+- Mobile support
 
 Cross browser tested with [BrowserStack](https://www.browserstack.com/).
 

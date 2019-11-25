@@ -36,7 +36,7 @@ As the React docs state,
 > If your `render()` method depends on some other data, you can tell React that the component needs re-rendering by calling `forceUpdate()`
 
 In a normal React application, changes to `props`, `state`, and even `context` is the main driver of component render cycles.
-However, you ***can*** tell React to re-render your component without updating any of those things.
+However, you **_can_** tell React to re-render your component without updating any of those things.
 And one special way to do that is to call `forceUpdate()`.
 
 Let's take a glance at what this may look like:
@@ -66,8 +66,8 @@ class BadExample extends React.Component {
   React component forceUpdate() example usage
 </figcaption>
 
-Yeah, I know the code is bad, but it's only ~~a reflection of my daily code production~~ *an example*.
-***It actually doesn't do anything.*** <small><em><strong>kinda</strong></em></small>
+Yeah, I know the code is bad, but it's only ~~a reflection of my daily code production~~ _an example_.
+**_It actually doesn't do anything._** <small><em><strong>kinda</strong></em></small>
 
 ![Be a lot cooler if it did](./be-a-lot-cooler.png)
 
@@ -96,7 +96,7 @@ That last sentence simply means that calling `forceUpdate()` could end up being 
 If nothing in the DOM will change by forcing a re-render, then you've done some wasted work on the UI thread.
 [And we don't want that.](https://dassur.ma/things/when-workers/)
 
-***Use*** `forceUpdate()` ***sparingly and with intention.***
+**_Use_** `forceUpdate()` **_sparingly and with intention._**
 
 ---
 
@@ -105,21 +105,21 @@ If nothing in the DOM will change by forcing a re-render, then you've done some 
 If you've used React [hooks](https://reactjs.org/docs/hooks-intro.html), you've probably noticed that:
 
 1. They're awesome 😎
-2. They don't have a hook corollary to [componentDidCatch](https://reactjs.org/docs/react-component.html#componentdidcatch) or forceUpdate() (*hey, what gives??*)
+2. They don't have a hook corollary to [componentDidCatch](https://reactjs.org/docs/react-component.html#componentdidcatch) or forceUpdate() (_hey, what gives??_)
 
-Alright, well maybe you ***haven't*** noticed point #2.
-That's *alright, alright, alright*.
+Alright, well maybe you **_haven't_** noticed point #2.
+That's _alright, alright, alright_.
 
 It may not exist as a first class hook, but that can't stop us!
 Let's write a custom hook!
 
 ```jsx
 function useForceUpdate() {
-  const [, forceUpdate] = React.useState();
+  const [, forceUpdate] = React.useState()
 
   return React.useCallback(() => {
-    forceUpdate(s => !s);
-  }, []);
+    forceUpdate(s => !s)
+  }, [])
 }
 ```
 
@@ -130,10 +130,10 @@ function useForceUpdate() {
 ### So, what does this hook do?
 
 Well, it first calls `React.useState()` and passes nothing, or `undefined`, to the initial state.
-Notice however, that it doesn't care about the first argument returned in the `useState()` tuple, which is the ***state variable***.
+Notice however, that it doesn't care about the first argument returned in the `useState()` tuple, which is the **_state variable_**.
 We will soon see that this is okay though, because our initial state is `falsey`, which is just a funny way of saying that it evaluates to `false`.
-It's important to note that we've effectively made the state variable ***private*** to the custom hook, or ***hidden*** to the outside users.
-The state variable still exists, but *we just don't expose it for use*.
+It's important to note that we've effectively made the state variable **_private_** to the custom hook, or **_hidden_** to the outside users.
+The state variable still exists, but _we just don't expose it for use_.
 Here's what happens in [React DevTools](https://github.com/facebook/react/tree/master/packages/react-devtools-extensions#installation):
 
 ![useForceUpdate in React DevTools ⚛️](./useForceUpdate-in-react-devtools.gif)
@@ -143,20 +143,20 @@ Here's what happens in [React DevTools](https://github.com/facebook/react/tree/m
 </figcaption>
 
 The last thing that the `useForceUpdate` hook does is return a memoized callback that simply toggles the unnamed state variable.
-Just like in the React class component method [setState](https://reactjs.org/docs/react-component.html#setstate), you can pass an *updater function* to the `React.useState()` setter, as I've done here.
+Just like in the React class component method [setState](https://reactjs.org/docs/react-component.html#setstate), you can pass an _updater function_ to the `React.useState()` setter, as I've done here.
 This updater function just happens to return the inverse of what the unnamed state variable currently is, e.g. `false` ➡️ `true`.
 
-If you're unsure about what I mean by ***"memoized callback"***, that's okay.
+If you're unsure about what I mean by **_"memoized callback"_**, that's okay.
 In this case, we just want the function `() => { forceUpdate(); }` to always refer to the same underlying object reference.
 So, we're caching, or remembering, what the function is, even across separate calls to `useForceUpdate`.
 If you're curious for more info on memoization, check out this [Wikipedia article](https://en.wikipedia.org/wiki/Memoization).
 
-To answer the question ***"What does this hook do?"***, it allows you to force a re-render in your functional component without actually changing `props`, `state`, or `context`.
+To answer the question **_"What does this hook do?"_**, it allows you to force a re-render in your functional component without actually changing `props`, `state`, or `context`.
 
 I have misled you a bit, however.
 The `useForceUpdate()` hook isn't quite a 1-to-1 comparison with the `forceUpdate()` class component usage above.
 That's because there's no [shouldComponentUpdate() hook](https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-shouldcomponentupdate).
-Hooks require a ***different*** [mental model of React](https://kentcdodds.com/chats-with-kent-podcast/seasons/01/episodes/realigning-your-model-of-react-after-hooks-with-dan-abramov).
+Hooks require a **_different_** [mental model of React](https://kentcdodds.com/chats-with-kent-podcast/seasons/01/episodes/realigning-your-model-of-react-after-hooks-with-dan-abramov).
 
 ## Example Time! ⏰
 
@@ -166,17 +166,17 @@ But, before I reveal the code we will be running, I want to talk about a couple 
 First, let's touch back on what causes a React component to re-render.
 As I mentioned before, a component will re-render if:
 
-* its `shouldComponentUpdate()` returns `true`
-* its own internal state changes
-* it receives new props
-* the context it hooks into changes
-* it's a class component that calls `forceUpdate()`
+- its `shouldComponentUpdate()` returns `true`
+- its own internal state changes
+- it receives new props
+- the context it hooks into changes
+- it's a class component that calls `forceUpdate()`
 
 Notice that changing React [refs](https://reactjs.org/docs/refs-and-the-dom.html) don't cause a re-render.
 Refs are nice for imperatively mutating DOM nodes.
 I primarily use them for focus management: `ref.current.focus()`.
 But, you can also use them to store instance-like-variables, even in functional components!
-Keep in mind that changing these kinds of instance-like-variables ***won't trigger a re-render***.
+Keep in mind that changing these kinds of instance-like-variables **_won't trigger a re-render_**.
 
 Next, I wanna briefly talk about one of my favorite hooks: `React.useEffect()`.
 And by briefly talk about, I really just mean referencing a tweet from [@ryanflorence](https://twitter.com/ryanflorence).
@@ -244,7 +244,7 @@ const forceUpdate = useForceUpdate()
   Get the forceUpdate() callback by calling the useForceUpdate() hook
 </figcaption>
 
-Now, let's grab a `ref` to a *pseudo-instance-variable* counter, initialized to `0`:
+Now, let's grab a `ref` to a _pseudo-instance-variable_ counter, initialized to `0`:
 
 ```jsx
 // let's retain some counting state without useState()... with refs!
@@ -256,7 +256,7 @@ const renderCount = React.useRef(0)
   Use state without useState(), ya dig?
 </figcaption>
 
-Using our handy dandy ~~notebook 📕~~ `React.useEffect()` guide from Ryan Florence, let's increment the counter ***on each render***:
+Using our handy dandy ~~notebook 📕~~ `React.useEffect()` guide from Ryan Florence, let's increment the counter **_on each render_**:
 
 ```jsx
 // add one to the render count ref's current value on each render
@@ -282,7 +282,7 @@ const onClick = React.useCallback(() => {
   Force an update when we click the button
 </figcaption>
 
-And finally, ~~draw the rest of the ****ing owl~~ the markup:
+And finally, ~~draw the rest of the \*\*\*\*ing owl~~ the markup:
 
 ```jsx
 // render the button and our "state variable" render count
@@ -302,19 +302,19 @@ return (
 
 ## Conclusion
 
-**TLDR:** Don't do this.<sup>*</sup>
+**TLDR:** Don't do this.<sup>\*</sup>
 
-This was definitely an exercise in *what if?* territory.
+This was definitely an exercise in _what if?_ territory.
 While there are certainly [use cases](https://github.com/alphagov/accessible-autocomplete/blob/4bebed4a4799b39ee1cd493336988bafb53aa0ef/src/autocomplete.js#L302) for `forceUpdate()`, odds are you're better off using hooks, `props`, `state`, and `context` to declaratively render what you want and when.
 
 If nothing in the DOM will change by forcing a re-render, then you've done some wasted work on the UI thread.
 The UI thread is a precious resource and we should be using it as little as possible for maximum performance.
 
-***Again, use*** `forceUpdate()` ***sparingly and with intention.***
+**_Again, use_** `forceUpdate()` **_sparingly and with intention._**
 
 And if you're thinking about reaching for something like the custom `useForceUpdate()` hook above, then you're probably [holding it wrong](https://www.engadget.com/2010/06/24/apple-responds-over-iphone-4-reception-issues-youre-holding-th/).
 
 Thanks for coming to my TED talk. After all, [all the cool kids are doing it](https://twitter.com/dan_abramov/status/1120987501072650240).
 
-<sup>*</sup><small>Unless you have <em><strong>good reason</strong></em> to. <s>Terms and conditions</s> Nuance applies.
+<sup>\*</sup><small>Unless you have <em><strong>good reason</strong></em> to. <s>Terms and conditions</s> Nuance applies.
 </small>
