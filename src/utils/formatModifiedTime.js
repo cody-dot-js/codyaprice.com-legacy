@@ -1,5 +1,5 @@
 export default function formatModifiedTime(modifiedTime) {
-  const date = new Date(modifiedTime).toLocaleString();
+  const date = new Date(modifiedTime).toLocaleString()
 
-  return `Updated: ${date}`;
+  return `Updated: ${date}`
 }
