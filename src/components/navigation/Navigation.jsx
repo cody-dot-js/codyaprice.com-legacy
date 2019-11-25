@@ -35,7 +35,7 @@ const navContainer = css`
 function Navigation() {
   const data = useStaticQuery(graphql`
     query {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      avatar: file(absolutePath: { regex: "/profile-pic.png/" }) {
         childImageSharp {
           fixed(width: 64, height: 64) {
             ...GatsbyImageSharpFixed
