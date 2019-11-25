@@ -14,18 +14,15 @@ function BlogPage({ data, location }) {
       {posts.map(({ node }) => (
         <article key={node.fields.slug}>
           <header>
-            <h3
+            <h2
               css={{
                 marginBottom: "0.5rem",
               }}
             >
-              <Link
-                css={{ color: "#fc85ae", "&:visited": { color: "#9e579d" } }}
-                to={node.fields.slug}
-              >
+              <Link to={node.fields.slug}>
                 {node.frontmatter.title || node.fields.slug}
               </Link>
-            </h3>
+            </h2>
             <small css={{ display: "block" }}>
               {node.frontmatter.date}
               {` • ${formatReadingTime(node.timeToRead)}`}

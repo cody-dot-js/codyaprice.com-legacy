@@ -1,6 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "./Link"
+import VisuallyHidden from "./VisuallyHidden"
 
 const propTypes = {}
 
@@ -45,7 +47,8 @@ function Socials() {
             dispaly: "block",
           }}
         >
-          <i className={`fab fa-${id}`} />
+          <FontAwesomeIcon aria-describedby={`icon_${id}`} icon={["fab", id]} />
+          <VisuallyHidden id={`icon_${id}`}>Icon for {id}</VisuallyHidden>
         </Link>
       ))}
     </div>
