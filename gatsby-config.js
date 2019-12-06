@@ -35,8 +35,8 @@ module.exports = {
       },
       {
         id: "twitter",
-        user: "lokcal_styles",
-        url: "https://twitter.com/lokcal_styles",
+        user: "devcprice",
+        url: "https://twitter.com/devcprice",
       },
       {
         id: "medium",
