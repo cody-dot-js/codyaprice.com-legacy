@@ -15,6 +15,12 @@ const style = {
 }
 
 function SiteFooter() {
+  const rssLink = {
+    id: "rss",
+    url: "https://codyaprice.com/rss.xml",
+    iconType: "fas",
+  }
+
   return (
     <footer css={style}>
       <div
@@ -36,7 +42,7 @@ function SiteFooter() {
             Gatsby
           </Link>
         </div>
-        <Socials />
+        <Socials otherLinks={[rssLink]} />
       </div>
     </footer>
   )

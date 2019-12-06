@@ -1,12 +1,23 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "./Link"
 import VisuallyHidden from "./VisuallyHidden"
 
-const propTypes = {}
+const propTypes = {
+  otherLinks: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+      iconType: PropTypes.string,
+    })
+  ),
+}
 
-const defaultProps = {}
+const defaultProps = {
+  otherLinks: [],
+}
 
 const style = {
   display: "flex",
@@ -16,7 +27,7 @@ const style = {
   flexFlow: "row wrap",
 }
 
-function Socials() {
+function Socials({ otherLinks }) {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -32,9 +43,11 @@ function Socials() {
 
   const { socials } = data.site.siteMetadata
 
+  const allLinks = socials.concat(otherLinks)
+
   return (
     <div css={style}>
-      {socials.map(({ id, url }) => (
+      {allLinks.map(({ id, url, iconType = "fab" }) => (
         <Link
           key={id}
           to={url}
@@ -47,7 +60,10 @@ function Socials() {
             dispaly: "block",
           }}
         >
-          <FontAwesomeIcon aria-describedby={`icon_${id}`} icon={["fab", id]} />
+          <FontAwesomeIcon
+            aria-describedby={`icon_${id}`}
+            icon={[iconType, id]}
+          />
           <VisuallyHidden id={`icon_${id}`}>Icon for {id}</VisuallyHidden>
         </Link>
       ))}

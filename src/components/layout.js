@@ -4,12 +4,13 @@ import { Link } from "gatsby"
 import { css } from "@emotion/core"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import { fab } from "@fortawesome/free-brands-svg-icons"
+import { faRss } from "@fortawesome/free-solid-svg-icons"
 import StarrySection from "./StarrySection"
 import Navigation from "./navigation/Navigation"
 import Card from "./Card"
 import SiteFooter from "./SiteFooter"
 
-library.add(fab)
+library.add(fab, faRss)
 
 function Layout({ children, location, title }) {
   return (
