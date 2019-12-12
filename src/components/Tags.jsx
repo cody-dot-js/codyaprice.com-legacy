@@ -11,7 +11,7 @@ const defaultProps = {
   list: []
 }
 
-function Tags({ list }) {
+function Tags({ list, ...extraProps }) {
   return (
     <div
       css={{
@@ -19,6 +19,7 @@ function Tags({ list }) {
         flexFlow: "row wrap",
         marginBottom: "1rem"
       }}
+      {...extraProps}
     >
       {list.map((tag, i) => (
         <Link

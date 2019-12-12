@@ -8,6 +8,7 @@ import {
   Layout,
   ReadingProgress,
   SEO,
+  SeriesHeader,
   Tags
 } from "../components"
 import { rhythm } from "../utils/typography"
@@ -18,6 +19,11 @@ function BlogPost({ data, location, pageContext }) {
   const { mdx: post } = data
   const { previous, next } = pageContext
   const postRef = React.useRef(null)
+  const isASeries = !!post.frontmatter.series
+  const series = {
+    ...(pageContext.series || {}),
+    ...(post.frontmatter.series || {})
+  }
 
   return (
     <>
@@ -41,13 +47,14 @@ function BlogPost({ data, location, pageContext }) {
             <small
               css={{
                 display: "block",
-                marginBottom: "1rem",
+                marginBottom: "0",
                 color: "rgba(0, 0, 0, 0.54)"
               }}
             >
               {formatModifiedTime(post.fields.modifiedTime)}
             </small>
             <Tags list={post.frontmatter.tags} />
+            {isASeries && <SeriesHeader {...series} />}
           </header>
           <div ref={postRef}>
             <MDXRenderer>{post.body}</MDXRenderer>
@@ -118,6 +125,11 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         tags
+        series {
+          id
+          number
+          subtitle
+        }
       }
     }
   }

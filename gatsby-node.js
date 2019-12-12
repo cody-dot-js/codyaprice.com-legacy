@@ -1,13 +1,16 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
-const BlogPost = path.resolve(`./src/templates/blog-post.js`)
+const path = require("path")
+const { createFilePath } = require("gatsby-source-filesystem")
+const BlogPost = path.resolve("./src/templates/BlogPost.jsx")
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
   const { data, errors } = await graphql(`
     query {
-      allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
+      allPosts: allMdx(
+        filter: { frontmatter: { seriesId: { eq: null } } }
+        sort: { order: DESC, fields: [frontmatter___date] }
+      ) {
         edges {
           node {
             id
@@ -20,7 +23,24 @@ exports.createPages = async ({ actions, graphql }) => {
               date
               categories
               tags
+              series {
+                id
+                number
+                subtitle
+              }
             }
+          }
+        }
+      }
+      allSeries: allMdx(filter: { frontmatter: { seriesId: { ne: null } } }) {
+        edges {
+          node {
+            frontmatter {
+              seriesId
+              title
+            }
+            excerpt
+            body
           }
         }
       }
@@ -31,12 +51,39 @@ exports.createPages = async ({ actions, graphql }) => {
     throw errors
   }
 
+  const { edges: seriesList } = data.allSeries
+  const seriesMap = seriesList.reduce((acc, seriesItem) => {
+    const { seriesId, title } = seriesItem.node.frontmatter
+    const { body } = seriesItem.node
+
+    const total = data.allPosts.edges.reduce((acc, post) => {
+      const { series } = post.node.frontmatter
+      if (!series || !series.id) {
+        return acc
+      }
+
+      const val = seriesId === series.id ? 1 : 0
+
+      return acc + val
+    }, 0)
+
+    const series = {
+      seriesId,
+      title,
+      body,
+      total
+    }
+
+    return { ...acc, [seriesId]: series }
+  }, {})
+
   // Create blog posts pages.
-  const { edges: posts } = data.allMdx
+  const { edges: posts } = data.allPosts
 
   posts.forEach((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node
     const next = index === 0 ? null : posts[index - 1].node
+    const { series } = post.node.frontmatter
 
     createPage({
       path: post.node.fields.slug,
@@ -44,7 +91,8 @@ exports.createPages = async ({ actions, graphql }) => {
       context: {
         slug: post.node.fields.slug,
         previous,
-        next
+        next,
+        series: seriesMap[(series || {}).id]
       }
     })
   })
@@ -87,7 +135,7 @@ exports.onCreateNode = ({ actions, getNode, node }) => {
     const slug = getSlugPath({ node, getNode, parentNode })
 
     createNodeField({
-      name: `slug`,
+      name: "slug",
       node,
       value: slug
     })
