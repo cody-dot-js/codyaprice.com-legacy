@@ -8,3 +8,6 @@ script:
   - yarn lint
   - yarn test
   - yarn build
+branches:
+  only:
+    - master
