@@ -27,7 +27,7 @@ That being said, I **_do_** have a lot of things in the pipeline for upcoming po
 Tonight I made a script to [automate the boring stuff](https://automatetheboringstuff.com/) when creating a blog post.
 It's a small-_ish_ node driven command line script that [scaffolds](https://github.com/dev-cprice/codyaprice.com/blob/3105787df9d879252b198a5e719817b20c6c2b64/scripts/new-post/index.js) out a new blog post using a template.
 In my website's repo, like most (if not all) Gatsby driven static sites, my [posts](https://codyaprice.com/blog) are located under [content/blog](https://github.com/dev-cprice/codyaprice.com/tree/3105787df9d879252b198a5e719817b20c6c2b64/content/blog).
-The directory names for each are prefixed with a zero-padded index, followed by a kebab-cased path (which is generally similar to the title and actually happens to be what makes up the slug).
+The directory names for each are prefixed with a zero-padded index, followed by a kebab-cased path (which is generally similar to the title and happens to be what makes up the slug).
 
 For example, `0005-git-commit-m-write-more`, which maps to [this post](https://codyaprice.com/blog/git-commit-m-write-more).
 
@@ -63,10 +63,10 @@ const sortedList = list.sort()
 
 What will the result of the `sortedList` variable be?
 
-|         |                                   |         |                   |
-| ------- | --------------------------------- | ------- | ----------------- |
-| **(A)** | `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]` | **(C)** | `"Bush did 911"`  |
-| **(B)** | `[1, 10, 2, 3, 4, 5, 6, 7, 8, 9]` | **(D)** | None of the above |
+- **(A):** `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`
+- **(B):** `[1, 10, 2, 3, 4, 5, 6, 7, 8, 9]`
+- **(C):** `"Bush did 911"`
+- **(D):** None of the above
 
 I'll wait...
 No peeking 🙈.
@@ -86,10 +86,10 @@ Let's go to my favorite site south of Reddit, [MDN](https://developer.mozilla.or
 
 Emphasis mine.
 Did you catch it?
-While there are plenty of things to talk about here (like sorting in [place](https://twitter.com/_jayphelps/status/1196249744902967296)), let's focus on what happens when you don't provide your own comparator function.
+While there are plenty of things to talk about here (like sorting in [place](https://twitter.com/_jayphelps/status/1196249744902967296)), let's focus on what happens when you don't provide your comparator function.
 Let's `.reverse()` and replay that back:
 
-> The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
+> The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code unit values.
 
 So, the following list of numbers from ten down to one will be converted into strings when sorted.
 Let's pretend we can see _pseudo-intermediary steps_, so that:
@@ -140,10 +140,10 @@ If you answered **(B)**, you're...
 
 **_Surely you can't be serious._**
 
-![I am serious, and don't call me Shirley.](./surely.gif)
+![I am serious and don't call me Shirley.](./surely.gif)
 
 <figcaption>
-  I am serious, and don't call me Shirley.
+  I am serious and don't call me Shirley.
 </figcaption>
 
 ## The Problematic Code
@@ -175,7 +175,7 @@ function newPostNumber() {
 
 > I used `.sort()`.
 
-So, the list of **_numbers_** were converted to strings and then... well, you know the rest.
+So, the list of **_numbers_** was converted to strings and then... well, you know the rest.
 After `"0009"`, I would have been stuck generating `"0010-..."` directories! 😳
 
 ## The Fix
