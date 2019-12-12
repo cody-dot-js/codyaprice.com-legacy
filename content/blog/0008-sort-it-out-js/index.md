@@ -22,7 +22,7 @@ Fell for the ol' default JavaScript sorting algorithm trap when working with num
 
 It's been a little while since my last post (about a month and a half).
 This wasn't intentional since I have a lot of things in flight right now.
-That being siad, I **_do_** have a lot of things in the pipeline for upcoming posts.
+That being said, I **_do_** have a lot of things in the pipeline for upcoming posts.
 
 Tonight I made a script to [automate the boring stuff](https://automatetheboringstuff.com/) when creating a blog post.
 It's a small-_ish_ node driven command line script that [scaffolds](https://github.com/dev-cprice/codyaprice.com/blob/3105787df9d879252b198a5e719817b20c6c2b64/scripts/new-post/index.js) out a new blog post using a template.
