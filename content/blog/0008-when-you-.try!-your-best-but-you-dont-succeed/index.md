@@ -154,7 +154,7 @@ You can access properties through bracket access, dot notation, or even destruct
 ```js
 // an example object
 const exampleObject = {
-  foo: true,
+  foo: true
 }
 
 // bracket access, evaluates to true
@@ -240,8 +240,8 @@ Let's begin our exploration of safe navigation in JavaScript with a contrived ex
 ```js
 const conspiracy = {
   bush: {
-    did: "911",
-  },
+    did: "911"
+  }
 }
 
 // 👇 this will throw, see below
@@ -263,8 +263,8 @@ Prior to _optional chaining_, you would need to do something like the following 
 ```js
 const conspiracy = {
   bush: {
-    did: "911",
-  },
+    did: "911"
+  }
 }
 
 // do a truthiness check for all nested attribute accesses
@@ -290,8 +290,8 @@ But, we have been blessed with **_optional chaining!_** 😇
 ```js
 const conspiracy = {
   bush: {
-    did: "911",
-  },
+    did: "911"
+  }
 }
 
 // unlike before, 👇 this DOES NOT throw! 🙌

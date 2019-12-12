@@ -80,8 +80,8 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/content/series`,
-        name: "series",
-      },
+        name: "series"
+      }
     },
     {
       resolve: "gatsby-source-filesystem",

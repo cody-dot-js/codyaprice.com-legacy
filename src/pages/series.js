@@ -22,12 +22,12 @@ function SeriesIndex({ data, location }) {
         const entry = {
           id: series.id,
           title,
-          slug: fields.slug,
+          slug: fields.slug
         }
 
         return {
           ...acc,
-          [series.id]: current.concat(entry),
+          [series.id]: current.concat(entry)
         }
       }, {}),
     [data.allSeriesEntries.edges]

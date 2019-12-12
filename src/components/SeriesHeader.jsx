@@ -17,7 +17,7 @@ function SeriesHeader({ seriesId, title, number, total, subtitle, body }) {
         css={{
           color: "rgba(0, 0, 0, 0.87)",
           marginTop: 0,
-          marginBottom: 0,
+          marginBottom: 0
         }}
       >
         {title}
@@ -27,7 +27,7 @@ function SeriesHeader({ seriesId, title, number, total, subtitle, body }) {
           css={{
             color: "rgba(0, 0, 0, 0.54)",
             marginTop: rhythm(0.25),
-            marginBottom: rhythm(1),
+            marginBottom: rhythm(1)
           }}
         >
           {subtitle}
@@ -37,7 +37,7 @@ function SeriesHeader({ seriesId, title, number, total, subtitle, body }) {
         css={{
           color: "rgba(0, 0, 0, 0.54)",
           marginTop: rhythm(0.25),
-          marginBottom: rhythm(0.75),
+          marginBottom: rhythm(0.75)
         }}
       >
         {/* For now, just link to the series index page */}
