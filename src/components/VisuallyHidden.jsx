@@ -12,7 +12,7 @@ const style = {
 
   // https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
   whiteSpace: "nowrap",
-  wordWrap: "normal",
+  wordWrap: "normal"
 }
 
 function VisuallyHidden(props) {

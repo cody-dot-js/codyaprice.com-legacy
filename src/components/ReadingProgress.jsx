@@ -4,18 +4,18 @@ import ProgressBar from "./ProgressBar"
 
 const propTypes = {
   targetRef: PropTypes.shape({
-    current: PropTypes.element,
-  }),
+    current: PropTypes.element
+  })
 }
 
 const defaultProps = {
-  targetRef: null,
+  targetRef: null
 }
 
 const style = {
   position: "sticky",
   top: 0,
-  zIndex: 9001,
+  zIndex: 9001
 }
 
 function ReadingProgress({ targetRef }) {

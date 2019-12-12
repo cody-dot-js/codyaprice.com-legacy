@@ -23,12 +23,12 @@ function removeScript(id, parent) {
 const propTypes = {
   id: PropTypes.string.isRequired,
   commentoSrc: PropTypes.string,
-  commentoScriptId: PropTypes.string,
+  commentoScriptId: PropTypes.string
 }
 
 const defaultProps = {
   commentoSrc: "https://cdn.commento.io/js/commento.js",
-  commentoScriptId: "commento-script",
+  commentoScriptId: "commento-script"
 }
 
 function Commento({ id, commentoSrc, commentoScriptId }) {

@@ -3,11 +3,11 @@ import { css } from "@emotion/core"
 import PropTypes from "prop-types"
 
 const propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node
 }
 
 const defaultProps = {
-  children: null,
+  children: null
 }
 
 const style = css`

@@ -8,7 +8,7 @@ import {
   Layout,
   ReadingProgress,
   SEO,
-  Tags,
+  Tags
 } from "../components"
 import { rhythm } from "../utils/typography"
 import formatReadingTime from "../utils/formatReadingTime"
@@ -32,7 +32,7 @@ function BlogPost({ data, location, pageContext }) {
             <p
               css={{
                 display: `block`,
-                marginBottom: 0,
+                marginBottom: 0
               }}
             >
               {post.frontmatter.date}
@@ -42,7 +42,7 @@ function BlogPost({ data, location, pageContext }) {
               css={{
                 display: "block",
                 marginBottom: "1rem",
-                color: "rgba(0, 0, 0, 0.54)",
+                color: "rgba(0, 0, 0, 0.54)"
               }}
             >
               {formatModifiedTime(post.fields.modifiedTime)}
@@ -54,7 +54,7 @@ function BlogPost({ data, location, pageContext }) {
           </div>
           <hr
             css={{
-              marginBottom: rhythm(1),
+              marginBottom: rhythm(1)
             }}
           />
           <footer>
@@ -69,7 +69,7 @@ function BlogPost({ data, location, pageContext }) {
               flexWrap: "wrap",
               justifyContent: "space-between",
               listStyle: "none",
-              padding: 0,
+              padding: 0
             }}
           >
             <li>

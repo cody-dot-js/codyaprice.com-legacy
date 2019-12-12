@@ -20,7 +20,7 @@ export default function HTML(props) {
         </noscript>
         <div
           css={{
-            minHeight: "100vh",
+            minHeight: "100vh"
           }}
           key={`body`}
           id="___gatsby"
@@ -38,5 +38,5 @@ HTML.propTypes = {
   bodyAttributes: PropTypes.object,
   preBodyComponents: PropTypes.array,
   body: PropTypes.string,
-  postBodyComponents: PropTypes.array,
+  postBodyComponents: PropTypes.array
 }

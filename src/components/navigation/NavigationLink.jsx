@@ -5,13 +5,13 @@ import Link from "../Link"
 const propTypes = {
   to: PropTypes.string,
   children: PropTypes.node,
-  activeClassName: PropTypes.string,
+  activeClassName: PropTypes.string
 }
 
 const defaultProps = {
   to: "#",
   children: null,
-  activeClassName: "active",
+  activeClassName: "active"
 }
 
 const style = {
@@ -20,11 +20,11 @@ const style = {
   borderRadius: "0.25rem",
   padding: "0.5rem",
   "&:hover,&:focus": {
-    background: "#574b90",
+    background: "#574b90"
   },
   "&.active": {
-    background: "#a44fb6",
-  },
+    background: "#a44fb6"
+  }
 }
 
 function NavigationLink({ children, to, ...extraProps }) {

@@ -21,7 +21,7 @@ export default function Counter() {
       css={{
         textAlign: "center",
         padding: "0.5rem",
-        border: "0.25rem dashed",
+        border: "0.25rem dashed"
       }}
     >
       <h1>React Counter Component</h1>
@@ -38,7 +38,7 @@ export default function Counter() {
           display: "block",
           width: "40%",
           margin: "auto",
-          marginBottom: "1rem",
+          marginBottom: "1rem"
         }}
         type="button"
         onClick={() => dispatch({ type: "decrement" })}

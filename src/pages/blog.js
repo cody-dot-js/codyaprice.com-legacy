@@ -16,7 +16,7 @@ function BlogPage({ data, location }) {
           <header>
             <h2
               css={{
-                marginBottom: "0.5rem",
+                marginBottom: "0.5rem"
               }}
             >
               <Link to={node.fields.slug}>
@@ -32,14 +32,14 @@ function BlogPage({ data, location }) {
             <p
               css={{ margin: 0 }}
               dangerouslySetInnerHTML={{
-                __html: node.frontmatter.description || node.excerpt,
+                __html: node.frontmatter.description || node.excerpt
               }}
             />
             <small
               css={{
                 display: "block",
                 marginBottom: "1rem",
-                color: "rgba(0, 0, 0, 0.54)",
+                color: "rgba(0, 0, 0, 0.54)"
               }}
             >
               {formatModifiedTime(node.fields.modifiedTime)}

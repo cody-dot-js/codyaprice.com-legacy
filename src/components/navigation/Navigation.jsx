@@ -64,11 +64,11 @@ function Navigation() {
             to="/"
             css={{
               "&:hover,&:focus": {
-                background: "none",
+                background: "none"
               },
               "&.active": {
-                background: "none",
-              },
+                background: "none"
+              }
             }}
           >
             <div css={{ display: "flex", alignItems: "center" }}>
@@ -79,11 +79,11 @@ function Navigation() {
                   marginRight: "1rem",
                   marginBottom: 0,
                   minWidth: "4rem",
-                  borderRadius: "100%",
+                  borderRadius: "100%"
                 }}
                 imgStyle={{
                   borderRadius: `50%`,
-                  margin: 0,
+                  margin: 0
                 }}
               />
               <span>{author}</span>
@@ -100,7 +100,7 @@ function Navigation() {
                 to={to}
                 css={{
                   marginRight:
-                    i !== topNavigationRoutes.length - 1 ? "0.5rem" : 0,
+                    i !== topNavigationRoutes.length - 1 ? "0.5rem" : 0
                 }}
               >
                 {display}
