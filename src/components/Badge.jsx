@@ -3,12 +3,12 @@ import PropTypes from "prop-types"
 
 const propTypes = {
   children: PropTypes.node,
-  color: PropTypes.string,
+  color: PropTypes.string
 }
 
 const defaultProps = {
   children: null,
-  color: "#a44fb6",
+  color: "#a44fb6"
 }
 
 function Badge({ children, color, ...extraProps }) {
@@ -19,7 +19,7 @@ function Badge({ children, color, ...extraProps }) {
         color: color,
         borderRadius: "0.5rem",
         border: `1px solid ${color}`,
-        fontSize: "0.75rem",
+        fontSize: "0.75rem"
       }}
       {...extraProps}
     >

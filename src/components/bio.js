@@ -32,7 +32,7 @@ function Bio() {
     <div
       css={{
         display: "flex",
-        marginBottom: "2rem",
+        marginBottom: "2rem"
       }}
     >
       <Image
@@ -42,10 +42,10 @@ function Bio() {
           marginRight: "0.5rem",
           marginBottom: 0,
           minWidth: 64,
-          borderRadius: "100%",
+          borderRadius: "100%"
         }}
         imgStyle={{
-          borderRadius: "50%",
+          borderRadius: "50%"
         }}
       />
       <p>

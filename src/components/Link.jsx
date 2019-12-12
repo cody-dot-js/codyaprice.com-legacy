@@ -4,12 +4,12 @@ import { Link as GatsbyLink } from "gatsby"
 
 const propTypes = {
   to: PropTypes.string,
-  children: PropTypes.node,
+  children: PropTypes.node
 }
 
 const defaultProps = {
   to: "#",
-  children: null,
+  children: null
 }
 
 function Link({ children, to, ...extraProps }) {

@@ -4,11 +4,11 @@ import Link from "./Link"
 import Badge from "./Badge"
 
 const propTypes = {
-  list: PropTypes.arrayOf(PropTypes.string),
+  list: PropTypes.arrayOf(PropTypes.string)
 }
 
 const defaultProps = {
-  list: [],
+  list: []
 }
 
 function Tags({ list }) {
@@ -17,7 +17,7 @@ function Tags({ list }) {
       css={{
         display: "flex",
         flexFlow: "row wrap",
-        marginBottom: "1rem",
+        marginBottom: "1rem"
       }}
     >
       {list.map((tag, i) => (
@@ -27,13 +27,13 @@ function Tags({ list }) {
           to="#"
           css={{
             textDecoration: "none",
-            color: "#a44fb6",
+            color: "#a44fb6"
           }}
         >
           <Badge
             css={{
               marginTop: "0.5rem",
-              marginRight: i === list.length - 1 ? 0 : "0.5rem",
+              marginRight: i === list.length - 1 ? 0 : "0.5rem"
             }}
           >
             {tag}

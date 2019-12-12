@@ -11,14 +11,14 @@ const style = {
   minHeight: "8rem",
   backgroundColor: "#393152",
   width: "100%",
-  padding: "2rem",
+  padding: "2rem"
 }
 
 function SiteFooter() {
   const rssLink = {
     id: "rss",
     url: "https://codyaprice.com/rss.xml",
-    iconType: "fas",
+    iconType: "fas"
   }
 
   return (
@@ -32,7 +32,7 @@ function SiteFooter() {
           margin: "0 auto",
           marginTop: "5rem",
           width: "100%",
-          maxWidth: "64rem",
+          maxWidth: "64rem"
         }}
       >
         <div>

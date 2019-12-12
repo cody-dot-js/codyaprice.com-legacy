@@ -46,14 +46,14 @@ function Layout({ children, location, title }) {
             <h1
               css={{
                 margin: 0,
-                marginBottom: "1rem",
+                marginBottom: "1rem"
               }}
             >
               <Link
                 css={{
                   boxShadow: `none`,
                   textDecoration: `none`,
-                  color: `inherit`,
+                  color: `inherit`
                 }}
                 to="/"
               >

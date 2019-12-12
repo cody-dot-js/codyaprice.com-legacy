@@ -10,13 +10,13 @@ const propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
-      iconType: PropTypes.string,
+      iconType: PropTypes.string
     })
-  ),
+  )
 }
 
 const defaultProps = {
-  otherLinks: [],
+  otherLinks: []
 }
 
 const style = {
@@ -24,7 +24,7 @@ const style = {
   justifyContent: "center",
   alignItems: "center",
   width: "100%",
-  flexFlow: "row wrap",
+  flexFlow: "row wrap"
 }
 
 function Socials({ otherLinks }) {
@@ -57,7 +57,7 @@ function Socials({ otherLinks }) {
             fontSize: "2rem",
             padding: "1rem",
             color: "white",
-            dispaly: "block",
+            dispaly: "block"
           }}
         >
           <FontAwesomeIcon

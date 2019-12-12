@@ -25,42 +25,42 @@ function StarrySection() {
               value: 256,
               density: {
                 enable: true,
-                value_area: 1024,
-              },
+                value_area: 1024
+              }
             },
             line_linked: {
               enable: true,
-              opacity: 0.05,
+              opacity: 0.05
             },
             move: {
               direction: "right",
-              speed: 0.12,
+              speed: 0.12
             },
             size: {
-              value: 1,
+              value: 1
             },
             opacity: {
               anim: {
                 enable: true,
                 speed: 3.3,
-                opacity_min: 0.01,
-              },
-            },
+                opacity_min: 0.01
+              }
+            }
           },
           interactivity: {
             events: {
               onclick: {
                 enable: true,
-                mode: "push",
-              },
+                mode: "push"
+              }
             },
             modes: {
               push: {
-                particles_nb: 1,
-              },
-            },
+                particles_nb: 1
+              }
+            }
           },
-          retina_detect: true,
+          retina_detect: true
         }}
       />
       v2.7.0

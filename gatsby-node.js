@@ -44,8 +44,8 @@ exports.createPages = async ({ actions, graphql }) => {
       context: {
         slug: post.node.fields.slug,
         previous,
-        next,
-      },
+        next
+      }
     })
   })
 }
@@ -53,8 +53,8 @@ exports.createPages = async ({ actions, graphql }) => {
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, "src"), "node_modules"],
-    },
+      modules: [path.resolve(__dirname, "src"), "node_modules"]
+    }
   })
 }
 
@@ -89,13 +89,13 @@ exports.onCreateNode = ({ actions, getNode, node }) => {
     createNodeField({
       name: `slug`,
       node,
-      value: slug,
+      value: slug
     })
 
     createNodeField({
       node,
       name: "modifiedTime",
-      value: modifiedTime,
+      value: modifiedTime
     })
   }
 }
