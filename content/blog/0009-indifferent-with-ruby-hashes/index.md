@@ -1,12 +1,19 @@
 ---
 title: Indifferent With Ruby Hashes
-date: 2019-12-13T01:30:55.761Z
+date: 2019-12-13T20:41:12.382Z
 description: I miss plain old JavaScript objects... 😔
-tags: 
- - Ruby
- - Developer
+tags:
+  - Ruby
+  - Developer Experience
+  - DX
+  - Development
+  - Programming
 ---
 
-# Indifferent With Ruby Hashes
+![Photo by ctwoner on Pixabay](./hero-image.jpg)
+
+<figcaption>
+  Photo by <a href="https://pixabay.com/photos/root-potato-hash-healthy-vegetable-1112017/">ctwoner</a> on <a href="https://pixabay.com/">Pixabay</a>
+</figcaption>
 
 I miss plain old JavaScript objects... 😔
