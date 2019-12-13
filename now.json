@@ -1,1 +1,6 @@
-{ "name": "codyaprice.com" }
+{
+  "name": "codyaprice.com",
+  "version": 2,
+  "public": true,
+  "github": { "enabled": true }
+}
