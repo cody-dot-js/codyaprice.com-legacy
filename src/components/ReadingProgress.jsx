@@ -5,11 +5,13 @@ import ProgressBar from "./ProgressBar"
 const propTypes = {
   targetRef: PropTypes.shape({
     current: PropTypes.element
-  })
+  }),
+  calcFromTopOfTarget: PropTypes.bool
 }
 
 const defaultProps = {
-  targetRef: null
+  targetRef: null,
+  calcFromTopOfTarget: true
 }
 
 const style = {
@@ -18,7 +20,7 @@ const style = {
   zIndex: 9001
 }
 
-function ReadingProgress({ targetRef }) {
+function ReadingProgress({ targetRef, calcFromTopOfTarget }) {
   const [progress, setProgress] = React.useState(0)
 
   const scrollListener = React.useCallback(() => {
@@ -30,22 +32,27 @@ function ReadingProgress({ targetRef }) {
 
     const totalHeight =
       target.clientHeight - target.offsetTop - window.innerHeight
+
     const windowScrollTop =
       window.pageYOffset ||
       document.documentElement.scrollTop ||
       document.body.scrollTop ||
       0
 
-    if (windowScrollTop === 0) {
+    const scrollDistance = calcFromTopOfTarget
+      ? windowScrollTop - target.offsetTop
+      : windowScrollTop
+
+    if (scrollDistance <= 0) {
       return setProgress(0)
     }
 
-    if (windowScrollTop > totalHeight) {
+    if (scrollDistance >= totalHeight) {
       return setProgress(100)
     }
 
-    setProgress((windowScrollTop / totalHeight) * 100)
-  }, [targetRef])
+    setProgress((scrollDistance / totalHeight) * 100)
+  }, [calcFromTopOfTarget, targetRef])
 
   React.useEffect(() => {
     window.addEventListener("scroll", scrollListener)
