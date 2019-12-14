@@ -1,6 +1,6 @@
 const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`)
 const BlogPost = path.resolve(`./src/templates/blog-post.js`)
+const { caseInsensitiveSort, getSlugPath } = require("./gatsby-utils")
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
@@ -14,6 +14,7 @@ exports.createPages = async ({ actions, graphql }) => {
             fields {
               slug
               modifiedTime
+              tags
             }
             frontmatter {
               title
@@ -58,24 +59,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   })
 }
 
-function getSlugBase(dir) {
-  return path.parse(path.dirname(dir)).base
-}
-
-function getSlugPath({ node, getNode, parentNode }) {
-  // get the slug base path, e.g. 'blog'
-  const slugBase = getSlugBase(parentNode.dir)
-
-  // resources will begin with a number 'xxxx-', just for sorting order in their
-  // respective dirs, strip it off
-  const resourceName = createFilePath({ node, getNode })
-    .split("-")
-    .slice(1)
-    .join("-")
-
-  return `/${slugBase}/${resourceName}`
-}
-
 exports.onCreateNode = ({ actions, getNode, node }) => {
   const { createNodeField } = actions
   const { type } = node.internal
@@ -96,6 +79,13 @@ exports.onCreateNode = ({ actions, getNode, node }) => {
       node,
       name: "modifiedTime",
       value: modifiedTime
+    })
+
+    createNodeField({
+      node,
+      name: "tags",
+      // intentionally sort in place
+      value: node.frontmatter.tags.sort(caseInsensitiveSort)
     })
   }
 }

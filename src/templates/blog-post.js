@@ -47,7 +47,7 @@ function BlogPost({ data, location, pageContext }) {
             >
               {formatModifiedTime(post.fields.modifiedTime)}
             </small>
-            <Tags list={post.frontmatter.tags} />
+            <Tags list={post.fields.tags} />
           </header>
           <div ref={postRef}>
             <MDXRenderer>{post.body}</MDXRenderer>
@@ -112,6 +112,7 @@ export const pageQuery = graphql`
       fields {
         modifiedTime
         slug
+        tags
       }
       frontmatter {
         title
