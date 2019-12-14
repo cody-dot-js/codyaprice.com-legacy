@@ -46,7 +46,7 @@ function BlogIndex({ data, location }) {
             >
               {formatModifiedTime(node.fields.modifiedTime)}
             </small>
-            <Tags list={node.frontmatter.tags} />
+            <Tags list={node.fields.tags} />
           </section>
         </article>
       ))}
@@ -72,11 +72,11 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
-            tags
           }
           fields {
             modifiedTime
             slug
+            tags
           }
         }
       }
