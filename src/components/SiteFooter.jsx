@@ -14,7 +14,7 @@ const style = {
   padding: "2rem"
 }
 
-function SiteFooter() {
+function SiteFooter({ ...otherProps }) {
   const rssLink = {
     id: "rss",
     url: "https://codyaprice.com/rss.xml",
@@ -22,17 +22,14 @@ function SiteFooter() {
   }
 
   return (
-    <footer css={style}>
+    <footer css={style} {...otherProps}>
       <div
         css={{
           display: "flex",
           flexFlow: "column wrap",
           alignItems: "center",
           justifyContent: "center",
-          margin: "0 auto",
-          marginTop: "5rem",
-          width: "100%",
-          maxWidth: "64rem"
+          marginTop: "5rem"
         }}
       >
         <div>

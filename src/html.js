@@ -3,7 +3,10 @@ import PropTypes from "prop-types"
 
 export default function HTML(props) {
   return (
-    <html {...props.htmlAttributes} css={{ backgroundColor: "#f5f5f5" }}>
+    <html
+      {...props.htmlAttributes}
+      css={{ height: "100%", backgroundColor: "#f5f5f5" }}
+    >
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -13,16 +16,16 @@ export default function HTML(props) {
         />
         {props.headComponents}
       </head>
-      <body {...props.bodyAttributes}>
+      <body {...props.bodyAttributes} css={{ height: "100%" }}>
         {props.preBodyComponents}
         <noscript key="noscript" id="gatsby-noscript">
           This app works best with JavaScript enabled.
         </noscript>
         <div
           css={{
-            minHeight: "100vh"
+            height: "100%"
           }}
-          key={`body`}
+          key="body"
           id="___gatsby"
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
