@@ -29,6 +29,8 @@ const defaultProps = {
   layoutRef: React.createRef()
 }
 
+const desktopBreakpointMq = "@media (min-width: 50rem)"
+
 function Layout({
   children,
   location,
@@ -41,26 +43,37 @@ function Layout({
     <div
       ref={layoutRef}
       css={css`
-        display: grid;
+        display: flex;
+        flex-direction: column;
         height: 100%;
         /*
           For min-height, use 100vh instead of 100%
           because of the weird reach router wrapper div
         */
         min-height: 100vh;
-        grid-template-columns: 1fr 4fr 1fr;
-        grid-template-rows: 1fr auto;
+        width: 100%;
+
+        ${desktopBreakpointMq} {
+          display: grid;
+          grid-template-columns: 1fr 4fr 1fr;
+          grid-template-rows: 1fr auto;
+          grid-column-gap: 2rem;
+        }
       `}
     >
       <StarrySection />
       <div>{leftSidebarContent}</div>
       <div
-        css={{
-          // position relative for free z-index stacking
-          position: "relative",
-          marginBottom: "-4rem",
-          padding: "1rem 2rem"
-        }}
+        css={css`
+          padding: 0 1rem;
+          /* position relative for free z-index stacking */
+          position: relative;
+          margin-bottom: -4rem;
+
+          ${desktopBreakpointMq} {
+            padding: 0;
+          }
+        `}
       >
         <Navigation />
         <main

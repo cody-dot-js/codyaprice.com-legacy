@@ -64,7 +64,6 @@ function StarrySection() {
           retina_detect: true
         }}
       />
-      v2.7.0
     </section>
   )
 }
