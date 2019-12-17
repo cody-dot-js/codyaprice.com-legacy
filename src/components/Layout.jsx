@@ -6,7 +6,7 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import { fab } from "@fortawesome/free-brands-svg-icons"
 import { faRss } from "@fortawesome/free-solid-svg-icons"
 
-import StarrySection from "./StarrySection"
+import StarryDisplay from "./StarryDisplay"
 import Navigation from "./navigation/Navigation"
 import { CardCss } from "./Card"
 import SiteFooter from "./SiteFooter"
@@ -61,11 +61,13 @@ function Layout({
         }
       `}
     >
-      <StarrySection />
+      <StarryDisplay />
       <div>{leftSidebarContent}</div>
       <div
         css={css`
           padding: 0 1rem;
+          /* pointer events none for click-throughs on starry display */
+          pointer-events: none;
           /* position relative for free z-index stacking */
           position: relative;
           margin-bottom: -4rem;
@@ -77,7 +79,12 @@ function Layout({
       >
         <Navigation />
         <main
-          css={{ ...CardCss, backgroundColor: "#fff", display: "block" }}
+          css={{
+            ...CardCss,
+            backgroundColor: "#fff",
+            display: "block",
+            pointerEvents: "auto"
+          }}
           role="main"
         >
           <header>
