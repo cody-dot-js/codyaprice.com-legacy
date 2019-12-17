@@ -1,5 +1,4 @@
 import React from "react"
-import { css } from "@emotion/core"
 import PropTypes from "prop-types"
 
 const propTypes = {
@@ -10,12 +9,12 @@ const defaultProps = {
   children: null
 }
 
-const style = css`
-  border-radius: 0.25rem;
-  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.38);
-  margin: 1rem 0;
-  padding: 1rem;
-`
+const style = {
+  borderRadius: "0.25rem",
+  boxShadow: "0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.38)",
+  margin: "1rem 0",
+  padding: "1rem"
+}
 
 function Card({ children, ...otherProps }) {
   return (
@@ -27,5 +26,7 @@ function Card({ children, ...otherProps }) {
 
 Card.propTypes = propTypes
 Card.defaultProps = defaultProps
+
+export { style as CardCss }
 
 export default Card

@@ -18,11 +18,16 @@ function BlogPost({ data, location, pageContext }) {
   const { mdx: post } = data
   const { previous, next } = pageContext
   const postRef = React.useRef(null)
+  const layoutRef = React.useRef(null)
 
   return (
     <>
       <ReadingProgress targetRef={postRef} />
-      <Layout location={location} title={post.frontmatter.title}>
+      <Layout
+        layoutRef={layoutRef}
+        location={location}
+        title={post.frontmatter.title}
+      >
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}

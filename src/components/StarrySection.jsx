@@ -9,6 +9,7 @@ const style = css`
   position: absolute;
   top: 0;
   width: 100%;
+  z-index: 0;
 `
 
 const propTypes = {}
@@ -63,7 +64,6 @@ function StarrySection() {
           retina_detect: true
         }}
       />
-      v2.7.0
     </section>
   )
 }
