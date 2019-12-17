@@ -29,7 +29,7 @@ const defaultProps = {
   layoutRef: React.createRef()
 }
 
-const desktopBreakpointMq = "@media (min-width: 50rem)"
+const desktopBreakpointMq = "@media (min-width: 64rem)"
 
 function Layout({
   children,
