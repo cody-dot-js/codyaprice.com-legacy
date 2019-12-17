@@ -1,5 +1,4 @@
 import React from "react"
-import { css } from "@emotion/core"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import NavigationLink from "./NavigationLink"
@@ -7,13 +6,6 @@ import NavigationLink from "./NavigationLink"
 const propTypes = {}
 
 const defaultProps = {}
-
-const navStyle = css`
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-`
 
 function Navigation({ ...otherProps }) {
   const data = useStaticQuery(graphql`
@@ -40,54 +32,61 @@ function Navigation({ ...otherProps }) {
   const { author, topNavigationRoutes } = data.site.siteMetadata
 
   return (
-    <nav {...otherProps}>
-      <div css={navStyle}>
-        <NavigationLink
-          to="/"
-          css={{
-            "&:hover,&:focus": {
-              background: "none"
-            },
-            "&.active": {
-              background: "none"
-            }
-          }}
-        >
-          <div css={{ display: "flex", alignItems: "center" }}>
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
-              css={{
-                marginRight: "1rem",
-                marginBottom: 0,
-                minWidth: "4rem",
-                borderRadius: "100%"
-              }}
-              imgStyle={{
-                borderRadius: `50%`,
-                margin: 0
-              }}
-            />
-            <span>{author}</span>
-          </div>
-        </NavigationLink>
-        <div
-          css={css`
-            display: flex;
-          `}
-        >
-          {topNavigationRoutes.map(({ to, display }, i) => (
-            <NavigationLink
-              key={to}
-              to={to}
-              css={{
-                marginRight: i !== topNavigationRoutes.length - 1 ? "0.5rem" : 0
-              }}
-            >
-              {display}
-            </NavigationLink>
-          ))}
+    <nav
+      css={{
+        alignItems: "center",
+        display: "flex",
+        justifyContent: "space-between"
+      }}
+      {...otherProps}
+    >
+      <NavigationLink
+        to="/"
+        css={{
+          pointerEvents: "auto",
+          "&:hover,&:focus": {
+            background: "none"
+          },
+          "&.active": {
+            background: "none"
+          }
+        }}
+      >
+        <div css={{ display: "flex", alignItems: "center" }}>
+          <Image
+            fixed={data.avatar.childImageSharp.fixed}
+            alt={author}
+            css={{
+              marginRight: "1rem",
+              marginBottom: 0,
+              minWidth: "4rem",
+              borderRadius: "100%"
+            }}
+            imgStyle={{
+              borderRadius: `50%`,
+              margin: 0
+            }}
+          />
+          <span>{author}</span>
         </div>
+      </NavigationLink>
+      <div
+        css={{
+          display: "flex",
+          pointerEvents: "auto"
+        }}
+      >
+        {topNavigationRoutes.map(({ to, display }, i) => (
+          <NavigationLink
+            key={to}
+            to={to}
+            css={{
+              marginRight: i !== topNavigationRoutes.length - 1 ? "0.5rem" : 0
+            }}
+          >
+            {display}
+          </NavigationLink>
+        ))}
       </div>
     </nav>
   )
