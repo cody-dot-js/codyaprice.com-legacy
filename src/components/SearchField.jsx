@@ -61,7 +61,7 @@ function SearchField(props) {
           fontWeight: 400,
           lineHeight: "2.25rem",
           padding: 0,
-          paddingRight: "1rem",
+          paddingRight: "3rem",
           paddingLeft: "2rem",
           verticalAlign: "middle",
           width: "100%",
