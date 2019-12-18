@@ -25,7 +25,7 @@ function BlogPage({ data, location }) {
               background: "#a44fb6"
             }
           }}
-          to="blog/tags"
+          to="/blog/tags"
         >
           View All Tags&nbsp;
           <FaTags css={{ verticalAlign: "middle" }} />
