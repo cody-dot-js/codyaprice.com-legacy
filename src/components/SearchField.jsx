@@ -107,7 +107,8 @@ function SearchField(props) {
           position: "absolute",
           right: "0.25rem",
           top: "0.375rem",
-          cursor: isClearDisabled ? "normal" : "pointer"
+          cursor: "pointer",
+          visibility: isClearDisabled ? "hidden" : "visible"
         }}
         disabled={isClearDisabled}
         onClick={handleClear}
@@ -115,7 +116,7 @@ function SearchField(props) {
         <MdClose
           css={{
             display: "block",
-            fill: isClearDisabled ? "rgba(0, 0, 0, 0.38)" : "#78757a",
+            fill: "#78757a",
             width: "1.5rem",
             height: "1.5rem"
           }}
