@@ -1,11 +1,16 @@
 import React from "react"
+import PropTypes from "prop-types"
 import Particles from "react-particles-js"
 
-const propTypes = {}
+const propTypes = {
+  starCount: PropTypes.number
+}
 
-const defaultProps = {}
+const defaultProps = {
+  starCount: 1024
+}
 
-function StarryDisplay() {
+function StarryDisplay({ starCount }) {
   return (
     <div
       css={{
@@ -22,29 +27,14 @@ function StarryDisplay() {
         params={{
           particles: {
             number: {
-              value: 160,
+              value: starCount,
               density: {
                 enable: true,
-                value_area: 800
+                value_area: starCount
               }
             },
             color: {
               value: "#fff"
-            },
-            shape: {
-              type: "circle",
-              stroke: {
-                width: 0,
-                color: "#000"
-              },
-              polygon: {
-                nb_sides: 5
-              },
-              image: {
-                src: "img/github.svg",
-                width: 100,
-                height: 100
-              }
             },
             opacity: {
               value: 1,
@@ -53,39 +43,24 @@ function StarryDisplay() {
                 enable: true,
                 speed: 1,
                 opacity_min: 0,
-                sync: false
+                sync: true
               }
             },
             size: {
-              value: 3,
-              random: true,
-              anim: {
-                enable: false,
-                speed: 4,
-                size_min: 0.3,
-                sync: false
-              }
+              value: 1.570795,
+              random: true
             },
             line_linked: {
-              enable: false,
-              distance: 150,
-              color: "#fff",
-              opacity: 0.4,
-              width: 1
+              enable: false
             },
             move: {
               enable: true,
-              speed: 1,
+              speed: 0.38,
               direction: "none",
               random: true,
               straight: false,
               out_mode: "out",
-              bounce: false,
-              attract: {
-                enable: false,
-                rotateX: 600,
-                rotateY: 600
-              }
+              bounce: false
             }
           },
           interactivity: {
@@ -99,31 +74,19 @@ function StarryDisplay() {
                 enable: true,
                 mode: "repulse"
               },
-              resize: true
+              resize: false
             },
             modes: {
-              grab: {
-                distance: 400,
-                line_linked: {
-                  opacity: 1
-                }
-              },
               bubble: {
-                distance: 250,
-                size: 0,
+                distance: 128,
+                size: 3,
                 duration: 2,
-                opacity: 0,
+                opacity: 0.54,
                 speed: 3
               },
               repulse: {
-                distance: 400,
-                duration: 0.4
-              },
-              push: {
-                particles_nb: 4
-              },
-              remove: {
-                particles_nb: 2
+                distance: 300,
+                duration: 1
               }
             }
           },
