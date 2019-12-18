@@ -29,7 +29,8 @@ const defaultProps = {
   layoutRef: React.createRef()
 }
 
-const desktopBreakpointMq = "@media (min-width: 64rem)"
+const desktopBreakpoint = "(min-width: 64rem)"
+const desktopBreakpointMq = `@media ${desktopBreakpoint}`
 
 function Layout({
   children,
@@ -39,6 +40,14 @@ function Layout({
   rightSidebarContent,
   layoutRef
 }) {
+  // only check on mount, really we're checking if we're on a "mobile"-like
+  // device
+  const starCount = React.useMemo(() => {
+    const { matches: isAtDesktopBreakpoint } = window.matchMedia(desktopBreakpoint)
+
+    return isAtDesktopBreakpoint ? 512 : 256
+  }, [])
+
   return (
     <div
       ref={layoutRef}
@@ -61,7 +70,7 @@ function Layout({
         }
       `}
     >
-      <StarryDisplay />
+      <StarryDisplay starCount={starCount} />
       <div>{leftSidebarContent}</div>
       <div
         css={css`
