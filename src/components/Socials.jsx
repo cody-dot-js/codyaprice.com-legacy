@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-/* eslint-disable-next-line */
 import {
   FaDribbble,
   FaFacebook,
@@ -71,8 +70,6 @@ function Socials({ otherLinks }) {
   const { socials } = data.site.siteMetadata
 
   const allLinks = socials.concat(otherLinks)
-
-  console.log(allLinks)
 
   return (
     <div css={style}>
