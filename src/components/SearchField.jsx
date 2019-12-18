@@ -1,18 +1,23 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { MdSearch } from "react-icons/md"
+import { MdSearch, MdClose } from "react-icons/md"
 
 const propTypes = {
   onChange: PropTypes.func,
+  onClear: PropTypes.func,
+  placeholder: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   value: PropTypes.string
 }
 
 const defaultProps = {
   onChange: null,
+  onClear: null,
   value: undefined
 }
 
-function SearchField({ onChange, value, ...otherProps }) {
+function SearchField(props) {
+  const { onChange, onClear, placeholder, title, value, ...otherProps } = props
   const [_value, setValue] = React.useState("")
   const isControlledInput = value !== undefined
   const searchValue = isControlledInput ? value : _value
@@ -29,6 +34,18 @@ function SearchField({ onChange, value, ...otherProps }) {
     },
     [isControlledInput, onChange]
   )
+
+  const handleClear = React.useCallback(() => {
+    if (!isControlledInput) {
+      setValue("")
+    }
+
+    if (onClear) {
+      onClear()
+    }
+  }, [isControlledInput, onClear])
+
+  const isClearDisabled = value.length === 0
 
   return (
     <label
@@ -58,9 +75,9 @@ function SearchField({ onChange, value, ...otherProps }) {
           }
         }}
         type="search"
-        placeholder="Search tags"
-        aria-label="Tag Search"
-        title="Filter tags"
+        placeholder={placeholder}
+        aria-label={title}
+        title={title}
         value={searchValue}
         onChange={handleChange}
       />
@@ -80,6 +97,32 @@ function SearchField({ onChange, value, ...otherProps }) {
         focusable={false}
         aria-hidden
       />
+      <button
+        type="button"
+        css={{
+          display: "block",
+          border: 0,
+          ":hover": {},
+          background: 0,
+          position: "absolute",
+          right: "0.25rem",
+          top: "0.375rem",
+          cursor: isClearDisabled ? "normal" : "pointer"
+        }}
+        disabled={isClearDisabled}
+        onClick={handleClear}
+      >
+        <MdClose
+          css={{
+            display: "block",
+            fill: isClearDisabled ? "rgba(0, 0, 0, 0.38)" : "#78757a",
+            width: "1.5rem",
+            height: "1.5rem"
+          }}
+          viewBox="0 0 24 24"
+          aria-label="Clear"
+        />
+      </button>
     </label>
   )
 }

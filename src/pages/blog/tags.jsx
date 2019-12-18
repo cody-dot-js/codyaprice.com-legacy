@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 
 import { Layout, Link, SearchField, SEO } from "../../components"
-import caseInsensitiveSort from "../../utils/caseInsensitiveSort"
 import caseInsensitiveContains from "../../utils/caseInsensitiveContains"
 
 function TagsPage({ data, location }) {
@@ -12,6 +11,8 @@ function TagsPage({ data, location }) {
   const handleSearch = React.useCallback(({ target: { value } }) => {
     setQuery(value)
   }, [])
+
+  const handleClear = React.useCallback(() => setQuery(""), [])
 
   const tags = React.useMemo(
     () =>
@@ -46,47 +47,62 @@ function TagsPage({ data, location }) {
   return (
     <Layout location={location} title={`Tags (${tags.length})`}>
       <SEO title="All tags" />
-      <SearchField value={query} onChange={handleSearch} />
-      {groups.length > 0 ? (
-        <ul css={{ listStyle: "none", padding: 0, margin: 0 }}>
-          {groups.map(group => (
-            <li key={group}>
-              <h3>{group}</h3>
-              <ul
-                css={{
-                  display: "flex",
-                  flexFlow: "row wrap",
-                  listStyle: "none",
-                  padding: 0,
-                  margin: 0
-                }}
-              >
-                {groupLookup[group].map(({ name, count, slug }) => (
-                  <li
-                    css={{ padding: "1rem", margin: 0 }}
-                    key={name + count + slug}
-                  >
-                    <Link to="#">
-                      {name}&nbsp;({count})
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <div
-          css={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "1.5rem"
-          }}
-        >
-          No tags found for&nbsp;<strong>"{query}"</strong>&nbsp;🕵️‍♂️
-        </div>
-      )}
+      <SearchField
+        title="Filter tags"
+        placeholder="Search tags"
+        value={query}
+        onChange={handleSearch}
+        onClear={handleClear}
+      />
+      <div css={{ position: "relative", overflowY: "scroll", height: "40rem" }}>
+        {groups.length > 0 ? (
+          <ul
+            css={{
+              listStyle: "none",
+              padding: 0,
+              margin: 0,
+              display: "block"
+            }}
+          >
+            {groups.map(group => (
+              <li key={group}>
+                <h3>{group}</h3>
+                <ul
+                  css={{
+                    display: "flex",
+                    flexFlow: "row wrap",
+                    listStyle: "none",
+                    padding: 0,
+                    margin: 0
+                  }}
+                >
+                  {groupLookup[group].map(({ name, count, slug }) => (
+                    <li
+                      css={{ padding: "1rem", margin: 0 }}
+                      key={name + count + slug}
+                    >
+                      <Link to="#">
+                        {name}&nbsp;({count})
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div
+            css={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "1.5rem"
+            }}
+          >
+            No tags found for&nbsp;<strong>"{query}"</strong>&nbsp;🕵️‍♂️
+          </div>
+        )}
+      </div>
     </Layout>
   )
 }
