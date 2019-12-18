@@ -4,12 +4,9 @@ import { graphql } from "gatsby"
 import { Layout, SEO } from "../components"
 
 function ProjectsPage({ data, location }) {
-  const siteTitle = data.site.siteMetadata.title
-
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} title="Projects">
       <SEO title="Projects" />
-      <h1>Projects</h1>
       <p>
         <span role="img" aria-label="construction sign">
           🚧

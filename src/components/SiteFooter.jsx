@@ -17,8 +17,7 @@ const style = {
 function SiteFooter({ ...otherProps }) {
   const rssLink = {
     id: "rss",
-    url: "https://codyaprice.com/rss.xml",
-    iconType: "fas"
+    url: "https://codyaprice.com/rss.xml"
   }
 
   return (

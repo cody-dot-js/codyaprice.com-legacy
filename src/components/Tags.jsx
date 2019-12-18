@@ -22,15 +22,16 @@ function Tags({ list }) {
     >
       {list.map((tag, i) => (
         <Link
-          // TODO: make tags go to `/tags/${tag}`
+          // TODO: make tags go to `/blog/tags/${tag}`
           key={tag}
           to="#"
           css={{
             textDecoration: "none",
-            color: "#a44fb6"
+            fontWeight: 700
           }}
         >
           <Badge
+            color="#3d84a8"
             css={{
               marginTop: "0.5rem",
               marginRight: i === list.length - 1 ? 0 : "0.5rem"
