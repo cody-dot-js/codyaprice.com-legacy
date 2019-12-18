@@ -1,15 +1,37 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { FaTags } from "react-icons/fa"
 
-import { Layout, Link, SEO, Tags } from "../components"
-import formatReadingTime from "../utils/formatReadingTime"
-import formatModifiedTime from "../utils/formatModifiedTime"
+import { Layout, Link, SEO, Tags } from "../../components"
+import formatReadingTime from "../../utils/formatReadingTime"
+import formatModifiedTime from "../../utils/formatModifiedTime"
 
 function BlogPage({ data, location }) {
   const posts = data.allMdx.edges
 
   return (
-    <Layout location={location} title="All Blog Posts">
+    <Layout
+      location={location}
+      title="All Blog Posts"
+      headerContent={
+        <Link
+          css={{
+            textDecoration: "none",
+            color: "#fff",
+            borderRadius: "0.25rem",
+            background: "#574b90",
+            padding: "0.5rem",
+            "&:hover,&:focus": {
+              background: "#a44fb6"
+            }
+          }}
+          to="blog/tags"
+        >
+          View All Tags&nbsp;
+          <FaTags css={{ verticalAlign: "middle" }} />
+        </Link>
+      }
+    >
       <SEO title="All Blog Posts" />
       {posts.map(({ node }) => (
         <article key={node.fields.slug}>

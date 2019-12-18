@@ -1,9 +1,36 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+/* eslint-disable-next-line */
+import {
+  FaDribbble,
+  FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaMedium,
+  FaRss,
+  FaTwitter
+} from "react-icons/fa"
 import Link from "./Link"
 import VisuallyHidden from "./VisuallyHidden"
+
+function Icon({ id, ...otherProps }) {
+  const icons = {
+    dribbble: FaDribbble,
+    facebook: FaFacebook,
+    github: FaGithub,
+    instagram: FaInstagram,
+    linkedin: FaLinkedin,
+    medium: FaMedium,
+    rss: FaRss,
+    twitter: FaTwitter
+  }
+
+  const Icon = icons[id]
+
+  return <Icon {...otherProps} />
+}
 
 const propTypes = {
   otherLinks: PropTypes.arrayOf(
@@ -45,28 +72,29 @@ function Socials({ otherLinks }) {
 
   const allLinks = socials.concat(otherLinks)
 
+  console.log(allLinks)
+
   return (
     <div css={style}>
-      {allLinks.map(({ id, url, iconType = "fab" }) => (
-        <Link
-          key={id}
-          to={url}
-          aria-label={`Link to ${id}`}
-          css={{
-            textDecoration: "none",
-            fontSize: "2rem",
-            padding: "1rem",
-            color: "white",
-            dispaly: "block"
-          }}
-        >
-          <FontAwesomeIcon
-            aria-describedby={`icon_${id}`}
-            icon={[iconType, id]}
-          />
-          <VisuallyHidden id={`icon_${id}`}>Icon for {id}</VisuallyHidden>
-        </Link>
-      ))}
+      {allLinks.map(({ id, url }) => {
+        return (
+          <Link
+            key={id}
+            to={url}
+            aria-label={`Link to ${id}`}
+            css={{
+              textDecoration: "none",
+              fontSize: "2rem",
+              padding: "1rem",
+              color: "white",
+              dispaly: "block"
+            }}
+          >
+            <Icon id={id} css={{ verticalAlign: "middle" }} />
+            <VisuallyHidden id={`icon_${id}`}>Icon for {id}</VisuallyHidden>
+          </Link>
+        )
+      })}
     </div>
   )
 }

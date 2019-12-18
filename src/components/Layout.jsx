@@ -2,50 +2,51 @@ import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
-import { library } from "@fortawesome/fontawesome-svg-core"
-import { fab } from "@fortawesome/free-brands-svg-icons"
-import { faRss } from "@fortawesome/free-solid-svg-icons"
 
 import StarryDisplay from "./StarryDisplay"
 import Navigation from "./navigation/Navigation"
 import { CardCss } from "./Card"
 import SiteFooter from "./SiteFooter"
 
-library.add(fab, faRss)
-
 const propTypes = {
   children: PropTypes.node.isRequired,
+  headerContent: PropTypes.node,
+  layoutRef: PropTypes.shape({
+    current: PropTypes.instanceOf(Element)
+  }),
   leftSidebarContent: PropTypes.node,
   location: PropTypes.object,
   rightSidebarContent: PropTypes.node,
-  title: PropTypes.string.isRequired,
-  layoutRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  title: PropTypes.string.isRequired
 }
 
 const defaultProps = {
+  headerContent: null,
+  layoutRef: React.createRef(),
   leftSidebarContent: null,
   location: null,
-  rightSidebarContent: null,
-  layoutRef: React.createRef()
+  rightSidebarContent: null
 }
 
-const desktopBreakpoint = "(min-width: 64rem)"
+const desktopBreakpoint = "(min-width: 48rem)"
 const desktopBreakpointMq = `@media ${desktopBreakpoint}`
 
 function Layout({
   children,
-  location,
-  title,
+  headerContent,
+  layoutRef,
   leftSidebarContent,
+  location,
   rightSidebarContent,
-  layoutRef
+  title,
+  ...otherProps
 }) {
   const starCountRef = React.useRef()
   const { current: starCount } = starCountRef
 
-  // only check on mount, really we're checking if we're on a "mobile"-like
-  // device
   React.useEffect(() => {
+    // only check on mount, really we're checking if we're on a "mobile"-like
+    // device
     const { matches: isAtDesktopBreakpoint } = window.matchMedia(
       desktopBreakpoint
     )
@@ -69,7 +70,7 @@ function Layout({
 
         ${desktopBreakpointMq} {
           display: grid;
-          grid-template-columns: 1fr 4fr 1fr;
+          grid-template-columns: 1fr 2fr 1fr;
           grid-template-rows: 1fr auto;
           grid-column-gap: 1rem;
         }
@@ -97,30 +98,42 @@ function Layout({
             ...CardCss,
             backgroundColor: "#fff",
             display: "block",
-            pointerEvents: "auto"
+            padding: "2rem",
+            pointerEvents: "auto",
+            minHeight: "50rem"
           }}
           role="main"
+          {...otherProps}
         >
-          <header>
-            <h1
+          <div css={{ margin: "0 auto", maxWidth: "40rem" }}>
+            <header
               css={{
-                margin: 0,
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "space-between",
                 marginBottom: "1rem"
               }}
             >
-              <Link
+              <h1
                 css={{
-                  boxShadow: `none`,
-                  textDecoration: `none`,
-                  color: `inherit`
+                  margin: 0
                 }}
-                to="/"
               >
-                {title}
-              </Link>
-            </h1>
-          </header>
-          {children}
+                <Link
+                  css={{
+                    boxShadow: `none`,
+                    textDecoration: `none`,
+                    color: `inherit`
+                  }}
+                  to="/"
+                >
+                  {title}
+                </Link>
+              </h1>
+              <div>{headerContent}</div>
+            </header>
+            {children}
+          </div>
         </main>
       </div>
       <div>{rightSidebarContent}</div>
