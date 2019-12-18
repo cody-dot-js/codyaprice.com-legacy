@@ -40,12 +40,17 @@ function Layout({
   rightSidebarContent,
   layoutRef
 }) {
+  const starCountRef = React.useRef()
+  const { current: starCount } = starCountRef
+
   // only check on mount, really we're checking if we're on a "mobile"-like
   // device
-  const starCount = React.useMemo(() => {
-    const { matches: isAtDesktopBreakpoint } = window.matchMedia(desktopBreakpoint)
+  React.useEffect(() => {
+    const { matches: isAtDesktopBreakpoint } = window.matchMedia(
+      desktopBreakpoint
+    )
 
-    return isAtDesktopBreakpoint ? 512 : 256
+    starCountRef.current = isAtDesktopBreakpoint ? 512 : 256
   }, [])
 
   return (

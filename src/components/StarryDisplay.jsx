@@ -48,10 +48,10 @@ function StarryDisplay({ starCount }) {
             },
             size: {
               value: 1.570795,
-              random: true,
+              random: true
             },
             line_linked: {
-              enable: false,
+              enable: false
             },
             move: {
               enable: true,
@@ -60,7 +60,7 @@ function StarryDisplay({ starCount }) {
               random: true,
               straight: false,
               out_mode: "out",
-              bounce: false,
+              bounce: false
             }
           },
           interactivity: {
@@ -87,7 +87,7 @@ function StarryDisplay({ starCount }) {
               repulse: {
                 distance: 300,
                 duration: 1
-              },
+              }
             }
           },
           retina_detect: true
