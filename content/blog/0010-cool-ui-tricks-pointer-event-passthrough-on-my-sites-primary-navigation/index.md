@@ -340,7 +340,11 @@ What do you see? 👀
   <RelativePositioning />
 </Example>
 
-One cool side-effect is that by setting `position: relative;`, you get a `z-index` for free.
+Note: positioning direction with `top`, `right`, `bottom`, and `left` follows a potentially confusing pattern.
+If you give one of those properties a **_positive_** value, it shifts the element in the **_opposite_** direction, e.g. `top: 10px` will not move the element **UP** `10px`, but instead **DOWN** `10px`.
+**_Negative_** values shift the element in the specified direction, e.g. `top: -10px` will move the element **UP** `10px`.
+
+One cool side-effect is of setting `position: relative;`, you get a `z-index` for free.
 It's really `z-index = 0`, but it becomes and appears positioned above static elements!
 This will come in handy down below in the [stacking contexts subsection](#stacking-contexts).
 
