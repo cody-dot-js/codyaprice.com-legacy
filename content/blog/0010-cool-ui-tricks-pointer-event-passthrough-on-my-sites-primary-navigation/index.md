@@ -14,8 +14,9 @@ tags:
 ---
 
 import MockNavigation from "./MockNavigation"
-import DestroyAllClicks from "./DestroyAllClicks"
 import BoxModel from "./BoxModel"
+import RelativePositioning from "./RelativePositioning"
+import DestroyAllClicks from "./DestroyAllClicks"
 
 ![Photo by Aleks Dahlberg on Unsplash](./hero-image.jpg)
 
@@ -284,7 +285,77 @@ Now, let's _position_ ourselves to understand the remaining two sections.
 >
 > Mason Cooley
 
+If you ever find yourself wanting to do _interesting_ things with a website (read as to make it pretty and not look like it came out of 1995), then styling paired with positioning will probably be of interest to you.
+
+By default, DOM elements will be rendered with `position: static;`.
+You don't need to set this, the browser will do it for you!
+All it does is makes the element participate in its _normal layout behavior_, e.g.
+
+```html
+<h1>Mr. Booshded Neynaleavun</h1>
+<p>Date: September 11, 2001</p>
+```
+
+will behave identically to:
+
+```html
+<h1 style="position: static;">Mr. Booshded Neynaleavun</h1>
+<p style="position: static;">Date: September 11, 2001</p>
+```
+
+even though we've explicitly **_"positioned"_** (but, we haven't 😉) both elements!
+
+I must sound like a broken record, but again, MDN comes in clutch with amazing docs on [positioning](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning).
+I'll summarize the main points below.
+We've already talked about `static` (or default) positioning and while it has its place, it can be rather boring.
+In the upcoming subsections, I'll explain the gist of `relative`, `absolute`, and `fixed` positioning.
+I'll leave out `position: sticky` for now, just so this post doesn't become a full-on DOM layout rendering 101 tutorial 😂.
+
+##### Top, Bottom, Left, and Right
+
+When set, these properties are used to **_offset_** an element from its _normal_ position.
+This will make more sense in upcoming examples, I promise.
+Read on! 📖
+
+##### Relative Positioning
+
+Relative positioning can take a second to wrap your head around, but once you get it it's really neat.
+
+So, remember how`static` positioning just means "Hey browser, put me where I fit"?
+Well, `relative` positioning behaves the same.
+
+_Until you set `top`, `right`, `bottom`, and/or `left`_.
+
+When you set one or more of those properties (assuming to a non-zero, default value), then the `position: relative;` element will shift in the direction you told it by the amount you told it to!
+
+Here's an interactive example to drive this point home.
+Try setting the `top` field to `-4rem`, for example.
+What do you see? 👀
+
+<Example caption={(
+  <>
+    Interactive Example: Demonstrate <code>position: relative</code> when used with <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code>.
+  </>
+)}>
+  <RelativePositioning />
+</Example>
+
+One cool side-effect is that by setting `position: relative;`, you get a `z-index` for free.
+It's really `z-index = 0`, but it becomes and appears positioned above static elements!
+This will come in handy down below in the [stacking contexts subsection](#stacking-contexts).
+
+##### Absolute Positioning
+
 `// TODO: writeme`
+
+##### Fixed Positioning
+
+This is similar to `position: absolute;`, except instead of being offset relative to its parent, a `fixed` positioned element is offset relative to the browser viewport (bounds).
+I haven't used this in my navigation code, but I figured I'd call it out since it's useful! 🗣
+
+##### Positioning: The Takeaway
+
+Positioning is one tool in our toolbox for massaging the DOM into the correct looking shape that we desire. It allows you to do cool things like move things around and stack elements on top of others (like for a modal, popup, or tooltip).
 
 And finally, it's time to _rack em', **stack** em', and pack em'_.
 
