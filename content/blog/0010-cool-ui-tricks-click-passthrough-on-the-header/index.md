@@ -177,7 +177,7 @@ Notice that we turn off all `pointer-events` on the parent element and then sele
 It seems kind of odd to me that such behavior is delegated to CSS instead of Javascript.
 I mean, it's not like [`cursor: pointer`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor) where it's a **_purely "presentational"_** effect.
 With Javascript, (examples following being of the React flavor) you enhance DOM elements by adding `event listeners` which trigger on interactions providing the desired functionality.
-By setting `pointer-events: none;` on a DOM element, you are turning off all cursor interactions for **_and its children!_**
+By setting `pointer-events: none;` on a DOM element, you are turning off all cursor interactions for **_it and its children!_**
 This is crazy to me! 😜
 Sounds an awful lot like a Javascript concern, namely something like:
 
