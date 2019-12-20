@@ -199,7 +199,7 @@ Be warned, I am going to gloss over a lot of the details because these topics de
 There's a ton of nuance at play, so **_readers ye be warned_** 🏴‍☠️, but please bear with me 🐻.
 Feel free to skip this section (or sections) if you're up to speed on these topics.
 
-![Skip link](#you-got-your-chocolate-in-my-peanut-butter-)
+[Skip link](#you-got-your-chocolate-in-my-peanut-butter-)
 
 - [The Box Model](#the-box-model)
 - [DOM Flow](#dom-flow)
