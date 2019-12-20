@@ -1,6 +1,10 @@
 const path = require(`path`)
 const BlogPost = path.resolve(`./src/templates/blog-post.js`)
-const { caseInsensitiveSort, getSlugPath } = require("./gatsby-utils")
+const {
+  caseInsensitiveSort,
+  getSlugPath,
+  toMarkdown
+} = require("./gatsby-utils")
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
@@ -12,12 +16,14 @@ exports.createPages = async ({ actions, graphql }) => {
           node {
             id
             fields {
+              descriptionMd
               slug
               modifiedTime
               tags
             }
             frontmatter {
               title
+              description
               date
               categories
               tags
@@ -65,20 +71,17 @@ exports.onCreateNode = ({ actions, getNode, node }) => {
 
   if (type === "Mdx") {
     const parentNode = getNode(node.parent)
-    const { modifiedTime } = parentNode
-
-    const slug = getSlugPath({ node, getNode, parentNode })
 
     createNodeField({
       name: `slug`,
       node,
-      value: slug
+      value: getSlugPath({ node, getNode, parentNode })
     })
 
     createNodeField({
       node,
       name: "modifiedTime",
-      value: modifiedTime
+      value: parentNode.modifiedTime
     })
 
     createNodeField({
@@ -86,6 +89,12 @@ exports.onCreateNode = ({ actions, getNode, node }) => {
       name: "tags",
       // intentionally sort in place
       value: node.frontmatter.tags.sort(caseInsensitiveSort)
+    })
+
+    createNodeField({
+      node,
+      name: "descriptionMd",
+      value: toMarkdown(node.frontmatter.description)
     })
   }
 }

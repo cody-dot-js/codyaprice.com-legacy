@@ -42,6 +42,8 @@
     "react-icons": "^3.8.0",
     "react-particles-js": "^2.7.0",
     "react-typography": "^0.16.19",
+    "remark": "^11.0.2",
+    "remark-html": "^10.0.0",
     "typography": "^0.16.19"
   },
   "devDependencies": {
