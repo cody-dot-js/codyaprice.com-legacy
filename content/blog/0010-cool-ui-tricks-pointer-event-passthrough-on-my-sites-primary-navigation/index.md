@@ -11,11 +11,14 @@ tags:
   - UX
   - User Experience
   - User Interface
+  - Layout
+  - Positioning
 ---
 
 import MockNavigation from "./MockNavigation"
 import BoxModel from "./BoxModel"
 import RelativePositioning from "./RelativePositioning"
+import AbsolutePositioning from "./AbsolutePositioning"
 import DestroyAllClicks from "./DestroyAllClicks"
 
 ![Photo by Aleks Dahlberg on Unsplash](./hero-image.jpg)
@@ -352,7 +355,36 @@ This will come in handy down below in the [stacking contexts subsection](#stacki
 
 ##### Absolute Positioning
 
-`// TODO: writeme`
+![Only a Sith deals in absolutes.](./only-a-sith-deals-in-absolutes.gif)
+
+<figcaption>
+  Only a Sith deals in absolutes.
+</figcaption>
+
+Unlike `relative`, an `absolute` element no longer exists in the normal DOM flow.
+Instead, it is bound to its **_containing element_**.
+The _containing element_ is determined by a fancy algorithm described [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Containing_block#Identifying_the_containing_block).
+Basically, for `position: absolute;`, the containing element is generally (here comes ~~dat boi 🐸~~ the nuance) nearest ancestor whose `position` is **_not_** `static`.
+If one doesn't exist, it becomes the **_initial containing block_**, which is the block that contains the `documentElement`, or the `<html>` tag.
+The initial containing block has the size of the browser viewport.
+
+As is tradition, here's an interactive example! 💃
+Which element is the **_containing element_** of the `position: absolute`'d one?
+
+<Example caption={(
+<>
+Interactive Example: Demonstrate <code>position: absolute</code> when used with <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code>.
+</>
+)}>
+<AbsolutePositioning />
+</Example>
+
+Play around with the positional attributes `top`, `right`, `bottom`, and `left` to get a feel for how the position of the `Move me around!` element works.
+For those playing along, the div (box) with the solid black border is `position: relative`, so it is the **_containing element_** of the `Move me around!` element.
+This is because it is the first parent that isn't `position: static`!
+
+Fun fact: the starry background in my site's navigation is set to `position: absolute;`.
+Can you guess what its containing element is? 🤔
 
 ##### Fixed Positioning
 

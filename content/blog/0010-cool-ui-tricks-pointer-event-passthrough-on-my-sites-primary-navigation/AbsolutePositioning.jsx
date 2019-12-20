@@ -9,19 +9,19 @@ function FormInput({ children, label }) {
   )
 }
 
-function RelativePositioning() {
-  const [usePositionRelative, setUsePositionRelative] = React.useState(true)
+function AbsolutePositioning() {
+  const [usePositionAbsolute, setUsePositionAbsolute] = React.useState(true)
   const [backgroundColor, setBackgroundColor] = React.useState("#e0e0e0")
   const [color, setColor] = React.useState("#000")
-  const [top, setTop] = React.useState(0)
-  const [right, setRight] = React.useState(0)
-  const [bottom, setBottom] = React.useState(0)
-  const [left, setLeft] = React.useState(0)
+  const [top, setTop] = React.useState("-10px")
+  const [right, setRight] = React.useState()
+  const [bottom, setBottom] = React.useState()
+  const [left, setLeft] = React.useState("-20px")
 
   const customizableStyles = {
     backgroundColor,
     color,
-    position: usePositionRelative ? "relative" : "static",
+    position: usePositionAbsolute ? "absolute" : "static",
     top,
     right,
     bottom,
@@ -41,11 +41,11 @@ function RelativePositioning() {
   return (
     <>
       <div css={{ position: "relative", zIndex: 100 }}>
-        <FormInput label="Use position relative?&nbsp;">
+        <FormInput label="Use position absolute?&nbsp;">
           <input
             type="checkbox"
-            checked={usePositionRelative}
-            onChange={toggle(setUsePositionRelative)}
+            checked={usePositionAbsolute}
+            onChange={toggle(setUsePositionAbsolute)}
           />
         </FormInput>
         <FormInput>
@@ -93,7 +93,8 @@ function RelativePositioning() {
         css={{
           width: "100%",
           border: "0.25rem solid black",
-          padding: "1rem"
+          padding: "1rem",
+          position: "relative"
         }}
       >
         <p>
@@ -110,4 +111,4 @@ function RelativePositioning() {
   )
 }
 
-export default RelativePositioning
+export default AbsolutePositioning
