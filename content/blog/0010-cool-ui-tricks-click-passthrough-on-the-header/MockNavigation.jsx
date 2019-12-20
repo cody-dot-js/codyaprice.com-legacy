@@ -1,5 +1,5 @@
 import React from "react"
-import { keyframes, css } from "@emotion/core"
+import { keyframes } from "@emotion/core"
 import uniqueId from "./uniqueId"
 
 const buttonCss = {
@@ -20,7 +20,10 @@ const stripeAnimation = keyframes({
   "100%": { backgroundPosition: "2rem 4rem" }
 })
 
-function Example({ pointerEventPassthroughEnabled, passthroughInitialValue }) {
+function MockNavigation({
+  pointerEventPassthroughEnabled,
+  passthroughInitialValue
+}) {
   const [lastClicked, setLastClicked] = React.useState(null)
   const [
     allowPointerEventPassthrough,
@@ -37,13 +40,7 @@ function Example({ pointerEventPassthroughEnabled, passthroughInitialValue }) {
   }, [])
 
   return (
-    <div
-      css={{
-        border: "0.25rem #c0c0c0 dashed",
-        padding: "1rem",
-        margin: "1rem 0"
-      }}
-    >
+    <>
       <div
         onClick={onClick}
         css={{
@@ -138,13 +135,13 @@ function Example({ pointerEventPassthroughEnabled, passthroughInitialValue }) {
       <p css={{ margin: 0 }}>
         Last clicked: {lastClicked ? lastClicked : "nothing"}
       </p>
-    </div>
+    </>
   )
 }
 
-Example.defaultProps = {
+MockNavigation.defaultProps = {
   allowPointerEventPassthrough: false,
   passthroughInitialValue: false
 }
 
-export default Example
+export default MockNavigation
