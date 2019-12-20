@@ -233,11 +233,11 @@ According to MDN's [box model docs](https://developer.mozilla.org/en-US/docs/Web
 
 You should also be aware of the difference between `inline` or `block` elements.
 What's described above is directly applicable to `block` elements.
-MDN also has a great [doc](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow#Elements_participating_in_an_inline_formatting_context) on `inline` vs `block` flow, but the main takeaways are:
+MDN also has a great [doc](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow#Elements_participating_in_an_inline_formatting_context) on `inline` vs `block` flow, but the main takeaways are that `inline` elements:
 
-- They are only as big as they need to be, e.g. words or text. Think of them as a box, but with shrinkwrap to take up as little space as possible.
-- When placed next to one another, they _"flow"_ together in the document's text direction, e.g. left to right.
-- They are still "boxes", but you can't determine their size directly
+- They are only as big as they need to be, e.g. all of the words or text in this post! Think of them as a box, but shrinkwrapped up nice and tightly to take up as little space as possible.
+- When placed next to one another, they _"flow"_ together in the document's text direction, e.g. left to right. Think about how words flow together within a paragraph.
+- They are still "boxes", but you can't determine their size directly. Instead, it's inferred from how much "stuff" is inside them!
 
 Lastly, for understanding the box model, let's go through an interactive example of `box-sizing`.
 In the following rendering, you can change the properties of each box and see their size and visual properties update in real-time.
