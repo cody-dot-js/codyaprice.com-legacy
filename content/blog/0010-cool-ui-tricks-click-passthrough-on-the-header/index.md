@@ -68,6 +68,10 @@ Even though there doesn't appear to be anything between my name and the list of 
   The navigation blocks any interactions with the stars! 🙅‍♂️
 </figcaption>
 
+Bummer! 😢
+
+> How do we fix that!? 🧐
+
 ## Interactive Example Time ⏰
 
 Let's play around with some interactable examples!
@@ -126,7 +130,7 @@ If you set it to `none`, then that element and all of its children will no longe
 Let's look at the simplified DOM of my navigation with minimal styling using [emotion, an incredible css-in-js library](https://emotion.sh/docs/introduction):
 
 ```jsx
-{/* top level element sets pointer events to none */}
+/* top level element sets pointer events to none */
 <div css={{ pointerEvents: "none" }}>
   <div css={{ display: "flex", alignItems: "center", position: "relative" }}>
     {/* The starry background 👇*/}
@@ -160,7 +164,7 @@ Let's look at the simplified DOM of my navigation with minimal styling using [em
 </div>
 ```
 
-Notice that we turn off all pointer events on the parent element and then selectively turn pointer events back on for **_specific children_**.
+Notice that we turn off all `pointer-events` on the parent element and then selectively turn `pointer-events` back on for **_specific children_**.
 
 ![If you're saying I play favorites, you're wrong. I love all my children equally.](./i-love-all-my-children-equally.gif)
 
