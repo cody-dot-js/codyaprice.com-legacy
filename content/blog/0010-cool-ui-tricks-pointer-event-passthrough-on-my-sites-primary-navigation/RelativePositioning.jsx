@@ -40,52 +40,71 @@ function RelativePositioning() {
 
   return (
     <>
-      <FormInput label="Use position: relative;?&nbsp;">
-        <input
-          type="checkbox"
-          checked={usePositionRelative}
-          onChange={toggle(setUsePositionRelative)}
-        />
-      </FormInput>
-      <FormInput>
-        <ul
-          css={{
-            display: "flex",
-            justifyContent: "space-between",
-            flexFlow: "row wrap",
-            listStyle: "none",
-            margin: 0
-          }}
-        >
-          {positions.map(({ name, value, setState }) => (
-            <li key={name}>
-              {name}:&nbsp;
-              <input
-                type="text"
-                css={{ width: "4rem" }}
-                value={value}
-                onChange={setState}
-              />
-            </li>
-          ))}
-        </ul>
-      </FormInput>
-      <FormInput label="Background color:&nbsp;">
-        <input
-          type="text"
-          value={backgroundColor}
-          onChange={onChange(setBackgroundColor)}
-        />
-      </FormInput>
-      <FormInput label="Color:&nbsp;">
-        <input type="text" value={color} onChange={onChange(setColor)} />
-      </FormInput>
-      <div css={{ width: "100%" }}>
+      <div css={{ position: "relative", zIndex: 100 }}>
+        <FormInput label="Use position: relative;?&nbsp;">
+          <input
+            type="checkbox"
+            checked={usePositionRelative}
+            onChange={toggle(setUsePositionRelative)}
+          />
+        </FormInput>
+        <FormInput>
+          <ul
+            css={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexFlow: "row wrap",
+              listStyle: "none",
+              margin: 0
+            }}
+          >
+            {positions.map(({ name, value, setState }) => (
+              <li key={name}>
+                {name}:&nbsp;
+                <input
+                  type="text"
+                  css={{ width: "4rem" }}
+                  value={value}
+                  onChange={setState}
+                />
+              </li>
+            ))}
+          </ul>
+        </FormInput>
+        <FormInput label="Background color:&nbsp;">
+          <input
+            type="text"
+            value={backgroundColor}
+            onChange={onChange(setBackgroundColor)}
+          />
+        </FormInput>
+        <FormInput label="Color:&nbsp;">
+          <input type="text" value={color} onChange={onChange(setColor)} />
+        </FormInput>
+        <p>
+          Note: the movable element below will appear below these form elements
+          on purpose{" "}
+          <span role="img" aria-label="wink emoji">
+            😉
+          </span>
+        </p>
+      </div>
+      <div
+        css={{
+          width: "100%",
+          border: "0.25rem solid black",
+          padding: "1rem"
+        }}
+      >
         <p>
           Dolor quis excepteur dolor cillum ipsum cupidatat incididunt tempor
           non cillum anim irure occaecat.
         </p>
         <p css={customizableStyles}>Move me around!</p>
+        <p>
+          Fugiat velit est proident nostrud consequat est quis excepteur
+          exercitation exercitation labore.
+        </p>
       </div>
     </>
   )

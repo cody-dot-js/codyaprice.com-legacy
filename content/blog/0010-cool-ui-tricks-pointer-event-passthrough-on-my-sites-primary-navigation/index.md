@@ -331,6 +331,7 @@ When you set one or more of those properties (assuming to a non-zero, default va
 Here's an interactive example to drive this point home.
 Try setting the `top` field to `-4rem`, for example.
 What do you see? 👀
+What happens if you turn off position relative, but still set one of the positional properties, e.g. `top`?
 
 <Example caption={(
   <>
@@ -344,7 +345,8 @@ Note: positioning direction with `top`, `right`, `bottom`, and `left` follows a 
 If you give one of those properties a **_positive_** value, it shifts the element in the **_opposite_** direction, e.g. `top: 10px` will not move the element **UP** `10px`, but instead **DOWN** `10px`.
 **_Negative_** values shift the element in the specified direction, e.g. `top: -10px` will move the element **UP** `10px`.
 
-One cool side-effect is of setting `position: relative;`, you get a `z-index` for free.
+Notice that the `Move me around!` element appears to hover over other elements (except for the form elements 😉).
+This is a cool side-effect is of setting `position: relative;`: you get a `z-index` for free.
 It's really `z-index = 0`, but it becomes and appears positioned above static elements!
 This will come in handy down below in the [stacking contexts subsection](#stacking-contexts).
 
