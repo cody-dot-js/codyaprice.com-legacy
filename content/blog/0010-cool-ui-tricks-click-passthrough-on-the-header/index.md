@@ -29,7 +29,11 @@ import DestroyAllClicks from "./DestroyAllClicks"
 I recently updated my primary navigation.
 You know, this thing:
 
-![Primary Navigation](./primary-navigation.png)
+![Primary navigation, with minor annotations.](./primary-navigation.png)
+
+<figcaption>
+  Primary navigation, with minor annotations.
+</figcaption>
 
 Underneath the primary navigation is a [stripe](https://www.stripe.com) inspired header.
 Inside the clipped header is a `<canvas>` element that renders a starry background that you can interact with through hover and clicking.
