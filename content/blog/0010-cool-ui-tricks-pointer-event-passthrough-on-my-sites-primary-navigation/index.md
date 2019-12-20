@@ -15,6 +15,7 @@ tags:
 
 import MockNavigation from "./MockNavigation"
 import DestroyAllClicks from "./DestroyAllClicks"
+import BoxModel from "./BoxModel"
 
 ![Photo by Aleks Dahlberg on Unsplash](./hero-image.jpg)
 
@@ -210,6 +211,44 @@ For everyone else, let's go! 🏌️‍♂️
 First, let's talk through the box model.
 
 #### The Box Model
+
+![The boxing model, probably a derivative of or adjacent to border-box 🥁🤷‍♂️😂](./boxing.gif)
+
+<figcaption>
+  The boxing model, probably a derivative of or adjacent to border-box 🥁🤷‍♂️😂
+</figcaption>
+
+In HTML and CSS, everything is a box or rectangle (even circular things)!
+You can manipulate each box's size, position, and presentational styling using CSS.
+According to MDN's [box model docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model):
+
+> Every box is composed of four parts (or areas), defined by their respective edges: the content edge, padding edge, border edge, and margin edge.
+
+![MDN's Box Model Graphic](./mdn-box-model.png)
+
+<figcaption>
+  MDN's Box Model Graphic
+</figcaption>
+
+You should also be aware of the difference between `inline` or `block` elements.
+What's described above is directly applicable to `block` elements.
+MDN also has a great [doc](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow#Elements_participating_in_an_inline_formatting_context) on `inline` vs `block` flow, but the main takeaways are:
+
+- They are only as big as they need to be, e.g. words or text. Think of them as a box, but with shrinkwrap to take up as little space as possible.
+- When placed next to one another, they _"flow"_ together in the document's text direction, e.g. left to right.
+- They are still "boxes", but you can't determine their size directly
+
+Lastly, for understanding the box model, let's go through an interactive example of `box-sizing`.
+In the following rendering, you can change the properties of each box and see their size and visual properties update in real-time.
+It should give you a good idea of how the box model works in general!
+
+<Example caption={(
+  <>
+    Interactive Example: Demonstrate the difference between <code>box-sizing</code> types: <code>content-box</code> (initial & default) vs <code>border-box</code>
+  </>
+)}>
+  <BoxModel />
+</Example>
 
 Next, we're drifting into DOM flow. 🌊
 
