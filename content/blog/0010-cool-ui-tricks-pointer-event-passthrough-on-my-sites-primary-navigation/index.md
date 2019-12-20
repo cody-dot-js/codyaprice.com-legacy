@@ -1,5 +1,5 @@
 ---
-title: "Cool UI Tricks: Pointer Event Passthrough on the my Site's Primary Navigation"
+title: "Cool UI Tricks: Pointer Event Passthrough on my Site's Primary Navigation"
 date: 2019-12-20T01:18:49.853Z
 description: '"You have to be transparent so you no longer ~~cast a shadow~~ block clicks but instead let the ~~light~~ clicks pass through you" - Kamand Kojouri...*ish*'
 tags:
@@ -201,10 +201,10 @@ Feel free to skip this section (or sections) if you're up to speed on these topi
 
 ![Skip link](#you-got-your-chocolate-in-my-peanut-butter-)
 
- - [The Box Model](#the-box-model)
- - [DOM Flow](#dom-flow)
- - [Positioning](#positioning)
- - [Stacking Contexts](#stacking-contexts)
+- [The Box Model](#the-box-model)
+- [DOM Flow](#dom-flow)
+- [Positioning](#positioning)
+- [Stacking Contexts](#stacking-contexts)
 
 For everyone else, let's go! 🏌️‍♂️
 First, let's talk through the box model.
