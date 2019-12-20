@@ -136,19 +136,23 @@ Let's look at the simplified DOM of my navigation with minimal styling using [em
 ```jsx
 /* top level element sets pointer events to none */
 <div css={{ pointerEvents: "none" }}>
-  <div css={{ display: "flex", alignItems: "center", position: "relative" }}>
+  <div css={{
+    display: "flex",
+    alignItems: "center",
+    position: "relative" {/* 👈 this is important */}
+  }}>
     {/* The starry background 👇*/}
-    <div css={{ position: "absolute" }}>
+    <div css={{ position: "absolute" }}> {/* 👈 this is important */}
       <canvas>✨</canvas>
     </div>
     <nav
       css={{
         display: "flex",
         justifyContent: "space-between",
-        position: "relative"
+        position: "relative" {/* 👈 this is important */}
       }}
     >
-      {/* manually enable pointerEvents for all children after here*/}
+      {/* manually enable pointerEvents for all children after here */}
       <a href="#" css={{ pointerEvents: "auto" }}>
         Cody A. Price
       </a>
@@ -160,6 +164,10 @@ Let's look at the simplified DOM of my navigation with minimal styling using [em
           pointerEvents: "auto"
         }}
       >
+        {/*
+          These will inherit `pointer-events: auto;`
+          from the parent <ul> by default
+        */}
         <a href="#">Blog</a>
         <a href="#">About</a>
       </ul>
@@ -175,6 +183,66 @@ Notice that we turn off all `pointer-events` on the parent element and then sele
 <figcaption>
   If you're saying I play favorites, you're wrong. I love all my children equally.
 </figcaption>
+
+### Unpacking it All
+
+There's a lot to unpack here, so let's get down to business.
+
+![Let's get down to business!](./lets-get-down-to-business.gif)
+
+<figcaption>
+  Let's get down to business!
+</figcaption>
+
+We need to talk about DOM flow, the box model, positioning, and stacking contexts.
+Be warned, I am going to gloss over a lot of the details because these topics deserve a post in themselves.
+There's a ton of nuance at play, so **_readers ye be warned_** 🏴‍☠️, but please bear with me 🐻.
+Feel free to skip this section (or sections) if you're up to speed on these topics.
+
+![Skip link](#you-got-your-chocolate-in-my-peanut-butter-)
+
+ - [The Box Model](#the-box-model)
+ - [DOM Flow](#dom-flow)
+ - [Positioning](#positioning)
+ - [Stacking Contexts](#stacking-contexts)
+
+For everyone else, let's go! 🏌️‍♂️
+First, let's talk through the box model.
+
+#### The Box Model
+
+Next, we're drifting into DOM flow. 🌊
+
+#### DOM Flow
+
+For starters, there's [normal flow](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction#Normal_flow), which MDN says is:
+
+> Normal flow is how the browser lays out HTML pages by default when you do nothing to control page layout.
+>
+> Note here how the HTML is displayed in the exact order in which it appears in the source code, with elements stacked up on top of one another
+
+By default for English locales (bear with me 🐻, I'm glossing over a lot of details), the markup is rendered from left to right, top to bottom.
+Block
+
+Now, let's _position_ ourselves to understand the remaining two sections.
+
+#### Positioning
+
+> Position yourself well enough, and circumstances will do the rest
+>
+> Mason Cooley
+
+`// TODO: writeme`
+
+And finally, it's time to _rack em', **stack** em', and pack em'_.
+
+#### Stacking Contexts
+
+> You can do anything with stacks and iteration that you can do with recursion
+>
+> Steve McConnell
+
+`// TODO: writeme`
 
 ## You Got Your Chocolate in my Peanut Butter 😔
 
