@@ -67,27 +67,31 @@ function Navigation({ ...otherProps }) {
               margin: 0
             }}
           />
-          <span>{author}</span>
+          <span css={{ whiteSpace: "nowrap" }}>{author}</span>
         </div>
       </NavigationLink>
-      <div
+      <ul
         css={{
           display: "flex",
-          pointerEvents: "auto"
+          pointerEvents: "auto",
+          listStyle: "none",
+          margin: 0
         }}
       >
-        {topNavigationRoutes.map(({ to, display }, i) => (
+        {topNavigationRoutes.map(({ to, display }) => (
           <NavigationLink
             key={to}
             to={to}
             css={{
-              marginRight: i !== topNavigationRoutes.length - 1 ? "0.5rem" : 0
+              ":not(:last-of-type)": {
+                marginRight: "0.5rem"
+              }
             }}
           >
             {display}
           </NavigationLink>
         ))}
-      </div>
+      </ul>
     </nav>
   )
 }
