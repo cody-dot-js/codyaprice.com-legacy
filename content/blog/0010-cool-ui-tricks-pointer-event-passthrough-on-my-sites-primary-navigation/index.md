@@ -245,11 +245,11 @@ In the following rendering, you can change the properties of each box and see th
 It should give you a good idea of how the box model works in general!
 
 <Example caption={(
-  <>
-    Interactive Example: Demonstrate the difference between <code>box-sizing</code> types: <code>content-box</code> (initial & default) vs <code>border-box</code>
-  </>
+<>
+Interactive Example: Demonstrate the difference between <code>box-sizing</code> types: <code>content-box</code> (initial & default) vs <code>border-box</code>
+</>
 )}>
-  <BoxModel />
+<BoxModel />
 </Example>
 
 ##### Box Model: The Takeaway
@@ -334,11 +334,11 @@ What do you see? 👀
 What happens if you turn off position relative, but still set one of the positional properties, e.g. `top`?
 
 <Example caption={(
-  <>
-    Interactive Example: Demonstrate <code>position: relative</code> when used with <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code>.
-  </>
+<>
+Interactive Example: Demonstrate <code>position: relative</code> when used with <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code>.
+</>
 )}>
-  <RelativePositioning />
+<RelativePositioning />
 </Example>
 
 Note: positioning direction with `top`, `right`, `bottom`, and `left` follows a potentially confusing pattern.
