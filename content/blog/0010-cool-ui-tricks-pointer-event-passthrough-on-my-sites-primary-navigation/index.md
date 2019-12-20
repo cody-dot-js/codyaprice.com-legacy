@@ -198,7 +198,8 @@ There's a lot to unpack here, so let's get down to business.
 We need to talk about DOM flow, the box model, positioning, and stacking contexts.
 Be warned, I am going to gloss over a lot of the details because these topics deserve a post in themselves.
 There's a ton of nuance at play, so **_readers ye be warned_** 🏴‍☠️, but please bear with me 🐻.
-Feel free to skip this section (or sections) if you're up to speed on these topics.
+Each one is tightly coupled to one another because it is how layout is performed in your browser!
+Feel free to skip this section (or any of the sub-sections) if you're up to speed on these topics.
 
 [Skip link](#you-got-your-chocolate-in-my-peanut-butter-)
 
@@ -250,6 +251,12 @@ It should give you a good idea of how the box model works in general!
   <BoxModel />
 </Example>
 
+##### Box Model: The Takeaway
+
+**_With HTML and CSS, it's boxes all the way down!_**
+Even if it doesn't appear that way, everything is a box.
+This is part of why the navigation box originally blocked inner pointer interactions!
+
 Next, we're drifting into DOM flow. 🌊
 
 #### DOM Flow
@@ -261,7 +268,13 @@ For starters, there's [normal flow](https://developer.mozilla.org/en-US/docs/Lea
 > Note here how the HTML is displayed in the exact order in which it appears in the source code, with elements stacked up on top of one another
 
 By default for English locales (bear with me 🐻, I'm glossing over a lot of details), the markup is rendered from left to right, top to bottom.
-Block
+We've already touched on this briefly above in [the box model section](#the-box-model).
+Now, you _can_ stack elements on top of one another visually with CSS, namely through **positioning** and the use of **stacking contexts**.
+Conveniently, these are the two upcoming sections!
+
+##### DOM Flow: The Takeaway
+
+Without changing any CSS, elements will render in the order that you define them in the DOM (your code).
 
 Now, let's _position_ ourselves to understand the remaining two sections.
 
