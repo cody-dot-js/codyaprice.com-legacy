@@ -28,7 +28,7 @@ const defaultProps = {
   rightSidebarContent: null
 }
 
-const desktopBreakpoint = "(min-width: 48rem)"
+const desktopBreakpoint = "(min-width: 64rem)"
 const desktopBreakpointMq = `@media ${desktopBreakpoint}`
 
 function Layout({
