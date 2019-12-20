@@ -54,7 +54,7 @@ function BlogPage({ data, location }) {
             <p
               css={{ margin: 0 }}
               dangerouslySetInnerHTML={{
-                __html: node.frontmatter.description || node.excerpt
+                __html: node.fields.descriptionMd || node.excerpt
               }}
             />
             <small
@@ -94,6 +94,7 @@ export const pageQuery = graphql`
             description
           }
           fields {
+            descriptionMd
             modifiedTime
             slug
             tags

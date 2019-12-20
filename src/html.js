@@ -43,6 +43,10 @@ export default function HTML(props) {
             a:active {
             }
 
+            button {
+              cursor: pointer;
+            }
+
             header,
             nav,
             main,
