@@ -31,6 +31,28 @@ import DestroyAllClicks from "./DestroyAllClicks"
 
 ---
 
+## Post Mortem: Or, Hey Friends 👋
+
+Look. 👀
+I _really tried_ to keep this article short and sweet.
+But, I failed.
+It may seem long (because it kinda is 😬), but stick with me!
+It's worth it, trust me. 🤞
+
+<small>
+  Also, you can skip around if you already know some parts or if you ain't interested in the juicy deets. 💅
+</small>
+
+![Ight imma head out. 🧽🚶‍♂️](./ight-imma-head-out.png)
+
+<figcaption>
+  Ight imma head out. 🧽🚶‍♂️
+</figcaption>
+
+Back to the post.
+
+## What's up Cody?
+
 I recently updated my primary navigation.
 You know, this thing:
 
