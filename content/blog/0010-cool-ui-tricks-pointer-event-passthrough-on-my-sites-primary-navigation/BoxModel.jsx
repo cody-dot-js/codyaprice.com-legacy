@@ -1,13 +1,5 @@
 import React from "react"
-
-function FormInput({ children, label }) {
-  return (
-    <label css={{ display: "block", marginBottom: "0.5rem" }}>
-      {label}
-      {children}
-    </label>
-  )
-}
+import FormInput from "./FormInput"
 
 function Summary({ height, title, width }) {
   return (

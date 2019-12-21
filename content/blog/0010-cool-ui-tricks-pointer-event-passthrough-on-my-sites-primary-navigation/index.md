@@ -19,6 +19,7 @@ import MockNavigation from "./MockNavigation"
 import BoxModel from "./BoxModel"
 import RelativePositioning from "./RelativePositioning"
 import AbsolutePositioning from "./AbsolutePositioning"
+import StackingContexts from "./StackingContexts"
 import DestroyAllClicks from "./DestroyAllClicks"
 
 ![Photo by Aleks Dahlberg on Unsplash](./hero-image.jpg)
@@ -429,10 +430,31 @@ And finally, it's time to _rack em', **stack** em', and pack em'_.
 >
 > Steve McConnell
 
-`// TODO: writeme`
+As we saw when discussing [positioning](#positioning), _positioned elements win over non-positioned elements_.
+In cases where there are multiple positioned elements, the way to control which has overlapping precedence is with the `z-index` CSS property. The `z-index` CSS property is an integer value that describes how "high" the element would be elevated off the page if it were in 3D space.
+
+Let's check out a simple interactive stacking example.
+There's a non-positioned (i.e. `position: static`) blue box, a red `position: relative` box at `z-index: 2`, and a green box that you can control which defaults to `z-index: 1`.
+At the start, the red box is visually "on top" of the other two boxes, followed by the green box, and finally the blue box.
+What happens when you set the green box's `z-index` to 2? To 3? To 0?
+
+<Example caption={(
+<>
+Interactive Example: Demonstrate <code>z-index</code>.
+</>
+)}>
+<StackingContexts />
+</Example>
+
+##### Stacking Contexts: The Takeaway
+
+We saw before in the [positioning section](#positioning) that anything that isn't `position: static` has the ability to use `z-index`.
+The `z-index` CSS property allows you to manage how elements overlap others.
+The higher the `z-index` (if not `position: static`), the more likely an element will visually appear on top of others.
 
 ## You Got Your Chocolate in my Peanut Butter 😔
 
+Does it make sense to use CSS for disabling an element and its children's `pointer-events`?
 It seems kind of odd to me that such behavior is delegated to CSS instead of Javascript.
 I mean, it's not like [`cursor: pointer`](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor) where it's a **_purely "presentational"_** effect.
 With Javascript, (examples following being of the React flavor) you enhance DOM elements by adding `event listeners` which trigger on interactions providing the desired functionality.
