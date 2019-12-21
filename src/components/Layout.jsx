@@ -2,7 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
+import { MDXProvider } from "@mdx-js/react"
 
+import * as mdxComponents from "./mdx"
 import StarryDisplay from "./StarryDisplay"
 import Navigation from "./navigation/Navigation"
 import { CardCss } from "./Card"
@@ -132,7 +134,7 @@ function Layout({
               </h1>
               <div>{headerContent}</div>
             </header>
-            {children}
+            <MDXProvider components={mdxComponents}>{children}</MDXProvider>
           </div>
         </main>
       </div>

@@ -29,6 +29,7 @@
     "gatsby-remark-autolink-headers": "^2.1.21",
     "gatsby-remark-copy-linked-files": "^2.1.33",
     "gatsby-remark-images": "^3.1.38",
+    "gatsby-remark-numbered-footnotes": "^1.0.1",
     "gatsby-remark-prismjs": "^3.3.27",
     "gatsby-remark-responsive-iframe": "^2.2.30",
     "gatsby-source-filesystem": "^2.1.42",

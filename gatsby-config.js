@@ -88,6 +88,7 @@ module.exports = {
       options: {
         extensions: [".mdx", ".md"],
         gatsbyRemarkPlugins: [
+          "gatsby-remark-numbered-footnotes",
           {
             resolve: "@weknow/gatsby-remark-twitter",
             options: {
