@@ -16,7 +16,7 @@ function StackingContexts() {
       <FormInput label="Green zIndex:&nbsp;">
         <input type="number" value={zIndex} onChange={onChange} />
       </FormInput>
-      <div css={{ width: "100%" }}>
+      <div css={{ width: "100%", height: "16rem" }}>
         <div css={{ ...baseBoxStyle, backgroundColor: "#1976d2" }}>Blue</div>
         <div
           css={{
