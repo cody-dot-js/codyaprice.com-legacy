@@ -227,6 +227,10 @@ There's a ton of nuance at play, so **_readers ye be warned_** 🏴‍☠️, bu
 Each one is tightly coupled to one another because it is how layout is performed in your browser!
 Feel free to skip this section (or any of the sub-sections) if you're up to speed on these topics.
 
+Also, keep in mind that this section is pure **_background information_**.
+You don't _need_ to read it, but I highly suggest that you do!
+It's informative and has some cool and insightful interactive examples. 🤓
+
 [Skip link](#you-got-your-chocolate-in-my-peanut-butter-)
 
 - [The Box Model](#the-box-model)
