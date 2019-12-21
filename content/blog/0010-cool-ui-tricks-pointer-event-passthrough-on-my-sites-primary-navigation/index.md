@@ -13,6 +13,8 @@ tags:
   - User Interface
   - Layout
   - Positioning
+  - Learning
+  - Playground
 ---
 
 import MockNavigation from "./MockNavigation"
