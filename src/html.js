@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Global, css } from "@emotion/core"
+import GlobalCss from "./GlobalCss"
 
 export default function HTML(props) {
   return (
@@ -22,42 +22,7 @@ export default function HTML(props) {
         <noscript key="noscript" id="gatsby-noscript">
           This app works best with JavaScript enabled.
         </noscript>
-        <Global
-          styles={css`
-            a {
-              color: #8a4baf;
-            }
-
-            a:link {
-            }
-
-            a:visited {
-            }
-
-            a:focus {
-            }
-
-            a:hover {
-            }
-
-            a:active {
-            }
-
-            button {
-              cursor: pointer;
-            }
-
-            header,
-            nav,
-            main,
-            footer,
-            article,
-            section,
-            aside {
-              display: block;
-            }
-          `}
-        />
+        <GlobalCss />
         <div
           css={{
             height: "100%"

@@ -29,7 +29,7 @@ const style = {
 
 function NavigationLink({ children, to, ...extraProps }) {
   return (
-    <Link css={style} to={to} {...extraProps}>
+    <Link css={style} to={to} partiallyActive {...extraProps}>
       {children}
     </Link>
   )

@@ -6,9 +6,10 @@ import { MDXProvider } from "@mdx-js/react"
 
 import * as mdxComponents from "./mdx"
 import StarryDisplay from "./StarryDisplay"
-import Navigation from "./navigation/Navigation"
+import Navigation from "./navigation"
 import { CardCss } from "./Card"
 import SiteFooter from "./SiteFooter"
+import { ActiveBreakpointContext, mediaQueries } from "./breakpoints"
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -30,9 +31,6 @@ const defaultProps = {
   rightSidebarContent: null
 }
 
-const desktopBreakpoint = "(min-width: 64rem)"
-const desktopBreakpointMq = `@media ${desktopBreakpoint}`
-
 function Layout({
   children,
   headerContent,
@@ -43,18 +41,11 @@ function Layout({
   title,
   ...otherProps
 }) {
-  const starCountRef = React.useRef()
-  const { current: starCount } = starCountRef
-
-  React.useEffect(() => {
-    // only check on mount, really we're checking if we're on a "mobile"-like
-    // device
-    const { matches: isAtDesktopBreakpoint } = window.matchMedia(
-      desktopBreakpoint
-    )
-
-    starCountRef.current = isAtDesktopBreakpoint ? 512 : 256
-  }, [])
+  const activeBreakpoint = React.useContext(ActiveBreakpointContext)
+  const starCount = React.useMemo(
+    () => (activeBreakpoint === "desktop" ? 512 : 256),
+    [activeBreakpoint]
+  )
 
   return (
     <div
@@ -70,7 +61,7 @@ function Layout({
         min-height: 100vh;
         width: 100%;
 
-        ${desktopBreakpointMq} {
+        ${mediaQueries.desktop} {
           display: grid;
           grid-template-columns: 1fr 2fr 1fr;
           grid-template-rows: 1fr auto;
@@ -89,7 +80,7 @@ function Layout({
           position: relative;
           margin-bottom: -4rem;
 
-          ${desktopBreakpointMq} {
+          ${mediaQueries.desktop} {
             padding: 0;
           }
         `}

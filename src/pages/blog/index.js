@@ -23,7 +23,8 @@ function BlogPage({ data, location }) {
             padding: "0.5rem",
             "&:hover,&:focus": {
               background: "#a44fb6"
-            }
+            },
+            whiteSpace: "nowrap"
           }}
           to="/blog/tags"
         >
