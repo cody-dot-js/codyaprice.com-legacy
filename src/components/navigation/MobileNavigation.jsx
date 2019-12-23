@@ -82,8 +82,19 @@ function MobileNavigation({ color, routes, ...otherProps }) {
             width: "100%"
           }}
         >
+          <NavigationLink to="/" partiallyActive={false}>
+            Home
+          </NavigationLink>
           {routes.map(({ to, display }) => (
-            <li key={to} css={{ margin: "1rem" }}>
+            <li
+              key={to}
+              css={{
+                margin: "1rem",
+                ":last-of-type": {
+                  marginBottom: 0
+                }
+              }}
+            >
               <NavigationLink to={to}>{display}</NavigationLink>
             </li>
           ))}
