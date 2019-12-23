@@ -84,7 +84,10 @@ function Socials({ otherLinks }) {
               fontSize: "2rem",
               padding: "1rem",
               color: "white",
-              dispaly: "block"
+              display: "block",
+              ":hover": {
+                color: "#a44fb6"
+              }
             }}
           >
             <Icon id={id} css={{ verticalAlign: "middle" }} />

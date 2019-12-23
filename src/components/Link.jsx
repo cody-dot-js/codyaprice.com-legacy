@@ -4,19 +4,21 @@ import { Link as GatsbyLink } from "gatsby"
 
 const propTypes = {
   to: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
+  partiallyActive: PropTypes.bool
 }
 
 const defaultProps = {
   to: "#",
-  children: null
+  children: null,
+  partiallyActive: false
 }
 
-function Link({ children, to, ...extraProps }) {
+function Link({ children, to, partiallyActive, ...extraProps }) {
   const isInternal = /^\/(?!\/)/.test(to)
 
   return isInternal ? (
-    <GatsbyLink to={to} {...extraProps}>
+    <GatsbyLink to={to} partiallyActive={partiallyActive} {...extraProps}>
       {children}
     </GatsbyLink>
   ) : (
