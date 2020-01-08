@@ -26,7 +26,7 @@ New year, new... quarter.
 New quarter, new... planning cycle.
 New planning cycle, ~~new...~~ same old, archaic process to appease the ~~gods~~ management.
 
-From my perspective, as a developer, four things bother me about quarterly planning, _especially so at Cerner_:
+From my perspective, as a developer, four things bother me about quarterly planning, _especially so in **E N T E R P R I S E**_:
 
 1. Big Room Planning, aka BRP
 2. Plans are consistent
