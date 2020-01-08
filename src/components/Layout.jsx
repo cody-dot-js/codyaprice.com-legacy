@@ -63,7 +63,7 @@ function Layout({
 
         ${mediaQueries.desktop} {
           display: grid;
-          grid-template-columns: 1fr 2fr 1fr;
+          grid-template-columns: 1fr 67% 1fr;
           grid-template-rows: 1fr auto;
           grid-column-gap: 1rem;
         }
@@ -98,7 +98,7 @@ function Layout({
           role="main"
           {...otherProps}
         >
-          <div css={{ margin: "0 auto", maxWidth: "40rem" }}>
+          <div css={{ margin: "0 auto", maxWidth: "50rem" }}>
             <header
               css={{
                 alignItems: "center",
