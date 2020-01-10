@@ -135,7 +135,7 @@ if (Boolean(leftHandSide) === true) {
 }
 ```
 
-This is _mostly true_, but we'll clarify how it _really works_ soon.
+This is _mostly true_, but we'll clarify how it _actually works_ next.
 The main thing to take away is that if the `leftHandSide` expression evaluates to `false`, then **_a falsey value is returned_**.
 Let's take a deeper look.
 
