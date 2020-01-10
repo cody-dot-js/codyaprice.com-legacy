@@ -112,7 +112,17 @@ But, the astute reader will notice that, for the typical dynamically-typed langu
 
 ## What's going on here?
 
-Under the hood, the dynamically-typed runtime is _coercing_ the left-hand side of the boolean expression into a boolean value, like:
+Let's look at a quick example:
+
+```js
+const leftHandSide = "some value here"
+const rightHandSide = "One Truthy Boi"
+
+const result = leftHandSide && rightHandSide
+// result = "One Truthy Boi"
+```
+
+In this case, the dynamically-typed runtime is _coercing_ the left-hand side of the boolean expression into a boolean value, like:
 
 ```js
 const leftHandSide = "some value here"
