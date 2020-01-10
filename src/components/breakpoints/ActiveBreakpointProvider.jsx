@@ -29,8 +29,6 @@ function ActiveBreakpointProvider({ children }) {
     getActiveBreakpoint(width())
   )
 
-  console.log({ activeBreakpoint })
-
   const updateActiveBreakpoint = React.useCallback(() => {
     const breakpoint = getActiveBreakpoint(width())
 
