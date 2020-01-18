@@ -6,8 +6,7 @@ function newPostNumber() {
     .readdirSync(blogsPath)
     .map(filename => parseInt(filename.split("-")[0], 10))
     .filter(Boolean)
-    .sort((l, r) => l < r)
-    .reverse()
+    .sort((l, r) => r - l)
 
   const postNumber = postNumbers[0] + 1
 
