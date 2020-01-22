@@ -325,6 +325,7 @@ Thanks for reading! 👋
   While we _do_ loop `list.length` times twice, remember to drop the leading constant!
   As in: `2*O(n)` becomes `O(n)`.
 [^2]: If you said `O(n³)`, then you are...incorrect!
+  The answer is: `O(n²)`!
   **_How's that so?!_**
   Remember what I said at the beginning of this post?
   
