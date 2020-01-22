@@ -144,7 +144,26 @@ This is also the best conceivable runtime (BCR) for that: you cannot do better t
 
 ### Space Complexity
 
-// TODO: writeme
+Say you want to write an algorithm that reverses the order of a list using a stack, which is a first in, last out list.
+This could look something like:
+
+```js
+function reverseList(list = []) {
+  const stack = new Stack();
+  list.forEach(item => stack.push(item));
+
+  let reversedList = [];
+  while (!stack.isEmpty()) {
+    reversedList.push(stack.pop());
+  }
+
+  return reversedList;
+}
+```
+
+The stack used grows proportional to the size of the given input list.
+It grows linearly with the input list size, so we use an extra `O(n)` space!
+What's the runtime of this algorithm? [^1]
 
 ## Quadratic: O(n²)
 
@@ -158,9 +177,27 @@ So, this operates just like a single array sized `M`, but now you have to print 
 So, the generic runtime of printing out a `2D grid` is `O(M * N)`, but if `M = N` (if the `grid` is a square, e.g. `4 x 4`), then you have `N * N == n²`, or `O(n²)`.
 And again, the BCR here is `O(n²)` because you have to touch every element in the `grid` and there are `N * N` of them.
 
+Let's try an example!
+
+```js
+function doSomeGridWork(grid, rows, columns) {
+  for (let row = 0; row < rows; row += 1) {
+    for (let col = 0; col < columns; col += 1) {
+      for (let k = 0; k < 100000; k += 1) {
+        console.log(`k = ${k}, grid[${row}][${col}] = ${grid[row][col]}`);
+      }
+    }
+  }
+}
+```
+
+What's the runtime of this code? [^2]
+
 ### Space Complexity
 
-// TODO: writeme
+Quadratic space complexity is similar to linear space complexity.
+If you have an `MxN` `2D grid`, but use something like a `queue` or `stack` to keep track of all unprocessed cells, then you will need to store `O(M * N)` items.
+The space required in the storage grows proportional to `O(n²)`.
 
 ---
 
@@ -194,7 +231,52 @@ That's 30 vs 1B searches in the worst case!
 
 ### Space Complexity
 
-// TODO: writeme
+For the binary search, you can do it with an iterative approach, like so:
+
+```js
+function binarySearchIterative(sortedList = [], key) {
+  let start = 0;
+  let end = sortedList.length - 1;
+
+  while (start <= end) {
+    const middle = Math.floor(start + (end - start) / 2);
+
+    if (sortedList[middle] < key) {
+      start = middle + 1;
+    } else if (sortedList[middle] > key) {
+      end = middle - 1;
+    } else {
+      return middle;
+    }
+  }
+
+  return -1;
+}
+```
+
+This runs in logarithmic time, but has constant space complexity.
+You can also use _recursion_ to perform binary search:
+
+```js
+function binarySearchRecursive(sortedList = [], key, start, end) {
+  if (!sortedList || !sortedList.length || end < start) {
+    return -1;
+  }
+
+  const middle = Math.floor(start + (end - start) / 2);
+
+  if (key === sortedList[middle]) {
+    return middle;
+  } else if (key < sortedList[middle]) {
+    return binarySearchRecursive(sortedList, key, start, middle - 1);
+  } else {
+    return binarySearchRecursive(sortedList, key, middle + 1, end);
+  }
+}
+```
+
+This also runs in logarithmic time.
+However, when it comes to space complexity, this is `O(log n)`, can you tell why? [^3]
 
 ## Linearithmic: O(n * log n)
 
@@ -231,4 +313,25 @@ Looking back at the table at the start of this post, at `n = 20`, it takes 77.1 
 
 ## Conclusion
 
-// TODO: writeme
+In practice, algorithmic `time` and `space` complexity follows common patterns that I have outlined in this post.
+Big O notation is simply a way to describe them in a way that is independent of environmental or system factors.
+I hope this has been helpful!
+Please comment below if you have any thoughts or questions and be sure to share on your favorite social media too!
+Thanks for reading! 👋
+
+[^1]: The runtime of this algorithm is linear, `O(n)`.
+  While we _do_ loop `list.length` times twice, remember to drop the leading constant!
+  As in: `2*O(n)` becomes `O(n)`.
+[^2]: If you said `O(n³)`, then you are...incorrect!
+  **_How's that so?!_**
+  Remember what I said at the beginning of this post?
+  > [Big O] only depends on your inputs
+  The inner-most `for loop` runs the _same number of times **independent of the input**_.
+  In our case, it will always run 100000 times.
+  So, you can think of that as one incredibly slow operation that always runs the same number of times, even if rows and columns are small!
+  This one is a tricky lil' curveball for sure! ⚾️
+[^3]: The recursive binary search algorithm has **_logarithmic space complexity_** because it uses recursion.
+  With recursion, you get a "free" stack, the calling stack, which is used on each function call.
+  Since the algorithm calls itself at most `log n` times, the stack will have at most `log n` entries on it.
+  This space usage doesn't come for free, so you have to be aware of it and account for it!
+  If you recurse too much, you can cause a stack overflow!
