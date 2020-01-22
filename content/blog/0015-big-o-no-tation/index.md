@@ -19,6 +19,8 @@ tags:
   Photo by <a href="https://unsplash.com/@romankraft">Roman Kraft</a> on <a href="https://unsplash.com/s/photos/scale">Unsplash</a>
 </figcaption>
 
+I felt inspired because of [this twitter thread](https://twitter.com/devcprice/status/1218468406934016001) to make a dedicated post on Big O notation and what it means for runtime and space complexity.
+
 **TLDR:** Big O notation, the _"easy"_ way: Big O describes how things scale by their inputs, for both `time` and `space` complexity.
 
 > Commit this to memory: it only depends on your inputs.
