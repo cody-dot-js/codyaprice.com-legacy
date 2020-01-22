@@ -327,7 +327,9 @@ Thanks for reading! 👋
 [^2]: If you said `O(n³)`, then you are...incorrect!
   **_How's that so?!_**
   Remember what I said at the beginning of this post?
+  
   > [Big O] only depends on your inputs
+  
   The inner-most `for loop` runs the _same number of times **independent of the input**_.
   In our case, it will always run 100000 times.
   So, you can think of that as one incredibly slow operation that always runs the same number of times, even if rows and columns are small!
