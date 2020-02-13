@@ -60,6 +60,7 @@ I have my faults and my weaknesses, but they will not hold me back.
 
 > But he said to me, "My grace is enough for you, for my power is made perfect in weakness."
 > So then, I will boast most gladly about my weaknesses, so that the power of Christ may reside in me.
+>
 > 2 Corinthians 9 (NET)
 
 So yes, I **_am_** good enough.
