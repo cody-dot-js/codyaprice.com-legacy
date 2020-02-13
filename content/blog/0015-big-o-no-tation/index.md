@@ -3,14 +3,14 @@ title: Big O(no) ...tation
 date: 2020-01-22T00:21:14.249Z
 description: "Big O describes how things scale by their inputs, for both `time` and `space` complexity."
 tags:
- - Development
- - Web
- - Programming
- - Code
- - Algorithms
- - Design
- - Performance
- - Scalability
+  - Development
+  - Web
+  - Programming
+  - Code
+  - Algorithms
+  - Design
+  - Performance
+  - Scalability
 ---
 
 ![Photo by Roman Kraft on Unsplash](./hero-image.jpg)
@@ -55,13 +55,13 @@ This is a common approach in many algorithms, especially in dynamic programming,
 
 The most common Big O orders of algorithms that you will find, in orders of growth rate from low to high, are:
 
-* constant: `O(1)`
-* logarithmic: `O(log n)`
-* linear: `O(n)`
-* linearithmic: `O(n * log n)`
-* quadratic: `O(n²)`
-* exponential: `O(2ⁿ)`
-* factorial: `O(n!)`
+- constant: `O(1)`
+- logarithmic: `O(log n)`
+- linear: `O(n)`
+- linearithmic: `O(n * log n)`
+- quadratic: `O(n²)`
+- exponential: `O(2ⁿ)`
+- factorial: `O(n!)`
 
 Here's a graph of the growth of each of these from Wikipedia.
 This shows what each order tends to as they approach larger `n` inputs.
@@ -128,8 +128,8 @@ Notice that just like time complexity, the additional space needed does not grow
 An example of this is holding primitive values as variables in your code, like:
 
 ```js
-const time = new Date().toString(); // a string literal, independent of any input
-const count = 100; // an integer literal, independent of any input
+const time = new Date().toString() // a string literal, independent of any input
+const count = 100 // an integer literal, independent of any input
 ```
 
 ## Linear: O(n)
@@ -142,7 +142,7 @@ What does that mean?
 Well, you have to access every element (which happens in constant time `O(1)`), but there are `n` elements in the list, so this is an `O(n)` algorithm.
 Stated another way, it takes longer to print out the array when there are more items in the array (and specifically, this is a linear relationship).
 For every new item you add to the list, the time to print out the whole list grows by one.
-This is also the best conceivable runtime (BCR) for that: you cannot do better than `O(n)` for printing all elements of an array _because you have to touch all `n` items in the list.
+This is also the best conceivable runtime (BCR) for that: you cannot do better than `O(n)` for printing all elements of an array \_because you have to touch all `n` items in the list.
 
 ### Space Complexity
 
@@ -151,15 +151,15 @@ This could look something like:
 
 ```js
 function reverseList(list = []) {
-  const stack = new Stack();
-  list.forEach(item => stack.push(item));
+  const stack = new Stack()
+  list.forEach(item => stack.push(item))
 
-  let reversedList = [];
+  let reversedList = []
   while (!stack.isEmpty()) {
-    reversedList.push(stack.pop());
+    reversedList.push(stack.pop())
   }
 
-  return reversedList;
+  return reversedList
 }
 ```
 
@@ -186,7 +186,7 @@ function doSomeGridWork(grid, rows, columns) {
   for (let row = 0; row < rows; row += 1) {
     for (let col = 0; col < columns; col += 1) {
       for (let k = 0; k < 100000; k += 1) {
-        console.log(`k = ${k}, grid[${row}][${col}] = ${grid[row][col]}`);
+        console.log(`k = ${k}, grid[${row}][${col}] = ${grid[row][col]}`)
       }
     }
   }
@@ -237,22 +237,22 @@ For the binary search, you can do it with an iterative approach, like so:
 
 ```js
 function binarySearchIterative(sortedList = [], key) {
-  let start = 0;
-  let end = sortedList.length - 1;
+  let start = 0
+  let end = sortedList.length - 1
 
   while (start <= end) {
-    const middle = Math.floor(start + (end - start) / 2);
+    const middle = Math.floor(start + (end - start) / 2)
 
     if (sortedList[middle] < key) {
-      start = middle + 1;
+      start = middle + 1
     } else if (sortedList[middle] > key) {
-      end = middle - 1;
+      end = middle - 1
     } else {
-      return middle;
+      return middle
     }
   }
 
-  return -1;
+  return -1
 }
 ```
 
@@ -262,17 +262,17 @@ You can also use _recursion_ to perform binary search:
 ```js
 function binarySearchRecursive(sortedList = [], key, start, end) {
   if (!sortedList || !sortedList.length || end < start) {
-    return -1;
+    return -1
   }
 
-  const middle = Math.floor(start + (end - start) / 2);
+  const middle = Math.floor(start + (end - start) / 2)
 
   if (key === sortedList[middle]) {
-    return middle;
+    return middle
   } else if (key < sortedList[middle]) {
-    return binarySearchRecursive(sortedList, key, start, middle - 1);
+    return binarySearchRecursive(sortedList, key, start, middle - 1)
   } else {
-    return binarySearchRecursive(sortedList, key, middle + 1, end);
+    return binarySearchRecursive(sortedList, key, middle + 1, end)
   }
 }
 ```
@@ -280,7 +280,7 @@ function binarySearchRecursive(sortedList = [], key, start, end) {
 This also runs in logarithmic time.
 However, when it comes to space complexity, this is `O(log n)`, can you tell why? [^3]
 
-## Linearithmic: O(n * log n)
+## Linearithmic: O(n \* log n)
 
 This comes into play mostly with sorting: e.g. merge sort and quicksort.
 Both of these operate on `n` items in a list (hence the first `n` term in `n * log n`).
@@ -296,14 +296,14 @@ The inverse of `O(log n)`.
 This will make more sense when you get into binary trees, but if you keep doubling your size as N increases, you grow very fast.
 Think about the powers of two and how fast they grow (doubling):
 
-* 2⁰ = 1
-* 2¹ = 2
-* 2² = 4
-* 2³ = 8
-* 2⁸ = 256
-* 2¹⁰ = 1024
-* 2²⁰ = 1 million
-* 2³⁰ = 1 billion
+- 2⁰ = 1
+- 2¹ = 2
+- 2² = 4
+- 2³ = 8
+- 2⁸ = 256
+- 2¹⁰ = 1024
+- 2²⁰ = 1 million
+- 2³⁰ = 1 billion
 
 Notice the exponent cleanly matches with the number of times you need to search in binary search!
 
@@ -321,21 +321,29 @@ I hope this has been helpful!
 Please comment below if you have any thoughts or questions and be sure to share on your favorite social media too!
 Thanks for reading! 👋
 
-[^1]: The runtime of this algorithm is linear, `O(n)`.
+[^1]:
+
+  The runtime of this algorithm is linear, `O(n)`.
   While we _do_ loop `list.length` times twice, remember to drop the leading constant!
   As in: `2*O(n)` becomes `O(n)`.
-[^2]: If you said `O(n³)`, then you are...incorrect!
+
+[^2]:
+
+  If you said `O(n³)`, then you are...incorrect!
   The answer is: `O(n²)`!
   **_How's that so?!_**
   Remember what I said at the beginning of this post?
-  
+
   > [Big O] only depends on your inputs
-  
+
   The inner-most `for loop` runs the _same number of times **independent of the input**_.
   In our case, it will always run 100000 times.
   So, you can think of that as one incredibly slow operation that always runs the same number of times, even if rows and columns are small!
   This one is a tricky lil' curveball for sure! ⚾️
-[^3]: The recursive binary search algorithm has **_logarithmic space complexity_** because it uses recursion.
+
+[^3]:
+
+  The recursive binary search algorithm has **_logarithmic space complexity_** because it uses recursion.
   With recursion, you get a "free" stack, the calling stack, which is used on each function call.
   Since the algorithm calls itself at most `log n` times, the stack will have at most `log n` entries on it.
   This space usage doesn't come for free, so you have to be aware of it and account for it!

@@ -1,17 +1,17 @@
 ---
 title: Am I good enough?
 date: 2020-02-12T23:26:59.792Z
-description: '`opportunities.reject { |person| person.is? :cody }`'
+description: "`opportunities.reject { |person| person.is? :cody }`"
 tags:
- - Introspection
- - Rejection
- - Life
- - Mental Health
- - Self Worth
- - Skill
- - Competency
- - Lesson
- - Imposter Syndrome
+  - Introspection
+  - Rejection
+  - Life
+  - Mental Health
+  - Self Worth
+  - Skill
+  - Competency
+  - Lesson
+  - Imposter Syndrome
 ---
 
 ![Photo by Anthony Tori on Unsplash](./hero-image.jpg)
