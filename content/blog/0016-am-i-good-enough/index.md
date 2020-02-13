@@ -41,14 +41,19 @@ On the one hand, I want to sulk.
 I want to be sad and recognize my sadness.
 I want to be heard and understood by how I feel.
 I want to meditate on why I was not good enough.
+I feel like an imposter.
+_Am I good enough?_
+Are **_they_** right?
 
 On the other, I am finding that fire burns within me.
 I know that I am good enough to pursue my passions.
 I know that I am beautifully and intelligently made with purpose and perfect intent.
+There is a time and a place for everything.
 
 ## I cannot dwell
 
 I know the path forward, but I need to be patient.
+My self-worth is not a function of what has happened.
 The process takes time.
 I'm going to take the night for introspection, but I cannot help but see this situation as a gift and an opportunity.
 I have my faults and my weaknesses, but they will not hold me back.
