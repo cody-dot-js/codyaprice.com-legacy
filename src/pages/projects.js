@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { Layout, SEO } from "../components"
+import { PostLayout, SEO } from "../components"
 
 function ProjectsPage({ data, location }) {
   return (
-    <Layout location={location} title="Projects">
+    <PostLayout location={location} title="Projects">
       <SEO title="Projects" />
       <p>
         <span role="img" aria-label="construction sign">
@@ -18,7 +18,7 @@ function ProjectsPage({ data, location }) {
       </p>
       <hr />
       <p>It's</p>
-    </Layout>
+    </PostLayout>
   )
 }
 

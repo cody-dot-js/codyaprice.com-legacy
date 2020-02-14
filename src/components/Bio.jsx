@@ -29,7 +29,7 @@ function Bio({ ...props }) {
 
   const { author } = data.site.siteMetadata
   return (
-    <div {...props}>
+    <div css={{ maxWidth: "50rem", margin: "0 auto" }} {...props}>
       <h1
         css={{
           color: "#fff",

@@ -3,17 +3,9 @@ import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import {
-  Bio,
-  Commento,
-  PostLayout,
-  ReadingProgress,
-  SEO,
-  Tags
-} from "../components"
+import { Commento, PostLayout, ReadingProgress, SEO, Tags } from "../components"
 import { rhythm } from "../utils/typography"
 import formatReadingTime from "../utils/formatReadingTime"
-import formatModifiedTime from "../utils/formatModifiedTime"
 
 function BlogPost({ data, location, pageContext }) {
   const { mdx: post } = data
@@ -53,16 +45,15 @@ function BlogPost({ data, location, pageContext }) {
                 __html: post.fields.hero.caption
               }}
             />
-            <MDXRenderer>{post.body}</MDXRenderer>
+            <div css={{ margin: "0 auto", maxWidth: "50rem" }}>
+              <MDXRenderer>{post.body}</MDXRenderer>
+            </div>
           </div>
           <hr
             css={{
               marginBottom: rhythm(1)
             }}
           />
-          <footer>
-            <Bio />
-          </footer>
         </article>
         <nav>
           <ul

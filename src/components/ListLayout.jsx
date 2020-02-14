@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { MDXProvider } from "@mdx-js/react"
 
-import Card from "./Card"
 import Layout from "./Layout"
 import * as mdxComponents from "./mdx"
 
