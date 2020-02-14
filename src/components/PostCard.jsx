@@ -15,8 +15,8 @@ const propTypes = {
   description: PropTypes.node,
   tags: PropTypes.arrayOf(PropTypes.string),
   slug: PropTypes.string.isRequired,
-  date: PropTypes.object.isRequired,
-  timeToRead: PropTypes.string.isRequired
+  date: PropTypes.string.isRequired,
+  timeToRead: PropTypes.number.isRequired
 }
 
 const defaultProps = {
@@ -81,18 +81,14 @@ function PostCard({
             {` • ${formatReadingTime(timeToRead)}`}
           </small>
         </header>
-        <section
+        <div
           css={css`
             flex: 1;
           `}
-        >
-          <p
-            css={{ margin: 0 }}
-            dangerouslySetInnerHTML={{
-              __html: description
-            }}
-          />
-        </section>
+          dangerouslySetInnerHTML={{
+            __html: description
+          }}
+        />
         <Tags list={tags} />
         <Link
           css={css`
