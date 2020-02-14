@@ -2,5 +2,6 @@
   "name": "codyaprice.com",
   "version": 2,
   "public": true,
-  "github": { "enabled": true }
+  "github": { "enabled": true },
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
