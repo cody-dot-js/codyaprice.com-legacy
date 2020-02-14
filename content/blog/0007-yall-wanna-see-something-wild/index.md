@@ -181,7 +181,11 @@ And by briefly talk about, I really just mean referencing a tweet from [@ryanflo
 
 A quick and helpful guide on `React.useEffect()`:
 
-https://twitter.com/ryanflorence/status/1125041041063665666?lang=en
+![Ryan Florence on Twitter: "@dan_abramov @_developit @mjackson The question is not "when does this effect run" the question is "with which state does this effect synchronize with" useEffect(fn) // all state useEffect(fn, []) // no state useEffect(fn, [these, states])"](./images/ryan-florence-use-effect.png)
+
+<figcaption>
+  Tweet: <a href="https://twitter.com/ryanflorence/status/1125041041063665666?lang=en">Ryan Florence (@ryanflorence) May 5, 2019</a>
+</figcaption>
 
 Now that that's out of the way, let's see some code, Cody! 🤓
 

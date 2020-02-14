@@ -86,16 +86,6 @@ module.exports = {
         gatsbyRemarkPlugins: [
           "gatsby-remark-numbered-footnotes",
           {
-            resolve: "@weknow/gatsby-remark-twitter",
-            options: {
-              align: "center",
-              theme: "dark",
-              debug: true,
-              hideMedia: false,
-              hideThread: true
-            }
-          },
-          {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 800

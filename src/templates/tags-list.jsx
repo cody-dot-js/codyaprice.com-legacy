@@ -6,13 +6,11 @@ import { ListLayout, SEO, PostCard } from "../components"
 function TagsList({ data, location, pageContext }) {
   const posts = data.allMdx.edges
   const { tag, count } = pageContext
+  const title = `All Blog Posts with Tag: ${tag} (${count})`
 
   return (
-    <ListLayout
-      location={location}
-      title={`All Blog Posts with Tag: ${tag} (${count})`}
-    >
-      <SEO title="All Blog Posts" />
+    <ListLayout location={location} title={title}>
+      <SEO title={title} />
       {posts.map(({ node }) => (
         <article key={node.fields.slug}>
           <PostCard

@@ -99,7 +99,7 @@ it's still _**different**_. There's a small learning curve and there's not
 nearly as much community support (yet). This isn't svelte's fault, but it plays
 a factor in how fast I can iterate on features and development for my website.
 
-<https://twitter.com/veneficaultrix/status/1003039904346132481?s=20>
+![elf on the shelf on Twitter: "Why is nobody talking about the mouth feel"](./images/elf-mouthfeel.png)
 
 <figcaption class="tweet">
   Why aren't we talking about the mouthfeel, y'all? 🤔
@@ -135,7 +135,7 @@ and go from there. I needed some help and perhaps some guidance. When I woke up
 yesterday around 6am, I opened twitter on my phone and at the top of my feed was
 a [@ken_wheeler](https://twitter.com/ken_wheeler) tweet:
 
-<https://twitter.com/ken_wheeler/status/1163760360693874688?s=20>
+![Ken Wheeler on Twitter: "@rickhanlonii The best practice is shipping"](./images/ken-best-practice-is-shipping.png)
 
 <figcaption class="tweet">
   Ken Wheeler spittin' facts: Best practice === ship it
@@ -207,7 +207,7 @@ Sounds like React, like JavaScript, will be a safe
 [bet](http://brendaneich.github.io/ModernWeb.tw-2015/#74)
 for the near future.
 
-<https://twitter.com/horse_js/status/1164512598454394881?s=21>
+![Horse JS on Twitter: "Svelte is probably better, I don’t know but I’m pretty sure it is. But"](./images/horsejs-svelte-is-probably-better.png)
 
 <figcaption class="tweet">
   Svelte is probably maybe better.. at some things.
