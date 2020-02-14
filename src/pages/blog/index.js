@@ -36,7 +36,11 @@ function BlogPage({ data, location }) {
         <article key={node.fields.slug}>
           <PostCard
             date={node.frontmatter.date}
-            description={node.fields.descriptionMd}
+            description={
+              node.fields.descriptionMd ||
+              node.frontmatter.description ||
+              node.excerpt
+            }
             imageAlt={node.fields.hero.alt}
             imageSrc={node.fields.hero.src.childImageSharp.fluid}
             slug={node.fields.slug}
@@ -76,7 +80,7 @@ export const pageQuery = graphql`
             tags
             hero {
               src {
-                ...heroImage320
+                ...heroImage640
               }
               alt
               caption

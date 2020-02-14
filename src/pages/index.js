@@ -17,7 +17,11 @@ function PortfolioIndex({ data, location }) {
         <article key={latestPost.fields.slug}>
           <PostCard
             date={latestPost.frontmatter.date}
-            description={latestPost.fields.descriptionMd}
+            description={
+              latestPost.fields.descriptionMd ||
+              latestPost.frontmatter.description ||
+              latestPost.excerpt
+            }
             imageAlt={latestPost.fields.hero.alt}
             imageSrc={latestPost.fields.hero.src.childImageSharp.fluid}
             slug={latestPost.fields.slug}
@@ -57,7 +61,7 @@ export const pageQuery = graphql`
             tags
             hero {
               src {
-                ...heroImage320
+                ...heroImage640
               }
               alt
               caption
