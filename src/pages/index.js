@@ -1,60 +1,37 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { Bio, Layout, Link, SEO, Tags } from "../components"
-import formatReadingTime from "../utils/formatReadingTime"
-import formatModifiedTime from "../utils/formatModifiedTime"
+import { Bio, Layout, SEO, PostCard } from "../components"
 
-function BlogIndex({ data, location }) {
+function PortfolioIndex({ data, location }) {
   const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMdx.edges
+  const { node: latestPost } = data.allMdx.edges[0]
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Cody Price's Portfolio Site" />
       <Bio />
-      {posts.map(({ node }) => (
-        <article key={node.fields.slug}>
-          <header>
-            <h2
-              css={{
-                marginBottom: "0.5rem"
-              }}
-            >
-              <Link to={node.fields.slug}>
-                {node.frontmatter.title || node.fields.slug}
-              </Link>
-            </h2>
-            <small css={{ display: "block" }}>
-              {node.frontmatter.date}
-              {` • ${formatReadingTime(node.timeToRead)}`}
-            </small>
-          </header>
-          <section>
-            <p
-              css={{ margin: 0 }}
-              dangerouslySetInnerHTML={{
-                __html: node.fields.descriptionMd || node.excerpt
-              }}
-            />
-            <small
-              css={{
-                display: "block",
-                marginBottom: "0.5rem",
-                color: "rgba(0, 0, 0, 0.54)"
-              }}
-            >
-              {formatModifiedTime(node.fields.modifiedTime)}
-            </small>
-            <Tags list={node.fields.tags} />
-          </section>
+      <hr />
+      <section css={{ pointerEvents: "auto" }}>
+        <h2>Latest Post</h2>
+        <article key={latestPost.fields.slug}>
+          <PostCard
+            date={latestPost.frontmatter.date}
+            description={latestPost.fields.descriptionMd}
+            imageAlt={latestPost.fields.hero.alt}
+            imageSrc={latestPost.fields.hero.src.childImageSharp.fluid}
+            slug={latestPost.fields.slug}
+            tags={latestPost.fields.tags}
+            timeToRead={latestPost.timeToRead}
+            title={latestPost.frontmatter.title}
+          />
         </article>
-      ))}
+      </section>
     </Layout>
   )
 }
 
-export default BlogIndex
+export default PortfolioIndex
 
 export const pageQuery = graphql`
   query {
@@ -78,6 +55,13 @@ export const pageQuery = graphql`
             modifiedTime
             slug
             tags
+            hero {
+              src {
+                ...heroImage320
+              }
+              alt
+              caption
+            }
           }
         }
       }

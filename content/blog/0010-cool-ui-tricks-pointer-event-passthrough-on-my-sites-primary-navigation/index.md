@@ -15,20 +15,18 @@ tags:
   - Positioning
   - Learning
   - Playground
+hero:
+  src: ./images/hero-image.jpg
+  alt: "Photo by Aleks Dahlberg on Unsplash"
+  caption: "Photo by [Aleks Dahlberg](https://unsplash.com/@aleksdahlberg) on [Unsplash](https://unsplash.com/s/photos/transparent)"
 ---
 
-import MockNavigation from "./MockNavigation"
-import BoxModel from "./BoxModel"
-import RelativePositioning from "./RelativePositioning"
-import AbsolutePositioning from "./AbsolutePositioning"
-import StackingContexts from "./StackingContexts"
-import DestroyAllClicks from "./DestroyAllClicks"
-
-![Photo by Aleks Dahlberg on Unsplash](./hero-image.jpg)
-
-<figcaption>
-  Photo by <a href="https://unsplash.com/@aleksdahlberg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Aleks Dahlberg</a> on <a href="https://unsplash.com/s/photos/transparent?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-</figcaption>
+import MockNavigation from "./components/MockNavigation"
+import BoxModel from "./components/BoxModel"
+import RelativePositioning from "./components/RelativePositioning"
+import AbsolutePositioning from "./components/AbsolutePositioning"
+import StackingContexts from "./components/StackingContexts"
+import DestroyAllClicks from "./components/DestroyAllClicks"
 
 > "You have to be transparent so you no longer ~~cast a shadow~~ block clicks but instead let the ~~light~~ clicks pass through you" - Kamand Kojouri..._ish_
 
@@ -46,7 +44,7 @@ It's worth it, trust me. 🤞
   Also, you can skip around if you already know some parts or if you ain't interested in the juicy deets. 💅
 </small>
 
-![Ight imma head out. 🧽🚶‍♂️](./ight-imma-head-out.png)
+![Ight imma head out. 🧽🚶‍♂️](./images/ight-imma-head-out.png)
 
 <figcaption>
   Ight imma head out. 🧽🚶‍♂️
@@ -59,7 +57,7 @@ Back to the post.
 I recently updated my primary navigation.
 You know, this thing:
 
-![Primary navigation, with minor annotations.](./primary-navigation.png)
+![Primary navigation, with minor annotations.](./images/primary-navigation.png)
 
 <figcaption>
   Primary navigation, with minor annotations.
@@ -69,7 +67,7 @@ Underneath the primary navigation is a [stripe](https://www.stripe.com) inspired
 Inside the clipped header is a `<canvas>` element that renders a starry background that you can interact with through hover and clicking.
 Hovering produces a _"brightening"_ effect on stars adjacent to the mouse, like so:
 
-![Navigation mouse hover animation](./navigation-hover.gif)
+![Navigation mouse hover animation](./images/navigation-hover.gif)
 
 <figcaption>
   Navigation mouse hover animation
@@ -77,7 +75,7 @@ Hovering produces a _"brightening"_ effect on stars adjacent to the mouse, like 
 
 And clicking allows you to _"blow up"_ the stars, blasting them in all directions:
 
-![Navigation mouse click interaction](./navigation-click.gif)
+![Navigation mouse click interaction](./images/navigation-click.gif)
 
 <figcaption>
   Navigation mouse click interaction
@@ -88,7 +86,7 @@ And clicking allows you to _"blow up"_ the stars, blasting them in all direction
 The navigation is rather delightful to play with.
 Unfortunately, you originally could not click or hover on the region between my name and the navigation links.
 
-![Call my navigation Sprint because this was a dead zone, my friend. 🤙](./annotated-primary-navigation.png)
+![Call my navigation Sprint because this was a dead zone, my friend. 🤙](./images/annotated-primary-navigation.png)
 
 <figcaption>
   Call my navigation Sprint because this was a dead zone, my friend. 🤙
@@ -96,7 +94,7 @@ Unfortunately, you originally could not click or hover on the region between my 
 
 Even though there doesn't appear to be anything between my name and the list of links, pointer interactions fail to register!
 
-![The navigation blocks any interactions with the stars! 🙅‍♂️](./navigation-blocks-interaction.gif)
+![The navigation blocks any interactions with the stars! 🙅‍♂️](./images/navigation-blocks-interaction.gif)
 
 <figcaption>
   The navigation blocks any interactions with the stars! 🙅‍♂️
@@ -146,7 +144,7 @@ I want to explain more on why this wall exists, but first, here's the same examp
 
 When the navigation bounds are visible, but we remove the _"invisible wall"_, the background can receive our click!
 
-![Still image: The click passes through the navigation region and registers on the background!](./click-passthrough.png)
+![Still image: The click passes through the navigation region and registers on the background!](./images/click-passthrough.png)
 
 <figcaption>
   Still image: The click passes through the navigation region and registers on the background!
@@ -208,7 +206,7 @@ Let's look at the simplified DOM of my navigation with minimal styling using [em
 
 Notice that we turn off all `pointer-events` on the parent element and then selectively turn `pointer-events` back on for **_specific children_**.
 
-![If you're saying I play favorites, you're wrong. I love all my children equally.](./i-love-all-my-children-equally.gif)
+![If you're saying I play favorites, you're wrong. I love all my children equally.](./images/i-love-all-my-children-equally.gif)
 
 <figcaption>
   If you're saying I play favorites, you're wrong. I love all my children equally.
@@ -218,7 +216,7 @@ Notice that we turn off all `pointer-events` on the parent element and then sele
 
 There's a lot to unpack here, so let's get down to business.
 
-![Let's get down to business!](./lets-get-down-to-business.gif)
+![Let's get down to business!](./images/lets-get-down-to-business.gif)
 
 <figcaption>
   Let's get down to business!
@@ -246,7 +244,7 @@ First, let's talk through the box model.
 
 #### The Box Model
 
-![The boxing model, probably a derivative of or adjacent to border-box 🥁🤷‍♂️😂](./boxing.gif)
+![The boxing model, probably a derivative of or adjacent to border-box 🥁🤷‍♂️😂](./images/boxing.gif)
 
 <figcaption>
   The boxing model, probably a derivative of or adjacent to border-box 🥁🤷‍♂️😂
@@ -258,7 +256,7 @@ According to MDN's [box model docs](https://developer.mozilla.org/en-US/docs/Web
 
 > Every box is composed of four parts (or areas), defined by their respective edges: the content edge, padding edge, border edge, and margin edge.
 
-![MDN's Box Model Graphic](./mdn-box-model.png)
+![MDN's Box Model Graphic](./images/mdn-box-model.png)
 
 <figcaption>
   MDN's Box Model Graphic
@@ -384,7 +382,7 @@ This will come in handy down below in the [stacking contexts subsection](#stacki
 
 ##### Absolute Positioning
 
-![Only a Sith deals in absolutes.](./only-a-sith-deals-in-absolutes.gif)
+![Only a Sith deals in absolutes.](./images/only-a-sith-deals-in-absolutes.gif)
 
 <figcaption>
   Only a Sith deals in absolutes.

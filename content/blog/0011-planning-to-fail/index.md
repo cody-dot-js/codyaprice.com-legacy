@@ -9,13 +9,11 @@ tags:
   - Kanban
   - Backlog
   - Quarterly Planning
+hero:
+  src: ./images/hero-image.jpg
+  alt: "Photo by Med Badr Chemmaoui on Unsplash"
+  caption: "Photo by [M]ed Badr Chemmaoui](https://unsplash.com/@medbadrc) on [Unsplash](https://unsplash.com/s/photos/plan)"
 ---
-
-![Photo by Med Badr Chemmaoui on Unsplash](./hero-image.jpg)
-
-<figcaption>
-  Photo by <a href="https://unsplash.com/@medbadrc">Med Badr Chemmaoui</a> on <a href="https://unsplash.com/s/photos/plan">Unsplash</a>
-</figcaption>
 
 > Planning may be valuable, but the plan is worthless the moment it is created.
 

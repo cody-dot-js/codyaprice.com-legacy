@@ -2,15 +2,13 @@ import React from "react"
 import { graphql } from "gatsby"
 import { FaTags } from "react-icons/fa"
 
-import { Layout, Link, SEO, Tags } from "../../components"
-import formatReadingTime from "../../utils/formatReadingTime"
-import formatModifiedTime from "../../utils/formatModifiedTime"
+import { Link, ListLayout, PostCard, SEO } from "../../components"
 
 function BlogPage({ data, location }) {
   const posts = data.allMdx.edges
 
   return (
-    <Layout
+    <ListLayout
       location={location}
       title="All Blog Posts"
       headerContent={
@@ -36,42 +34,19 @@ function BlogPage({ data, location }) {
       <SEO title="All Blog Posts" />
       {posts.map(({ node }) => (
         <article key={node.fields.slug}>
-          <header>
-            <h2
-              css={{
-                marginBottom: "0.5rem"
-              }}
-            >
-              <Link to={node.fields.slug}>
-                {node.frontmatter.title || node.fields.slug}
-              </Link>
-            </h2>
-            <small css={{ display: "block" }}>
-              {node.frontmatter.date}
-              {` • ${formatReadingTime(node.timeToRead)}`}
-            </small>
-          </header>
-          <section>
-            <p
-              css={{ margin: 0 }}
-              dangerouslySetInnerHTML={{
-                __html: node.fields.descriptionMd || node.excerpt
-              }}
-            />
-            <small
-              css={{
-                display: "block",
-                marginBottom: "1rem",
-                color: "rgba(0, 0, 0, 0.54)"
-              }}
-            >
-              {formatModifiedTime(node.fields.modifiedTime)}
-            </small>
-            <Tags list={node.fields.tags} />
-          </section>
+          <PostCard
+            date={node.frontmatter.date}
+            description={node.fields.descriptionMd}
+            imageAlt={node.fields.hero.alt}
+            imageSrc={node.fields.hero.src.childImageSharp.fluid}
+            slug={node.fields.slug}
+            tags={node.fields.tags}
+            timeToRead={node.timeToRead}
+            title={node.frontmatter.title}
+          />
         </article>
       ))}
-    </Layout>
+    </ListLayout>
   )
 }
 
@@ -99,6 +74,13 @@ export const pageQuery = graphql`
             modifiedTime
             slug
             tags
+            hero {
+              src {
+                ...heroImage320
+              }
+              alt
+              caption
+            }
           }
         }
       }

@@ -12,13 +12,13 @@ tags:
   - VoiceOver
 redirect_from:
   - /how-ios-voiceover-demonstrates-the-power-and-flexibility-of-react/
+hero:
+  src: ./images/react-logo.png
+  alt: React.js Logo
+  caption: React.js Logo
 ---
 
 > This was originally posted on [Medium on June 7, 2019](https://medium.com/swlh/how-ios-voiceover-demonstrates-the-power-and-flexibility-of-react-5369679b6a6b)
-
-![React.js Logo](react-logo.png)
-
-<figcaption>React.js Logo</figcaption>
 
 I was recently blessed with the opportunity to work on an extremely
 high-priority project which aimed to fix an accessibility bug in a multi-select
@@ -41,7 +41,7 @@ Django template and then enhanced/decorated with an external dependency. The
 component in question was actually using a
 [popular JavaScript dropreadown library: Select2](https://select2.org/).
 
-![select2 MultiSelect Example](select-2-multiselect-example.png)
+![select2 MultiSelect Example](./images/select-2-multiselect-example.png)
 
 <figcaption>Select2 MultiSelect Example</figcaption>
 
@@ -88,7 +88,7 @@ Given this list, in a simplified world, when you render a Select2 multi-select
 around a hidden input (used for your form submission), your screen will look
 like:
 
-![select2 Example Rendering with List of Colors](select2-example-rendering-with-colors.png)
+![select2 Example Rendering with List of Colors](./images/select2-example-rendering-with-colors.png)
 
 <figcaption>
   Example Select2 rendering given the data list of colors above
@@ -147,7 +147,7 @@ If you answered that the next navigation swipe lands on the dropdown options,
 then you are sadly mistaken my friend 😢.
 [WAT](https://www.destroyallsoftware.com/talks/wat). WAT indeed..
 
-![This is NOT what iOS VoiceOver navigates to next when focused on the input](not-what-voiceover-navigates-to-next.png)
+![This is NOT what iOS VoiceOver navigates to next when focused on the input](./images/not-what-voiceover-navigates-to-next.png)
 
 <figcaption>
   This is NOT what iOS VoiceOver navigates to next when focused on the input
@@ -303,7 +303,7 @@ With this full control, we can use the magic of
 [refs](https://reactjs.org/docs/refs-and-the-dom.html) to manipulate the hidden
 `input` and/or `select` nodes.
 
-![noice!](noice.gif)
+![noice!](./images/noice.gif)
 
 <figcaption>Noice!</figcaption>
 
@@ -315,7 +315,7 @@ So, with all that work, what do we have to show for it? Well, I can’t show the
 rest of the code (company secret 🤫😉). However, we now have a responsive and
 accessible multi-select asynchronous dropdown!
 
-![Responsive and Accessible Asynchronous MultiSelect Dropdown](responsive-a11y-dropdown-select.png)
+![Responsive and Accessible Asynchronous MultiSelect Dropdown](./images/responsive-a11y-dropdown-select.png)
 
 <figcaption>
   Responsive and Accessible Asynchronous MultiSelect Dropdown

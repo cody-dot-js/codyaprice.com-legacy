@@ -10,15 +10,13 @@ tags:
   - Code
   - Scripting
   - Dynamic Languages
+hero:
+  src: ./images/hero-image.jpg
+  alt: "Photo by Clément H on Unsplash"
+  caption: "Photo by [Clément H](https://unsplash.com/@clemhlrdt) on [Unsplash](https://unsplash.com/s/photos/javascript-plant)"
 ---
 
-import ListLengthExample from "./ListLengthExample"
-
-![Photo by Clément H on Unsplash](./hero-image.jpg)
-
-<figcaption>
-  Photo by <a href="https://unsplash.com/@clemhlrdt">Clément H</a> on <a href="https://unsplash.com/s/photos/javascript-plant">Unsplash</a>
-</figcaption>
+import ListLengthExample from "./components/ListLengthExample"
 
 ~~Click now~~ Keep reading to see the beginner's guide to what `computedValue && "One Truthy Boi"` evaluates to!
 
@@ -48,7 +46,7 @@ console.log(result) // false
 
 And to prove it, a screenshot of it running:
 
-![Console output of running the above code snippets.](./console-output.png)
+![Console output of running the above code snippets.](./images/console-output.png)
 
 <figcaption>
   Console output of running the above code snippets.
@@ -92,7 +90,7 @@ Falsey things:
 
 But here's the kicker: in `C`, boolean expressions are _just that_: boolean, one of two values.
 
-![You can tell that it's a boolean because of the way that it is.](./boolean.png)
+![You can tell that it's a boolean because of the way that it is.](./images/boolean.png)
 
 <figcaption>
   You can tell that it's a boolean because of the way that it is.

@@ -11,13 +11,11 @@ tags:
   - Design
   - Performance
   - Scalability
+hero:
+  src: ./images/hero-image.jpg
+  alt: "Photo by Roman Kraft on Unsplash"
+  caption: "Photo by [Roman Kraft](https://unsplash.com/@romankraft) on [Unsplash](https://unsplash.com/s/photos/scale)"
 ---
-
-![Photo by Roman Kraft on Unsplash](./hero-image.jpg)
-
-<figcaption>
-  Photo by <a href="https://unsplash.com/@romankraft">Roman Kraft</a> on <a href="https://unsplash.com/s/photos/scale">Unsplash</a>
-</figcaption>
 
 I felt inspired because of [this twitter thread](https://twitter.com/devcprice/status/1218468406934016001) to make a dedicated post on Big O notation and what it means for runtime and space complexity.
 
@@ -66,7 +64,7 @@ The most common Big O orders of algorithms that you will find, in orders of grow
 Here's a graph of the growth of each of these from Wikipedia.
 This shows what each order tends to as they approach larger `n` inputs.
 
-![Graphs of common orders of growth showing the number of operations N versus input size n for each](./comparison_computational_complexity.png)
+![Graphs of common orders of growth showing the number of operations N versus input size n for each](./images/comparison_computational_complexity.png)
 
 <figcaption>
   Graphs of common orders of growth showing the number of operations N versus input size n for each.&nbsp;
@@ -89,7 +87,7 @@ To get the calculated runtime, you use the `n` on the `y-axis` with the formula 
 Notice that for `n²` and less, you don't notice a major difference until `n = 1-10k` items.
 But for exponential and factorial growth, it matters real quick!
 
-![Tweet: Bruce Dawson (@BruceDawson0xB) April 22, 2019](./o-n-squared_tweet.png)
+![Tweet: Bruce Dawson (@BruceDawson0xB) April 22, 2019](./images/o-n-squared_tweet.png)
 
 <figcaption>
   Tweet: <a href="https://twitter.com/BruceDawson0xB/status/1120381406700429312">Bruce Dawson (@BruceDawson0xB) April 22, 2019</a>

@@ -34,7 +34,8 @@ function Navigation({ ...otherProps }) {
       css={{
         alignItems: "center",
         display: "flex",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        marginTop: "0.5rem"
       }}
       {...otherProps}
     >

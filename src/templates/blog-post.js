@@ -1,11 +1,12 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Image from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import {
   Bio,
   Commento,
-  Layout,
+  PostLayout,
   ReadingProgress,
   SEO,
   Tags
@@ -23,10 +24,11 @@ function BlogPost({ data, location, pageContext }) {
   return (
     <>
       <ReadingProgress targetRef={postRef} />
-      <Layout
+      <PostLayout
         layoutRef={layoutRef}
         location={location}
         title={post.frontmatter.title}
+        date={post.frontmatter.date}
       >
         <SEO
           title={post.frontmatter.title}
@@ -34,27 +36,23 @@ function BlogPost({ data, location, pageContext }) {
         />
         <article>
           <header>
-            <p
-              css={{
-                display: `block`,
-                marginBottom: 0
-              }}
-            >
-              {post.frontmatter.date}
-              {` • ${formatReadingTime(post.timeToRead)}`}
+            <p css={{ marginBottom: 0 }}>{post.frontmatter.date}</p>
+            <p css={{ marginBottom: 0 }}>
+              {formatReadingTime(post.timeToRead)}
             </p>
-            <small
-              css={{
-                display: "block",
-                marginBottom: "1rem",
-                color: "rgba(0, 0, 0, 0.54)"
-              }}
-            >
-              {formatModifiedTime(post.fields.modifiedTime)}
-            </small>
             <Tags list={post.fields.tags} />
           </header>
           <div ref={postRef}>
+            <Image
+              css={{ marginBottom: "2rem" }}
+              alt={post.fields.hero.alt}
+              fluid={post.fields.hero.src.childImageSharp.fluid}
+            />
+            <figcaption
+              dangerouslySetInnerHTML={{
+                __html: post.fields.hero.caption
+              }}
+            />
             <MDXRenderer>{post.body}</MDXRenderer>
           </div>
           <hr
@@ -66,7 +64,6 @@ function BlogPost({ data, location, pageContext }) {
             <Bio />
           </footer>
         </article>
-
         <nav>
           <ul
             css={{
@@ -94,7 +91,7 @@ function BlogPost({ data, location, pageContext }) {
           </ul>
         </nav>
         <Commento id={post.fields.slug} />
-      </Layout>
+      </PostLayout>
     </>
   )
 }
@@ -118,6 +115,13 @@ export const pageQuery = graphql`
         modifiedTime
         slug
         tags
+        hero {
+          src {
+            ...heroImage800
+          }
+          alt
+          caption
+        }
       }
       frontmatter {
         title

@@ -10,10 +10,6 @@ module.exports = {
         display: "Blog"
       },
       {
-        to: "/essays",
-        display: "Essays"
-      },
-      {
         to: "/projects",
         display: "Projects"
       },

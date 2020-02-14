@@ -12,16 +12,14 @@ tags:
   - JavaScript
   - Web Development
   - Development
+hero:
+  src: ./images/hero-image.jpg
+  alt: "You ain't wild, ya mild. Photo: © pixabay @ pexels"
+  caption: "You ain't wild, ya mild. Photo: © pixabay @ pexels"
 ---
 
-import BadExample from "./BadExample";
-import UseTheForce from "./UseTheForce";
-
-![You ain't wild, ya mild. Photo: © pixabay @ pexels](./hero-image.jpg)
-
-<figcaption>
-  You ain't wild, ya mild. Photo: © pixabay @ pexels
-</figcaption>
+import BadExample from "./components/BadExample";
+import UseTheForce from "./components/UseTheForce";
 
 Y'all wanna see something wild? 🦒👀
 
@@ -69,7 +67,7 @@ class BadExample extends React.Component {
 Yeah, I know the code is bad, but it's only ~~a reflection of my daily code production~~ _an example_.
 **_It actually doesn't do anything._** <small><em><strong>kinda</strong></em></small>
 
-![Be a lot cooler if it did](./be-a-lot-cooler.png)
+![Be a lot cooler if it did](./images/be-a-lot-cooler.png)
 
 <figcaption>
   Be a lot cooler if it did
@@ -136,7 +134,7 @@ It's important to note that we've effectively made the state variable **_private
 The state variable still exists, but _we just don't expose it for use_.
 Here's what happens in [React DevTools](https://github.com/facebook/react/tree/master/packages/react-devtools-extensions#installation):
 
-![useForceUpdate in React DevTools ⚛️](./useForceUpdate-in-react-devtools.gif)
+![useForceUpdate in React DevTools ⚛️](./images/useForceUpdate-in-react-devtools.gif)
 
 <figcaption>
   useForceUpdate() in React DevTools ⚛️
@@ -217,7 +215,7 @@ Go ahead, give it a click. 👇
 <UseTheForce />
 <br />
 
-![Well there it is](./well-there-it-is.gif)
+![Well there it is](./images/well-there-it-is.gif)
 
 <figcaption>
   Well there it is
@@ -225,7 +223,7 @@ Go ahead, give it a click. 👇
 
 The oddball `UseTheForce` component, rendered in all its glory.
 
-![How neat is that? 🌲](./how-neat-is-that.gif)
+![How neat is that? 🌲](./images/how-neat-is-that.gif)
 
 <figcaption>
   How neat is that? 🌲

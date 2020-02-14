@@ -9,13 +9,11 @@ tags:
   - Development
   - Programming
   - Rails
+hero:
+  src: ./images/hero-image.jpg
+  alt: "A nice hash, unlike Ruby's 😂, Photo by ctwoner on Pixabay"
+  caption: "A nice hash, unlike Ruby's 😂, Photo by [ctwoner](https://pixabay.com/photos/root-potato-hash-healthy-vegetable-1112017/) on [Pixabay](https://pixabay.com/)"
 ---
-
-![A nice hash, unlike Ruby's 😂, Photo by ctwoner on Pixabay](./hero-image.jpg)
-
-<figcaption>
-  A nice hash, unlike Ruby's 😂, Photo by <a href="https://pixabay.com/photos/root-potato-hash-healthy-vegetable-1112017/">ctwoner</a> on <a href="https://pixabay.com/">Pixabay</a>
-</figcaption>
 
 I miss plain old JavaScript objects... 😔
 
@@ -94,7 +92,7 @@ foo = hash["foo"]
 
 The answer?
 
-![Example: Hash access using a string when the key is a symbol](./example-hash-access-using-a-string-when-key-is-a-symbol.png)
+![Example: Hash access using a string when the key is a symbol](./images/example-hash-access-using-a-string-when-key-is-a-symbol.png)
 
 <figcaption>
   Example: Hash access using a string when the key is a symbol
@@ -120,7 +118,7 @@ foo = hash["foo"]
 foo = hash.foo
 ```
 
-![Example: Node object access](./example-node-object-access.png)
+![Example: Node object access](./images/example-node-object-access.png)
 
 <figcaption>
   Example: Node object access
@@ -130,11 +128,11 @@ Keep in mind that I've purposefully left out ES2015 [Symbols](https://developer.
 Mainly, they don't coerce to strings easily.
 And, when converting them to strings using `.toString()`, for example, they produce `"Symbol(<VALUE>)"`, e.g.:
 
-![Example: Demonstrating JS Symbols](./example-demonstrating-js-symbols.png)
+![Example: Demonstrating JS Symbols](./images/example-demonstrating-js-symbols.png)
 
 > What do you want Cody?
 
-![I'll tell you what I want, what I really really want!](./ill-tell-you-what-i-want.gif)
+![I'll tell you what I want, what I really really want!](./images/ill-tell-you-what-i-want.gif)
 
 <figcaption>
   I'll tell you what I want, what I really really want!
@@ -168,7 +166,7 @@ hash = {}.with_indifferent_access
 
 Here it is in action:
 
-![Example: Using the Rails Hash With Indifferent Access Extension](./example-hash-with-indifferent-access.png)
+![Example: Using the Rails Hash With Indifferent Access Extension](./images/example-hash-with-indifferent-access.png)
 
 <figcaption>
   Example: Using the Rails Hash With Indifferent Access Extension

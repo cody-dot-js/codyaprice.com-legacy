@@ -12,9 +12,13 @@ tags:
   - Communication
 redirect_from:
   - /update-on-event-loop-article/
+hero:
+  src: ./images/hero-image.jpg
+  alt: Time for excuses... ⌚️, © Marius Mann @ pexels
+  caption: Time for excuses... ⌚️, © Marius Mann @ pexels
 ---
 
-import Counter from "./Counter";
+import Counter from "./components/Counter";
 
 > Update: I have a working MDX configuration on a feature branch!
 > Interactive examples are coming! 💪💪💪
@@ -25,13 +29,9 @@ import Counter from "./Counter";
 
 Turns out good content takes a lot of time and effort. Who knew? 🤷‍♂️ 😂
 
-![Time for excuses... ⌚️](./hero-image.jpg)
-
-<figcaption>Time for excuses... ⌚️ © Marius Mann @ pexels</figcaption>
-
 **TLDR:** _It's coming...**soon**_
 
-![Soon... 🦉](./soon.gif)
+![Soon... 🦉](./images/soon.gif)
 
 <figcaption>Soon... 🦉</figcaption>
 
@@ -42,7 +42,7 @@ A lot of concepts related to the JavaScript event loop are much easier to explai
 
 ## And that's what I want to provide.
 
-![Excuses, excuses... 😒](./excuses.gif)
+![Excuses, excuses... 😒](./images/excuses.gif)
 
 <figcaption>Excuses, excuses... 😒</figcaption>
 
