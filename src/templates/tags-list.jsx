@@ -1,35 +1,16 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { FaTags } from "react-icons/fa"
 
-import { Link, ListLayout, PostCard, SEO } from "../../components"
+import { ListLayout, SEO, PostCard } from "../components"
 
-function BlogPage({ data, location }) {
+function TagsList({ data, location, pageContext }) {
   const posts = data.allMdx.edges
+  const { tag, count } = pageContext
 
   return (
     <ListLayout
       location={location}
-      title="All Blog Posts"
-      headerContent={
-        <Link
-          css={{
-            textDecoration: "none",
-            color: "#fff",
-            borderRadius: "0.25rem",
-            background: "#574b90",
-            padding: "0.5rem",
-            "&:hover,&:focus": {
-              background: "#a44fb6"
-            },
-            whiteSpace: "nowrap"
-          }}
-          to="/blog/tags"
-        >
-          View All Tags&nbsp;
-          <FaTags css={{ verticalAlign: "middle" }} />
-        </Link>
-      }
+      title={`All Blog Posts with Tag: ${tag} (${count})`}
     >
       <SEO title="All Blog Posts" />
       {posts.map(({ node }) => (
@@ -54,16 +35,19 @@ function BlogPage({ data, location }) {
   )
 }
 
-export default BlogPage
+export default TagsList
 
 export const pageQuery = graphql`
-  query {
+  query BlogPostsByTag($tag: String!) {
     site {
       siteMetadata {
         title
       }
     }
-    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+    allMdx(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { fields: { tags: { in: [$tag] } } }
+    ) {
       edges {
         node {
           excerpt
@@ -80,7 +64,7 @@ export const pageQuery = graphql`
             tags
             hero {
               src {
-                ...heroImage640
+                ...heroImage320
               }
               alt
               caption

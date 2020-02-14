@@ -41,9 +41,9 @@ and it makes it difficult to test implementation details, unlike enzyme which
 often encourages it. **In this article, this second point is what I want to
 focus on.**
 
-<https://twitter.com/kentcdodds/status/977018512689455106>
+![Kent C. Dodds on Twitter: "The more your tests resemble the way your software is used, the more confidence they can give you."](./images/kcd-test-resemble-use.png)
 
-<figcaption class="tweet">Write your tests the way it's used</figcaption>
+<figcaption>Kent C. Dodds on Twitter: "The more your tests resemble the way your software is used, the more confidence they can give you."</figcaption>
 
 ## Don’t write tests that are coupled to or leak out your implementation details
 

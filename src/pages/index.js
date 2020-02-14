@@ -61,7 +61,7 @@ export const pageQuery = graphql`
             tags
             hero {
               src {
-                ...heroImage640
+                ...heroImage320
               }
               alt
               caption

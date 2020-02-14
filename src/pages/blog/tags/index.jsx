@@ -2,8 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 
-import { ListLayout, Link, SearchField, SEO, Card } from "../../components"
-import caseInsensitiveContains from "../../utils/caseInsensitiveContains"
+import { ListLayout, Link, SearchField, SEO, Card } from "../../../components"
+import caseInsensitiveContains from "../../../utils/caseInsensitiveContains"
 
 function TagsPage({ data, location }) {
   const [query, setQuery] = React.useState("")
@@ -19,7 +19,9 @@ function TagsPage({ data, location }) {
       data.allMdx.group.reduce((acc, tag) => {
         const slug = kebabCase(tag.fieldValue.toLowerCase())
 
-        return [...acc, { name: tag.fieldValue, count: tag.totalCount, slug }]
+        acc.push({ name: tag.fieldValue, count: tag.totalCount, slug })
+
+        return acc
       }, []),
     [data.allMdx.group]
   )
@@ -34,10 +36,12 @@ function TagsPage({ data, location }) {
       filteredTags.reduce((acc, tag) => {
         const group = tag.name.slice(0, 1).toUpperCase()
 
-        return {
-          ...acc,
-          [group]: [...(acc[group] || []), tag]
+        if (acc[group] == null) {
+          acc[group] = []
         }
+        acc[group].push(tag)
+
+        return acc
       }, {}),
     [filteredTags]
   )
@@ -91,7 +95,7 @@ function TagsPage({ data, location }) {
                       key={name + count + slug}
                     >
                       <Link
-                        to="#"
+                        to={`/blog/tags/${slug}`}
                         css={{
                           textDecoration: "none",
                           borderRadius: "0.25rem",

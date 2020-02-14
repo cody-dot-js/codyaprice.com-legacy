@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import kebabCase from "lodash.kebabcase"
 import Link from "./Link"
 import Badge from "./Badge"
 
@@ -21,27 +22,30 @@ function Tags({ list, ...otherProps }) {
       }}
       {...otherProps}
     >
-      {list.map((tag, i) => (
-        <Link
-          // TODO: make tags go to `/blog/tags/${tag}`
-          key={tag}
-          to="#"
-          css={{
-            textDecoration: "none",
-            fontWeight: 700
-          }}
-        >
-          <Badge
-            color="#3d84a8"
+      {list.map((tag, i) => {
+        const slug = kebabCase(tag.toLowerCase())
+
+        return (
+          <Link
+            key={tag}
+            to={`/blog/tags/${slug}`}
             css={{
-              marginTop: "0.5rem",
-              marginRight: i === list.length - 1 ? 0 : "0.5rem"
+              textDecoration: "none",
+              fontWeight: 700
             }}
           >
-            {tag}
-          </Badge>
-        </Link>
-      ))}
+            <Badge
+              color="#3d84a8"
+              css={{
+                marginTop: "0.5rem",
+                marginRight: i === list.length - 1 ? 0 : "0.5rem"
+              }}
+            >
+              {tag}
+            </Badge>
+          </Link>
+        )
+      })}
     </div>
   )
 }
