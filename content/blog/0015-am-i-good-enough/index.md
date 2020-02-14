@@ -12,13 +12,11 @@ tags:
   - Competency
   - Lesson
   - Imposter Syndrome
+hero:
+  src: ./images/hero-image.jpg
+  alt: "Photo by Anthony Tori on Unsplash"
+  caption: "Photo by [Anthony Tori](https://unsplash.com/@anthonytori) on [Unsplash](https://unsplash.com/s/photos/thinking)"
 ---
-
-![Photo by Anthony Tori on Unsplash](./hero-image.jpg)
-
-<figcaption>
-  Photo by <a href="https://unsplash.com/@anthonytori">Anthony Tori</a> on <a href="https://unsplash.com/s/photos/thinking">Unsplash</a>
-</figcaption>
 
 `opportunities.reject { |person| person.is? :cody }`
 

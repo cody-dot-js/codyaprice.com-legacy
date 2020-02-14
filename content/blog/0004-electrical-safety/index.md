@@ -13,14 +13,14 @@ tags:
   - Integrity
 redirect_from:
   - /electrical-safety/
+hero:
+  src: ./images/hero-image.jpg
+  alt: Leave a light on...💡, © Rahul @ pexels
+  caption: Leave a light on...💡, © Rahul @ pexels
 ---
 
 Currently reflecting on how thankful I am for all the opportunities I've been blessed with.
 Specifically, the ability to recognize subpar electrical work and the capability to fix it for the safety of my family.
-
-![Leave a light on...💡](./hero-image.jpg)
-
-<figcaption>© Rahul @ pexels</figcaption>
 
 I was reading up on electrical subpanels on my lunch break since our home has one in the basement.
 

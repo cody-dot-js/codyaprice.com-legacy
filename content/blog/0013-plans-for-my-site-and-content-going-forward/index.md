@@ -11,13 +11,11 @@ tags:
   - Meta
   - Plan
   - Writing
+hero:
+  src: ./images/hero-image.jpg
+  alt: "Photo by Helloquence on Unsplash"
+  caption: "Photo by [Helloquence](https://unsplash.com/@helloquence) on [Unsplash](https://unsplash.com/s/photos/site)"
 ---
-
-![Photo by Helloquence on Unsplash](./hero-image.jpg)
-
-<figcaption>
-  Photo by <a href="https://unsplash.com/@helloquence">Helloquence</a> on <a href="https://unsplash.com/s/photos/site">Unsplash</a>
-</figcaption>
 
 And no, this ain't a 'going away' post, y'all.
 I just wanted to provide an update on where I want to take this site within the foreseeable future.

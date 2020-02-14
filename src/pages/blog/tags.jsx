@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 
-import { Layout, Link, SearchField, SEO } from "../../components"
+import { ListLayout, Link, SearchField, SEO, Card } from "../../components"
 import caseInsensitiveContains from "../../utils/caseInsensitiveContains"
 
 function TagsPage({ data, location }) {
@@ -45,16 +45,25 @@ function TagsPage({ data, location }) {
   const groups = Object.keys(groupLookup).sort()
 
   return (
-    <Layout location={location} title={`Tags (${tags.length})`}>
+    <ListLayout location={location} title={`Tags (${tags.length})`}>
       <SEO title="All tags" />
       <SearchField
+        css={{ pointerEvents: "auto" }}
         title="Filter tags"
         placeholder="Search tags"
         value={query}
         onChange={handleSearch}
         onClear={handleClear}
       />
-      <div css={{ position: "relative", overflowY: "scroll", height: "40rem" }}>
+      <Card
+        css={{
+          position: "relative",
+          overflowY: "scroll",
+          height: "50rem",
+          backgroundColor: "#fff",
+          pointerEvents: "auto"
+        }}
+      >
         {groups.length > 0 ? (
           <ul
             css={{
@@ -81,7 +90,19 @@ function TagsPage({ data, location }) {
                       css={{ padding: "1rem", margin: 0 }}
                       key={name + count + slug}
                     >
-                      <Link to="#">
+                      <Link
+                        to="#"
+                        css={{
+                          textDecoration: "none",
+                          borderRadius: "0.25rem",
+                          padding: "0.5rem",
+                          "&:hover,&:focus": {
+                            background: "#a44fb6",
+                            color: "#fff"
+                          },
+                          whiteSpace: "nowrap"
+                        }}
+                      >
                         {name}&nbsp;({count})
                       </Link>
                     </li>
@@ -102,8 +123,8 @@ function TagsPage({ data, location }) {
             No tags found for&nbsp;<strong>"{query}"</strong>&nbsp;🕵️‍♂️
           </div>
         )}
-      </div>
-    </Layout>
+      </Card>
+    </ListLayout>
   )
 }
 

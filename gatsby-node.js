@@ -96,5 +96,14 @@ exports.onCreateNode = ({ actions, getNode, node }) => {
       name: "descriptionMd",
       value: toMarkdown(node.frontmatter.description)
     })
+
+    createNodeField({
+      name: "hero",
+      node,
+      value: {
+        ...node.frontmatter.hero,
+        caption: toMarkdown(node.frontmatter.hero.caption)
+      }
+    })
   }
 }

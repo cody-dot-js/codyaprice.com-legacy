@@ -6,12 +6,12 @@ export default function formatReadingTime(minutes = 1) {
 
   const cups = Math.round(paddedMinutes / 5)
   if (cups > 5) {
-    return `${new Array(Math.round(cups / Math.E))
+    return `${paddedMinutes} min read ${new Array(Math.round(cups / Math.E))
       .fill("🍱")
-      .join("")} ${paddedMinutes} min read`
+      .join("")}`
   } else {
-    return `${new Array(cups || 1)
+    return `${paddedMinutes} min read ${new Array(cups || 1)
       .fill("☕️")
-      .join("")} ${paddedMinutes} min read`
+      .join("")}`
   }
 }

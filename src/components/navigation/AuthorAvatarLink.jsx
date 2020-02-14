@@ -36,10 +36,11 @@ function AuthorAvatarLink({ to, ...otherProps }) {
     <NavigationLink
       to={to}
       css={{
-        "&:hover,&:focus": {
+        padding: 0,
+        "&.active": {
           background: "none"
         },
-        "&.active": {
+        "&:hover,&:focus": {
           background: "none"
         }
       }}

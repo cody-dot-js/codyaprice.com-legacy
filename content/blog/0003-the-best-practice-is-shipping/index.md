@@ -16,17 +16,17 @@ tags:
   - Iteration
 redirect_from:
   - /the-best-practice-is-shipping/
+hero:
+  src: ./images/hero-image.jpeg
+  alt: Ship it, my guy. It'll never be "perfect" so just ship it now. 🚢
+  caption: Ship it, my guy. It'll never be "perfect" so just ship it now. 🚢
 ---
-
-![Ship it, my guy](./hero-image.jpeg)
-
-<figcaption>It'll never be "perfect" so just ship it now. 🚢</figcaption>
 
 ---
 
 **TLDR:** I'm pivoting.
 
-![Which framework? Which one?](./which-one.gif)
+![Which framework? Which one?](./images/which-one.gif)
 
 <figcaption>I'm pivoting to a new framework. Which one? Which one?</figcaption>
 
@@ -39,7 +39,7 @@ deploy it. I had heard great things about [zeit](https://zeit.co) and gave them
 a shot (can't recommend them enough btw!). So, within fifteen minutes and twelve
 dollars later, I had a domain and deployment/cdn service. Awesome!
 
-![Now what?](./now-what.gif)
+![Now what?](./images/now-what.gif)
 
 <figcaption>I have a domain.. now what?</figcaption>
 
@@ -59,7 +59,7 @@ to include _**the universe**_ with any React app, while
 DOM
 [ain't free](https://medium.com/@hayavuk/why-virtual-dom-is-slower-2d9b964b4c9e).
 
-![node_modules... oof](./node-modules.png)
+![node_modules... oof](./images/node-modules.png)
 
 <figcaption>Just give it another `rm -rf` for good measure.</figcaption>
 
@@ -124,7 +124,7 @@ are a first class feature and on by default (one of the things I love about
 svelte). I worked on this in my spare time for nearly two weeks without
 producing nor hosting any meaningful content.
 
-![naked website](./naked-svelte-website.png)
+![naked website](./images/naked-svelte-website.png)
 
 <figcaption>My website was dormant, vacant, and quite naked. 🙈</figcaption>
 
@@ -186,7 +186,7 @@ and other
 It's best to deliver as quick and as often as possible. A boss of mine has this
 cartoon pinned on his office door and I think it's a perfect metaphor for this:
 
-![Agile, like this](./agile-like-this.png)
+![Agile, like this](./images/agile-like-this.png)
 
 <figcaption>Agile, but like this: 🛹➡️🚲️️➡️🏎</figcaption>
 

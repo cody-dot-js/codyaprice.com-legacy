@@ -1,44 +1,32 @@
 import React from "react"
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
-import { MDXProvider } from "@mdx-js/react"
 
-import * as mdxComponents from "./mdx"
 import StarryDisplay from "./StarryDisplay"
 import Navigation from "./navigation"
-import { CardCss } from "./Card"
 import SiteFooter from "./SiteFooter"
 import { ActiveBreakpointContext, mediaQueries } from "./breakpoints"
 
 const propTypes = {
   children: PropTypes.node.isRequired,
-  headerContent: PropTypes.node,
   layoutRef: PropTypes.shape({
     current: PropTypes.instanceOf(Element)
   }),
   leftSidebarContent: PropTypes.node,
-  location: PropTypes.object,
-  rightSidebarContent: PropTypes.node,
-  title: PropTypes.string.isRequired
+  rightSidebarContent: PropTypes.node
 }
 
 const defaultProps = {
-  headerContent: null,
   layoutRef: React.createRef(),
   leftSidebarContent: null,
-  location: null,
   rightSidebarContent: null
 }
 
 function Layout({
   children,
-  headerContent,
   layoutRef,
   leftSidebarContent,
-  location,
   rightSidebarContent,
-  title,
   ...otherProps
 }) {
   const activeBreakpoint = React.useContext(ActiveBreakpointContext)
@@ -86,47 +74,8 @@ function Layout({
         `}
       >
         <Navigation />
-        <main
-          css={{
-            ...CardCss,
-            backgroundColor: "#fff",
-            display: "block",
-            padding: "2rem",
-            pointerEvents: "auto",
-            minHeight: "50rem"
-          }}
-          role="main"
-          {...otherProps}
-        >
-          <div css={{ margin: "0 auto", maxWidth: "50rem" }}>
-            <header
-              css={{
-                alignItems: "center",
-                display: "flex",
-                justifyContent: "space-between",
-                marginBottom: "1rem"
-              }}
-            >
-              <h1
-                css={{
-                  margin: 0
-                }}
-              >
-                <Link
-                  css={{
-                    boxShadow: `none`,
-                    textDecoration: `none`,
-                    color: `inherit`
-                  }}
-                  to="/"
-                >
-                  {title}
-                </Link>
-              </h1>
-              <div>{headerContent}</div>
-            </header>
-            <MDXProvider components={mdxComponents}>{children}</MDXProvider>
-          </div>
+        <main css={{ display: "block" }} role="main" {...otherProps}>
+          {children}
         </main>
       </div>
       <div>{rightSidebarContent}</div>

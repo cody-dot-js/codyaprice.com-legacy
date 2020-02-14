@@ -8,13 +8,11 @@ tags:
   - Programming
   - Web Development
   - Sorting
+hero:
+  src: ./images/hero-image.jpg
+  alt: "Photo by Sophie Elvis on Unsplash"
+  caption: "Photo by [Sophie Elvis](https://unsplash.com/@thetechnomaid) on [Unsplash](https://unsplash.com/s/photos/sorting)"
 ---
-
-![Photo by Sophie Elvis on Unsplash](./hero-image.jpg)
-
-<figcaption>
-  Photo by <a href="https://unsplash.com/@thetechnomaid?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sophie Elvis</a> on <a href="https://unsplash.com/s/photos/sorting?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-</figcaption>
 
 Fell for the ol' default JavaScript sorting algorithm trap when working with numbers. 😲
 
@@ -35,7 +33,7 @@ For each new post I make, I simply increment that prefix number for superficial 
 While I do [order them by date](https://github.com/dev-cprice/codyaprice.com/blob/3105787df9d879252b198a5e719817b20c6c2b64/gatsby-node.js#L10) on my site, I like seeing my directory listed in posted order, since without the number prefix, the order is alphabetical.
 While alphabetical is fine, I'm gaming the system since numbers are _"alphabetically before"_ letters.
 
-![Sorted blog directory](./sorted-dir.png)
+![Sorted blog directory](./images/sorted-dir.png)
 
 <figcaption>
   Sorted blog directory
@@ -72,7 +70,7 @@ I'll wait...
 No peeking 🙈.
 Or, you can cheat and [scroll down to the answer 😉](#the-correct-answer-is)
 
-![countdown from 60 seconds](./countdown.gif)
+![countdown from 60 seconds](./images/countdown.gif)
 
 <figcaption>
   Countdown from 60 seconds ⏳
@@ -140,7 +138,7 @@ If you answered **(B)**, you're...
 
 **_Surely you can't be serious._**
 
-![I am serious and don't call me Shirley.](./surely.gif)
+![I am serious and don't call me Shirley.](./images/surely.gif)
 
 <figcaption>
   I am serious and don't call me Shirley.
@@ -184,7 +182,7 @@ To fix the above code, all I needed to do was provide my own `comparator` functi
 
 ```diff
  - .sort()
- + .sort((lhs, rhs) => lhs < rhs)
+ + .sort((lhs, rhs) => lhs - rhs)
 ```
 
 <figcaption>
@@ -200,7 +198,7 @@ function newPostNumber() {
     .readdirSync(blogsPath)
     .map(filename => parseInt(filename.split("-")[0], 10))
     .filter(Boolean)
-    .sort((l, r) => l < r)
+    .sort((l, r) => l - r)
     .reverse()
 
   const postNumber = postNumbers[0] + 1
@@ -224,7 +222,7 @@ In the wise words of the Letterkenny gang:
 
 > JavaScript, you figure it out.
 
-![Figure it out.](./figure-it-out.gif)
+![Figure it out.](./images/figure-it-out.gif)
 
 <figcaption>
   Figure it out.

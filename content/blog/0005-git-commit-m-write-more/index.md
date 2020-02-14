@@ -14,15 +14,15 @@ tags:
   - Accountability
 redirect_from:
   - /git-commit-m-write-more/
+hero:
+  src: ./images/hero-image.jpg
+  alt: Time to write. Click clack, he won't hold back!
+  caption: Time to write. Click clack, he won't hold back!
 ---
 
 It's about time. ⏳
 At least, it's about the commitment to stick to a certain time.
 _And I'll keep this post short and quick_.
-
-![time to write](./hero-image.jpg)
-
-<figcaption>Click clack, he won't hold back.</figcaption>
 
 **TLDR**: I have a Public Accountability Statement.
 I'm officially committing to writing a new article every week and posting on Thursday at noon local time, starting this week.

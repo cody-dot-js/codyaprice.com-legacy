@@ -13,21 +13,13 @@ tags:
   - Best Practices
 redirect_from:
   - /stop-testing-implementation-details/
+hero:
+  src: ./images/hero-image.png
+  alt: The writing is on the wall, Photo by Startup Stock Photos from Pexels
+  caption: "The writing is on the wall [Photo by Startup Stock Photos from Pexels](https://www.pexels.com/photo/man-wearing-black-and-white-stripe-shirt-looking-at-white-printer-papers-on-the-wall-212286/)"
 ---
 
 > This was originally posted on [Medium on August 8, 2019](https://medium.com/@dev.cprice/stop-testing-implementation-details-77a3528336af)
-
-![Hero Image](./hero-image.png)
-
-<figcaption>
-  The writing is on the wall
-  <a
-    href="https://www.pexels.com/photo/man-wearing-black-and-white-stripe-shirt-looking-at-white-printer-papers-on-the-wall-212286/
-"
-  >
-    © pexels
-  </a>
-</figcaption>
 
 Yes, even you, object oriented peeps. 🐤😉
 
@@ -79,7 +71,7 @@ idea for an awesome application which runs in an embedded environment. A key
 feature of your application is that you can multiply two numbers. It’s
 imperative that you get to market quickly so you can get paid.
 
-![Gotta go fast!](./gotta-go-fast.gif)
+![Gotta go fast!](./images/gotta-go-fast.gif)
 
 <figcaption>Gotta go fast!</figcaption>
 
