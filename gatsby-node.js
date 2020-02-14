@@ -1,12 +1,14 @@
 const path = require(`path`)
+const kebabCase = require("lodash.kebabcase")
 const BlogPost = path.resolve(`./src/templates/blog-post.js`)
+const TagsList = path.resolve(`./src/templates/tags-list.jsx`)
 const {
   caseInsensitiveSort,
   getSlugPath,
   toMarkdown
 } = require("./gatsby-utils")
 
-exports.createPages = async ({ actions, graphql }) => {
+async function createBlogPostPages({ actions, graphql }) {
   const { createPage } = actions
 
   const { data, errors } = await graphql(`
@@ -55,6 +57,51 @@ exports.createPages = async ({ actions, graphql }) => {
       }
     })
   })
+}
+
+async function createTagsListPages({ actions, graphql }) {
+  const { createPage } = actions
+
+  const { data, errors } = await graphql(`
+    query {
+      allMdx {
+        group(field: frontmatter___tags) {
+          fieldValue
+          totalCount
+        }
+      }
+    }
+  `)
+
+  if (errors) {
+    throw errors
+  }
+
+  const tags = data.allMdx.group.reduce((acc, tag) => {
+    const slug = kebabCase(tag.fieldValue.toLowerCase())
+
+    acc.push({ name: tag.fieldValue, count: tag.totalCount, slug })
+
+    return acc
+  }, [])
+
+  tags.forEach(({ name, slug, count }) => {
+    const path = `/blog/tags/${slug}`
+    createPage({
+      path,
+      component: TagsList,
+      context: {
+        tag: name,
+        count,
+        slug
+      }
+    })
+  })
+}
+
+exports.createPages = async ({ actions, graphql }) => {
+  createBlogPostPages({ actions, graphql })
+  createTagsListPages({ actions, graphql })
 }
 
 exports.onCreateWebpackConfig = ({ actions }) => {

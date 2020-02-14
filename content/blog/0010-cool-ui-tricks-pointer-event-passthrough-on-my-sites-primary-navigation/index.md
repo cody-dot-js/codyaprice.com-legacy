@@ -5,7 +5,7 @@ description: '"You have to be transparent so you no longer ~~cast a shadow~~ blo
 tags:
   - UI
   - React
-  - Javascript
+  - JavaScript
   - CSS
   - Web Development
   - UX

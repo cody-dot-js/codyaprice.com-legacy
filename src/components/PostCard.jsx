@@ -44,7 +44,7 @@ function PostCard({
         ${mediaQueries.desktop} {
           display: grid;
           grid-column-gap: 1rem;
-          grid-template-columns: 40% 1fr;
+          grid-template-columns: 50% 1fr;
         }
       `}
     >
@@ -52,6 +52,7 @@ function PostCard({
         <Image
           css={css`
             margin-bottom: 1rem;
+            max-height: 20rem;
 
             ${mediaQueries.desktop} {
               margin-bottom: 0;
