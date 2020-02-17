@@ -14,7 +14,7 @@ function ResumeSourcePage({ location }) {
         to generate the pdf.
       </p>
       <p>
-        <a href="/resume_08022020.pdf">Download my latest resume</a>
+        <a href="/resume_17022020.pdf">Download my latest resume</a>
       </p>
       <p>
         <a href="/resume.zip">Download my resume's source code</a>
