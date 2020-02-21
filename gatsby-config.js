@@ -59,13 +59,6 @@ module.exports = {
   plugins: [
     "gatsby-plugin-emotion",
     {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "UA-146469183-1",
-        head: true
-      }
-    },
-    {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/content/blog`,
