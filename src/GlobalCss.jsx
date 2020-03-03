@@ -5,6 +5,10 @@ function GlobalCss() {
   return (
     <Global
       styles={css`
+        html {
+          box-sizing: border-box;
+        }
+
         a {
           color: #8a4baf;
         }
@@ -36,6 +40,12 @@ function GlobalCss() {
         section,
         aside {
           display: block;
+        }
+
+        *,
+        *::before,
+        *::after {
+          box-sizing: inherit;
         }
       `}
     />
