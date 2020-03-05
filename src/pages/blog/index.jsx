@@ -19,8 +19,10 @@ function BlogPage({ data, location }) {
             borderRadius: "0.25rem",
             background: "#574b90",
             padding: "0.5rem",
+            transition: "all 0.125s ease-in-out",
             "&:hover,&:focus": {
-              background: "#a44fb6"
+              background: "#a44fb6",
+              boxShadow: "0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.38)"
             },
             whiteSpace: "nowrap"
           }}

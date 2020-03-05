@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 import { MDXProvider } from "@mdx-js/react"
 
 import Layout from "./Layout"
-import * as mdxComponents from "./mdx"
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -71,7 +70,7 @@ function ListLayout({
           </h1>
           <div css={{ pointerEvents: "auto" }}>{headerContent}</div>
         </header>
-        <MDXProvider components={mdxComponents}>{children}</MDXProvider>
+        <MDXProvider>{children}</MDXProvider>
       </div>
     </Layout>
   )

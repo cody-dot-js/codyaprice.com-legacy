@@ -1,8 +1,8 @@
 import React from "react"
+import { css } from "@emotion/core"
 import PropTypes from "prop-types"
 import kebabCase from "lodash.kebabcase"
-import Link from "./Link"
-import Badge from "./Badge"
+import Tag from "./Tag"
 
 const propTypes = {
   list: PropTypes.arrayOf(PropTypes.string)
@@ -15,35 +15,31 @@ const defaultProps = {
 function Tags({ list, ...otherProps }) {
   return (
     <div
-      css={{
-        display: "flex",
-        flexFlow: "row wrap",
-        marginBottom: "1rem"
-      }}
+      css={css`
+        display: flex;
+        flex-flow: row wrap;
+        margin-bottom: 1rem;
+        margin-top: 0.5rem;
+      `}
       {...otherProps}
     >
       {list.map((tag, i) => {
         const slug = kebabCase(tag.toLowerCase())
 
         return (
-          <Link
+          <Tag
             key={tag}
-            to={`/blog/tags/${slug}`}
-            css={{
-              textDecoration: "none",
-              fontWeight: 700
-            }}
+            slug={slug}
+            css={css`
+              margin-right: 0.5rem;
+
+              :last-of-type {
+                margin-right: 0;
+              }
+            `}
           >
-            <Badge
-              color="#3d84a8"
-              css={{
-                marginTop: "0.5rem",
-                marginRight: i === list.length - 1 ? 0 : "0.5rem"
-              }}
-            >
-              {tag}
-            </Badge>
-          </Link>
+            {tag}
+          </Tag>
         )
       })}
     </div>

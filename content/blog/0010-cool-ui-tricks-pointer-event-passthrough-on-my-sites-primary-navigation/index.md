@@ -21,6 +21,7 @@ hero:
   caption: "Photo by [Aleks Dahlberg](https://unsplash.com/@aleksdahlberg) on [Unsplash](https://unsplash.com/s/photos/transparent)"
 ---
 
+import Example from "../../../src/components/mdx/Example"
 import MockNavigation from "./components/MockNavigation"
 import BoxModel from "./components/BoxModel"
 import RelativePositioning from "./components/RelativePositioning"

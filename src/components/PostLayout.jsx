@@ -5,7 +5,6 @@ import { MDXProvider } from "@mdx-js/react"
 
 import Card from "./Card"
 import Layout from "./Layout"
-import * as mdxComponents from "./mdx"
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -70,7 +69,7 @@ function PostLayout({
         css={{ backgroundColor: "#fff", pointerEvents: "auto" }}
         {...otherProps}
       >
-        <MDXProvider components={mdxComponents}>{children}</MDXProvider>
+        <MDXProvider>{children}</MDXProvider>
       </Card>
     </Layout>
   )

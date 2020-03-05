@@ -1,8 +1,9 @@
 import React from "react"
+import { css } from "@emotion/core"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
 import NavigationLink from "./NavigationLink"
+import Logo from "./Logo"
 
 const propTypes = {
   to: PropTypes.string
@@ -15,13 +16,6 @@ const defaultProps = {
 function AuthorAvatarLink({ to, ...otherProps }) {
   const data = useStaticQuery(graphql`
     query {
-      avatar: file(absolutePath: { regex: "/profile-pic.png/" }) {
-        childImageSharp {
-          fixed(width: 64, height: 64) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
       site {
         siteMetadata {
           author
@@ -38,7 +32,8 @@ function AuthorAvatarLink({ to, ...otherProps }) {
       css={{
         padding: 0,
         "&.active": {
-          background: "none"
+          background: "none",
+          boxShadow: "none"
         },
         "&:hover,&:focus": {
           background: "none"
@@ -47,21 +42,35 @@ function AuthorAvatarLink({ to, ...otherProps }) {
       {...otherProps}
     >
       <div css={{ display: "flex", alignItems: "center" }}>
-        <Image
-          fixed={data.avatar.childImageSharp.fixed}
-          alt={`${author} avatar`}
-          css={{
-            marginRight: "1rem",
-            marginBottom: 0,
-            minWidth: "4rem",
-            borderRadius: "100%"
-          }}
-          imgStyle={{
-            borderRadius: `50%`,
-            margin: 0
-          }}
+        <Logo
+          css={css`
+            width: 4rem;
+            fill: #fff;
+            margin: 0;
+            margin-right: 1rem;
+            border-radius: 100%;
+            transition: all 0.125s ease-in-out;
+
+            &:hover,
+            &:focus {
+              fill: #a44fb6;
+              box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.38);
+            }
+          `}
         />
-        <span css={{ whiteSpace: "nowrap" }}>{author}</span>
+        <span
+          css={css`
+            transition: all 0.125s ease-in-out;
+            white-space: nowrap;
+
+            &:hover,
+            &:focus {
+              color: #a44fb6;
+            }
+          `}
+        >
+          {author}
+        </span>
       </div>
     </NavigationLink>
   )
