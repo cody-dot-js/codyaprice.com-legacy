@@ -19,7 +19,6 @@ function Tags({ list, ...otherProps }) {
         display: flex;
         flex-flow: row wrap;
         margin-bottom: 1rem;
-        margin-top: 0.5rem;
       `}
       {...otherProps}
     >
@@ -31,6 +30,7 @@ function Tags({ list, ...otherProps }) {
             key={tag}
             slug={slug}
             css={css`
+              margin-top: 0.5rem;
               margin-right: 0.5rem;
 
               :last-of-type {
