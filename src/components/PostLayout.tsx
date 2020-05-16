@@ -1,18 +1,18 @@
-import React, { ReactNode, RefObject } from "react"
-import { css } from "@emotion/core"
-import { Link } from "gatsby"
-import { MDXProvider } from "@mdx-js/react"
+import React, { ReactNode, RefObject } from 'react';
+import { css } from '@emotion/core';
+import { Link } from 'gatsby';
+import { MDXProvider } from '@mdx-js/react';
 
-import Card from "./Card"
-import Layout from "./Layout"
+import Card from './Card';
+import Layout from './Layout';
 
 interface Props {
-  children: ReactNode
-  headerContent?: ReactNode
-  layoutRef?: RefObject<HTMLDivElement>
-  leftSidebarContent?: ReactNode
-  rightSidebarContent?: ReactNode
-  title: ReactNode
+  children: ReactNode;
+  headerContent?: ReactNode;
+  layoutRef?: RefObject<HTMLDivElement>;
+  leftSidebarContent?: ReactNode;
+  rightSidebarContent?: ReactNode;
+  title: ReactNode;
 }
 
 const defaultProps = {
@@ -21,7 +21,7 @@ const defaultProps = {
   leftSidebarContent: null,
   location: null,
   rightSidebarContent: null,
-}
+};
 
 function PostLayout({
   children,
@@ -81,9 +81,9 @@ function PostLayout({
         </Card>
       </div>
     </Layout>
-  )
+  );
 }
 
-PostLayout.defaultProps = defaultProps
+PostLayout.defaultProps = defaultProps;
 
-export default PostLayout
+export default PostLayout;

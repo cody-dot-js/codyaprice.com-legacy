@@ -1,14 +1,14 @@
-import React from "react"
-import { css } from "@emotion/core"
-import { useStaticQuery, graphql } from "gatsby"
-import NavigationLink from "./NavigationLink"
-import Logo from "./Logo"
+import React from 'react';
+import { css } from '@emotion/core';
+import { useStaticQuery, graphql } from 'gatsby';
+import NavigationLink from './NavigationLink';
+import Logo from './Logo';
 
 interface Props {
-  to: string
+  to: string;
 }
 
-function AuthorAvatarLink({ to = "/", ...otherProps }: Props) {
+function AuthorAvatarLink({ to = '/', ...otherProps }: Props) {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -17,9 +17,9 @@ function AuthorAvatarLink({ to = "/", ...otherProps }: Props) {
         }
       }
     }
-  `)
+  `);
 
-  const { author } = data.site.siteMetadata
+  const { author } = data.site.siteMetadata;
 
   return (
     <NavigationLink
@@ -74,7 +74,7 @@ function AuthorAvatarLink({ to = "/", ...otherProps }: Props) {
         </span>
       </div>
     </NavigationLink>
-  )
+  );
 }
 
-export default AuthorAvatarLink
+export default AuthorAvatarLink;

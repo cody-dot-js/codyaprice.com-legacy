@@ -1,27 +1,27 @@
-import React, { ReactNode } from "react"
-import { css } from "@emotion/core"
+import React, { ReactNode } from 'react';
+import { css } from '@emotion/core';
 
-import StarryDisplay from "./StarryDisplay"
-import Navigation from "./navigation"
-import SiteFooter from "./SiteFooter"
+import StarryDisplay from './StarryDisplay';
+import Navigation from './navigation';
+import SiteFooter from './SiteFooter';
 import {
   ActiveBreakpointContext,
   Breakpoint,
   mediaQueries,
-} from "./breakpoints"
+} from './breakpoints';
 
 interface Props {
-  children: ReactNode
-  layoutRef?: React.RefObject<HTMLDivElement>
-  leftSidebarContent?: ReactNode
-  rightSidebarContent?: ReactNode
+  children: ReactNode;
+  layoutRef?: React.RefObject<HTMLDivElement>;
+  leftSidebarContent?: ReactNode;
+  rightSidebarContent?: ReactNode;
 }
 
 const defaultProps = {
   layoutRef: React.createRef(),
   leftSidebarContent: null,
   rightSidebarContent: null,
-}
+};
 
 function Layout({
   children,
@@ -30,11 +30,11 @@ function Layout({
   rightSidebarContent,
   ...otherProps
 }: Props) {
-  const activeBreakpoint = React.useContext(ActiveBreakpointContext)
+  const activeBreakpoint = React.useContext(ActiveBreakpointContext);
   const starCount = React.useMemo(
     () => (activeBreakpoint === Breakpoint.desktop ? 512 : 256),
     [activeBreakpoint]
-  )
+  );
 
   return (
     <div
@@ -95,9 +95,9 @@ function Layout({
         `}
       />
     </div>
-  )
+  );
 }
 
-Layout.defaultProps = defaultProps
+Layout.defaultProps = defaultProps;
 
-export default Layout
+export default Layout;

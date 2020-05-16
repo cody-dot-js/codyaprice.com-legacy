@@ -5,10 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import { css } from "@emotion/core"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import React from 'react';
+import { css } from '@emotion/core';
+import { useStaticQuery, graphql } from 'gatsby';
+import Image from 'gatsby-image';
 
 function Bio({ ...props }) {
   const data = useStaticQuery(graphql`
@@ -26,9 +26,9 @@ function Bio({ ...props }) {
         }
       }
     }
-  `)
+  `);
 
-  const { author } = data.site.siteMetadata
+  const { author } = data.site.siteMetadata;
   return (
     <div
       css={css`
@@ -108,7 +108,7 @@ function Bio({ ...props }) {
         </ul>
       </section>
     </div>
-  )
+  );
 }
 
-export default Bio
+export default Bio;

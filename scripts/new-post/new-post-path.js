@@ -1,12 +1,12 @@
-const blogsPath = require("./blogs-path")
-const newPostNumber = require("./new-post-number")
-const kebabify = require("./kebabify")
+const blogsPath = require('./blogs-path');
+const newPostNumber = require('./new-post-number');
+const kebabify = require('./kebabify');
 
-function newPostPath(title = "") {
-  const postNumber = newPostNumber()
-  const kebabedTitle = kebabify(title)
+function newPostPath(title = '') {
+  const postNumber = newPostNumber();
+  const kebabedTitle = kebabify(title);
 
-  return `${blogsPath}/${postNumber}-${kebabedTitle}`
+  return `${blogsPath}/${postNumber}-${kebabedTitle}`;
 }
 
-module.exports = newPostPath
+module.exports = newPostPath;

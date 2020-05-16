@@ -1,12 +1,12 @@
-import React from "react"
-import { css } from "@emotion/core"
-import Link from "./Link"
-import Socials, { Social } from "./Socials"
+import React from 'react';
+import { css } from '@emotion/core';
+import Link from './Link';
+import Socials, { Social } from './Socials';
 
 const rssLink = {
   id: Social.rss,
-  url: "https://codyaprice.com/rss.xml",
-}
+  url: 'https://codyaprice.com/rss.xml',
+};
 
 function SiteFooter({ ...otherProps }) {
   return (
@@ -44,7 +44,7 @@ function SiteFooter({ ...otherProps }) {
         <Socials otherLinks={[rssLink]} />
       </div>
     </footer>
-  )
+  );
 }
 
-export default SiteFooter
+export default SiteFooter;

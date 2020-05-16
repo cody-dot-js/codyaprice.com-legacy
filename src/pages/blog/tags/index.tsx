@@ -1,74 +1,74 @@
-import React from "react"
-import { css } from "@emotion/core"
-import { graphql } from "gatsby"
-import kebabCase from "lodash.kebabcase"
+import React from 'react';
+import { css } from '@emotion/core';
+import { graphql } from 'gatsby';
+import kebabCase from 'lodash.kebabcase';
 
-import { ListLayout, Link, SearchField, SEO, Card } from "../../../components"
-import caseInsensitiveContains from "../../../utils/caseInsensitiveContains"
+import { ListLayout, Link, SearchField, SEO, Card } from '../../../components';
+import caseInsensitiveContains from '../../../utils/caseInsensitiveContains';
 
 interface Props {
   data: {
     allMdx: {
       group: Array<{
-        fieldValue: string
-        totalCount: string | number
-      }>
-    }
-  }
-  location: any
+        fieldValue: string;
+        totalCount: string | number;
+      }>;
+    };
+  };
+  location: any;
 }
 
 type Tag = {
-  name: string
-  count: number | string
-  slug: string
-}
+  name: string;
+  count: number | string;
+  slug: string;
+};
 
 function TagsPage({ data, location }: Props) {
-  const [query, setQuery] = React.useState<string>("")
+  const [query, setQuery] = React.useState<string>('');
 
   const handleSearch = React.useCallback(({ target: { value } }) => {
-    setQuery(value)
-  }, [])
+    setQuery(value);
+  }, []);
 
-  const handleClear = React.useCallback(() => setQuery(""), [])
+  const handleClear = React.useCallback(() => setQuery(''), []);
 
   const tags = React.useMemo(
     () =>
       data.allMdx.group.reduce(
         (acc: Array<Tag>, { fieldValue, totalCount }) => {
-          const slug: string = kebabCase(fieldValue.toLowerCase())
+          const slug: string = kebabCase(fieldValue.toLowerCase());
 
-          acc.push({ name: fieldValue, count: totalCount, slug })
+          acc.push({ name: fieldValue, count: totalCount, slug });
 
-          return acc
+          return acc;
         },
         []
       ),
     [data.allMdx.group]
-  )
+  );
 
   const filteredTags = React.useMemo(
     () => tags.filter(({ name }) => caseInsensitiveContains(name, query)),
     [query, tags]
-  )
+  );
 
   const groupLookup = React.useMemo(
     () =>
       filteredTags.reduce((acc: Record<string, Tag[]>, tag) => {
-        const group = tag.name.slice(0, 1).toUpperCase()
+        const group = tag.name.slice(0, 1).toUpperCase();
 
         if (acc[group] == null) {
-          acc[group] = []
+          acc[group] = [];
         }
-        acc[group].push(tag)
+        acc[group].push(tag);
 
-        return acc
+        return acc;
       }, {}),
     [filteredTags]
-  )
+  );
 
-  const groups = Object.keys(groupLookup).sort()
+  const groups = Object.keys(groupLookup).sort();
 
   return (
     <ListLayout location={location} title={`Tags (${tags.length})`}>
@@ -158,10 +158,10 @@ function TagsPage({ data, location }: Props) {
         )}
       </Card>
     </ListLayout>
-  )
+  );
 }
 
-export default TagsPage
+export default TagsPage;
 
 export const pageQuery = graphql`
   query {
@@ -172,4 +172,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

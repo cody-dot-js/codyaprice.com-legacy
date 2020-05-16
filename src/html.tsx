@@ -1,14 +1,14 @@
-import React from "react"
-import { css } from "@emotion/core"
-import GlobalCss from "./GlobalCss"
+import React from 'react';
+import { css } from '@emotion/core';
+import GlobalCss from './GlobalCss';
 
 interface Props {
-  htmlAttributes: any
-  headComponents: Array<any>
-  bodyAttributes: any
-  preBodyComponents: Array<any>
-  body: string
-  postBodyComponents: Array<any>
+  htmlAttributes: any;
+  headComponents: Array<any>;
+  bodyAttributes: any;
+  preBodyComponents: Array<any>;
+  body: string;
+  postBodyComponents: Array<any>;
 }
 
 export default function HTML({
@@ -58,5 +58,5 @@ export default function HTML({
         {postBodyComponents}
       </body>
     </html>
-  )
+  );
 }

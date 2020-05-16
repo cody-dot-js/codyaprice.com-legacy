@@ -1,9 +1,9 @@
-import React, { ReactNode } from "react"
-import { css } from "@emotion/core"
+import React, { ReactNode } from 'react';
+import { css } from '@emotion/core';
 
 interface Props {
-  children: ReactNode
-  caption?: ReactNode
+  children: ReactNode;
+  caption?: ReactNode;
 }
 
 function Example({ children, caption = null }: Props) {
@@ -25,7 +25,7 @@ function Example({ children, caption = null }: Props) {
         </>
       )}
     </>
-  )
+  );
 }
 
-export default Example
+export default Example;

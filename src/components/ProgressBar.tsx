@@ -1,13 +1,13 @@
-import React from "react"
-import { css } from "@emotion/core"
+import React from 'react';
+import { css } from '@emotion/core';
 
 interface Props {
-  value?: number
-  max?: number
-  className?: string
+  value?: number;
+  max?: number;
+  className?: string;
 }
 
-const barColor = "#a44fb6"
+const barColor = '#a44fb6';
 
 const style = css`
   background-color: transparent;
@@ -52,17 +52,17 @@ const style = css`
     }
   }
 
-  &[value="100"],
-  &[value="0"] {
+  &[value='100'],
+  &[value='0'] {
     &::-webkit-progress-value {
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
     }
   }
-`
+`;
 
 function ProgressBar({ value = 0, max = 100, className }: Props) {
-  const normalizedValue = (value / max) * 100
+  const normalizedValue = (value / max) * 100;
 
   return (
     <progress
@@ -76,7 +76,7 @@ function ProgressBar({ value = 0, max = 100, className }: Props) {
       aria-valuetext={`${normalizedValue} %`}
       tabIndex={-1}
     />
-  )
+  );
 }
 
-export default ProgressBar
+export default ProgressBar;

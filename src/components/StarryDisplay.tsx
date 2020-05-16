@@ -1,14 +1,14 @@
-import React from "react"
-import { css } from "@emotion/core"
+import React from 'react';
+import { css } from '@emotion/core';
 import Particles, {
   IParticlesParams,
   MoveDirection,
   OutMode,
   InteractivityDetect,
-} from "react-particles-js"
+} from 'react-particles-js';
 
 interface Props {
-  starCount?: number
+  starCount?: number;
 }
 
 function StarryDisplay({ starCount = 1024 }: Props) {
@@ -26,10 +26,10 @@ function StarryDisplay({ starCount = 1024 }: Props) {
     >
       <Particles params={params({ starCount })} />
     </div>
-  )
+  );
 }
 
-export default StarryDisplay
+export default StarryDisplay;
 
 export function params({ starCount }: { starCount: number }): IParticlesParams {
   return {
@@ -42,7 +42,7 @@ export function params({ starCount }: { starCount: number }): IParticlesParams {
         },
       },
       color: {
-        value: "#fff",
+        value: '#fff',
       },
       opacity: {
         value: 1,
@@ -76,11 +76,11 @@ export function params({ starCount }: { starCount: number }): IParticlesParams {
       events: {
         onhover: {
           enable: true,
-          mode: "bubble",
+          mode: 'bubble',
         },
         onclick: {
           enable: true,
-          mode: "repulse",
+          mode: 'repulse',
         },
         resize: false,
       },
@@ -98,5 +98,5 @@ export function params({ starCount }: { starCount: number }): IParticlesParams {
       },
     },
     retina_detect: true,
-  }
+  };
 }

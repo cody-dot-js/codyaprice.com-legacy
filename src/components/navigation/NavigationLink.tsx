@@ -1,12 +1,12 @@
-import React, { ReactNode } from "react"
-import { css } from "@emotion/core"
-import Link from "../Link"
+import React, { ReactNode } from 'react';
+import { css } from '@emotion/core';
+import Link from '../Link';
 
 interface Props {
-  to?: string
-  children?: ReactNode
-  activeClassName?: string
-  partiallyActive?: boolean
+  to?: string;
+  children?: ReactNode;
+  activeClassName?: string;
+  partiallyActive?: boolean;
 }
 
 const style = css`
@@ -24,12 +24,12 @@ const style = css`
     background: #a44fb6;
     box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.38);
   }
-`
+`;
 
 function NavigationLink({
   children = null,
-  to = "#",
-  activeClassName = "active",
+  to = '#',
+  activeClassName = 'active',
   ...extraProps
 }: Props) {
   return (
@@ -42,7 +42,7 @@ function NavigationLink({
     >
       {children}
     </Link>
-  )
+  );
 }
 
-export default NavigationLink
+export default NavigationLink;

@@ -1,4 +1,4 @@
-import { graphql } from "gatsby"
+import { graphql } from 'gatsby';
 
 export const heroImage = graphql`
   fragment heroImage640 on File {
@@ -15,4 +15,4 @@ export const heroImage = graphql`
       }
     }
   }
-`
+`;

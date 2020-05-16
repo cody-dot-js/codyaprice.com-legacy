@@ -1,25 +1,25 @@
-import React from "react"
-import { css } from "@emotion/core"
+import React from 'react';
+import { css } from '@emotion/core';
 
 function useForceUpdate() {
-  const [, forceUpdate] = React.useState<boolean>(false)
+  const [, forceUpdate] = React.useState<boolean>(false);
 
   return React.useCallback(() => {
-    forceUpdate((s) => !s)
-  }, [])
+    forceUpdate((s) => !s);
+  }, []);
 }
 
 export default function UseTheForce() {
-  const forceUpdate = useForceUpdate()
-  const renderCount = React.useRef(0)
+  const forceUpdate = useForceUpdate();
+  const renderCount = React.useRef(0);
 
   React.useEffect(() => {
-    renderCount.current += 1
-  })
+    renderCount.current += 1;
+  });
 
   const onClick = React.useCallback(() => {
-    forceUpdate()
-  }, [forceUpdate])
+    forceUpdate();
+  }, [forceUpdate]);
 
   return (
     <div
@@ -34,5 +34,5 @@ export default function UseTheForce() {
       </button>
       <div>Render count: {renderCount.current}</div>
     </div>
-  )
+  );
 }

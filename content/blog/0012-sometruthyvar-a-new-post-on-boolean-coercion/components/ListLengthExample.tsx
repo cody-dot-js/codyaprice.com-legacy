@@ -1,15 +1,15 @@
-import React from "react"
-import { css } from "@emotion/core"
+import React from 'react';
+import { css } from '@emotion/core';
 
 function ListLengthExample() {
-  const [list, setList] = React.useState<Array<number>>([])
+  const [list, setList] = React.useState<Array<number>>([]);
 
   function addItem() {
-    setList((l) => l.concat(l.length + 1))
+    setList((l) => l.concat(l.length + 1));
   }
 
   function clearList() {
-    setList([])
+    setList([]);
   }
 
   return (
@@ -42,7 +42,7 @@ function ListLengthExample() {
         </ul>
       )}
     </div>
-  )
+  );
 }
 
-export default ListLengthExample
+export default ListLengthExample;

@@ -1,17 +1,17 @@
-import React from "react"
-import { css } from "@emotion/core"
-import { graphql } from "gatsby"
-import { FaTags } from "react-icons/fa"
+import React from 'react';
+import { css } from '@emotion/core';
+import { graphql } from 'gatsby';
+import { FaTags } from 'react-icons/fa';
 
-import { Link, ListLayout, PostCard, SEO } from "../../components"
+import { Link, ListLayout, PostCard, SEO } from '../../components';
 
 interface Props {
-  data: any
-  location: any
+  data: any;
+  location: any;
 }
 
 function BlogPage({ data, location }: Props) {
-  const posts = data.allMdx.edges
+  const posts = data.allMdx.edges;
 
   return (
     <ListLayout
@@ -63,10 +63,10 @@ function BlogPage({ data, location }: Props) {
         </article>
       ))}
     </ListLayout>
-  )
+  );
 }
 
-export default BlogPage
+export default BlogPage;
 
 export const pageQuery = graphql`
   query {
@@ -102,4 +102,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

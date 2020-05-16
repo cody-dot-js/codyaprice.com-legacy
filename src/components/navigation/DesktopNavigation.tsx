@@ -1,9 +1,9 @@
-import React from "react"
-import { css } from "@emotion/core"
-import NavigationLink from "./NavigationLink"
+import React from 'react';
+import { css } from '@emotion/core';
+import NavigationLink from './NavigationLink';
 
 interface Props {
-  routes: Array<{ to: string; display: string }>
+  routes: Array<{ to: string; display: string }>;
 }
 
 function DesktopNavigation({ routes = [], ...otherProps }: Props) {
@@ -30,7 +30,7 @@ function DesktopNavigation({ routes = [], ...otherProps }: Props) {
         </NavigationLink>
       ))}
     </ul>
-  )
+  );
 }
 
-export default DesktopNavigation
+export default DesktopNavigation;

@@ -1,10 +1,10 @@
-const cache: Record<string, number> = {}
+const cache: Record<string, number> = {};
 
-function uniqueId(key = "") {
-  const id = cache[key] || 0
-  cache[key] = id + 1
+function uniqueId(key = '') {
+  const id = cache[key] || 0;
+  cache[key] = id + 1;
 
-  return `${key}${id}`
+  return `${key}${id}`;
 }
 
-export default uniqueId
+export default uniqueId;

@@ -1,9 +1,9 @@
-import React, { ReactNode } from "react"
-import { css } from "@emotion/core"
+import React, { ReactNode } from 'react';
+import { css } from '@emotion/core';
 
 interface Props {
-  children: ReactNode
-  label?: ReactNode
+  children: ReactNode;
+  label?: ReactNode;
 }
 
 function FormInput({ children, label = null }: Props) {
@@ -17,7 +17,7 @@ function FormInput({ children, label = null }: Props) {
       {label}
       {children}
     </label>
-  )
+  );
 }
 
-export default FormInput
+export default FormInput;

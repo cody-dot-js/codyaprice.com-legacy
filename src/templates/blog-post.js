@@ -1,18 +1,24 @@
-import React from "react"
-import { css } from "@emotion/core"
-import { Link, graphql } from "gatsby"
-import Image from "gatsby-image"
-import { MDXRenderer } from "gatsby-plugin-mdx"
+import React from 'react';
+import { css } from '@emotion/core';
+import { Link, graphql } from 'gatsby';
+import Image from 'gatsby-image';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import { Commento, PostLayout, ReadingProgress, SEO, Tags } from "../components"
-import { rhythm } from "../utils/typography"
-import formatReadingTime from "../utils/formatReadingTime"
+import {
+  Commento,
+  PostLayout,
+  ReadingProgress,
+  SEO,
+  Tags,
+} from '../components';
+import { rhythm } from '../utils/typography';
+import formatReadingTime from '../utils/formatReadingTime';
 
 function BlogPost({ data, location, pageContext }) {
-  const { mdx: post } = data
-  const { previous, next } = pageContext
-  const postRef = React.useRef(null)
-  const layoutRef = React.useRef(null)
+  const { mdx: post } = data;
+  const { previous, next } = pageContext;
+  const postRef = React.useRef(null);
+  const layoutRef = React.useRef(null);
 
   return (
     <>
@@ -102,10 +108,10 @@ function BlogPost({ data, location, pageContext }) {
         <Commento id={post.fields.slug} />
       </PostLayout>
     </>
-  )
+  );
 }
 
-export default BlogPost
+export default BlogPost;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -140,4 +146,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

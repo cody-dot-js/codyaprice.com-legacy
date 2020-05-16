@@ -1,6 +1,6 @@
-import React from "react"
-import { css } from "@emotion/core"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react';
+import { css } from '@emotion/core';
+import { useStaticQuery, graphql } from 'gatsby';
 import {
   FaDribbble,
   FaFacebook,
@@ -10,20 +10,20 @@ import {
   FaMedium,
   FaRss,
   FaTwitter,
-} from "react-icons/fa"
-import Link from "./Link"
-import VisuallyHidden from "./VisuallyHidden"
-import { IconType } from "react-icons/lib/cjs"
+} from 'react-icons/fa';
+import Link from './Link';
+import VisuallyHidden from './VisuallyHidden';
+import { IconType } from 'react-icons/lib/cjs';
 
 export enum Social {
-  dribbble = "dribble",
-  facebook = "facebook",
-  github = "github",
-  instagram = "instagram",
-  linkedin = "linkedin",
-  medium = "medium",
-  rss = "rss",
-  twitter = "twitter",
+  dribbble = 'dribble',
+  facebook = 'facebook',
+  github = 'github',
+  instagram = 'instagram',
+  linkedin = 'linkedin',
+  medium = 'medium',
+  rss = 'rss',
+  twitter = 'twitter',
 }
 
 const iconMap: Record<string, IconType> = {
@@ -35,26 +35,26 @@ const iconMap: Record<string, IconType> = {
   medium: FaMedium,
   rss: FaRss,
   twitter: FaTwitter,
-}
+};
 
 interface IconProps {
-  id: Social
+  id: Social;
 }
 
 function Icon({ id, ...otherProps }: IconProps) {
-  const Icon: IconType = iconMap[id]
+  const Icon: IconType = iconMap[id];
 
-  return <Icon {...otherProps} />
+  return <Icon {...otherProps} />;
 }
 
 type SocialMetadata = {
-  id: Social
-  user?: string
-  url: string
-}
+  id: Social;
+  user?: string;
+  url: string;
+};
 
 interface Props {
-  otherLinks?: Array<SocialMetadata>
+  otherLinks?: Array<SocialMetadata>;
 }
 
 const style = css`
@@ -63,7 +63,7 @@ const style = css`
   align-items: center;
   width: 100%;
   flex-flow: row wrap;
-`
+`;
 
 function Socials({ otherLinks = [] }: Props) {
   const data = useStaticQuery(graphql`
@@ -77,11 +77,13 @@ function Socials({ otherLinks = [] }: Props) {
         }
       }
     }
-  `)
+  `);
 
-  const { socials }: { socials: Array<SocialMetadata> } = data.site.siteMetadata
+  const {
+    socials,
+  }: { socials: Array<SocialMetadata> } = data.site.siteMetadata;
 
-  const allLinks = socials.concat(otherLinks)
+  const allLinks = socials.concat(otherLinks);
 
   return (
     <div css={style}>
@@ -110,10 +112,10 @@ function Socials({ otherLinks = [] }: Props) {
             />
             <VisuallyHidden id={`icon_${id}`}>Icon for {id}</VisuallyHidden>
           </Link>
-        )
+        );
       })}
     </div>
-  )
+  );
 }
 
-export default Socials
+export default Socials;

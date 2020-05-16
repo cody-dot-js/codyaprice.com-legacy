@@ -1,6 +1,7 @@
-import React from "react"
+import React from 'react';
+import { css } from '@emotion/core';
 
-import { PostLayout } from "../components"
+import { PostLayout } from '../components';
 
 function ResumeSourcePage({ location }) {
   return (
@@ -22,7 +23,7 @@ function ResumeSourcePage({ location }) {
         <a href="/resume.zip">Download my resume's source code</a>
       </p>
     </PostLayout>
-  )
+  );
 }
 
-export default ResumeSourcePage
+export default ResumeSourcePage;

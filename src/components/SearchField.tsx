@@ -1,13 +1,13 @@
-import React, { ChangeEvent } from "react"
-import { css } from "@emotion/core"
-import { MdSearch, MdClose } from "react-icons/md"
+import React, { ChangeEvent } from 'react';
+import { css } from '@emotion/core';
+import { MdSearch, MdClose } from 'react-icons/md';
 
 interface Props {
-  onChange?: (event: ChangeEvent<HTMLInputElement>) => void
-  onClear?: () => void
-  placeholder: string
-  title: string
-  value?: string
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  onClear?: () => void;
+  placeholder: string;
+  title: string;
+  value?: string;
 }
 
 function SearchField({
@@ -18,30 +18,30 @@ function SearchField({
   value,
   ...otherProps
 }: Props) {
-  const [_value, setValue] = React.useState<string>("")
-  const isControlledInput = value !== undefined
-  const searchValue = isControlledInput ? value : _value
+  const [_value, setValue] = React.useState<string>('');
+  const isControlledInput = value !== undefined;
+  const searchValue = isControlledInput ? value : _value;
 
   const handleChange = React.useCallback(
     (event) => {
       if (!isControlledInput) {
-        setValue(event.target.value)
+        setValue(event.target.value);
       }
 
-      onChange?.(event)
+      onChange?.(event);
     },
     [isControlledInput, onChange]
-  )
+  );
 
   const handleClear = React.useCallback(() => {
     if (!isControlledInput) {
-      setValue("")
+      setValue('');
     }
 
-    onClear?.()
-  }, [isControlledInput, onClear])
+    onClear?.();
+  }, [isControlledInput, onClear]);
 
-  const isClearDisabled = _value.length === 0
+  const isClearDisabled = _value.length === 0;
 
   return (
     <label
@@ -109,7 +109,7 @@ function SearchField({
           right: 0.25rem;
           top: 0.375rem;
           cursor: pointer;
-          visibility: ${isClearDisabled ? "hidden" : "visible"};
+          visibility: ${isClearDisabled ? 'hidden' : 'visible'};
         `}
         disabled={isClearDisabled}
         onClick={handleClear}
@@ -126,7 +126,7 @@ function SearchField({
         />
       </button>
     </label>
-  )
+  );
 }
 
-export default SearchField
+export default SearchField;

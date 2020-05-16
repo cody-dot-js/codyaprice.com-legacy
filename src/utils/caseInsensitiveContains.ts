@@ -3,11 +3,11 @@ export default function caseInsensitiveContains(
   query?: string
 ) {
   if (!string) {
-    return false
+    return false;
   }
 
-  const searchable = `${string}`.toLowerCase()
-  const by = `${query}`.trim().toLowerCase()
+  const searchable = `${string}`.toLowerCase();
+  const by = `${query}`.trim().toLowerCase();
 
-  return searchable.includes(by)
+  return searchable.includes(by);
 }

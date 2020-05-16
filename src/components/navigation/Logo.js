@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 
 function Logo(props) {
   return (
@@ -301,7 +301,7 @@ function Logo(props) {
   c7.61-7.14,16.51-11.89,26.73-14.03c11.13-2.34,22.02-1.43,32.6,2.79C154.76,78,159.93,81.12,164.62,85.17z"
       />
     </svg>
-  )
+  );
 }
 
-export default Logo
+export default Logo;

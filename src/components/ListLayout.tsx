@@ -1,17 +1,17 @@
-import React, { ReactNode, RefObject } from "react"
-import { css } from "@emotion/core"
-import { Link } from "gatsby"
-import { MDXProvider } from "@mdx-js/react"
+import React, { ReactNode, RefObject } from 'react';
+import { css } from '@emotion/core';
+import { Link } from 'gatsby';
+import { MDXProvider } from '@mdx-js/react';
 
-import Layout from "./Layout"
+import Layout from './Layout';
 
 interface Props {
-  children: ReactNode
-  headerContent?: ReactNode
-  layoutRef: RefObject<HTMLDivElement>
-  leftSidebarContent?: ReactNode
-  rightSidebarContent?: ReactNode
-  title: ReactNode
+  children: ReactNode;
+  headerContent?: ReactNode;
+  layoutRef: RefObject<HTMLDivElement>;
+  leftSidebarContent?: ReactNode;
+  rightSidebarContent?: ReactNode;
+  title: ReactNode;
 }
 
 const defaultProps = {
@@ -20,7 +20,7 @@ const defaultProps = {
   leftSidebarContent: null,
   location: null,
   rightSidebarContent: null,
-}
+};
 
 function ListLayout({
   children,
@@ -80,9 +80,9 @@ function ListLayout({
         <MDXProvider components={{}}>{children}</MDXProvider>
       </div>
     </Layout>
-  )
+  );
 }
 
-ListLayout.defaultProps = defaultProps
+ListLayout.defaultProps = defaultProps;
 
-export default ListLayout
+export default ListLayout;

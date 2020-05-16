@@ -1,12 +1,12 @@
-import React, { ReactNode } from "react"
-import { css } from "@emotion/core"
+import React, { ReactNode } from 'react';
+import { css } from '@emotion/core';
 
 interface Props {
-  children?: ReactNode
-  color?: string
+  children?: ReactNode;
+  color?: string;
 }
 
-function Badge({ children = null, color = "#a44fb6", ...extraProps }: Props) {
+function Badge({ children = null, color = '#a44fb6', ...extraProps }: Props) {
   return (
     <div
       css={css`
@@ -20,7 +20,7 @@ function Badge({ children = null, color = "#a44fb6", ...extraProps }: Props) {
     >
       {children}
     </div>
-  )
+  );
 }
 
-export default Badge
+export default Badge;

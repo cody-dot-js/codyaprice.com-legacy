@@ -1,11 +1,11 @@
-import React from "react"
-import { css } from "@emotion/core"
-import FormInput from "./FormInput"
+import React from 'react';
+import { css } from '@emotion/core';
+import FormInput from './FormInput';
 
 interface SummaryProps {
-  title: React.ReactNode | string
-  height: string | number
-  width: string | number
+  title: React.ReactNode | string;
+  height: string | number;
+  width: string | number;
 }
 
 function Summary({ height, title, width }: SummaryProps) {
@@ -15,32 +15,32 @@ function Summary({ height, title, width }: SummaryProps) {
       <p>Height: {height} px</p>
       <p>Width: {width} px</p>
     </div>
-  )
+  );
 }
 
 function BoxModel() {
-  const contentBoxRef = React.useRef<HTMLDivElement>(null)
-  const borderBoxRef = React.useRef<HTMLDivElement>(null)
+  const contentBoxRef = React.useRef<HTMLDivElement>(null);
+  const borderBoxRef = React.useRef<HTMLDivElement>(null);
 
-  const [backgroundColor, setBackgroundColor] = React.useState("#303030")
-  const [borderColor, setBorderColor] = React.useState("#f00")
-  const [borderWidth, setBorderWidth] = React.useState("4px")
-  const [color, setColor] = React.useState("#fff")
-  const [height, setHeight] = React.useState("80px")
-  const [padding, setPadding] = React.useState("20px")
-  const [width, setWidth] = React.useState("120px")
+  const [backgroundColor, setBackgroundColor] = React.useState('#303030');
+  const [borderColor, setBorderColor] = React.useState('#f00');
+  const [borderWidth, setBorderWidth] = React.useState('4px');
+  const [color, setColor] = React.useState('#fff');
+  const [height, setHeight] = React.useState('80px');
+  const [padding, setPadding] = React.useState('20px');
+  const [width, setWidth] = React.useState('120px');
   const [contentBoxSize, setContentBoxSize] = React.useState({
     height: 0,
     width: 0,
-  })
+  });
   const [borderBoxSize, setBorderBoxSize] = React.useState({
     height: 0,
     width: 0,
-  })
+  });
 
   const baseBoxStyles = {
-    borderStyle: "solid",
-  }
+    borderStyle: 'solid',
+  };
 
   const customizableBoxStyles = {
     backgroundColor,
@@ -50,26 +50,26 @@ function BoxModel() {
     height,
     padding,
     width,
-  }
+  };
 
   React.useEffect(() => {
-    const { current: contentBox } = contentBoxRef
-    const { current: borderBox } = borderBoxRef
+    const { current: contentBox } = contentBoxRef;
+    const { current: borderBox } = borderBoxRef;
 
     setContentBoxSize({
       height: contentBox?.scrollHeight ?? 0,
       width: contentBox?.scrollWidth ?? 0,
-    })
+    });
 
     setBorderBoxSize({
       height: borderBox?.scrollHeight ?? 0,
       width: borderBox?.scrollWidth ?? 0,
-    })
-  }, [borderWidth, height, padding, width])
+    });
+  }, [borderWidth, height, padding, width]);
 
   const onChange = (setState: React.Dispatch<React.SetStateAction<string>>) => (
     event: React.ChangeEvent<HTMLInputElement>
-  ) => setState(event.target.value)
+  ) => setState(event.target.value);
 
   return (
     <div
@@ -157,7 +157,7 @@ function BoxModel() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default BoxModel
+export default BoxModel;

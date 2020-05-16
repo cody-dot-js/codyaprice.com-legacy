@@ -1,39 +1,39 @@
-import React, { ReactNode } from "react"
-import { css } from "@emotion/core"
-import { Example } from "../../../mdx"
+import React, { ReactNode } from 'react';
+import { css } from '@emotion/core';
+import { Example } from '../../../mdx';
 
-const initialState = { count: 0 }
+const initialState = { count: 0 };
 
 enum CounterAction {
-  increment = "increment",
-  decrement = "decrement",
+  increment = 'increment',
+  decrement = 'decrement',
 }
 
 interface IReducerState {
-  count: number
+  count: number;
 }
 
 interface IReducerAction {
-  type: CounterAction
+  type: CounterAction;
 }
 
 function reducer({ count }: IReducerState, { type }: IReducerAction) {
   switch (type) {
     case CounterAction.increment:
-      return { count: count + 1 }
+      return { count: count + 1 };
     case CounterAction.decrement:
-      return { count: count - 1 }
+      return { count: count - 1 };
     default:
-      throw new Error()
+      throw new Error();
   }
 }
 
 interface Props {
-  caption?: ReactNode
+  caption?: ReactNode;
 }
 
 export default function Counter({ caption }: Props) {
-  const [{ count }, dispatch] = React.useReducer(reducer, initialState)
+  const [{ count }, dispatch] = React.useReducer(reducer, initialState);
 
   return (
     <Example caption={caption}>
@@ -64,5 +64,5 @@ export default function Counter({ caption }: Props) {
       </button>
       <small>This is rendered inside markdown (using MDX!) 🤓</small>
     </Example>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import React from "react"
-import { css } from "@emotion/core"
-import { Layout, SEO, Bio } from "../components"
+import React from 'react';
+import { css } from '@emotion/core';
+import { Layout, SEO, Bio } from '../components';
 
 interface Props {}
 
@@ -14,7 +14,7 @@ function AboutPage(props: Props) {
         `}
       />
     </Layout>
-  )
+  );
 }
 
-export default AboutPage
+export default AboutPage;

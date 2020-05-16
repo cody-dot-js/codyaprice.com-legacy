@@ -1,11 +1,11 @@
-function kebabify(str = "") {
+function kebabify(str = '') {
   return str
     .toLowerCase()
-    .replace(/[\W_]+/g, " ")
-    .split(" ")
+    .replace(/[\W_]+/g, ' ')
+    .split(' ')
     .filter(Boolean)
-    .join("-")
-    .trim()
+    .join('-')
+    .trim();
 }
 
-module.exports = kebabify
+module.exports = kebabify;

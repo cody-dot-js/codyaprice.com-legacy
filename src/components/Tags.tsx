@@ -1,10 +1,10 @@
-import React from "react"
-import { css } from "@emotion/core"
-import kebabCase from "lodash.kebabcase"
-import Tag from "./Tag"
+import React from 'react';
+import { css } from '@emotion/core';
+import kebabCase from 'lodash.kebabcase';
+import Tag from './Tag';
 
 interface Props {
-  list?: Array<string>
+  list?: Array<string>;
 }
 
 function Tags({ list = [], ...otherProps }: Props) {
@@ -18,7 +18,7 @@ function Tags({ list = [], ...otherProps }: Props) {
       {...otherProps}
     >
       {list.map((tag, i) => {
-        const slug = kebabCase(tag.toLowerCase())
+        const slug = kebabCase(tag.toLowerCase());
 
         return (
           <Tag
@@ -35,10 +35,10 @@ function Tags({ list = [], ...otherProps }: Props) {
           >
             {tag}
           </Tag>
-        )
+        );
       })}
     </div>
-  )
+  );
 }
 
-export default Tags
+export default Tags;

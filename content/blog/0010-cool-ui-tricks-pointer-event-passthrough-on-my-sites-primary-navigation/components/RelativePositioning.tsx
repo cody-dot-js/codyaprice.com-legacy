@@ -1,44 +1,44 @@
-import React from "react"
-import { css } from "@emotion/core"
-import FormInput from "./FormInput"
+import React from 'react';
+import { css } from '@emotion/core';
+import FormInput from './FormInput';
 
 function RelativePositioning() {
   const [usePositionRelative, setUsePositionRelative] = React.useState<boolean>(
     true
-  )
+  );
   const [backgroundColor, setBackgroundColor] = React.useState<string>(
-    "#e0e0e0"
-  )
-  const [color, setColor] = React.useState<string>("#000")
-  const [top, setTop] = React.useState<string>("0")
-  const [right, setRight] = React.useState<string>("0")
-  const [bottom, setBottom] = React.useState<string>("0")
-  const [left, setLeft] = React.useState<string>("0")
+    '#e0e0e0'
+  );
+  const [color, setColor] = React.useState<string>('#000');
+  const [top, setTop] = React.useState<string>('0');
+  const [right, setRight] = React.useState<string>('0');
+  const [bottom, setBottom] = React.useState<string>('0');
+  const [left, setLeft] = React.useState<string>('0');
 
   const customizableStyles = css`
     background-color: ${backgroundColor};
     color: ${color};
-    position: ${usePositionRelative ? "relative" : "static"};,
+    position: ${usePositionRelative ? 'relative' : 'static'};,
     top: ${top};
     right: ${right};
     bottom: ${bottom};
     left: ${left};
-  `
+  `;
 
   const onChange = (setState: React.Dispatch<React.SetStateAction<string>>) => (
     event: React.ChangeEvent<HTMLInputElement>
-  ) => setState(event.target.value)
+  ) => setState(event.target.value);
 
   const toggle = (
     setState: React.Dispatch<React.SetStateAction<boolean>>
-  ) => () => setState((s) => !s)
+  ) => () => setState((s) => !s);
 
   const positions = [
-    { name: "Top", setState: onChange(setTop), value: top },
-    { name: "Right", setState: onChange(setRight), value: right },
-    { name: "Bottom", setState: onChange(setBottom), value: bottom },
-    { name: "Left", setState: onChange(setLeft), value: left },
-  ]
+    { name: 'Top', setState: onChange(setTop), value: top },
+    { name: 'Right', setState: onChange(setRight), value: right },
+    { name: 'Bottom', setState: onChange(setBottom), value: bottom },
+    { name: 'Left', setState: onChange(setLeft), value: left },
+  ];
 
   return (
     <>
@@ -113,7 +113,7 @@ function RelativePositioning() {
         </p>
       </div>
     </>
-  )
+  );
 }
 
-export default RelativePositioning
+export default RelativePositioning;

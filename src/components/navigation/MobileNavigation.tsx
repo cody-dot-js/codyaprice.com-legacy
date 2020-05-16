@@ -1,25 +1,25 @@
-import React from "react"
-import { css, keyframes } from "@emotion/core"
-import { MdMenu, MdClose } from "react-icons/md"
-import useToggle from "../../hooks/useToggle"
-import NavigationLink from "./NavigationLink"
+import React from 'react';
+import { css, keyframes } from '@emotion/core';
+import { MdMenu, MdClose } from 'react-icons/md';
+import useToggle from '../../hooks/useToggle';
+import NavigationLink from './NavigationLink';
 
 interface Props {
-  color?: string
-  routes: Array<{ to: string; display: string }>
+  color?: string;
+  routes: Array<{ to: string; display: string }>;
 }
 
 const fadeIn = keyframes`
   0% {opacity: 0;}
   100% {opacity: 1;}
-`
+`;
 
 function MobileNavigation({
-  color = "#fff",
+  color = '#fff',
   routes = [],
   ...otherProps
 }: Props) {
-  const [isOpen, toggleIsOpen] = useToggle(false)
+  const [isOpen, toggleIsOpen] = useToggle(false);
 
   const openContainerCss = css`
     display: flex;
@@ -34,14 +34,14 @@ function MobileNavigation({
     height: 100vh;
     width: 100%;
     z-index: 100;
-  `
+  `;
 
   return (
     <div css={isOpen ? openContainerCss : {}} {...otherProps}>
       <button
         type="button"
         onClick={toggleIsOpen}
-        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
         css={css`
           color: ${color};
           font-size: 2rem;
@@ -54,7 +54,7 @@ function MobileNavigation({
           margin: 0;
           right: 1rem;
           top: 1.5rem;
-          position: ${isOpen ? "absolute" : "static"};
+          position: ${isOpen ? 'absolute' : 'static'};
         `}
       >
         {isOpen ? (
@@ -102,7 +102,7 @@ function MobileNavigation({
         </ul>
       )}
     </div>
-  )
+  );
 }
 
-export default MobileNavigation
+export default MobileNavigation;

@@ -1,6 +1,6 @@
-import React from "react"
-import { css, keyframes } from "@emotion/core"
-import uniqueId from "./uniqueId"
+import React from 'react';
+import { css, keyframes } from '@emotion/core';
+import uniqueId from './uniqueId';
 
 const buttonCss = css`
   height: 4rem;
@@ -13,7 +13,7 @@ const buttonCss = css`
     backgroundcolor: #fc85ae;
     boxshadow: 0 0.375rem 0.5rem 0 rgba(0, 0, 0, 0.54);
   }
-`
+`;
 
 const stripeAnimation = keyframes(css`
   0% {
@@ -22,31 +22,31 @@ const stripeAnimation = keyframes(css`
   100% {
     background-position: 2rem 4rem;
   }
-`)
+`);
 
 interface Props {
-  pointerEventPassthroughEnabled: boolean
-  passthroughInitialValue: boolean
+  pointerEventPassthroughEnabled: boolean;
+  passthroughInitialValue: boolean;
 }
 
 function MockNavigation({
   pointerEventPassthroughEnabled,
   passthroughInitialValue,
 }: Props) {
-  const [lastClicked, setLastClicked] = React.useState(null)
+  const [lastClicked, setLastClicked] = React.useState(null);
   const [
     allowPointerEventPassthrough,
     setAllowPointerEventPassthrough,
-  ] = React.useState(passthroughInitialValue)
-  const [showNavigationBounds, setShowNavigationBounds] = React.useState(false)
-  const { current: uniq } = React.useRef(uniqueId())
+  ] = React.useState(passthroughInitialValue);
+  const [showNavigationBounds, setShowNavigationBounds] = React.useState(false);
+  const { current: uniq } = React.useRef(uniqueId());
 
   const onClick = React.useCallback((event) => {
-    const { name } = event.target
-    const id = event.target.id.split("-")[0]
+    const { name } = event.target;
+    const id = event.target.id.split('-')[0];
 
-    setLastClicked(name || id)
-  }, [])
+    setLastClicked(name || id);
+  }, []);
 
   return (
     <>
@@ -88,12 +88,12 @@ function MockNavigation({
             display: flex;
             justify-content: space-between;
             background-color: ${showNavigationBounds
-              ? "rgba(255, 255, 255, 0.38)"
+              ? 'rgba(255, 255, 255, 0.38)'
               : 0};
             padding: 1rem;
             width: 100%;
             position: relative;
-            pointer-cvents: ${allowPointerEventPassthrough ? "none" : "auto"};
+            pointer-cvents: ${allowPointerEventPassthrough ? 'none' : 'auto'};
           `}
         >
           <button
@@ -154,10 +154,10 @@ function MockNavigation({
           margin: 0;
         `}
       >
-        Last clicked: {lastClicked ? lastClicked : "nothing"}
+        Last clicked: {lastClicked ? lastClicked : 'nothing'}
       </p>
     </>
-  )
+  );
 }
 
-export default MockNavigation
+export default MockNavigation;

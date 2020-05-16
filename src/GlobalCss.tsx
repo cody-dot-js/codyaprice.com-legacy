@@ -1,5 +1,5 @@
-import React from "react"
-import { Global, css } from "@emotion/core"
+import React from 'react';
+import { Global, css } from '@emotion/core';
 
 function GlobalCss() {
   return (
@@ -39,7 +39,7 @@ function GlobalCss() {
         }
       `}
     />
-  )
+  );
 }
 
-export default GlobalCss
+export default GlobalCss;

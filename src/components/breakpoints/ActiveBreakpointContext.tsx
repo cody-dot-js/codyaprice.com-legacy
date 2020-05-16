@@ -1,5 +1,5 @@
-import React from "react"
+import React from 'react';
 
-const ActiveBreakpointContext = React.createContext<string | number>(0)
+const ActiveBreakpointContext = React.createContext<string | number>(0);
 
-export default ActiveBreakpointContext
+export default ActiveBreakpointContext;

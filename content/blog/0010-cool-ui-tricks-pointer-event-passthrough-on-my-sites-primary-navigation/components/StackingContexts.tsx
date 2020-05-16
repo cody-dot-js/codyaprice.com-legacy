@@ -1,17 +1,17 @@
-import React from "react"
-import { css } from "@emotion/core"
-import FormInput from "./FormInput"
+import React from 'react';
+import { css } from '@emotion/core';
+import FormInput from './FormInput';
 
 function StackingContexts() {
-  const [zIndex, setZIndex] = React.useState<string>("1")
+  const [zIndex, setZIndex] = React.useState<string>('1');
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) =>
-    setZIndex(event.target.value)
+    setZIndex(event.target.value);
 
   const baseBoxStyle = css`
     width: 10rem;
     height: 10rem;
-  `
+  `;
 
   return (
     <>
@@ -56,7 +56,7 @@ function StackingContexts() {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default StackingContexts
+export default StackingContexts;

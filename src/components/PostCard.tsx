@@ -1,28 +1,28 @@
-import React, { ReactNode } from "react"
-import Image from "gatsby-image"
-import Card from "./Card"
-import Tags from "./Tags"
-import Link from "./Link"
-import formatReadingTime from "../utils/formatReadingTime"
-import { mediaQueries } from "./breakpoints"
-import { css } from "@emotion/core"
+import React, { ReactNode } from 'react';
+import Image from 'gatsby-image';
+import Card from './Card';
+import Tags from './Tags';
+import Link from './Link';
+import formatReadingTime from '../utils/formatReadingTime';
+import { mediaQueries } from './breakpoints';
+import { css } from '@emotion/core';
 
 interface Props {
-  imageSrc: any
-  imageAlt: string
-  title: ReactNode
-  description?: string
-  tags?: Array<string>
-  slug: string
-  date: string
-  timeToRead: number
+  imageSrc: any;
+  imageAlt: string;
+  title: ReactNode;
+  description?: string;
+  tags?: Array<string>;
+  slug: string;
+  date: string;
+  timeToRead: number;
 }
 
 function PostCard({
   imageSrc,
   imageAlt,
   title,
-  description = "",
+  description = '',
   tags = [],
   slug,
   date,
@@ -102,7 +102,7 @@ function PostCard({
         </Link>
       </div>
     </Card>
-  )
+  );
 }
 
-export default PostCard
+export default PostCard;

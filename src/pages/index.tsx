@@ -1,17 +1,17 @@
-import React from "react"
-import { css } from "@emotion/core"
-import { graphql } from "gatsby"
+import React from 'react';
+import { css } from '@emotion/core';
+import { graphql } from 'gatsby';
 
-import { Bio, Layout, SEO, PostCard } from "../components"
+import { Bio, Layout, SEO, PostCard } from '../components';
 
 interface Props {
-  data: any
-  location: any
+  data: any;
+  location: any;
 }
 
 function PortfolioIndex({ data, location }: Props) {
-  const siteTitle = data.site.siteMetadata.title
-  const { node: latestPost } = data.allMdx.edges[0]
+  const siteTitle = data.site.siteMetadata.title;
+  const { node: latestPost } = data.allMdx.edges[0];
 
   return (
     <Layout>
@@ -42,10 +42,10 @@ function PortfolioIndex({ data, location }: Props) {
         </article>
       </section>
     </Layout>
-  )
+  );
 }
 
-export default PortfolioIndex
+export default PortfolioIndex;
 
 export const pageQuery = graphql`
   query {
@@ -81,4 +81,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

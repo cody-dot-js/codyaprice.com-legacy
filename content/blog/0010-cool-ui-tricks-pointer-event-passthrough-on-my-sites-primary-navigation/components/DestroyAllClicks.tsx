@@ -1,16 +1,16 @@
-import React from "react"
-import { css } from "@emotion/core"
+import React from 'react';
+import { css } from '@emotion/core';
 
 function DestroyAllClicks() {
-  const [count, setCount] = React.useState<number>(0)
+  const [count, setCount] = React.useState<number>(0);
 
   function increment() {
-    setCount((c) => c + 1)
+    setCount((c) => c + 1);
   }
 
   function preventAllClicks(event: React.MouseEvent<HTMLDivElement>) {
-    event.preventDefault()
-    event.stopPropagation()
+    event.preventDefault();
+    event.stopPropagation();
   }
 
   return (
@@ -25,7 +25,7 @@ function DestroyAllClicks() {
       </button>
       <p>Count = {count}</p>
     </div>
-  )
+  );
 }
 
-export default DestroyAllClicks
+export default DestroyAllClicks;
