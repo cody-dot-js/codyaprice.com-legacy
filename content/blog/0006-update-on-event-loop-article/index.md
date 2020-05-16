@@ -25,9 +25,7 @@ import Counter from "./components/Counter";
 
 ## Example: React Component Embedded in Markdown
 
-<Counter />
-
-Turns out good content takes a lot of time and effort. Who knew? 🤷‍♂️ 😂
+<Counter caption="Turns out good content takes a lot of time and effort. Who knew? 🤷‍♂️ 😂" />
 
 **TLDR:** _It's coming...**soon**_
 

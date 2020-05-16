@@ -1,16 +1,49 @@
 import React from "react"
+import { css } from "@emotion/core"
 import { graphql } from "gatsby"
+import { FaTags } from "react-icons/fa"
 
-import { ListLayout, SEO, PostCard } from "../components"
+import { Link, ListLayout, PostCard, SEO } from "../../components"
 
-function TagsList({ data, location, pageContext }) {
+interface Props {
+  data: any
+  location: any
+}
+
+function BlogPage({ data, location }: Props) {
   const posts = data.allMdx.edges
-  const { tag, count } = pageContext
-  const title = `All Blog Posts with Tag: ${tag} (${count})`
 
   return (
-    <ListLayout location={location} title={title}>
-      <SEO title={title} />
+    <ListLayout
+      location={location}
+      title="All Blog Posts"
+      headerContent={
+        <Link
+          css={css`
+            text-decoration: none;
+            color: #fff;
+            border-radius: 0.25rem;
+            background: #574b90;
+            padding: 0.5rem;
+            transition: all 0.125s ease-in-out;
+            &:hover, &:focus: {
+              background: #a44fb6;
+              box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.38);
+            }
+            white-space: nowrap;
+          `}
+          to="/blog/tags"
+        >
+          View All Tags&nbsp;
+          <FaTags
+            css={css`
+              vertical-align: middle;
+            `}
+          />
+        </Link>
+      }
+    >
+      <SEO title="All Blog Posts" />
       {posts.map(({ node }) => (
         <article key={node.fields.slug}>
           <PostCard
@@ -33,19 +66,16 @@ function TagsList({ data, location, pageContext }) {
   )
 }
 
-export default TagsList
+export default BlogPage
 
 export const pageQuery = graphql`
-  query BlogPostsByTag($tag: String!) {
+  query {
     site {
       siteMetadata {
         title
       }
     }
-    allMdx(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { fields: { tags: { in: [$tag] } } }
-    ) {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
           excerpt

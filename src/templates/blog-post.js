@@ -1,4 +1,5 @@
 import React from "react"
+import { css } from "@emotion/core"
 import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
@@ -28,15 +29,27 @@ function BlogPost({ data, location, pageContext }) {
         />
         <article>
           <header>
-            <p css={{ marginBottom: 0 }}>{post.frontmatter.date}</p>
-            <p css={{ marginBottom: 0 }}>
+            <p
+              css={css`
+                margin-bottom: 0;
+              `}
+            >
+              {post.frontmatter.date}
+            </p>
+            <p
+              css={css`
+                margin-bottom: 0;
+              `}
+            >
               {formatReadingTime(post.timeToRead)}
             </p>
             <Tags list={post.fields.tags} />
           </header>
           <div ref={postRef}>
             <Image
-              css={{ marginBottom: "2rem" }}
+              css={css`
+                margin-bottom: 2rem;
+              `}
               alt={post.fields.hero.alt}
               fluid={post.fields.hero.src.childImageSharp.fluid}
             />
@@ -50,20 +63,20 @@ function BlogPost({ data, location, pageContext }) {
             </div>
           </div>
           <hr
-            css={{
-              marginBottom: rhythm(1),
-            }}
+            css={css`
+              margin-bottom: ${rhythm(1)};
+            `}
           />
         </article>
         <nav>
           <ul
-            css={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "space-between",
-              listStyle: "none",
-              padding: 0,
-            }}
+            css={css`
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              list-style: none;
+              padding: 0;
+            `}
           >
             <li>
               {previous && (

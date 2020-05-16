@@ -1,7 +1,7 @@
-const path = require(`path`)
+const path = require("path")
 const kebabCase = require("lodash.kebabcase")
-const BlogPost = path.resolve(`./src/templates/blog-post.js`)
-const TagsList = path.resolve(`./src/templates/tags-list.jsx`)
+const BlogPost = path.resolve("./src/templates/blog-post.js")
+const TagsList = path.resolve("./src/templates/tags-list.jsx")
 const {
   caseInsensitiveSort,
   getSlugPath,

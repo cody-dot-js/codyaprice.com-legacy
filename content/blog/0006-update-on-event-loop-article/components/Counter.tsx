@@ -1,5 +1,6 @@
-import React from "react"
+import React, { ReactNode } from "react"
 import { css } from "@emotion/core"
+import { Example } from "../../../mdx"
 
 const initialState = { count: 0 }
 
@@ -27,17 +28,15 @@ function reducer({ count }: IReducerState, { type }: IReducerAction) {
   }
 }
 
-export default function Counter() {
+interface Props {
+  caption?: ReactNode
+}
+
+export default function Counter({ caption }: Props) {
   const [{ count }, dispatch] = React.useReducer(reducer, initialState)
 
   return (
-    <div
-      css={css`
-        text-align: center;
-        padding: 0.5rem;
-        border: 0.25rem dashed;
-      `}
-    >
+    <Example caption={caption}>
       <h1>React Counter Component</h1>
       <h2>Count: {count}</h2>
       <button
@@ -64,6 +63,6 @@ export default function Counter() {
         -
       </button>
       <small>This is rendered inside markdown (using MDX!) 🤓</small>
-    </div>
+    </Example>
   )
 }

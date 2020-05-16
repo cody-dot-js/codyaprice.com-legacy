@@ -11,5 +11,5 @@
     "noUnusedLocals": false,
     "allowJs": true
   },
-  "exclude": ["node_modules/*", "public", ".cache", "static"]
+  "exclude": ["node_modules/*", "public", ".cache", "static", "gatsby-utils"]
 }
