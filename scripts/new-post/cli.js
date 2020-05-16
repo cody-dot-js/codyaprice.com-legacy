@@ -9,7 +9,7 @@ function cli() {
       "tags",
       "A comma separated list of tags to apply to the blog post",
       [],
-      content =>
+      (content) =>
         content.reduce((acc, tags) => acc.concat(...parseTags(tags)), [])
     )
 

@@ -3,11 +3,11 @@ import PropTypes from "prop-types"
 import Particles from "react-particles-js"
 
 const propTypes = {
-  starCount: PropTypes.number
+  starCount: PropTypes.number,
 }
 
 const defaultProps = {
-  starCount: 1024
+  starCount: 1024,
 }
 
 function StarryDisplay({ starCount }) {
@@ -20,7 +20,7 @@ function StarryDisplay({ starCount }) {
         position: "absolute",
         top: 0,
         width: "100%",
-        zIndex: 0
+        zIndex: 0,
       }}
     >
       <Particles params={params({ starCount })} />
@@ -40,11 +40,11 @@ export function params({ starCount }) {
         value: starCount,
         density: {
           enable: true,
-          value_area: starCount
-        }
+          value_area: starCount,
+        },
       },
       color: {
-        value: "#fff"
+        value: "#fff",
       },
       opacity: {
         value: 1,
@@ -53,15 +53,15 @@ export function params({ starCount }) {
           enable: true,
           speed: 1,
           opacity_min: 0,
-          sync: true
-        }
+          sync: true,
+        },
       },
       size: {
         value: 1.570795,
-        random: true
+        random: true,
       },
       line_linked: {
-        enable: false
+        enable: false,
       },
       move: {
         enable: true,
@@ -70,21 +70,21 @@ export function params({ starCount }) {
         random: true,
         straight: false,
         out_mode: "out",
-        bounce: false
-      }
+        bounce: false,
+      },
     },
     interactivity: {
       detect_on: "canvas",
       events: {
         onhover: {
           enable: true,
-          mode: "bubble"
+          mode: "bubble",
         },
         onclick: {
           enable: true,
-          mode: "repulse"
+          mode: "repulse",
         },
-        resize: false
+        resize: false,
       },
       modes: {
         bubble: {
@@ -92,14 +92,14 @@ export function params({ starCount }) {
           size: 3,
           duration: 2,
           opacity: 0.54,
-          speed: 3
+          speed: 3,
         },
         repulse: {
           distance: 300,
-          duration: 1
-        }
-      }
+          duration: 1,
+        },
+      },
     },
-    retina_detect: true
+    retina_detect: true,
   }
 }

@@ -22,9 +22,9 @@ function BlogPage({ data, location }) {
             transition: "all 0.125s ease-in-out",
             "&:hover,&:focus": {
               background: "#a44fb6",
-              boxShadow: "0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.38)"
+              boxShadow: "0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.38)",
             },
-            whiteSpace: "nowrap"
+            whiteSpace: "nowrap",
           }}
           to="/blog/tags"
         >

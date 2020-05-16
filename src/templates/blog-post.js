@@ -42,7 +42,7 @@ function BlogPost({ data, location, pageContext }) {
             />
             <figcaption
               dangerouslySetInnerHTML={{
-                __html: post.fields.hero.caption
+                __html: post.fields.hero.caption,
               }}
             />
             <div css={{ margin: "0 auto", maxWidth: "50rem" }}>
@@ -51,7 +51,7 @@ function BlogPost({ data, location, pageContext }) {
           </div>
           <hr
             css={{
-              marginBottom: rhythm(1)
+              marginBottom: rhythm(1),
             }}
           />
         </article>
@@ -62,7 +62,7 @@ function BlogPost({ data, location, pageContext }) {
               flexWrap: "wrap",
               justifyContent: "space-between",
               listStyle: "none",
-              padding: 0
+              padding: 0,
             }}
           >
             <li>

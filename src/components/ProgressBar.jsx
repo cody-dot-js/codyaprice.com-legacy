@@ -4,13 +4,13 @@ import PropTypes from "prop-types"
 const propTypes = {
   value: PropTypes.number,
   max: PropTypes.number,
-  className: PropTypes.string
+  className: PropTypes.string,
 }
 
 const defaultProps = {
   value: 0,
   max: 100,
-  className: undefined
+  className: undefined,
 }
 
 const barColor = "#a44fb6"
@@ -24,22 +24,22 @@ const style = {
   overflow: "hidden",
   width: "100%",
   "&::-webkit-progress-bar": {
-    backgroundColor: "transparent"
+    backgroundColor: "transparent",
   },
   "&::-webkit-progress-value": {
-    backgroundColor: barColor
+    backgroundColor: barColor,
   },
 
   "&::-moz-progress-bar": {
-    backgroundColor: barColor
+    backgroundColor: barColor,
   },
 
   "&::-ms-fill": {
-    backgroundColor: barColor
+    backgroundColor: barColor,
   },
 
   "&:focus": {
-    outline: "none"
+    outline: "none",
   },
 
   "&[value]": {
@@ -48,21 +48,21 @@ const style = {
 
     // To fix background color to the proper shade of Grey in Safari
     "&::-webkit-progress-bar": {
-      borderRadius: 0
+      borderRadius: 0,
     },
 
     "&::-webkit-progress-value": {
       borderBottomLeftRadius: 0,
-      borderTopLeftRadius: 0
-    }
+      borderTopLeftRadius: 0,
+    },
   },
 
   "&[value='100'],&[value='0']": {
     "&::-webkit-progress-value": {
       borderBottomRightRadius: 0,
-      borderTopRightRadius: 0
-    }
-  }
+      borderTopRightRadius: 0,
+    },
+  },
 }
 
 function ProgressBar({ value, max, className }) {

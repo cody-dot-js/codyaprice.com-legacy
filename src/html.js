@@ -25,7 +25,7 @@ export default function HTML(props) {
         <GlobalCss />
         <div
           css={{
-            height: "100%"
+            height: "100%",
           }}
           key="body"
           id="___gatsby"
@@ -43,5 +43,5 @@ HTML.propTypes = {
   bodyAttributes: PropTypes.object,
   preBodyComponents: PropTypes.array,
   body: PropTypes.string,
-  postBodyComponents: PropTypes.array
+  postBodyComponents: PropTypes.array,
 }

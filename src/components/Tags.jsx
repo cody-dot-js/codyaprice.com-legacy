@@ -5,11 +5,11 @@ import kebabCase from "lodash.kebabcase"
 import Tag from "./Tag"
 
 const propTypes = {
-  list: PropTypes.arrayOf(PropTypes.string)
+  list: PropTypes.arrayOf(PropTypes.string),
 }
 
 const defaultProps = {
-  list: []
+  list: [],
 }
 
 function Tags({ list, ...otherProps }) {

@@ -3,11 +3,11 @@ import PropTypes from "prop-types"
 
 const propTypes = {
   children: PropTypes.node.isRequired,
-  caption: PropTypes.node
+  caption: PropTypes.node,
 }
 
 const defaultProps = {
-  caption: null
+  caption: null,
 }
 
 function Example({ children, caption }) {
@@ -17,7 +17,7 @@ function Example({ children, caption }) {
         css={{
           border: "0.25rem #c0c0c0 dashed",
           padding: "1rem",
-          margin: "1rem 0"
+          margin: "1rem 0",
         }}
       >
         {children}

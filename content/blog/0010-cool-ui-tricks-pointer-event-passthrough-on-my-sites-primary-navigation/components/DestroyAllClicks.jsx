@@ -4,7 +4,7 @@ function DestroyAllClicks() {
   const [count, setCount] = React.useState(0)
 
   function increment() {
-    setCount(c => c + 1)
+    setCount((c) => c + 1)
   }
 
   function preventAllClicks(event) {

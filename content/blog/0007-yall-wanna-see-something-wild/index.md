@@ -116,7 +116,7 @@ function useForceUpdate() {
   const [, forceUpdate] = React.useState()
 
   return React.useCallback(() => {
-    forceUpdate(s => !s)
+    forceUpdate((s) => !s)
   }, [])
 }
 ```

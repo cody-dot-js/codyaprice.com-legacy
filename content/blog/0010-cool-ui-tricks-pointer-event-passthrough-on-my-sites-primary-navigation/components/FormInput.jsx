@@ -3,11 +3,11 @@ import PropTypes from "prop-types"
 
 const propTypes = {
   children: PropTypes.node.isRequired,
-  label: PropTypes.node
+  label: PropTypes.node,
 }
 
 const defaultProps = {
-  label: null
+  label: null,
 }
 
 function FormInput({ children, label }) {

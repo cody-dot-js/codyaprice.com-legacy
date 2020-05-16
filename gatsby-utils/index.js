@@ -5,5 +5,5 @@ const toMarkdown = require("./to-markdown")
 module.exports = {
   caseInsensitiveSort,
   getSlugPath,
-  toMarkdown
+  toMarkdown,
 }

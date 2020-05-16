@@ -35,7 +35,7 @@ function Bio({ ...props }) {
           color: "#fff",
           marginTop: "1rem",
           textAlign: "center",
-          pointerEvents: "auto"
+          pointerEvents: "auto",
         }}
       >
         Hey y'all&nbsp;
@@ -52,7 +52,7 @@ function Bio({ ...props }) {
           maxWidth: 640,
           minHeight: 300,
           minWidth: 300,
-          pointerEvents: "auto"
+          pointerEvents: "auto",
         }}
         fluid={data.avatar.childImageSharp.fluid}
         alt={author}

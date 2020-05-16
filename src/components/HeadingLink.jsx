@@ -4,12 +4,12 @@ import PropTypes from "prop-types"
 const propTypes = {
   level: PropTypes.number,
   children: PropTypes.node,
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
 }
 
 const defaultProps = {
   level: 2,
-  children: null
+  children: null,
 }
 
 function HeadingLink({ level, id, children }) {

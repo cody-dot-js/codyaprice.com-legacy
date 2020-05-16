@@ -12,7 +12,7 @@ async function promptForMissingInputs(inputs = {}) {
   return {
     title,
     description,
-    tags
+    tags,
   }
 }
 

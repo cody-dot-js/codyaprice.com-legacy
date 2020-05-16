@@ -209,7 +209,7 @@ function Example() {
       </button>
       {list.length && (
         <ul>
-          {list.map(item => (
+          {list.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>

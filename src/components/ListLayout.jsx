@@ -9,12 +9,12 @@ const propTypes = {
   children: PropTypes.node.isRequired,
   headerContent: PropTypes.node,
   layoutRef: PropTypes.shape({
-    current: PropTypes.instanceOf(Element)
+    current: PropTypes.instanceOf(Element),
   }),
   leftSidebarContent: PropTypes.node,
   location: PropTypes.object,
   rightSidebarContent: PropTypes.node,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 }
 
 const defaultProps = {
@@ -22,7 +22,7 @@ const defaultProps = {
   layoutRef: React.createRef(),
   leftSidebarContent: null,
   location: null,
-  rightSidebarContent: null
+  rightSidebarContent: null,
 }
 
 function ListLayout({
@@ -48,20 +48,20 @@ function ListLayout({
             display: "flex",
             justifyContent: "space-between",
             marginBottom: "1rem",
-            marginTop: "1rem"
+            marginTop: "1rem",
           }}
         >
           <h1
             css={{
               margin: 0,
-              pointerEvents: "auto"
+              pointerEvents: "auto",
             }}
           >
             <Link
               css={{
                 boxShadow: "none",
                 textDecoration: "none",
-                color: "#fff"
+                color: "#fff",
               }}
               to="/"
             >

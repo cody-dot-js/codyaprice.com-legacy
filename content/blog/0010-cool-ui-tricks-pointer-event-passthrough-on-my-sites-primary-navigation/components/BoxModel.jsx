@@ -24,15 +24,15 @@ function BoxModel() {
   const [width, setWidth] = React.useState("120px")
   const [contentBoxSize, setContentBoxSize] = React.useState({
     height: 0,
-    width: 0
+    width: 0,
   })
   const [borderBoxSize, setBorderBoxSize] = React.useState({
     height: 0,
-    width: 0
+    width: 0,
   })
 
   const baseBoxStyles = {
-    borderStyle: "solid"
+    borderStyle: "solid",
   }
 
   const customizableBoxStyles = {
@@ -42,7 +42,7 @@ function BoxModel() {
     color,
     height,
     padding,
-    width
+    width,
   }
 
   React.useEffect(() => {
@@ -51,16 +51,16 @@ function BoxModel() {
 
     setContentBoxSize({
       height: contentBox.scrollHeight,
-      width: contentBox.scrollWidth
+      width: contentBox.scrollWidth,
     })
 
     setBorderBoxSize({
       height: borderBox.scrollHeight,
-      width: borderBox.scrollWidth
+      width: borderBox.scrollWidth,
     })
   }, [borderWidth, height, padding, width])
 
-  const onChange = setState => event => setState(event.target.value)
+  const onChange = (setState) => (event) => setState(event.target.value)
 
   return (
     <div css={{ width: "100%", position: "relative" }}>
@@ -106,7 +106,7 @@ function BoxModel() {
         css={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
-          gridGap: "1rem"
+          gridGap: "1rem",
         }}
       >
         <Summary title="Content Box" {...contentBoxSize} />
@@ -117,7 +117,7 @@ function BoxModel() {
           margin: "0 auto",
           width: "fit-content",
           border: "1px dashed",
-          padding: "1rem"
+          padding: "1rem",
         }}
       >
         <div
@@ -126,7 +126,7 @@ function BoxModel() {
             ...baseBoxStyles,
             ...customizableBoxStyles,
             boxSizing: "content-box",
-            marginBottom: "1rem"
+            marginBottom: "1rem",
           }}
         >
           Content box (initial & default value)
@@ -136,7 +136,7 @@ function BoxModel() {
           css={{
             ...baseBoxStyles,
             ...customizableBoxStyles,
-            boxSizing: "border-box"
+            boxSizing: "border-box",
           }}
         >
           Border box

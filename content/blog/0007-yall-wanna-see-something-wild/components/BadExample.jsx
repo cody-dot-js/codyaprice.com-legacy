@@ -20,7 +20,7 @@ export default class BadExample extends React.Component {
         css={{
           textAlign: "center",
           padding: "0.5rem",
-          border: "0.25rm dashed"
+          border: "0.25rm dashed",
         }}
       >
         <h2>I have a structured settlement</h2>

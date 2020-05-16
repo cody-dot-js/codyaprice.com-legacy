@@ -6,13 +6,13 @@ const propTypes = {
   routes: PropTypes.arrayOf(
     PropTypes.shape({
       to: PropTypes.string.isRequired,
-      display: PropTypes.string.isRequired
+      display: PropTypes.string.isRequired,
     })
-  )
+  ),
 }
 
 const defaultProps = {
-  routes: []
+  routes: [],
 }
 
 function DesktopNavigation({ routes, ...otherProps }) {
@@ -21,7 +21,7 @@ function DesktopNavigation({ routes, ...otherProps }) {
       css={{
         display: "flex",
         listStyle: "none",
-        margin: 0
+        margin: 0,
       }}
       {...otherProps}
     >
@@ -31,8 +31,8 @@ function DesktopNavigation({ routes, ...otherProps }) {
           to={to}
           css={{
             ":not(:last-of-type)": {
-              marginRight: "0.5rem"
-            }
+              marginRight: "0.5rem",
+            },
           }}
         >
           {display}

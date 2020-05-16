@@ -17,7 +17,7 @@ async function runner() {
     title,
     description,
     tags: formatTags(tags),
-    date: now
+    date: now,
   }
 
   const templateData = fs.readFileSync(`${__dirname}/blog-template.md`, "utf8")

@@ -111,7 +111,7 @@ const list = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 const listAsStrings = ["10", "9", "8", "7", "6", "5", "4", "3", "2", "1"]
 
 // sort the list, convert back into numbers
-const sortedList = listAsStrings.sort().map(number => parseInt(number, 10))
+const sortedList = listAsStrings.sort().map((number) => parseInt(number, 10))
 ```
 
 <figcaption>
@@ -154,7 +154,7 @@ Here's the old way I wrote it:
 function newPostNumber() {
   const postNumbers = fs
     .readdirSync(blogsPath) // read the content/blog directory, like `ls`
-    .map(filename => parseInt(filename.split("-")[0], 10)) // get the prefix, as a number
+    .map((filename) => parseInt(filename.split("-")[0], 10)) // get the prefix, as a number
     .filter(Boolean) // remove any falsey things, like things that don't match our pattern
     .sort() // sort the list in order
     .reverse() // reverse the list so I can pick the first one (last number)
@@ -196,7 +196,7 @@ In other words, we're incrementing in ascending order, **_what we originally wan
 function newPostNumber() {
   const postNumbers = fs
     .readdirSync(blogsPath)
-    .map(filename => parseInt(filename.split("-")[0], 10))
+    .map((filename) => parseInt(filename.split("-")[0], 10))
     .filter(Boolean)
     .sort((l, r) => l - r)
     .reverse()

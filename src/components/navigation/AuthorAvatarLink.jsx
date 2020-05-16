@@ -6,11 +6,11 @@ import NavigationLink from "./NavigationLink"
 import Logo from "./Logo"
 
 const propTypes = {
-  to: PropTypes.string
+  to: PropTypes.string,
 }
 
 const defaultProps = {
-  to: "/"
+  to: "/",
 }
 
 function AuthorAvatarLink({ to, ...otherProps }) {
@@ -33,11 +33,11 @@ function AuthorAvatarLink({ to, ...otherProps }) {
         padding: 0,
         "&.active": {
           background: "none",
-          boxShadow: "none"
+          boxShadow: "none",
         },
         "&:hover,&:focus": {
-          background: "none"
-        }
+          background: "none",
+        },
       }}
       {...otherProps}
     >

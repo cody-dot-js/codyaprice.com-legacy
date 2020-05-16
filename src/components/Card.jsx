@@ -2,18 +2,18 @@ import React from "react"
 import PropTypes from "prop-types"
 
 const propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 }
 
 const defaultProps = {
-  children: null
+  children: null,
 }
 
 const style = {
   borderRadius: "0.25rem",
   boxShadow: "0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.38)",
   margin: "1rem 0",
-  padding: "1rem"
+  padding: "1rem",
 }
 
 function Card({ children, ...otherProps }) {

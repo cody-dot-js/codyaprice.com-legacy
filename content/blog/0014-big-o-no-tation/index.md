@@ -150,7 +150,7 @@ This could look something like:
 ```js
 function reverseList(list = []) {
   const stack = new Stack()
-  list.forEach(item => stack.push(item))
+  list.forEach((item) => stack.push(item))
 
   let reversedList = []
   while (!stack.isEmpty()) {
@@ -320,13 +320,11 @@ Please comment below if you have any thoughts or questions and be sure to share 
 Thanks for reading! 👋
 
 [^1]:
-
   The runtime of this algorithm is linear, `O(n)`.
   While we _do_ loop `list.length` times twice, remember to drop the leading constant!
   As in: `2*O(n)` becomes `O(n)`.
 
 [^2]:
-
   If you said `O(n³)`, then you are...incorrect!
   The answer is: `O(n²)`!
   **_How's that so?!_**
@@ -340,7 +338,6 @@ Thanks for reading! 👋
   This one is a tricky lil' curveball for sure! ⚾️
 
 [^3]:
-
   The recursive binary search algorithm has **_logarithmic space complexity_** because it uses recursion.
   With recursion, you get a "free" stack, the calling stack, which is used on each function call.
   Since the algorithm calls itself at most `log n` times, the stack will have at most `log n` entries on it.

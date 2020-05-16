@@ -7,13 +7,13 @@ const propTypes = {
   onClear: PropTypes.func,
   placeholder: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  value: PropTypes.string
+  value: PropTypes.string,
 }
 
 const defaultProps = {
   onChange: null,
   onClear: null,
-  value: undefined
+  value: undefined,
 }
 
 function SearchField(props) {
@@ -23,7 +23,7 @@ function SearchField(props) {
   const searchValue = isControlledInput ? value : _value
 
   const handleChange = React.useCallback(
-    event => {
+    (event) => {
       if (!isControlledInput) {
         setValue(event.target.value)
       }
@@ -71,8 +71,8 @@ function SearchField(props) {
           ":focus": {
             backgroundColor: "#fff",
             boxShadow: "0 0 0 2px #3d84a8",
-            outline: 0
-          }
+            outline: 0,
+          },
         }}
         type="search"
         placeholder={placeholder}
@@ -91,7 +91,7 @@ function SearchField(props) {
           left: "0.25rem",
           top: "0.375rem",
           pointerEvents: "none",
-          fill: "#78757a"
+          fill: "#78757a",
         }}
         viewBox="0 0 24 24"
         focusable={false}
@@ -108,7 +108,7 @@ function SearchField(props) {
           right: "0.25rem",
           top: "0.375rem",
           cursor: "pointer",
-          visibility: isClearDisabled ? "hidden" : "visible"
+          visibility: isClearDisabled ? "hidden" : "visible",
         }}
         disabled={isClearDisabled}
         onClick={handleClear}
@@ -118,7 +118,7 @@ function SearchField(props) {
             display: "block",
             fill: "#78757a",
             width: "1.5rem",
-            height: "1.5rem"
+            height: "1.5rem",
           }}
           viewBox="0 0 24 24"
           aria-label="Clear"

@@ -4,7 +4,7 @@ function useForceUpdate() {
   const [, forceUpdate] = React.useState()
 
   return React.useCallback(() => {
-    forceUpdate(s => !s)
+    forceUpdate((s) => !s)
   }, [])
 }
 
@@ -25,7 +25,7 @@ export default function UseTheForce() {
       css={{
         textAlign: "center",
         padding: "0.5rem",
-        border: "0.25rem dashed"
+        border: "0.25rem dashed",
       }}
     >
       <button type="button" onClick={onClick}>
