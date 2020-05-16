@@ -38,38 +38,48 @@ function PostLayout({
       leftSidebarContent={leftSidebarContent}
       rightSidebarContent={rightSidebarContent}
     >
-      <header
+      <div
         css={css`
-          margin: 1rem 0;
+          max-width: 50rem;
+          margin: 0 auto;
         `}
       >
-        <h1
+        <header
           css={css`
-            margin: 0;
-            pointer-events: auto;
+            margin: 1rem 0;
           `}
         >
-          <Link
+          <h1
             css={css`
-              box-shadow: none;
-              color: #fff;
-              text-decoration: none;
+              margin: 0;
+              pointer-events: auto;
             `}
-            to="/"
           >
-            {title}
-          </Link>
-        </h1>
-      </header>
-      <Card
-        css={css`
-          background-color: #fff;
-          pointer-events: auto;
-        `}
-        {...otherProps}
-      >
-        <MDXProvider>{children}</MDXProvider>
-      </Card>
+            <Link
+              css={css`
+                box-shadow: none;
+                color: #fff;
+                text-decoration: none;
+              `}
+              to="/"
+            >
+              {title}
+            </Link>
+          </h1>
+        </header>
+        <Card
+          css={css`
+            background-color: #fff;
+            pointer-events: auto;
+            max-width: 50rem;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+          `}
+          {...otherProps}
+        >
+          <MDXProvider components={{}}>{children}</MDXProvider>
+        </Card>
+      </div>
     </Layout>
   )
 }

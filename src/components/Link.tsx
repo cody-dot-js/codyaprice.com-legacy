@@ -7,6 +7,7 @@ interface Props {
   partiallyActive?: boolean
   onFocus?: (event: FocusEvent<HTMLAnchorElement>) => void
   onBlur?: (event: FocusEvent<HTMLAnchorElement>) => void
+  activeClassName?: string
 }
 
 function Link({

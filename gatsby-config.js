@@ -79,6 +79,7 @@ module.exports = {
         name: "assets",
       },
     },
+    "gatsby-plugin-typescript",
     {
       resolve: "gatsby-plugin-mdx",
       options: {

@@ -14,11 +14,15 @@ function PortfolioIndex({ data, location }: Props) {
   const { node: latestPost } = data.allMdx.edges[0]
 
   return (
-    <Layout /* location={location} title={siteTitle} */>
+    <Layout>
       <SEO title="Cody Price's Portfolio Site" />
       <Bio />
       <hr />
-      <section css={{ pointerEvents: "auto" }}>
+      <section
+        css={css`
+          pointer-events: auto;
+        `}
+      >
         <h2>Latest Post</h2>
         <article key={latestPost.fields.slug}>
           <PostCard

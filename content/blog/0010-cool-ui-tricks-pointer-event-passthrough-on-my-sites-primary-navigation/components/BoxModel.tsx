@@ -136,22 +136,22 @@ function BoxModel() {
       >
         <div
           ref={contentBoxRef}
-          css={{
-            ...baseBoxStyles,
-            ...customizableBoxStyles,
-            boxSizing: "content-box",
-            marginBottom: "1rem",
-          }}
+          css={css`
+            ${baseBoxStyles}
+            ${customizableBoxStyles}
+            box-sizing: content-box;
+            margin-bottom: 1rem;
+          `}
         >
           Content box (initial & default value)
         </div>
         <div
           ref={borderBoxRef}
-          css={{
-            ...baseBoxStyles,
-            ...customizableBoxStyles,
-            boxSizing: "border-box",
-          }}
+          css={css`
+            ${baseBoxStyles}
+            ${customizableBoxStyles}
+            box-sizing: border-box;
+          `}
         >
           Border box
         </div>

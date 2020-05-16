@@ -1,4 +1,5 @@
 import Typography from "typography"
+// @ts-ignore
 import blockquote from "./blockquote.css"
 
 const fonts = [
@@ -15,11 +16,11 @@ const typography = new Typography({
   baseFontSize: "16px",
   baseLineHeight: 1.5,
   bodyFontFamily: fonts,
-  bodyGray: 20,
+  // bodyGray: 20,
   bodyWeight: 400,
   boldWeight: 700,
   headerFontFamily: fonts,
-  headerGray: 20,
+  // headerGray: 20,
   headerWeight: 700,
   overrideStyles: () => ({
     blockquote,

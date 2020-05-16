@@ -3,12 +3,12 @@ import { css } from "@emotion/core"
 import Link from "./Link"
 import Socials, { Social } from "./Socials"
 
-function SiteFooter({ ...otherProps }) {
-  const rssLink = {
-    id: Social.rss,
-    url: "https://codyaprice.com/rss.xml",
-  }
+const rssLink = {
+  id: Social.rss,
+  url: "https://codyaprice.com/rss.xml",
+}
 
+function SiteFooter({ ...otherProps }) {
   return (
     <footer
       css={css`

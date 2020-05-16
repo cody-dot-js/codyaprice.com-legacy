@@ -58,7 +58,12 @@ function BlogPost({ data, location, pageContext }) {
                 __html: post.fields.hero.caption,
               }}
             />
-            <div css={{ margin: "0 auto", maxWidth: "50rem" }}>
+            <div
+              css={css`
+                margin: 0 auto;
+                max-width: 50rem;
+              `}
+            >
               <MDXRenderer>{post.body}</MDXRenderer>
             </div>
           </div>

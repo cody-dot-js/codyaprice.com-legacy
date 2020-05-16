@@ -5,7 +5,9 @@ import { PostLayout } from "../components"
 function ResumeSourcePage({ location }) {
   return (
     <PostLayout
-      css={{ minHeight: "50rem" }}
+      css={css`
+        min-height: 50rem;
+      `}
       location={location}
       title="Resume source"
     >

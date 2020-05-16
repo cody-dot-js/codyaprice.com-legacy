@@ -56,20 +56,22 @@ function AbsolutePositioning() {
         </FormInput>
         <FormInput>
           <ul
-            css={{
-              display: "flex",
-              justifyContent: "space-between",
-              flexFlow: "row wrap",
-              listStyle: "none",
-              margin: 0,
-            }}
+            css={css`
+              display: flex;
+              justify-content: "space-between;
+              flex-flow: row wrap;
+              list-style: none;
+              margin: 0;
+            `}
           >
             {positions.map(({ name, value, setState }) => (
               <li key={name}>
                 {name}:&nbsp;
                 <input
                   type="text"
-                  css={{ width: "4rem" }}
+                  css={css`
+                    width: 4rem;
+                  `}
                   value={value}
                   onChange={setState}
                 />
@@ -93,12 +95,12 @@ function AbsolutePositioning() {
         </p>
       </div>
       <div
-        css={{
-          width: "100%",
-          border: "0.25rem solid black",
-          padding: "1rem",
-          position: "relative",
-        }}
+        css={css`
+          width: 100%;
+          border: 0.25rem solid black;
+          padding: 1rem;
+          position: relative;
+        `}
       >
         <p>
           Dolor quis excepteur dolor cillum ipsum cupidatat incididunt tempor

@@ -13,7 +13,12 @@ function DestroyAllClicks() {
   }
 
   return (
-    <div css={{ textAlign: "center" }} onClickCapture={preventAllClicks}>
+    <div
+      css={css`
+        text-align: center;
+      `}
+      onClickCapture={preventAllClicks}
+    >
       <button type="button" onClick={increment}>
         Increment count
       </button>

@@ -40,6 +40,7 @@ function ListLayout({
       <div
         css={css`
           margin: 0 auto;
+          max-width: 50rem;
         `}
       >
         <header
@@ -76,7 +77,7 @@ function ListLayout({
             {headerContent}
           </div>
         </header>
-        <MDXProvider>{children}</MDXProvider>
+        <MDXProvider components={{}}>{children}</MDXProvider>
       </div>
     </Layout>
   )

@@ -47,6 +47,7 @@ function PostCard({
           css={css`
             margin-bottom: 1rem;
             max-height: 20rem;
+            max-width: 20rem;
 
             ${mediaQueries.desktop} {
               margin-bottom: 0;
@@ -65,13 +66,17 @@ function PostCard({
       >
         <header>
           <h2
-            css={{
-              marginBottom: "0.5rem",
-            }}
+            css={css`
+              margin-bottom: 0.5rem;
+            `}
           >
             <Link to={slug}>{title}</Link>
           </h2>
-          <small css={{ display: "block" }}>
+          <small
+            css={css`
+              display: block;
+            `}
+          >
             {date}
             {` • ${formatReadingTime(timeToRead)}`}
           </small>

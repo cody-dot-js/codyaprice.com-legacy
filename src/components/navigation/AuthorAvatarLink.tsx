@@ -24,19 +24,25 @@ function AuthorAvatarLink({ to = "/", ...otherProps }: Props) {
   return (
     <NavigationLink
       to={to}
-      css={{
-        padding: 0,
-        "&.active": {
-          background: "none",
-          boxShadow: "none",
-        },
-        "&:hover,&:focus": {
-          background: "none",
-        },
-      }}
+      css={css`
+        padding: 0;
+        &.active {
+          background: none;
+          box-shadow: none;
+        }
+        &:hover,
+        &:focus {
+          background: none;
+        }
+      `}
       {...otherProps}
     >
-      <div css={{ display: "flex", alignItems: "center" }}>
+      <div
+        css={css`
+          display: flex;
+          align-items: center;
+        `}
+      >
         <Logo
           css={css`
             width: 4rem;

@@ -75,18 +75,24 @@ function Layout({
         `}
       >
         <Navigation />
-        <main css={{ display: "block" }} role="main" {...otherProps}>
+        <main
+          css={css`
+            display: block;
+          `}
+          role="main"
+          {...otherProps}
+        >
           {children}
         </main>
       </div>
       <div>{rightSidebarContent}</div>
       <SiteFooter
-        css={{
-          gridColumnStart: 1,
-          gridColumnEnd: 4,
-          gridRowStart: 3,
-          gridRowEnd: 4,
-        }}
+        css={css`
+          grid-column-start: 1;
+          grid-column-end: 4;
+          grid-row-start: 3;
+          grid-rowend: 4;
+        `}
       />
     </div>
   )

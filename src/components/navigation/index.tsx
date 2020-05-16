@@ -34,7 +34,9 @@ function Navigation({ ...otherProps }) {
         align-items: center;
         display: flex;
         justify-content: space-between;
+        margin: 0 auto;
         margin-top: 0.5rem;
+        max-width: 50rem;
       `}
       {...otherProps}
     >
