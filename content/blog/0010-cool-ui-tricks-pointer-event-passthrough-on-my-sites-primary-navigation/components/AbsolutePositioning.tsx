@@ -1,27 +1,36 @@
 import React from "react"
+import { css } from "@emotion/core"
 import FormInput from "./FormInput"
 
-function RelativePositioning() {
-  const [usePositionRelative, setUsePositionRelative] = React.useState(true)
-  const [backgroundColor, setBackgroundColor] = React.useState("#e0e0e0")
-  const [color, setColor] = React.useState("#000")
-  const [top, setTop] = React.useState(0)
-  const [right, setRight] = React.useState(0)
-  const [bottom, setBottom] = React.useState(0)
-  const [left, setLeft] = React.useState(0)
+function AbsolutePositioning() {
+  const [usePositionAbsolute, setUsePositionAbsolute] = React.useState<boolean>(
+    true
+  )
+  const [backgroundColor, setBackgroundColor] = React.useState<string>(
+    "#e0e0e0"
+  )
+  const [color, setColor] = React.useState<string>("#000")
+  const [top, setTop] = React.useState<string>("-10px")
+  const [right, setRight] = React.useState<string>("")
+  const [bottom, setBottom] = React.useState<string>("")
+  const [left, setLeft] = React.useState<string>("-20px")
 
-  const customizableStyles = {
-    backgroundColor,
-    color,
-    position: usePositionRelative ? "relative" : "static",
-    top,
-    right,
-    bottom,
-    left,
-  }
+  const customizableStyles = css`
+    background-color: ${backgroundColor};
+    color: ${color};
+    position: ${usePositionAbsolute ? "absolute" : "static"};
+    top: ${top};
+    right: ${right};
+    bottom: ${bottom};
+    left: ${left};
+  `
 
-  const onChange = (setState) => (event) => setState(event.target.value)
-  const toggle = (setState) => () => setState((s) => !s)
+  const onChange = (setState: React.Dispatch<React.SetStateAction<string>>) => (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => setState(event.target.value)
+  const toggle = (
+    setState: React.Dispatch<React.SetStateAction<boolean>>
+  ) => () => setState((s) => !s)
 
   const positions = [
     { name: "Top", setState: onChange(setTop), value: top },
@@ -32,12 +41,17 @@ function RelativePositioning() {
 
   return (
     <>
-      <div css={{ position: "relative", zIndex: 100 }}>
-        <FormInput label="Use position relative?&nbsp;">
+      <div
+        css={css`
+          position: relative;
+          z-index: 100;
+        `}
+      >
+        <FormInput label="Use position absolute?&nbsp;">
           <input
             type="checkbox"
-            checked={usePositionRelative}
-            onChange={toggle(setUsePositionRelative)}
+            checked={usePositionAbsolute}
+            onChange={toggle(setUsePositionAbsolute)}
           />
         </FormInput>
         <FormInput>
@@ -75,10 +89,7 @@ function RelativePositioning() {
         </FormInput>
         <p>
           Note: the movable element below will appear below these form elements
-          on purpose{" "}
-          <span role="img" aria-label="wink emoji">
-            😉
-          </span>
+          on purpose 😉
         </p>
       </div>
       <div
@@ -86,6 +97,7 @@ function RelativePositioning() {
           width: "100%",
           border: "0.25rem solid black",
           padding: "1rem",
+          position: "relative",
         }}
       >
         <p>
@@ -102,4 +114,4 @@ function RelativePositioning() {
   )
 }
 
-export default RelativePositioning
+export default AbsolutePositioning

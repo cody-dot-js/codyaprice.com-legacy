@@ -1,10 +1,11 @@
 import React from "react"
+import { css } from "@emotion/core"
 
 function ListLengthExample() {
-  const [list, setList] = React.useState([])
+  const [list, setList] = React.useState<Array<number>>([])
 
   function addItem() {
-    setList(list.concat(list.length + 1))
+    setList((l) => l.concat(l.length + 1))
   }
 
   function clearList() {
@@ -12,7 +13,12 @@ function ListLengthExample() {
   }
 
   return (
-    <div css={{ margin: "0 auto", textAlign: "center" }}>
+    <div
+      css={css`
+        margin: 0 auto;
+        text-align: center;
+      `}
+    >
       <p>List length: {list.length}</p>
       <div>
         <button type="button" onClick={addItem}>
@@ -24,7 +30,11 @@ function ListLengthExample() {
       </div>
       {list.length && (
         <ul
-          css={{ maxHeight: "200px", overflowY: "scroll", listStyle: "inside" }}
+          css={css`
+            max-height: 200px;
+            overflow-y: scroll;
+            list-style: inside;
+          `}
         >
           {list.map((item) => (
             <li key={item}>{item}</li>

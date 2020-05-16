@@ -1,13 +1,13 @@
 import React from "react"
 
 function DestroyAllClicks() {
-  const [count, setCount] = React.useState(0)
+  const [count, setCount] = React.useState<number>(0)
 
   function increment() {
     setCount((c) => c + 1)
   }
 
-  function preventAllClicks(event) {
+  function preventAllClicks(event: React.MouseEvent<HTMLDivElement>) {
     event.preventDefault()
     event.stopPropagation()
   }

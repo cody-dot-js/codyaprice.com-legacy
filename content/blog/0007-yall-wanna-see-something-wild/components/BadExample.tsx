@@ -1,11 +1,8 @@
 import React from "react"
+import { css } from "@emotion/core"
 
 export default class BadExample extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.count = 0
-  }
+  private count = 0
 
   callJGWentworth = () => {
     this.count += 1
@@ -17,11 +14,11 @@ export default class BadExample extends React.Component {
   render() {
     return (
       <div
-        css={{
-          textAlign: "center",
-          padding: "0.5rem",
-          border: "0.25rm dashed",
-        }}
+        css={css`
+          text-align: center;
+          padding: 0.5rem;
+          border: 0.25rm dashed;
+        `}
       >
         <h2>I have a structured settlement</h2>
         <button type="button" onClick={this.callJGWentworth}>
@@ -29,11 +26,7 @@ export default class BadExample extends React.Component {
         </button>
         {this.count > 0 && (
           <p>
-            877-CASH-NOW&nbsp;
-            <span role="img" alt="yelling emoji">
-              🗣
-            </span>
-            {this.count} {this.count === 1 ? "time" : "times"}
+            877-CASH-NOW 🗣 {this.count} time{this.count > 1 && "s"}
           </p>
         )}
       </div>

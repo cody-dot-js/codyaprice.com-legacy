@@ -1,4 +1,4 @@
-const cache = {}
+const cache: Record<string, number> = {}
 
 function uniqueId(key = "") {
   const id = cache[key] || 0

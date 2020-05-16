@@ -1,7 +1,8 @@
 import React from "react"
+import { css } from "@emotion/core"
 
 function useForceUpdate() {
-  const [, forceUpdate] = React.useState()
+  const [, forceUpdate] = React.useState<boolean>(false)
 
   return React.useCallback(() => {
     forceUpdate((s) => !s)
@@ -22,17 +23,14 @@ export default function UseTheForce() {
 
   return (
     <div
-      css={{
-        textAlign: "center",
-        padding: "0.5rem",
-        border: "0.25rem dashed",
-      }}
+      css={css`
+        text-align: center;
+        padding: 0.5rem;
+        border: 0.25rem dashed;
+      `}
     >
       <button type="button" onClick={onClick}>
-        Use the Force&nbsp;
-        <span role="img" aria-label="wave emoji">
-          👋
-        </span>
+        Use the Force 👋
       </button>
       <div>Render count: {renderCount.current}</div>
     </div>

@@ -1,7 +1,14 @@
 import React from "react"
+import { css } from "@emotion/core"
 import FormInput from "./FormInput"
 
-function Summary({ height, title, width }) {
+interface SummaryProps {
+  title: React.ReactNode | string
+  height: string | number
+  width: string | number
+}
+
+function Summary({ height, title, width }: SummaryProps) {
   return (
     <div>
       <h4>{title}</h4>
@@ -12,8 +19,8 @@ function Summary({ height, title, width }) {
 }
 
 function BoxModel() {
-  const contentBoxRef = React.useRef()
-  const borderBoxRef = React.useRef()
+  const contentBoxRef = React.useRef<HTMLDivElement>(null)
+  const borderBoxRef = React.useRef<HTMLDivElement>(null)
 
   const [backgroundColor, setBackgroundColor] = React.useState("#303030")
   const [borderColor, setBorderColor] = React.useState("#f00")
@@ -50,20 +57,27 @@ function BoxModel() {
     const { current: borderBox } = borderBoxRef
 
     setContentBoxSize({
-      height: contentBox.scrollHeight,
-      width: contentBox.scrollWidth,
+      height: contentBox?.scrollHeight ?? 0,
+      width: contentBox?.scrollWidth ?? 0,
     })
 
     setBorderBoxSize({
-      height: borderBox.scrollHeight,
-      width: borderBox.scrollWidth,
+      height: borderBox?.scrollHeight ?? 0,
+      width: borderBox?.scrollWidth ?? 0,
     })
   }, [borderWidth, height, padding, width])
 
-  const onChange = (setState) => (event) => setState(event.target.value)
+  const onChange = (setState: React.Dispatch<React.SetStateAction<string>>) => (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => setState(event.target.value)
 
   return (
-    <div css={{ width: "100%", position: "relative" }}>
+    <div
+      css={css`
+        position: relative;
+        width: 100%;
+      `}
+    >
       <div>
         <FormInput label="Background color:&nbsp;">
           <input
@@ -103,22 +117,22 @@ function BoxModel() {
       <hr />
       <h3>Summary</h3>
       <div
-        css={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gridGap: "1rem",
-        }}
+        css={css`
+          display: grid;
+          grid-gap: 1rem;
+          grid-template-columns: 1fr 1fr;
+        `}
       >
         <Summary title="Content Box" {...contentBoxSize} />
         <Summary title="Border Box" {...borderBoxSize} />
       </div>
       <div
-        css={{
-          margin: "0 auto",
-          width: "fit-content",
-          border: "1px dashed",
-          padding: "1rem",
-        }}
+        css={css`
+          border: 1px dashed;
+          margin: 0 auto;
+          padding: 1rem;
+          width: fit-content;
+        `}
       >
         <div
           ref={contentBoxRef}
