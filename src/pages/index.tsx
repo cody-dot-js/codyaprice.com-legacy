@@ -6,11 +6,9 @@ import { Bio, Layout, SEO, PostCard } from '../components';
 
 interface Props {
   data: any;
-  location: any;
 }
 
-function PortfolioIndex({ data, location }: Props) {
-  const siteTitle = data.site.siteMetadata.title;
+function PortfolioIndex({ data }: Props) {
   const { node: latestPost } = data.allMdx.edges[0];
 
   return (
@@ -21,6 +19,8 @@ function PortfolioIndex({ data, location }: Props) {
       <section
         css={css`
           pointer-events: auto;
+          max-width: 50rem;
+          margin: 0 auto;
         `}
       >
         <h2>Latest Post</h2>
