@@ -5,7 +5,7 @@ const TagsList = path.resolve(`./src/templates/tags-list.jsx`)
 const {
   caseInsensitiveSort,
   getSlugPath,
-  toMarkdown
+  toMarkdown,
 } = require("./gatsby-utils")
 
 async function createBlogPostPages({ actions, graphql }) {
@@ -53,8 +53,8 @@ async function createBlogPostPages({ actions, graphql }) {
       context: {
         slug: post.node.fields.slug,
         previous,
-        next
-      }
+        next,
+      },
     })
   })
 }
@@ -93,8 +93,8 @@ async function createTagsListPages({ actions, graphql }) {
       context: {
         tag: name,
         count,
-        slug
-      }
+        slug,
+      },
     })
   })
 }
@@ -107,8 +107,8 @@ exports.createPages = async ({ actions, graphql }) => {
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
-      modules: [path.resolve(__dirname, "src"), "node_modules"]
-    }
+      modules: [path.resolve(__dirname, "src"), "node_modules"],
+    },
   })
 }
 
@@ -122,26 +122,26 @@ exports.onCreateNode = ({ actions, getNode, node }) => {
     createNodeField({
       name: `slug`,
       node,
-      value: getSlugPath({ node, getNode, parentNode })
+      value: getSlugPath({ node, getNode, parentNode }),
     })
 
     createNodeField({
       node,
       name: "modifiedTime",
-      value: parentNode.modifiedTime
+      value: parentNode.modifiedTime,
     })
 
     createNodeField({
       node,
       name: "tags",
       // intentionally sort in place
-      value: node.frontmatter.tags.sort(caseInsensitiveSort)
+      value: node.frontmatter.tags.sort(caseInsensitiveSort),
     })
 
     createNodeField({
       node,
       name: "descriptionMd",
-      value: toMarkdown(node.frontmatter.description)
+      value: toMarkdown(node.frontmatter.description),
     })
 
     createNodeField({
@@ -149,8 +149,8 @@ exports.onCreateNode = ({ actions, getNode, node }) => {
       node,
       value: {
         ...node.frontmatter.hero,
-        caption: toMarkdown(node.frontmatter.hero.caption)
-      }
+        caption: toMarkdown(node.frontmatter.hero.caption),
+      },
     })
   }
 }

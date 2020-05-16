@@ -17,17 +17,17 @@ function AbsolutePositioning() {
     top,
     right,
     bottom,
-    left
+    left,
   }
 
-  const onChange = setState => event => setState(event.target.value)
-  const toggle = setState => () => setState(s => !s)
+  const onChange = (setState) => (event) => setState(event.target.value)
+  const toggle = (setState) => () => setState((s) => !s)
 
   const positions = [
     { name: "Top", setState: onChange(setTop), value: top },
     { name: "Right", setState: onChange(setRight), value: right },
     { name: "Bottom", setState: onChange(setBottom), value: bottom },
-    { name: "Left", setState: onChange(setLeft), value: left }
+    { name: "Left", setState: onChange(setLeft), value: left },
   ]
 
   return (
@@ -47,7 +47,7 @@ function AbsolutePositioning() {
               justifyContent: "space-between",
               flexFlow: "row wrap",
               listStyle: "none",
-              margin: 0
+              margin: 0,
             }}
           >
             {positions.map(({ name, value, setState }) => (
@@ -86,7 +86,7 @@ function AbsolutePositioning() {
           width: "100%",
           border: "0.25rem solid black",
           padding: "1rem",
-          position: "relative"
+          position: "relative",
         }}
       >
         <p>

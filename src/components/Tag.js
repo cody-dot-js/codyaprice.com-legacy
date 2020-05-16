@@ -6,7 +6,7 @@ import Badge from "./Badge"
 
 const propTypes = {
   slug: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 }
 
 const focusedStyle = css`

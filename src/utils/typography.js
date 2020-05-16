@@ -8,7 +8,7 @@ const fonts = [
   "Segoe UI",
   "Helvetica",
   "Arial",
-  "sans-serif"
+  "sans-serif",
 ]
 
 const typography = new Typography({
@@ -22,8 +22,8 @@ const typography = new Typography({
   headerGray: 20,
   headerWeight: 700,
   overrideStyles: ({ rhythm }, options) => ({
-    blockquote
-  })
+    blockquote,
+  }),
 })
 
 // Hot reload typography in development.

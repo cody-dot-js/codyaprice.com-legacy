@@ -4,7 +4,7 @@ const blogsPath = require("./blogs-path")
 function newPostNumber() {
   const postNumbers = fs
     .readdirSync(blogsPath)
-    .map(filename => parseInt(filename.split("-")[0], 10))
+    .map((filename) => parseInt(filename.split("-")[0], 10))
     .filter(Boolean)
     .sort((l, r) => r - l)
 

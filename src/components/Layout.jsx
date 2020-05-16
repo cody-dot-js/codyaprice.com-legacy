@@ -10,16 +10,16 @@ import { ActiveBreakpointContext, mediaQueries } from "./breakpoints"
 const propTypes = {
   children: PropTypes.node.isRequired,
   layoutRef: PropTypes.shape({
-    current: PropTypes.instanceOf(Element)
+    current: PropTypes.instanceOf(Element),
   }),
   leftSidebarContent: PropTypes.node,
-  rightSidebarContent: PropTypes.node
+  rightSidebarContent: PropTypes.node,
 }
 
 const defaultProps = {
   layoutRef: React.createRef(),
   leftSidebarContent: null,
-  rightSidebarContent: null
+  rightSidebarContent: null,
 }
 
 function Layout({
@@ -84,7 +84,7 @@ function Layout({
           gridColumnStart: 1,
           gridColumnEnd: 4,
           gridRowStart: 3,
-          gridRowEnd: 4
+          gridRowEnd: 4,
         }}
       />
     </div>

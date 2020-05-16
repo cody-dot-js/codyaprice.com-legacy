@@ -9,7 +9,7 @@ import {
   FaLinkedin,
   FaMedium,
   FaRss,
-  FaTwitter
+  FaTwitter,
 } from "react-icons/fa"
 import Link from "./Link"
 import VisuallyHidden from "./VisuallyHidden"
@@ -23,7 +23,7 @@ function Icon({ id, ...otherProps }) {
     linkedin: FaLinkedin,
     medium: FaMedium,
     rss: FaRss,
-    twitter: FaTwitter
+    twitter: FaTwitter,
   }
 
   const Icon = icons[id]
@@ -36,13 +36,13 @@ const propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
-      iconType: PropTypes.string
+      iconType: PropTypes.string,
     })
-  )
+  ),
 }
 
 const defaultProps = {
-  otherLinks: []
+  otherLinks: [],
 }
 
 const style = {
@@ -50,7 +50,7 @@ const style = {
   justifyContent: "center",
   alignItems: "center",
   width: "100%",
-  flexFlow: "row wrap"
+  flexFlow: "row wrap",
 }
 
 function Socials({ otherLinks }) {
@@ -86,8 +86,8 @@ function Socials({ otherLinks }) {
               color: "white",
               display: "block",
               ":hover": {
-                color: "#a44fb6"
-              }
+                color: "#a44fb6",
+              },
             }}
           >
             <Icon id={id} css={{ verticalAlign: "middle" }} />

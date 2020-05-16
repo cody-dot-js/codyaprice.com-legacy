@@ -5,13 +5,13 @@ import { Link as GatsbyLink } from "gatsby"
 const propTypes = {
   to: PropTypes.string,
   children: PropTypes.node,
-  partiallyActive: PropTypes.bool
+  partiallyActive: PropTypes.bool,
 }
 
 const defaultProps = {
   to: "#",
   children: null,
-  partiallyActive: false
+  partiallyActive: false,
 }
 
 function Link({ children, to, partiallyActive, ...extraProps }) {

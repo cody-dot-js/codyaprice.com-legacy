@@ -105,7 +105,7 @@ Coming from JavaScript land, objects have [shorthand property names](https://dev
 
 ```js
 const hash = {
-  foo: "bar"
+  foo: "bar",
 }
 
 // accessing with object destructuring works

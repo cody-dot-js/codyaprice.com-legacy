@@ -4,11 +4,11 @@ import FormInput from "./FormInput"
 function StackingContexts() {
   const [zIndex, setZIndex] = React.useState(1)
 
-  const onChange = event => setZIndex(event.target.value)
+  const onChange = (event) => setZIndex(event.target.value)
 
   const baseBoxStyle = {
     width: "10rem",
-    height: "10rem"
+    height: "10rem",
   }
 
   return (
@@ -25,7 +25,7 @@ function StackingContexts() {
             position: "relative",
             zIndex: 2,
             top: "-8rem",
-            right: "-4rem"
+            right: "-4rem",
           }}
         >
           Red
@@ -36,7 +36,7 @@ function StackingContexts() {
             backgroundColor: "#388e3c",
             position: "relative",
             zIndex,
-            top: "-14rem"
+            top: "-14rem",
           }}
         >
           Green

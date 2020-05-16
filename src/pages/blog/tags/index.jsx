@@ -65,7 +65,7 @@ function TagsPage({ data, location }) {
           overflowY: "scroll",
           height: "50rem",
           backgroundColor: "#fff",
-          pointerEvents: "auto"
+          pointerEvents: "auto",
         }}
       >
         {groups.length > 0 ? (
@@ -74,10 +74,10 @@ function TagsPage({ data, location }) {
               listStyle: "none",
               padding: 0,
               margin: 0,
-              display: "block"
+              display: "block",
             }}
           >
-            {groups.map(group => (
+            {groups.map((group) => (
               <li key={group}>
                 <h3>{group}</h3>
                 <ul
@@ -86,7 +86,7 @@ function TagsPage({ data, location }) {
                     flexFlow: "row wrap",
                     listStyle: "none",
                     padding: 0,
-                    margin: 0
+                    margin: 0,
                   }}
                 >
                   {groupLookup[group].map(({ name, count, slug }) => (
@@ -104,9 +104,9 @@ function TagsPage({ data, location }) {
                           "&:hover,&:focus": {
                             background: "#a44fb6",
                             color: "#fff",
-                            boxShadow: "0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.38)"
+                            boxShadow: "0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.38)",
                           },
-                          whiteSpace: "nowrap"
+                          whiteSpace: "nowrap",
                         }}
                       >
                         {name}&nbsp;({count})
@@ -123,7 +123,7 @@ function TagsPage({ data, location }) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: "1.5rem"
+              fontSize: "1.5rem",
             }}
           >
             No tags found for&nbsp;<strong>"{query}"</strong>&nbsp;🕵️‍♂️

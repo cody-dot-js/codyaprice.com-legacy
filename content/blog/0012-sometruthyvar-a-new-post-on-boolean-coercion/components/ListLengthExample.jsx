@@ -26,7 +26,7 @@ function ListLengthExample() {
         <ul
           css={{ maxHeight: "200px", overflowY: "scroll", listStyle: "inside" }}
         >
-          {list.map(item => (
+          {list.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>

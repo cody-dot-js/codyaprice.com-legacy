@@ -16,12 +16,12 @@ const propTypes = {
   tags: PropTypes.arrayOf(PropTypes.string),
   slug: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
-  timeToRead: PropTypes.number.isRequired
+  timeToRead: PropTypes.number.isRequired,
 }
 
 const defaultProps = {
   description: null,
-  tags: []
+  tags: [],
 }
 
 function PostCard({
@@ -32,7 +32,7 @@ function PostCard({
   tags,
   slug,
   date,
-  timeToRead
+  timeToRead,
 }) {
   return (
     <Card
@@ -72,7 +72,7 @@ function PostCard({
         <header>
           <h2
             css={{
-              marginBottom: "0.5rem"
+              marginBottom: "0.5rem",
             }}
           >
             <Link to={slug}>{title}</Link>
@@ -87,7 +87,7 @@ function PostCard({
             flex: 1;
           `}
           dangerouslySetInnerHTML={{
-            __html: description
+            __html: description,
           }}
         />
         <Tags list={tags} />

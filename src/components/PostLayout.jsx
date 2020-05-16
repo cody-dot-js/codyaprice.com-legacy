@@ -10,12 +10,12 @@ const propTypes = {
   children: PropTypes.node.isRequired,
   headerContent: PropTypes.node,
   layoutRef: PropTypes.shape({
-    current: PropTypes.instanceOf(Element)
+    current: PropTypes.instanceOf(Element),
   }),
   leftSidebarContent: PropTypes.node,
   location: PropTypes.object,
   rightSidebarContent: PropTypes.node,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 }
 
 const defaultProps = {
@@ -23,7 +23,7 @@ const defaultProps = {
   layoutRef: React.createRef(),
   leftSidebarContent: null,
   location: null,
-  rightSidebarContent: null
+  rightSidebarContent: null,
 }
 
 function PostLayout({
@@ -44,20 +44,20 @@ function PostLayout({
     >
       <header
         css={{
-          margin: "1rem 0"
+          margin: "1rem 0",
         }}
       >
         <h1
           css={{
             margin: 0,
-            pointerEvents: "auto"
+            pointerEvents: "auto",
           }}
         >
           <Link
             css={{
               boxShadow: "none",
               color: "#fff",
-              textDecoration: "none"
+              textDecoration: "none",
             }}
             to="/"
           >

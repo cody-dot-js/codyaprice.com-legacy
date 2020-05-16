@@ -196,7 +196,7 @@ window.addEventListener("load", () => {
   // get all the dynamic lists on the page
   document
     .querySelectorAll("[data-dynamic-list]")
-    .forEach(dynamicListElement => {
+    .forEach((dynamicListElement) => {
       // render a new React tree with this specific dynamic list
       dynamicList(dynamicListElement)
     })
@@ -204,7 +204,7 @@ window.addEventListener("load", () => {
   // get all the dropdown lists on the page
   document
     .querySelectorAll("[data-dropdown-list]")
-    .forEach(dropdownListElement => {
+    .forEach((dropdownListElement) => {
       // render a new React tree with this specific dropdown list
       dropdownList(dropdownListElement)
     })
@@ -227,7 +227,7 @@ const { dataset } = element
 const {
   isMultiple,
   placeholder,
-  maxSelection
+  maxSelection,
   // etc,
 } = dataset
 ```
@@ -269,7 +269,7 @@ export default function dynamicList(node) {
     maximumSelection,
     searchUrl,
     additionalQueryParams,
-    isMultiple
+    isMultiple,
   } = dataset
 
   const placeholder = placeholderText || undefined
@@ -286,7 +286,7 @@ export default function dynamicList(node) {
     isMultiple,
     maxSelection,
     additionalQueryParams,
-    searchThreshold: 2
+    searchThreshold: 2,
   }
 
   const component = <SearchableSelection {...props} />
@@ -361,15 +361,15 @@ const propTypes = {
   selections: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired
+      text: PropTypes.string.isRequired,
     })
-  )
+  ),
 }
 
 const defaultProps = {
   // ...,
   onApply: () => {},
-  selections: []
+  selections: [],
 }
 
 function Modal({ selections, ...otherProps }) {

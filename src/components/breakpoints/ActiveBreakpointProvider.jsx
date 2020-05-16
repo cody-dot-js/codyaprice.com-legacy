@@ -4,14 +4,14 @@ import BreakpointContext from "./ActiveBreakpointContext"
 import { breakpoints, breakpointMinimumsInPx } from "./"
 
 const propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 }
 
 function getActiveBreakpoint(width = 0) {
   const _width = parseInt(width, 10)
   const size = _width >= 0 ? _width : 0
 
-  const breakpoint = breakpoints.find(breakpoint => size >= breakpoint)
+  const breakpoint = breakpoints.find((breakpoint) => size >= breakpoint)
 
   return breakpointMinimumsInPx[breakpoint]
 }

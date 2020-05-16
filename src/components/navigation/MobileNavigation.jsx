@@ -10,14 +10,14 @@ const propTypes = {
   routes: PropTypes.arrayOf(
     PropTypes.shape({
       to: PropTypes.string.isRequired,
-      display: PropTypes.string.isRequired
+      display: PropTypes.string.isRequired,
     })
-  )
+  ),
 }
 
 const defaultProps = {
   color: "#fff",
-  routes: []
+  routes: [],
 }
 
 const fadeIn = keyframes`
@@ -40,7 +40,7 @@ function MobileNavigation({ color, routes, ...otherProps }) {
     left: 0,
     height: "100vh",
     width: "100%",
-    zIndex: 100
+    zIndex: 100,
   }
 
   return (
@@ -61,7 +61,7 @@ function MobileNavigation({ color, routes, ...otherProps }) {
           margin: 0,
           right: "1rem",
           top: "1.5rem",
-          position: isOpen ? "absolute" : "static"
+          position: isOpen ? "absolute" : "static",
         }}
       >
         {isOpen ? (
@@ -79,7 +79,7 @@ function MobileNavigation({ color, routes, ...otherProps }) {
             justifyContent: "space-evenly",
             margin: 0,
             listStyle: "none",
-            width: "100%"
+            width: "100%",
           }}
         >
           <NavigationLink to="/" partiallyActive={false}>
@@ -91,8 +91,8 @@ function MobileNavigation({ color, routes, ...otherProps }) {
               css={{
                 margin: "1rem",
                 ":last-of-type": {
-                  marginBottom: 0
-                }
+                  marginBottom: 0,
+                },
               }}
             >
               <NavigationLink to={to}>{display}</NavigationLink>
