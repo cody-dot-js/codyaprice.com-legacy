@@ -6,7 +6,7 @@ interface Props {}
 
 function AboutPage(props: Props) {
   return (
-    <Layout {/* title="About Me" */} {...props}>
+    <Layout {...props}>
       <SEO title="About Me" />
       <Bio
         css={css`

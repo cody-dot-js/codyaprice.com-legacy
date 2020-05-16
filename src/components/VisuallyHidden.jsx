@@ -1,7 +1,7 @@
 import React from "react"
 import { css } from "@emotion/core"
 
-const css = css`
+const style = css`
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
