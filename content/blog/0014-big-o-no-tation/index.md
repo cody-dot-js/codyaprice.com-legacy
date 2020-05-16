@@ -1,7 +1,7 @@
 ---
 title: Big O(no) ...tation
 date: 2020-01-22T00:21:14.249Z
-description: "Big O describes how things scale by their inputs, for both `time` and `space` complexity."
+description: 'Big O describes how things scale by their inputs, for both `time` and `space` complexity.'
 tags:
   - Development
   - Web
@@ -13,8 +13,8 @@ tags:
   - Scalability
 hero:
   src: ./images/hero-image.jpg
-  alt: "Photo by Roman Kraft on Unsplash"
-  caption: "Photo by [Roman Kraft](https://unsplash.com/@romankraft) on [Unsplash](https://unsplash.com/s/photos/scale)"
+  alt: 'Photo by Roman Kraft on Unsplash'
+  caption: 'Photo by [Roman Kraft](https://unsplash.com/@romankraft) on [Unsplash](https://unsplash.com/s/photos/scale)'
 ---
 
 I felt inspired because of [this twitter thread](https://twitter.com/devcprice/status/1218468406934016001) to make a dedicated post on Big O notation and what it means for runtime and space complexity.
@@ -75,7 +75,7 @@ I'll be diving into more detail soon on what each of these means, mostly in term
 But first, let's take a look at some comparative _runtimes_ between all of the above orders.
 This picture comes from the [Algorithm Design Manual, 2nd Edition](http://www.algorist.com/):
 
-![Growth rates of common functions measured in nanoseconds](algorithm_design_manual_growth_rates.png)
+![Growth rates of common functions measured in nanoseconds](./images/algorithm_design_manual_growth_rates.png)
 
 <figcaption>
   Figure 2.4: Growth rates of common functions measured in nanoseconds. (pg. 50)
@@ -126,8 +126,8 @@ Notice that just like time complexity, the additional space needed does not grow
 An example of this is holding primitive values as variables in your code, like:
 
 ```js
-const time = new Date().toString() // a string literal, independent of any input
-const count = 100 // an integer literal, independent of any input
+const time = new Date().toString(); // a string literal, independent of any input
+const count = 100; // an integer literal, independent of any input
 ```
 
 ## Linear: O(n)
@@ -149,15 +149,15 @@ This could look something like:
 
 ```js
 function reverseList(list = []) {
-  const stack = new Stack()
-  list.forEach((item) => stack.push(item))
+  const stack = new Stack();
+  list.forEach((item) => stack.push(item));
 
-  let reversedList = []
+  let reversedList = [];
   while (!stack.isEmpty()) {
-    reversedList.push(stack.pop())
+    reversedList.push(stack.pop());
   }
 
-  return reversedList
+  return reversedList;
 }
 ```
 
@@ -184,7 +184,7 @@ function doSomeGridWork(grid, rows, columns) {
   for (let row = 0; row < rows; row += 1) {
     for (let col = 0; col < columns; col += 1) {
       for (let k = 0; k < 100000; k += 1) {
-        console.log(`k = ${k}, grid[${row}][${col}] = ${grid[row][col]}`)
+        console.log(`k = ${k}, grid[${row}][${col}] = ${grid[row][col]}`);
       }
     }
   }
@@ -235,22 +235,22 @@ For the binary search, you can do it with an iterative approach, like so:
 
 ```js
 function binarySearchIterative(sortedList = [], key) {
-  let start = 0
-  let end = sortedList.length - 1
+  let start = 0;
+  let end = sortedList.length - 1;
 
   while (start <= end) {
-    const middle = Math.floor(start + (end - start) / 2)
+    const middle = Math.floor(start + (end - start) / 2);
 
     if (sortedList[middle] < key) {
-      start = middle + 1
+      start = middle + 1;
     } else if (sortedList[middle] > key) {
-      end = middle - 1
+      end = middle - 1;
     } else {
-      return middle
+      return middle;
     }
   }
 
-  return -1
+  return -1;
 }
 ```
 
@@ -260,17 +260,17 @@ You can also use _recursion_ to perform binary search:
 ```js
 function binarySearchRecursive(sortedList = [], key, start, end) {
   if (!sortedList || !sortedList.length || end < start) {
-    return -1
+    return -1;
   }
 
-  const middle = Math.floor(start + (end - start) / 2)
+  const middle = Math.floor(start + (end - start) / 2);
 
   if (key === sortedList[middle]) {
-    return middle
+    return middle;
   } else if (key < sortedList[middle]) {
-    return binarySearchRecursive(sortedList, key, start, middle - 1)
+    return binarySearchRecursive(sortedList, key, start, middle - 1);
   } else {
-    return binarySearchRecursive(sortedList, key, middle + 1, end)
+    return binarySearchRecursive(sortedList, key, middle + 1, end);
   }
 }
 ```
