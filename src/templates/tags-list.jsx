@@ -1,12 +1,12 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import { ListLayout, SEO, PostCard } from "../components"
+import { ListLayout, SEO, PostCard } from '../components';
 
 function TagsList({ data, location, pageContext }) {
-  const posts = data.allMdx.edges
-  const { tag, count } = pageContext
-  const title = `All Blog Posts with Tag: ${tag} (${count})`
+  const posts = data.allMdx.edges;
+  const { tag, count } = pageContext;
+  const title = `All Blog Posts with Tag: ${tag} (${count})`;
 
   return (
     <ListLayout location={location} title={title}>
@@ -30,10 +30,10 @@ function TagsList({ data, location, pageContext }) {
         </article>
       ))}
     </ListLayout>
-  )
+  );
 }
 
-export default TagsList
+export default TagsList;
 
 export const pageQuery = graphql`
   query BlogPostsByTag($tag: String!) {
@@ -62,7 +62,7 @@ export const pageQuery = graphql`
             tags
             hero {
               src {
-                ...heroImage320
+                ...heroImage640
               }
               alt
               caption
@@ -72,4 +72,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

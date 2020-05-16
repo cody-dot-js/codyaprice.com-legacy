@@ -1,17 +1,24 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import Image from "gatsby-image"
-import { MDXRenderer } from "gatsby-plugin-mdx"
+import React from 'react';
+import { css } from '@emotion/core';
+import { Link, graphql } from 'gatsby';
+import Image from 'gatsby-image';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import { Commento, PostLayout, ReadingProgress, SEO, Tags } from "../components"
-import { rhythm } from "../utils/typography"
-import formatReadingTime from "../utils/formatReadingTime"
+import {
+  Commento,
+  PostLayout,
+  ReadingProgress,
+  SEO,
+  Tags,
+} from '../components';
+import { rhythm } from '../utils/typography';
+import formatReadingTime from '../utils/formatReadingTime';
 
 function BlogPost({ data, location, pageContext }) {
-  const { mdx: post } = data
-  const { previous, next } = pageContext
-  const postRef = React.useRef(null)
-  const layoutRef = React.useRef(null)
+  const { mdx: post } = data;
+  const { previous, next } = pageContext;
+  const postRef = React.useRef(null);
+  const layoutRef = React.useRef(null);
 
   return (
     <>
@@ -28,15 +35,27 @@ function BlogPost({ data, location, pageContext }) {
         />
         <article>
           <header>
-            <p css={{ marginBottom: 0 }}>{post.frontmatter.date}</p>
-            <p css={{ marginBottom: 0 }}>
+            <p
+              css={css`
+                margin-bottom: 0;
+              `}
+            >
+              {post.frontmatter.date}
+            </p>
+            <p
+              css={css`
+                margin-bottom: 0;
+              `}
+            >
               {formatReadingTime(post.timeToRead)}
             </p>
             <Tags list={post.fields.tags} />
           </header>
           <div ref={postRef}>
             <Image
-              css={{ marginBottom: "2rem" }}
+              css={css`
+                margin-bottom: 2rem;
+              `}
               alt={post.fields.hero.alt}
               fluid={post.fields.hero.src.childImageSharp.fluid}
             />
@@ -45,25 +64,30 @@ function BlogPost({ data, location, pageContext }) {
                 __html: post.fields.hero.caption,
               }}
             />
-            <div css={{ margin: "0 auto", maxWidth: "50rem" }}>
+            <div
+              css={css`
+                margin: 0 auto;
+                max-width: 50rem;
+              `}
+            >
               <MDXRenderer>{post.body}</MDXRenderer>
             </div>
           </div>
           <hr
-            css={{
-              marginBottom: rhythm(1),
-            }}
+            css={css`
+              margin-bottom: ${rhythm(1)};
+            `}
           />
         </article>
         <nav>
           <ul
-            css={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "space-between",
-              listStyle: "none",
-              padding: 0,
-            }}
+            css={css`
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              list-style: none;
+              padding: 0;
+            `}
           >
             <li>
               {previous && (
@@ -84,10 +108,10 @@ function BlogPost({ data, location, pageContext }) {
         <Commento id={post.fields.slug} />
       </PostLayout>
     </>
-  )
+  );
 }
 
-export default BlogPost
+export default BlogPost;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -122,4 +146,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

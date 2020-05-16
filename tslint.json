@@ -1,0 +1,31 @@
+{
+  "linterOptions": {
+    "exclude": ["**/*.js"]
+  },
+  "defaultSeverity": "error",
+  "rules": {
+    "no-duplicate-variable": true,
+    "no-unused-variable": [true, { "ignore-pattern": "_pb$" }],
+    "no-default-export": true,
+
+    "typedef": [true, "member-variable-declaration"],
+
+    "ban-types": [
+      true,
+      ["Object", "Use {} instead"],
+      ["String"],
+      ["Number"],
+      ["Boolean"],
+      ["Function", "Explicitly declare your function"]
+    ],
+
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-pascal-case",
+      "allow-snake-case"
+    ],
+    "import-name": false
+  }
+}

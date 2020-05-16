@@ -1,7 +1,7 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react';
+import { graphql } from 'gatsby';
 
-import { PostLayout, SEO } from "../components"
+import { PostLayout, SEO } from '../components';
 
 function ProjectsPage({ data, location }) {
   return (
@@ -19,10 +19,10 @@ function ProjectsPage({ data, location }) {
       <hr />
       <p>It's</p>
     </PostLayout>
-  )
+  );
 }
 
-export default ProjectsPage
+export default ProjectsPage;
 
 export const pageQuery = graphql`
   query {
@@ -32,4 +32,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

@@ -1,3 +1,3 @@
-const blogsPath = `${process.cwd()}/content/blog`
+const blogsPath = `${process.cwd()}/content/blog`;
 
-module.exports = blogsPath
+module.exports = blogsPath;
