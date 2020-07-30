@@ -67,7 +67,7 @@ class BadExample extends React.Component {
 Yeah, I know the code is bad, but it's only ~~a reflection of my daily code production~~ _an example_.
 **_It actually doesn't do anything._** <small><em><strong>kinda</strong></em></small>
 
-![Be a lot cooler if it did](./images/be-a-lot-cooler.png)
+![Be a lot cooler if it did](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0007-yall-wanna-see-something-wild/images/be-a-lot-cooler.png)
 
 <figcaption>
   Be a lot cooler if it did
@@ -134,7 +134,7 @@ It's important to note that we've effectively made the state variable **_private
 The state variable still exists, but _we just don't expose it for use_.
 Here's what happens in [React DevTools](https://github.com/facebook/react/tree/master/packages/react-devtools-extensions#installation):
 
-![useForceUpdate in React DevTools ⚛️](./images/useForceUpdate-in-react-devtools.gif)
+![useForceUpdate in React DevTools ⚛️](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0007-yall-wanna-see-something-wild/images/useForceUpdate-in-react-devtools.gif)
 
 <figcaption>
   useForceUpdate() in React DevTools ⚛️
@@ -181,7 +181,7 @@ And by briefly talk about, I really just mean referencing a tweet from [@ryanflo
 
 A quick and helpful guide on `React.useEffect()`:
 
-![Ryan Florence on Twitter: "@dan_abramov @_developit @mjackson The question is not "when does this effect run" the question is "with which state does this effect synchronize with" useEffect(fn) // all state useEffect(fn, []) // no state useEffect(fn, [these, states])"](./images/ryan-florence-use-effect.png)
+![Ryan Florence on Twitter: "@dan_abramov @_developit @mjackson The question is not "when does this effect run" the question is "with which state does this effect synchronize with" useEffect(fn) // all state useEffect(fn, []) // no state useEffect(fn, [these, states])"](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0007-yall-wanna-see-something-wild/images/ryan-florence-use-effect.png)
 
 <figcaption>
   Tweet: <a href="https://twitter.com/ryanflorence/status/1125041041063665666?lang=en">Ryan Florence (@ryanflorence) May 5, 2019</a>
@@ -219,7 +219,7 @@ Go ahead, give it a click. 👇
 <UseTheForce />
 <br />
 
-![Well there it is](./images/well-there-it-is.gif)
+![Well there it is](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0007-yall-wanna-see-something-wild/images/well-there-it-is.gif)
 
 <figcaption>
   Well there it is
@@ -227,7 +227,7 @@ Go ahead, give it a click. 👇
 
 The oddball `UseTheForce` component, rendered in all its glory.
 
-![How neat is that? 🌲](./images/how-neat-is-that.gif)
+![How neat is that? 🌲](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0007-yall-wanna-see-something-wild/images/how-neat-is-that.gif)
 
 <figcaption>
   How neat is that? 🌲

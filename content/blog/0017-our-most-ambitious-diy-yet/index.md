@@ -25,7 +25,7 @@ We have been sitting on this, anxious to share since the beginning of April!
 In fact, we found out **_TWO DAYS_** before we set out on our adventurous move to Seattle.
 We weren't planning or expecting a baby, but we feel so incredibly blessed that a healthy baby is growing and cannot wait to meet them!
 
-![Our baby's first ultrasound!](./images/ultrasound.jpg)
+![Our baby's first ultrasound!](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0017-our-most-ambitious-diy-yet/images/ultrasound.jpg)
 
 <figcaption>
   Our baby's first ultrasound!

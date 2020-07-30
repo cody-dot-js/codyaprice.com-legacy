@@ -29,7 +29,7 @@ import Counter from "./components/Counter";
 
 **TLDR:** _It's coming...**soon**_
 
-![Soon... 🦉](./images/soon.gif)
+![Soon... 🦉](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0006-update-on-event-loop-article/images/soon.gif)
 
 <figcaption>Soon... 🦉</figcaption>
 
@@ -40,7 +40,7 @@ A lot of concepts related to the JavaScript event loop are much easier to explai
 
 ## And that's what I want to provide.
 
-![Excuses, excuses... 😒](./images/excuses.gif)
+![Excuses, excuses... 😒](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0006-update-on-event-loop-article/images/excuses.gif)
 
 <figcaption>Excuses, excuses... 😒</figcaption>
 

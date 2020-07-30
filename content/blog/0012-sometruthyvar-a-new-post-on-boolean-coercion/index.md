@@ -47,7 +47,7 @@ console.log(result) // false
 
 And to prove it, a screenshot of it running:
 
-![Console output of running the above code snippets.](./images/console-output.png)
+![Console output of running the above code snippets.](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0012-sometruthyvar-a-new-post-on-boolean-coercion/images/console-output.png)
 
 <figcaption>
   Console output of running the above code snippets.
@@ -91,7 +91,7 @@ Falsey things:
 
 But here's the kicker: in `C`, boolean expressions are _just that_: boolean, one of two values.
 
-![You can tell that it's a boolean because of the way that it is.](./images/boolean.png)
+![You can tell that it's a boolean because of the way that it is.](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0012-sometruthyvar-a-new-post-on-boolean-coercion/images/boolean.png)
 
 <figcaption>
   You can tell that it's a boolean because of the way that it is.

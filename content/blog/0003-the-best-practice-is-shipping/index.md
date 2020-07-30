@@ -26,7 +26,7 @@ hero:
 
 **TLDR:** I'm pivoting.
 
-![Which framework? Which one?](./images/which-one.gif)
+![Which framework? Which one?](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0003-the-best-practice-is-shipping/images/which-one.gif)
 
 <figcaption>I'm pivoting to a new framework. Which one? Which one?</figcaption>
 
@@ -39,7 +39,7 @@ deploy it. I had heard great things about [zeit](https://zeit.co) and gave them
 a shot (can't recommend them enough btw!). So, within fifteen minutes and twelve
 dollars later, I had a domain and deployment/cdn service. Awesome!
 
-![Now what?](./images/now-what.gif)
+![Now what?](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0003-the-best-practice-is-shipping/images/now-what.gif)
 
 <figcaption>I have a domain.. now what?</figcaption>
 
@@ -59,7 +59,7 @@ to include _**the universe**_ with any React app, while
 DOM
 [ain't free](https://medium.com/@hayavuk/why-virtual-dom-is-slower-2d9b964b4c9e).
 
-![node_modules... oof](./images/node-modules.png)
+![node_modules... oof](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0003-the-best-practice-is-shipping/images/node-modules.png)
 
 <figcaption>Just give it another `rm -rf` for good measure.</figcaption>
 
@@ -99,7 +99,7 @@ it's still _**different**_. There's a small learning curve and there's not
 nearly as much community support (yet). This isn't svelte's fault, but it plays
 a factor in how fast I can iterate on features and development for my website.
 
-![elf on the shelf on Twitter: "Why is nobody talking about the mouth feel"](./images/elf-mouthfeel.png)
+![elf on the shelf on Twitter: "Why is nobody talking about the mouth feel"](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0003-the-best-practice-is-shipping/images/elf-mouthfeel.png)
 
 <figcaption class="tweet">
   Why aren't we talking about the mouthfeel, y'all? 🤔
@@ -124,7 +124,7 @@ are a first class feature and on by default (one of the things I love about
 svelte). I worked on this in my spare time for nearly two weeks without
 producing nor hosting any meaningful content.
 
-![naked website](./images/naked-svelte-website.png)
+![naked website](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0003-the-best-practice-is-shipping/images/naked-svelte-website.png)
 
 <figcaption>My website was dormant, vacant, and quite naked. 🙈</figcaption>
 
@@ -135,7 +135,7 @@ and go from there. I needed some help and perhaps some guidance. When I woke up
 yesterday around 6am, I opened twitter on my phone and at the top of my feed was
 a [@ken_wheeler](https://twitter.com/ken_wheeler) tweet:
 
-![Ken Wheeler on Twitter: "@rickhanlonii The best practice is shipping"](./images/ken-best-practice-is-shipping.png)
+![Ken Wheeler on Twitter: "@rickhanlonii The best practice is shipping"](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0003-the-best-practice-is-shipping/images/ken-best-practice-is-shipping.png)
 
 <figcaption class="tweet">
   Ken Wheeler spittin' facts: Best practice === ship it
@@ -186,7 +186,7 @@ and other
 It's best to deliver as quick and as often as possible. A boss of mine has this
 cartoon pinned on his office door and I think it's a perfect metaphor for this:
 
-![Agile, like this](./images/agile-like-this.png)
+![Agile, like this](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0003-the-best-practice-is-shipping/images/agile-like-this.png)
 
 <figcaption>Agile, but like this: 🛹➡️🚲️️➡️🏎</figcaption>
 
@@ -207,7 +207,7 @@ Sounds like React, like JavaScript, will be a safe
 [bet](http://brendaneich.github.io/ModernWeb.tw-2015/#74)
 for the near future.
 
-![Horse JS on Twitter: "Svelte is probably better, I don’t know but I’m pretty sure it is. But"](./images/horsejs-svelte-is-probably-better.png)
+![Horse JS on Twitter: "Svelte is probably better, I don’t know but I’m pretty sure it is. But"](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0003-the-best-practice-is-shipping/images/horsejs-svelte-is-probably-better.png)
 
 <figcaption class="tweet">
   Svelte is probably maybe better.. at some things.

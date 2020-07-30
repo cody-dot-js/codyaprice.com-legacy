@@ -41,7 +41,7 @@ and it makes it difficult to test implementation details, unlike enzyme which
 often encourages it. **In this article, this second point is what I want to
 focus on.**
 
-![Kent C. Dodds on Twitter: "The more your tests resemble the way your software is used, the more confidence they can give you."](./images/kcd-test-resemble-use.png)
+![Kent C. Dodds on Twitter: "The more your tests resemble the way your software is used, the more confidence they can give you."](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0002-stop-testing-implementation-details/images/kcd-test-resemble-use.png)
 
 <figcaption>Kent C. Dodds on Twitter: "The more your tests resemble the way your software is used, the more confidence they can give you."</figcaption>
 
@@ -71,7 +71,7 @@ idea for an awesome application which runs in an embedded environment. A key
 feature of your application is that you can multiply two numbers. It’s
 imperative that you get to market quickly so you can get paid.
 
-![Gotta go fast!](./images/gotta-go-fast.gif)
+![Gotta go fast!](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0002-stop-testing-implementation-details/images/gotta-go-fast.gif)
 
 <figcaption>Gotta go fast!</figcaption>
 
