@@ -30,7 +30,10 @@ export default function UseTheForce() {
       `}
     >
       <button type="button" onClick={onClick}>
-        Use the Force 👋
+        Use the Force{' '}
+        <span role="img" aria-label="wave emoji">
+          👋
+        </span>
       </button>
       <div>Render count: {renderCount.current}</div>
     </div>

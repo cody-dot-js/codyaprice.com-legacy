@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { css } from '@emotion/core';
-import { Example } from '../../../mdx';
+import { Example } from '../../../../src/components/mdx';
 
 const initialState = { count: 0 };
 
@@ -9,15 +9,15 @@ enum CounterAction {
   decrement = 'decrement',
 }
 
-interface IReducerState {
+interface ReducerState {
   count: number;
 }
 
-interface IReducerAction {
+interface ReducerAction {
   type: CounterAction;
 }
 
-function reducer({ count }: IReducerState, { type }: IReducerAction) {
+function reducer({ count }: ReducerState, { type }: ReducerAction) {
   switch (type) {
     case CounterAction.increment:
       return { count: count + 1 };
@@ -62,7 +62,12 @@ export default function Counter({ caption }: Props) {
       >
         -
       </button>
-      <small>This is rendered inside markdown (using MDX!) 🤓</small>
+      <small>
+        This is rendered inside markdown (using MDX!){' '}
+        <span role="img" aria-label="nerd face emoji">
+          🤓
+        </span>
+      </small>
     </Example>
   );
 }

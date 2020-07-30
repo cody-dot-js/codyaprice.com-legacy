@@ -16,7 +16,6 @@ hero:
   caption: "Photo by [Clément H](https://unsplash.com/@clemhlrdt) on [Unsplash](https://unsplash.com/s/photos/javascript-plant)"
 ---
 
-import { Example } from "../../mdx"
 import ListLengthExample from "./components/ListLengthExample"
 
 ~~Click now~~ Keep reading to see the beginner's guide to what `computedValue && "One Truthy Boi"` evaluates to!

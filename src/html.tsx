@@ -3,12 +3,12 @@ import { css } from '@emotion/core';
 import GlobalCss from './GlobalCss';
 
 interface Props {
-  htmlAttributes: any;
-  headComponents: Array<any>;
-  bodyAttributes: any;
-  preBodyComponents: Array<any>;
+  htmlAttributes: unknown;
+  headComponents: React.ReactNode[];
+  bodyAttributes: unknown;
+  preBodyComponents: React.ReactNode[];
   body: string;
-  postBodyComponents: Array<any>;
+  postBodyComponents: React.ReactNode[];
 }
 
 export default function HTML({

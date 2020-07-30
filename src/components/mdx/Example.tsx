@@ -6,7 +6,7 @@ interface Props {
   caption?: ReactNode;
 }
 
-function Example({ children, caption = null }: Props) {
+export function Example({ children, caption = null }: Props) {
   return (
     <>
       <div
@@ -27,5 +27,3 @@ function Example({ children, caption = null }: Props) {
     </>
   );
 }
-
-export default Example;

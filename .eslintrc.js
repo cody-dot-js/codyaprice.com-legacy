@@ -13,8 +13,18 @@ module.exports = {
   rules: {
     'react/prop-types': 'off', // Disable prop-types as we use TypeScript for type checking
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
   },
   globals: {
     __PATH_PREFIX__: true,
   },
+  overrides: [
+    {
+      files: ['gatsby-*.js', 'gatsby-utils/*.js', 'scripts/**/*.js'],
+      rules: {
+        '@typescript-eslint/camelcase': 'off',
+        '@typescript-eslint/no-var-requires': 'off',
+      },
+    },
+  ],
 };

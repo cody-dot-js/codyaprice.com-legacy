@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import { Bio, Layout, SEO, PostCard } from '../components';
 
 interface Props {
-  data: any;
+  data: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 function PortfolioIndex({ data }: Props) {

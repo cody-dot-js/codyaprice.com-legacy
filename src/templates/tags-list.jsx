@@ -20,8 +20,8 @@ function TagsList({ data, location, pageContext }) {
               node.frontmatter.description ||
               node.excerpt
             }
-            imageAlt={node.fields.hero.alt}
-            imageSrc={node.fields.hero.src.publicURL}
+            // imageAlt={node.fields.hero.alt}
+            // imageSrc={node.fields.hero.src.publicURL}
             slug={node.fields.slug}
             tags={node.fields.tags}
             timeToRead={node.timeToRead}

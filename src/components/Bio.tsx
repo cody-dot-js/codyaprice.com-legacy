@@ -44,6 +44,7 @@ function Bio({ ...props }) {
       </h1>
       <img
         css={css`
+          background: #fff;
           border-radius: 2rem;
           box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.38);
           display: block;

@@ -10,8 +10,8 @@ module.exports = {
         display: 'Blog',
       },
       {
-        to: '/projects',
-        display: 'Projects',
+        to: '/photography',
+        display: 'Photography',
       },
       {
         to: '/about',
@@ -63,13 +63,6 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog`,
         name: 'blog',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/content/mdx`,
-        name: 'mdx',
       },
     },
     'gatsby-plugin-typescript',

@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 interface Props {
   description?: string;
   lang?: string;
-  meta?: Array<any>;
+  meta?: { name: string; content: string }[];
   title: string;
 }
 

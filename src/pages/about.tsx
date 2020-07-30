@@ -2,11 +2,9 @@ import React from 'react';
 import { css } from '@emotion/core';
 import { Layout, SEO, Bio } from '../components';
 
-interface Props {}
-
-function AboutPage(props: Props) {
+function AboutPage() {
   return (
-    <Layout {...props}>
+    <Layout>
       <SEO title="About Me" />
       <Bio
         css={css`

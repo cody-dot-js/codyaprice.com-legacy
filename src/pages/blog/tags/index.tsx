@@ -15,7 +15,7 @@ interface Props {
       }>;
     };
   };
-  location: any;
+  location: unknown;
 }
 
 type Tag = {

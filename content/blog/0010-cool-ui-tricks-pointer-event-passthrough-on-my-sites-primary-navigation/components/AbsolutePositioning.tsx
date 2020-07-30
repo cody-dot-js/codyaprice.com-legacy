@@ -91,7 +91,10 @@ function AbsolutePositioning() {
         </FormInput>
         <p>
           Note: the movable element below will appear below these form elements
-          on purpose 😉
+          on purpose{' '}
+          <span role="img" aria-label="wink face emoji">
+            😉
+          </span>
         </p>
       </div>
       <div

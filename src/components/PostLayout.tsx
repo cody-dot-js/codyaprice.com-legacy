@@ -3,13 +3,14 @@ import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 
-import { Img, ImgProps } from './mdx/Img';
+import { Img, Example } from './mdx';
 import Card from './Card';
 import Layout from './Layout';
 
 const shortcodes = {
-  img: (props: ImgProps) => <Img {...props} />,
+  img: Img,
   Img,
+  Example,
 };
 
 interface Props {
