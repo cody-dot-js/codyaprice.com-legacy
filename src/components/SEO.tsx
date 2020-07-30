@@ -17,7 +17,13 @@ interface Props {
   imageSrc?: string;
 }
 
-function SEO({ description = '', lang = 'en', meta = [], title, imageSrc }: Props) {
+function SEO({
+  description = '',
+  lang = 'en',
+  meta = [],
+  title,
+  imageSrc,
+}: Props) {
   const { site } = useStaticQuery(
     graphql`
       query {
