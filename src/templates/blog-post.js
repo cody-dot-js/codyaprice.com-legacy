@@ -31,6 +31,7 @@ function BlogPost({ data, location, pageContext }) {
         <SEO
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
+          imageSrc={post.fields.hero.src.publicURL}
         />
         <article>
           <header>

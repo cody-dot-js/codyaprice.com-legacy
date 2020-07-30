@@ -14,9 +14,10 @@ interface Props {
   lang?: string;
   meta?: { name: string; content: string }[];
   title: string;
+  imageSrc?: string;
 }
 
-function SEO({ description = '', lang = 'en', meta = [], title }: Props) {
+function SEO({ description = '', lang = 'en', meta = [], title, imageSrc }: Props) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -52,6 +53,10 @@ function SEO({ description = '', lang = 'en', meta = [], title }: Props) {
         {
           property: 'og:description',
           content: metaDescription,
+        },
+        {
+          property: 'og:image',
+          content: imageSrc,
         },
         {
           property: 'og:type',
