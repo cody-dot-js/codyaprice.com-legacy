@@ -33,7 +33,7 @@ function PortfolioIndex({ data }: Props) {
               latestPost.excerpt
             }
             imageAlt={latestPost.fields.hero.alt}
-            imageSrc={latestPost.fields.hero.src.childImageSharp.fluid}
+            imageSrc={latestPost.fields.hero.src.publicURL}
             slug={latestPost.fields.slug}
             tags={latestPost.fields.tags}
             timeToRead={latestPost.timeToRead}
@@ -71,7 +71,7 @@ export const pageQuery = graphql`
             tags
             hero {
               src {
-                ...heroImage640
+                publicURL
               }
               alt
               caption

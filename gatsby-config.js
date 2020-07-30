@@ -72,13 +72,6 @@ module.exports = {
         name: 'mdx',
       },
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: 'assets',
-      },
-    },
     'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-mdx',
@@ -86,12 +79,6 @@ module.exports = {
         extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
           'gatsby-remark-numbered-footnotes',
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 800,
-            },
-          },
           {
             resolve: 'gatsby-remark-responsive-iframe',
             options: {
@@ -107,7 +94,7 @@ module.exports = {
           },
           'gatsby-remark-copy-linked-files',
         ],
-        plugins: ['gatsby-remark-images', 'gatsby-remark-autolink-headers'],
+        plugins: ['gatsby-remark-autolink-headers'],
       },
     },
     'gatsby-plugin-sharp',
@@ -161,7 +148,7 @@ module.exports = {
         background_color: '#ffffff',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'content/assets/icon.png',
+        icon: 'static/icon.png',
       },
     },
     'gatsby-plugin-offline',

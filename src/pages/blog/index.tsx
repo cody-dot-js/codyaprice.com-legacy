@@ -54,7 +54,7 @@ function BlogPage({ data, location }: Props) {
               node.excerpt
             }
             imageAlt={node.fields.hero.alt}
-            imageSrc={node.fields.hero.src.childImageSharp.fluid}
+            imageSrc={node.fields.hero.src.publicURL}
             slug={node.fields.slug}
             tags={node.fields.tags}
             timeToRead={node.timeToRead}
@@ -92,7 +92,7 @@ export const pageQuery = graphql`
             tags
             hero {
               src {
-                ...heroImage640
+                publicURL
               }
               alt
               caption

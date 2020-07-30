@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import Image from 'gatsby-image';
 import Card from './Card';
 import Tags from './Tags';
 import Link from './Link';
@@ -43,18 +42,22 @@ function PostCard({
       `}
     >
       <Link to={slug}>
-        <Image
+        <img
           css={css`
             margin-bottom: 1rem;
+            width: 100%;
             max-height: 20rem;
             max-width: 20rem;
+            top: 0;
+            object-fit: contain;
 
             ${mediaQueries.desktop} {
               margin-bottom: 0;
             }
           `}
           alt={imageAlt}
-          fluid={imageSrc}
+          src={imageSrc}
+          loading="lazy"
         />
       </Link>
       <div

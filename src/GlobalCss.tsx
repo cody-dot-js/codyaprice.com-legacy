@@ -28,13 +28,14 @@ function GlobalCss() {
           cursor: pointer;
         }
 
-        header,
-        nav,
-        main,
-        footer,
         article,
-        section,
-        aside {
+        aside,
+        footer,
+        header,
+        img,
+        main,
+        nav,
+        section {
           display: block;
         }
       `}

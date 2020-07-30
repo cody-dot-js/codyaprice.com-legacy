@@ -100,8 +100,10 @@ async function createTagsListPages({ actions, graphql }) {
 }
 
 exports.createPages = async ({ actions, graphql }) => {
-  createBlogPostPages({ actions, graphql });
-  createTagsListPages({ actions, graphql });
+  await Promise.all([
+    createBlogPostPages({ actions, graphql }),
+    createTagsListPages({ actions, graphql }),
+  ]);
 };
 
 exports.onCreateWebpackConfig = ({ actions }) => {
