@@ -1,7 +1,7 @@
 ---
 title: How iOS VoiceOver Demonstrates The Power and Flexibility of React 💪
-date: "2019-06-07T17:00:00"
-description: "TLDR: iOS VoiceOver is the new IE 🙅‍♂️ and React is awesome 😎"
+date: '2019-06-07T17:00:00'
+description: 'TLDR: iOS VoiceOver is the new IE 🙅‍♂️ and React is awesome 😎'
 categories:
   - Web Development
   - Accessibility
@@ -41,7 +41,7 @@ Django template and then enhanced/decorated with an external dependency. The
 component in question was actually using a
 [popular JavaScript dropreadown library: Select2](https://select2.org/).
 
-![select2 MultiSelect Example](./images/select-2-multiselect-example.png)
+![select2 MultiSelect Example](https://d1jubymwibgxp.cloudfront.net/blog/0001-how-ios-voiceover-demonstrates-the-power-and-flexibility-of-react/images/select-2-multiselect-example.png)
 
 <figcaption>Select2 MultiSelect Example</figcaption>
 
@@ -79,7 +79,7 @@ a multi-select workflow in a form and you have a list of data to select from
 like:
 
 ```js
-const data = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet"]
+const data = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
 ```
 
 <figcaption>Example list of colors</figcaption>
@@ -88,7 +88,7 @@ Given this list, in a simplified world, when you render a Select2 multi-select
 around a hidden input (used for your form submission), your screen will look
 like:
 
-![select2 Example Rendering with List of Colors](./images/select2-example-rendering-with-colors.png)
+![select2 Example Rendering with List of Colors](https://d1jubymwibgxp.cloudfront.net/blog/0001-how-ios-voiceover-demonstrates-the-power-and-flexibility-of-react/images/select2-example-rendering-with-colors.png)
 
 <figcaption>
   Example Select2 rendering given the data list of colors above
@@ -147,7 +147,7 @@ If you answered that the next navigation swipe lands on the dropdown options,
 then you are sadly mistaken my friend 😢.
 [WAT](https://www.destroyallsoftware.com/talks/wat). WAT indeed..
 
-![This is NOT what iOS VoiceOver navigates to next when focused on the input](./images/not-what-voiceover-navigates-to-next.png)
+![This is NOT what iOS VoiceOver navigates to next when focused on the input](https://d1jubymwibgxp.cloudfront.net/blog/0001-how-ios-voiceover-demonstrates-the-power-and-flexibility-of-react/images/not-what-voiceover-navigates-to-next.png)
 
 <figcaption>
   This is NOT what iOS VoiceOver navigates to next when focused on the input
@@ -189,26 +189,26 @@ inputs labeled with `data-dynamic-list` or `data-dropdown-list` attributes! All
 we need is a little native browser API magic and we’ve got ‘em 🎯:
 
 ```js
-import { dynamicList, dropdownList } from "codys-cool-react-stuff"
+import { dynamicList, dropdownList } from 'codys-cool-react-stuff';
 
 // wait for Django to load and render everything before we try to decorate with our custom React components :)
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   // get all the dynamic lists on the page
   document
-    .querySelectorAll("[data-dynamic-list]")
+    .querySelectorAll('[data-dynamic-list]')
     .forEach((dynamicListElement) => {
       // render a new React tree with this specific dynamic list
-      dynamicList(dynamicListElement)
-    })
+      dynamicList(dynamicListElement);
+    });
 
   // get all the dropdown lists on the page
   document
-    .querySelectorAll("[data-dropdown-list]")
+    .querySelectorAll('[data-dropdown-list]')
     .forEach((dropdownListElement) => {
       // render a new React tree with this specific dropdown list
-      dropdownList(dropdownListElement)
-    })
-})
+      dropdownList(dropdownListElement);
+    });
+});
 ```
 
 <figcaption>Get all the dynamic and dropdown lists on the page</figcaption>
@@ -223,13 +223,13 @@ and then we can pass those as props down to the React tree. This can be done as
 simple as:
 
 ```js
-const { dataset } = element
+const { dataset } = element;
 const {
   isMultiple,
   placeholder,
   maxSelection,
   // etc,
-} = dataset
+} = dataset;
 ```
 
 <figcaption>Extracting the container's metadata from its dataset</figcaption>
@@ -240,13 +240,13 @@ container:
 
 ```js
 export default function replaceNodeWithContainer(node) {
-  const { parentElement } = node
+  const { parentElement } = node;
 
-  const container = document.createElement("div")
+  const container = document.createElement('div');
 
-  parentElement.replaceChild(container, node)
+  parentElement.replaceChild(container, node);
 
-  return container
+  return container;
 }
 ```
 
@@ -256,27 +256,27 @@ Now all that’s left to do is put it all together and render our custom
 component.
 
 ```js
-import React from "react"
-import { render } from "react-dom"
-import getContainer from "./utils/getContainer"
-import SearchableSelection from "./components/SearchableSelection"
+import React from 'react';
+import { render } from 'react-dom';
+import getContainer from './utils/getContainer';
+import SearchableSelection from './components/SearchableSelection';
 
 export default function dynamicList(node) {
-  const { name, id } = node
-  const dataset = { ...(node.dataset || {}) }
+  const { name, id } = node;
+  const dataset = { ...(node.dataset || {}) };
   const {
     placeholderText,
     maximumSelection,
     searchUrl,
     additionalQueryParams,
     isMultiple,
-  } = dataset
+  } = dataset;
 
-  const placeholder = placeholderText || undefined
+  const placeholder = placeholderText || undefined;
   const maxSelection = isMultiple
     ? parseInt(maximumSelection, 10) || undefined
-    : 1
-  const container = getContainer(node)
+    : 1;
+  const container = getContainer(node);
 
   const props = {
     selectId: id,
@@ -287,11 +287,11 @@ export default function dynamicList(node) {
     maxSelection,
     additionalQueryParams,
     searchThreshold: 2,
-  }
+  };
 
-  const component = <SearchableSelection {...props} />
+  const component = <SearchableSelection {...props} />;
 
-  render(component, container)
+  render(component, container);
 }
 ```
 
@@ -303,7 +303,7 @@ With this full control, we can use the magic of
 [refs](https://reactjs.org/docs/refs-and-the-dom.html) to manipulate the hidden
 `input` and/or `select` nodes.
 
-![noice!](./images/noice.gif)
+![noice!](https://d1jubymwibgxp.cloudfront.net/blog/0001-how-ios-voiceover-demonstrates-the-power-and-flexibility-of-react/images/noice.gif)
 
 <figcaption>Noice!</figcaption>
 
@@ -315,7 +315,7 @@ So, with all that work, what do we have to show for it? Well, I can’t show the
 rest of the code (company secret 🤫😉). However, we now have a responsive and
 accessible multi-select asynchronous dropdown!
 
-![Responsive and Accessible Asynchronous MultiSelect Dropdown](./images/responsive-a11y-dropdown-select.png)
+![Responsive and Accessible Asynchronous MultiSelect Dropdown](https://d1jubymwibgxp.cloudfront.net/blog/0001-how-ios-voiceover-demonstrates-the-power-and-flexibility-of-react/images/responsive-a11y-dropdown-select.png)
 
 <figcaption>
   Responsive and Accessible Asynchronous MultiSelect Dropdown
@@ -352,8 +352,8 @@ We would pass the local selection state back to the parent through an `onApply`
 callback when the user clicked the `Apply` button. Pretty neat 📸
 
 ```js
-import React, { useState } from "react"
-import PropTypes from "prop-types"
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const propTypes = {
   // ..., other props
@@ -364,22 +364,22 @@ const propTypes = {
       text: PropTypes.string.isRequired,
     })
   ),
-}
+};
 
 const defaultProps = {
   // ...,
   onApply: () => {},
   selections: [],
-}
+};
 
 function Modal({ selections, ...otherProps }) {
   // initialize localSelections state with selections prop given :)
-  const [localSelections, setLocalSelections] = useState(selections)
+  const [localSelections, setLocalSelections] = useState(selections);
 
   function handleOnApply() {
     // pass the localSelections onto the parent component through
     // the onApply callback prop :D
-    onApply(localSelections)
+    onApply(localSelections);
   }
 
   return (
@@ -389,13 +389,13 @@ function Modal({ selections, ...otherProps }) {
         Apply
       </button>
     </div>
-  )
+  );
 }
 
-Modal.propTypes = propTypes
-Modal.defaultProps = defaultProps
+Modal.propTypes = propTypes;
+Modal.defaultProps = defaultProps;
 
-export default Modal
+export default Modal;
 ```
 
 <figcaption>Handling Local Modal State</figcaption>

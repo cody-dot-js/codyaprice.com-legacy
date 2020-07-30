@@ -64,7 +64,7 @@ The most common Big O orders of algorithms that you will find, in orders of grow
 Here's a graph of the growth of each of these from Wikipedia.
 This shows what each order tends to as they approach larger `n` inputs.
 
-![Graphs of common orders of growth showing the number of operations N versus input size n for each](./images/comparison_computational_complexity.png)
+![Graphs of common orders of growth showing the number of operations N versus input size n for each](https://d1jubymwibgxp.cloudfront.net/blog/0014-big-o-no-tation/images/comparison_computational_complexity.png)
 
 <figcaption>
   Graphs of common orders of growth showing the number of operations N versus input size n for each.&nbsp;
@@ -75,7 +75,7 @@ I'll be diving into more detail soon on what each of these means, mostly in term
 But first, let's take a look at some comparative _runtimes_ between all of the above orders.
 This picture comes from the [Algorithm Design Manual, 2nd Edition](http://www.algorist.com/):
 
-![Growth rates of common functions measured in nanoseconds](./images/algorithm_design_manual_growth_rates.png)
+![Growth rates of common functions measured in nanoseconds](https://d1jubymwibgxp.cloudfront.net/blog/0014-big-o-no-tation/images/algorithm_design_manual_growth_rates.png)
 
 <figcaption>
   Figure 2.4: Growth rates of common functions measured in nanoseconds. (pg. 50)
@@ -87,7 +87,7 @@ To get the calculated runtime, you use the `n` on the `y-axis` with the formula 
 Notice that for `n²` and less, you don't notice a major difference until `n = 1-10k` items.
 But for exponential and factorial growth, it matters real quick!
 
-![Tweet: Bruce Dawson (@BruceDawson0xB) April 22, 2019](./images/o-n-squared_tweet.png)
+![Tweet: Bruce Dawson (@BruceDawson0xB) April 22, 2019](https://d1jubymwibgxp.cloudfront.net/blog/0014-big-o-no-tation/images/o-n-squared_tweet.png)
 
 <figcaption>
   Tweet: <a href="https://twitter.com/BruceDawson0xB/status/1120381406700429312">Bruce Dawson (@BruceDawson0xB) April 22, 2019</a>

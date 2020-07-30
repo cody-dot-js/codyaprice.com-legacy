@@ -1,6 +1,4 @@
 import Typography from 'typography';
-// @ts-ignore
-import blockquote from './blockquote.css';
 
 const fonts = [
   'Fira Sans',
@@ -23,7 +21,22 @@ const typography = new Typography({
   // headerGray: 20,
   headerWeight: 700,
   overrideStyles: () => ({
-    blockquote,
+    blockquote: {
+      marginLeft: 0,
+      marginRight: 0,
+      marginTop: 0,
+      paddingBottom: '1rem',
+      paddingLeft: '2rem',
+      paddingRight: '1rem',
+      paddingTop: '1rem',
+      marginBottom: '2rem',
+      fontSize: '1.25rem',
+      lineHeight: '2rem',
+      background: 'hsla(0, 0%, 0%, 0.03)',
+      color: 'hsla(0, 0%, 0%, 0.69)',
+      /* border-left: 0.20833rem solid hsla(0, 0%, 0%, 0.2); */
+      borderLeft: '0.25rem solid #a44fb6',
+    },
   }),
 });
 

@@ -1,14 +1,9 @@
 import React, { ReactNode } from 'react';
 import { css } from '@emotion/core';
 
-import StarryDisplay from './StarryDisplay';
 import Navigation from './navigation';
 import SiteFooter from './SiteFooter';
-import {
-  ActiveBreakpointContext,
-  Breakpoint,
-  mediaQueries,
-} from './breakpoints';
+import { mediaQueries } from './breakpoints';
 
 interface Props {
   children: ReactNode;
@@ -30,12 +25,6 @@ function Layout({
   rightSidebarContent,
   ...otherProps
 }: Props) {
-  const activeBreakpoint = React.useContext(ActiveBreakpointContext);
-  const starCount = React.useMemo(
-    () => (activeBreakpoint === Breakpoint.desktop ? 512 : 256),
-    [activeBreakpoint]
-  );
-
   return (
     <div
       ref={layoutRef}
@@ -58,13 +47,21 @@ function Layout({
         }
       `}
     >
-      <StarryDisplay starCount={starCount} />
+      <div
+        css={css`
+          background: #303a52;
+          clip-path: polygon(0 0, 100% 0, 100% 15rem, 0 30rem);
+          height: 30rem;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          z-index: 0;
+        `}
+      />
       <div>{leftSidebarContent}</div>
       <div
         css={css`
           padding: 0 1rem;
-          /* pointer events none for click-throughs on starry display */
-          pointer-events: none;
           /* position relative for free z-index stacking */
           position: relative;
           margin-bottom: -4rem;

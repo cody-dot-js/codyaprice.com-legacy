@@ -1,7 +1,7 @@
 ---
 title: Am I good enough?
 date: 2020-02-12T23:26:59.792Z
-description: "`opportunities.reject { |person| person.is? :cody }`"
+description: '`opportunities.reject { |person| person.is? :cody }`'
 tags:
   - Introspection
   - Rejection
@@ -14,8 +14,8 @@ tags:
   - Imposter Syndrome
 hero:
   src: ./images/hero-image.jpg
-  alt: "Photo by Anthony Tori on Unsplash"
-  caption: "Photo by [Anthony Tori](https://unsplash.com/@anthonytori) on [Unsplash](https://unsplash.com/s/photos/thinking)"
+  alt: 'Photo by Anthony Tori on Unsplash'
+  caption: 'Photo by [Anthony Tori](https://unsplash.com/@anthonytori) on [Unsplash](https://unsplash.com/s/photos/thinking)'
 ---
 
 `opportunities.reject { |person| person.is? :cody }`

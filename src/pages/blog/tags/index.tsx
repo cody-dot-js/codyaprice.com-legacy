@@ -15,7 +15,7 @@ interface Props {
       }>;
     };
   };
-  location: any;
+  location: unknown;
 }
 
 type Tag = {
@@ -74,9 +74,6 @@ function TagsPage({ data, location }: Props) {
     <ListLayout location={location} title={`Tags (${tags.length})`}>
       <SEO title="All tags" />
       <SearchField
-        css={css`
-          pointer-events: auto;
-        `}
         title="Filter tags"
         placeholder="Search tags"
         value={query}
@@ -89,7 +86,6 @@ function TagsPage({ data, location }: Props) {
           overflow-y: scroll;
           height: 50rem;
           background-color: #fff;
-          pointer-events: auto;
         `}
       >
         {groups.length > 0 ? (

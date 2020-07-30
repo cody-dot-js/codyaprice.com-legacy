@@ -1,7 +1,7 @@
 ---
-title: "Electrical Reflections: What he learned will SHOCK you!!!"
-date: "2019-10-11T11:19:00"
-description: "When it comes to ensuring the safety of others and the ones we love, we have to do better."
+title: 'Electrical Reflections: What he learned will SHOCK you!!!'
+date: '2019-10-11T11:19:00'
+description: 'When it comes to ensuring the safety of others and the ones we love, we have to do better.'
 categories:
   - Safety
   - Electrical

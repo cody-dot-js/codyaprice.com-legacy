@@ -1,7 +1,7 @@
 ---
-title: "Update: Event Loop Article is coming"
-date: "2019-10-17T16:51:49.543Z"
-description: "Turns out good content takes a lot of time and effort. Who knew? 🤷‍♂️ 😂"
+title: 'Update: Event Loop Article is coming'
+date: '2019-10-17T16:51:49.543Z'
+description: 'Turns out good content takes a lot of time and effort. Who knew? 🤷‍♂️ 😂'
 categories:
   - Update
   - Commitment
@@ -29,7 +29,7 @@ import Counter from "./components/Counter";
 
 **TLDR:** _It's coming...**soon**_
 
-![Soon... 🦉](./images/soon.gif)
+![Soon... 🦉](https://d1jubymwibgxp.cloudfront.net/blog/0006-update-on-event-loop-article/images/soon.gif)
 
 <figcaption>Soon... 🦉</figcaption>
 
@@ -40,7 +40,7 @@ A lot of concepts related to the JavaScript event loop are much easier to explai
 
 ## And that's what I want to provide.
 
-![Excuses, excuses... 😒](./images/excuses.gif)
+![Excuses, excuses... 😒](https://d1jubymwibgxp.cloudfront.net/blog/0006-update-on-event-loop-article/images/excuses.gif)
 
 <figcaption>Excuses, excuses... 😒</figcaption>
 

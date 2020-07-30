@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import Image from 'gatsby-image';
 import Card from './Card';
 import Tags from './Tags';
 import Link from './Link';
@@ -8,8 +7,8 @@ import { mediaQueries } from './breakpoints';
 import { css } from '@emotion/core';
 
 interface Props {
-  imageSrc: any;
-  imageAlt: string;
+  imageSrc?: string;
+  imageAlt?: string;
   title: ReactNode;
   description?: string;
   tags?: Array<string>;
@@ -33,30 +32,35 @@ function PostCard({
       css={css`
         background-color: #fff;
         display: block;
-        pointer-events: auto;
 
         ${mediaQueries.desktop} {
           display: grid;
           grid-column-gap: 1rem;
-          grid-template-columns: 50% 1fr;
+          ${imageSrc ? 'grid-template-columns: 50% 1fr' : undefined};
         }
       `}
     >
-      <Link to={slug}>
-        <Image
-          css={css`
-            margin-bottom: 1rem;
-            max-height: 20rem;
-            max-width: 20rem;
+      {imageSrc && (
+        <Link to={slug}>
+          <img
+            css={css`
+              margin-bottom: 1rem;
+              width: 100%;
+              max-height: 20rem;
+              max-width: 20rem;
+              top: 0;
+              object-fit: contain;
 
-            ${mediaQueries.desktop} {
-              margin-bottom: 0;
-            }
-          `}
-          alt={imageAlt}
-          fluid={imageSrc}
-        />
-      </Link>
+              ${mediaQueries.desktop} {
+                margin-bottom: 0;
+              }
+            `}
+            alt={imageAlt}
+            src={imageSrc}
+            loading="lazy"
+          />
+        </Link>
+      )}
       <div
         css={css`
           display: flex;

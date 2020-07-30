@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import { Bio, Layout, SEO, PostCard } from '../components';
 
 interface Props {
-  data: any;
+  data: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 function PortfolioIndex({ data }: Props) {
@@ -18,7 +18,6 @@ function PortfolioIndex({ data }: Props) {
       <hr />
       <section
         css={css`
-          pointer-events: auto;
           max-width: 50rem;
           margin: 0 auto;
         `}
@@ -33,7 +32,7 @@ function PortfolioIndex({ data }: Props) {
               latestPost.excerpt
             }
             imageAlt={latestPost.fields.hero.alt}
-            imageSrc={latestPost.fields.hero.src.childImageSharp.fluid}
+            imageSrc={latestPost.fields.hero.src.publicURL}
             slug={latestPost.fields.slug}
             tags={latestPost.fields.tags}
             timeToRead={latestPost.timeToRead}
@@ -71,7 +70,7 @@ export const pageQuery = graphql`
             tags
             hero {
               src {
-                ...heroImage640
+                publicURL
               }
               alt
               caption

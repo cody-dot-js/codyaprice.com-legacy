@@ -2,16 +2,16 @@
 title: Our Most Ambitious DIY Yet
 date: 2020-05-31T19:31:35.231Z
 description: Coming December 2020
-tags: 
- - diy
- - news
- - life
- - update
- - family
- - baby
- - blessing
- - marriage
- - love
+tags:
+  - diy
+  - news
+  - life
+  - update
+  - family
+  - baby
+  - blessing
+  - marriage
+  - love
 hero:
   src: ./images/hero-image.jpg
   alt: 'Our Most Ambitious DIY Yet, Coming December 2020'
@@ -25,7 +25,7 @@ We have been sitting on this, anxious to share since the beginning of April!
 In fact, we found out **_TWO DAYS_** before we set out on our adventurous move to Seattle.
 We weren't planning or expecting a baby, but we feel so incredibly blessed that a healthy baby is growing and cannot wait to meet them!
 
-![Our baby's first ultrasound!](./images/ultrasound.jpg)
+![Our baby's first ultrasound!](https://d1jubymwibgxp.cloudfront.net/blog/0017-our-most-ambitious-diy-yet/images/ultrasound.jpg)
 
 <figcaption>
   Our baby's first ultrasound!

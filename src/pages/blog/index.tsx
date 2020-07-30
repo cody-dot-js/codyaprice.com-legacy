@@ -6,8 +6,8 @@ import { FaTags } from 'react-icons/fa';
 import { Link, ListLayout, PostCard, SEO } from '../../components';
 
 interface Props {
-  data: any;
-  location: any;
+  data: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+  location: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 function BlogPage({ data, location }: Props) {
@@ -53,8 +53,6 @@ function BlogPage({ data, location }: Props) {
               node.frontmatter.description ||
               node.excerpt
             }
-            imageAlt={node.fields.hero.alt}
-            imageSrc={node.fields.hero.src.childImageSharp.fluid}
             slug={node.fields.slug}
             tags={node.fields.tags}
             timeToRead={node.timeToRead}
@@ -92,7 +90,7 @@ export const pageQuery = graphql`
             tags
             hero {
               src {
-                ...heroImage640
+                publicURL
               }
               alt
               caption

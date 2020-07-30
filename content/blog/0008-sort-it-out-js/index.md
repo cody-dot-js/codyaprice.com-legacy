@@ -10,8 +10,8 @@ tags:
   - Sorting
 hero:
   src: ./images/hero-image.jpg
-  alt: "Photo by Sophie Elvis on Unsplash"
-  caption: "Photo by [Sophie Elvis](https://unsplash.com/@thetechnomaid) on [Unsplash](https://unsplash.com/s/photos/sorting)"
+  alt: 'Photo by Sophie Elvis on Unsplash'
+  caption: 'Photo by [Sophie Elvis](https://unsplash.com/@thetechnomaid) on [Unsplash](https://unsplash.com/s/photos/sorting)'
 ---
 
 Fell for the ol' default JavaScript sorting algorithm trap when working with numbers. 😲
@@ -33,7 +33,7 @@ For each new post I make, I simply increment that prefix number for superficial 
 While I do [order them by date](https://github.com/dev-cprice/codyaprice.com/blob/3105787df9d879252b198a5e719817b20c6c2b64/gatsby-node.js#L10) on my site, I like seeing my directory listed in posted order, since without the number prefix, the order is alphabetical.
 While alphabetical is fine, I'm gaming the system since numbers are _"alphabetically before"_ letters.
 
-![Sorted blog directory](./images/sorted-dir.png)
+![Sorted blog directory](https://d1jubymwibgxp.cloudfront.net/blog/0008-sort-it-out-js/images/sorted-dir.png)
 
 <figcaption>
   Sorted blog directory
@@ -50,9 +50,9 @@ The prize... _knawwwledge_.
 Let's consider the following code snippet:
 
 ```js
-const list = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+const list = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 
-const sortedList = list.sort()
+const sortedList = list.sort();
 ```
 
 <figcaption>
@@ -70,7 +70,7 @@ I'll wait...
 No peeking 🙈.
 Or, you can cheat and [scroll down to the answer 😉](#the-correct-answer-is)
 
-![countdown from 60 seconds](./images/countdown.gif)
+![countdown from 60 seconds](https://d1jubymwibgxp.cloudfront.net/blog/0008-sort-it-out-js/images/countdown.gif)
 
 <figcaption>
   Countdown from 60 seconds ⏳
@@ -93,9 +93,9 @@ So, the following list of numbers from ten down to one will be converted into st
 Let's pretend we can see _pseudo-intermediary steps_, so that:
 
 ```js
-const list = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+const list = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 
-const sortedList = list.sort()
+const sortedList = list.sort();
 ```
 
 <figcaption>
@@ -105,13 +105,13 @@ const sortedList = list.sort()
 turns into _something like_:
 
 ```js
-const list = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+const list = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 
 // convert list of numbers to strings
-const listAsStrings = ["10", "9", "8", "7", "6", "5", "4", "3", "2", "1"]
+const listAsStrings = ['10', '9', '8', '7', '6', '5', '4', '3', '2', '1'];
 
 // sort the list, convert back into numbers
-const sortedList = listAsStrings.sort().map((number) => parseInt(number, 10))
+const sortedList = listAsStrings.sort().map((number) => parseInt(number, 10));
 ```
 
 <figcaption>
@@ -138,7 +138,7 @@ If you answered **(B)**, you're...
 
 **_Surely you can't be serious._**
 
-![I am serious and don't call me Shirley.](./images/surely.gif)
+![I am serious and don't call me Shirley.](https://d1jubymwibgxp.cloudfront.net/blog/0008-sort-it-out-js/images/surely.gif)
 
 <figcaption>
   I am serious and don't call me Shirley.
@@ -154,16 +154,16 @@ Here's the old way I wrote it:
 function newPostNumber() {
   const postNumbers = fs
     .readdirSync(blogsPath) // read the content/blog directory, like `ls`
-    .map((filename) => parseInt(filename.split("-")[0], 10)) // get the prefix, as a number
+    .map((filename) => parseInt(filename.split('-')[0], 10)) // get the prefix, as a number
     .filter(Boolean) // remove any falsey things, like things that don't match our pattern
     .sort() // sort the list in order
-    .reverse() // reverse the list so I can pick the first one (last number)
+    .reverse(); // reverse the list so I can pick the first one (last number)
 
   // increment the last number used by one
-  const postNumber = postNumbers[0] + 1
+  const postNumber = postNumbers[0] + 1;
 
   // pad the post number with up to 3 zeros (4 number slots)
-  return `${postNumber}`.padStart(4, "0")
+  return `${postNumber}`.padStart(4, '0');
 }
 ```
 
@@ -196,14 +196,14 @@ In other words, we're incrementing in ascending order, **_what we originally wan
 function newPostNumber() {
   const postNumbers = fs
     .readdirSync(blogsPath)
-    .map((filename) => parseInt(filename.split("-")[0], 10))
+    .map((filename) => parseInt(filename.split('-')[0], 10))
     .filter(Boolean)
     .sort((l, r) => l - r)
-    .reverse()
+    .reverse();
 
-  const postNumber = postNumbers[0] + 1
+  const postNumber = postNumbers[0] + 1;
 
-  return `${postNumber}`.padStart(4, "0")
+  return `${postNumber}`.padStart(4, '0');
 }
 ```
 
@@ -222,7 +222,7 @@ In the wise words of the Letterkenny gang:
 
 > JavaScript, you figure it out.
 
-![Figure it out.](./images/figure-it-out.gif)
+![Figure it out.](https://d1jubymwibgxp.cloudfront.net/blog/0008-sort-it-out-js/images/figure-it-out.gif)
 
 <figcaption>
   Figure it out.

@@ -3,8 +3,15 @@ import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 
+import { Img, Example } from './mdx';
 import Card from './Card';
 import Layout from './Layout';
+
+const shortcodes = {
+  img: Img,
+  Img,
+  Example,
+};
 
 interface Props {
   children: ReactNode;
@@ -52,7 +59,6 @@ function PostLayout({
           <h1
             css={css`
               margin: 0;
-              pointer-events: auto;
             `}
           >
             <Link
@@ -70,14 +76,13 @@ function PostLayout({
         <Card
           css={css`
             background-color: #fff;
-            pointer-events: auto;
             max-width: 50rem;
             margin: 0 auto;
             padding: 1rem 1.5rem;
           `}
           {...otherProps}
         >
-          <MDXProvider components={{}}>{children}</MDXProvider>
+          <MDXProvider components={shortcodes}>{children}</MDXProvider>
         </Card>
       </div>
     </Layout>

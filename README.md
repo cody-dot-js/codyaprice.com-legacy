@@ -38,6 +38,6 @@ I've built _codyprice.com_ with progressive enhancement in mind to work on a wid
 
 Cross browser tested with [BrowserStack](https://www.browserstack.com/).
 
-[![BrowserStack](content/assets/browserstack-logo-600x315.png)](https://www.browserstack.com/)
+[![BrowserStack](static/browserstack-logo-600x315.png)](https://www.browserstack.com/)
 
 If you come across any bugs, or have any other issues with the site, please open an issue here on GitHub.

@@ -1,6 +1,6 @@
 ---
 title: git commit -m "write more"
-date: "2019-10-15T23:27:33.409Z"
+date: '2019-10-15T23:27:33.409Z'
 description: "Public Accountability Statement: I'm officially committing to writing a new article every week and posting on Thursday at noon local time, starting this week."
 categories:
   - Commitment

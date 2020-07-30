@@ -8,18 +8,10 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import { useStaticQuery, graphql } from 'gatsby';
-import Image from 'gatsby-image';
 
 function Bio({ ...props }) {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.png/" }) {
-        childImageSharp {
-          fluid(maxWidth: 800, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
       site {
         siteMetadata {
           author
@@ -42,7 +34,6 @@ function Bio({ ...props }) {
           color: #fff;
           margin-top: 1rem;
           text-align: center;
-          pointer-events: auto;
         `}
       >
         Hey y'all&nbsp;
@@ -50,26 +41,23 @@ function Bio({ ...props }) {
           👋
         </span>
       </h1>
-      <Image
+      <img
         css={css`
+          background: #fff;
           border-radius: 2rem;
           box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.38);
+          display: block;
           margin: 0 auto;
           margin-bottom: 1rem;
-          max-width: 40rem;
           max-height: 40rem;
           min-height: 20rem;
           min-width: 20rem;
-          pointer-events: auto;
         `}
-        fluid={data.avatar.childImageSharp.fluid}
         alt={author}
+        src="/profile-pic.png"
+        loading="lazy"
       />
-      <section
-        css={css`
-          pointer-events: auto;
-        `}
-      >
+      <section css={css``}>
         <h2
           css={css`
             text-align: center;

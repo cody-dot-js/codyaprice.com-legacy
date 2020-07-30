@@ -1,6 +1,6 @@
 ---
-title: "Wild React 🦒: useForceUpdate()"
-date: "2019-10-30T04:14:10.009Z"
+title: 'Wild React 🦒: useForceUpdate()'
+date: '2019-10-30T04:14:10.009Z'
 description: "Y'all wanna see something wild? 🦒👀"
 categories:
   - React
@@ -43,10 +43,10 @@ Let's take a glance at what this may look like:
 class BadExample extends React.Component {
   callJGWentworth = () => {
     // call J.G. Wentworth, or just tell React we need it now 👇
-    this.forceUpdate()
-  }
+    this.forceUpdate();
+  };
   render() {
-    console.log("877-CASH-NOW!!!")
+    console.log('877-CASH-NOW!!!');
 
     return (
       <>
@@ -55,7 +55,7 @@ class BadExample extends React.Component {
           AND I NEED CASH NOW
         </button>
       </>
-    )
+    );
   }
 }
 ```
@@ -67,7 +67,7 @@ class BadExample extends React.Component {
 Yeah, I know the code is bad, but it's only ~~a reflection of my daily code production~~ _an example_.
 **_It actually doesn't do anything._** <small><em><strong>kinda</strong></em></small>
 
-![Be a lot cooler if it did](./images/be-a-lot-cooler.png)
+![Be a lot cooler if it did](https://d1jubymwibgxp.cloudfront.net/blog/0007-yall-wanna-see-something-wild/images/be-a-lot-cooler.png)
 
 <figcaption>
   Be a lot cooler if it did
@@ -113,11 +113,11 @@ Let's write a custom hook!
 
 ```jsx
 function useForceUpdate() {
-  const [, forceUpdate] = React.useState()
+  const [, forceUpdate] = React.useState();
 
   return React.useCallback(() => {
-    forceUpdate((s) => !s)
-  }, [])
+    forceUpdate((s) => !s);
+  }, []);
 }
 ```
 
@@ -134,7 +134,7 @@ It's important to note that we've effectively made the state variable **_private
 The state variable still exists, but _we just don't expose it for use_.
 Here's what happens in [React DevTools](https://github.com/facebook/react/tree/master/packages/react-devtools-extensions#installation):
 
-![useForceUpdate in React DevTools ⚛️](./images/useForceUpdate-in-react-devtools.gif)
+![useForceUpdate in React DevTools ⚛️](https://d1jubymwibgxp.cloudfront.net/blog/0007-yall-wanna-see-something-wild/images/useForceUpdate-in-react-devtools.gif)
 
 <figcaption>
   useForceUpdate() in React DevTools ⚛️
@@ -181,7 +181,7 @@ And by briefly talk about, I really just mean referencing a tweet from [@ryanflo
 
 A quick and helpful guide on `React.useEffect()`:
 
-![Ryan Florence on Twitter: "@dan_abramov @_developit @mjackson The question is not "when does this effect run" the question is "with which state does this effect synchronize with" useEffect(fn) // all state useEffect(fn, []) // no state useEffect(fn, [these, states])"](./images/ryan-florence-use-effect.png)
+![Ryan Florence on Twitter: "@dan_abramov @_developit @mjackson The question is not "when does this effect run" the question is "with which state does this effect synchronize with" useEffect(fn) // all state useEffect(fn, []) // no state useEffect(fn, [these, states])"](https://d1jubymwibgxp.cloudfront.net/blog/0007-yall-wanna-see-something-wild/images/ryan-florence-use-effect.png)
 
 <figcaption>
   Tweet: <a href="https://twitter.com/ryanflorence/status/1125041041063665666?lang=en">Ryan Florence (@ryanflorence) May 5, 2019</a>
@@ -191,16 +191,16 @@ Now that that's out of the way, let's see some code, Cody! 🤓
 
 ```jsx
 function UseTheForce() {
-  const forceUpdate = useForceUpdate()
-  const renderCount = React.useRef(0)
+  const forceUpdate = useForceUpdate();
+  const renderCount = React.useRef(0);
 
   React.useEffect(() => {
-    renderCount.current += 1
-  })
+    renderCount.current += 1;
+  });
 
   const onClick = React.useCallback(() => {
-    forceUpdate()
-  }, [forceUpdate])
+    forceUpdate();
+  }, [forceUpdate]);
 
   return (
     <>
@@ -209,7 +209,7 @@ function UseTheForce() {
       </button>
       <div>Render count: {renderCount.current}</div>
     </>
-  )
+  );
 }
 ```
 
@@ -219,7 +219,7 @@ Go ahead, give it a click. 👇
 <UseTheForce />
 <br />
 
-![Well there it is](./images/well-there-it-is.gif)
+![Well there it is](https://d1jubymwibgxp.cloudfront.net/blog/0007-yall-wanna-see-something-wild/images/well-there-it-is.gif)
 
 <figcaption>
   Well there it is
@@ -227,7 +227,7 @@ Go ahead, give it a click. 👇
 
 The oddball `UseTheForce` component, rendered in all its glory.
 
-![How neat is that? 🌲](./images/how-neat-is-that.gif)
+![How neat is that? 🌲](https://d1jubymwibgxp.cloudfront.net/blog/0007-yall-wanna-see-something-wild/images/how-neat-is-that.gif)
 
 <figcaption>
   How neat is that? 🌲
@@ -239,7 +239,7 @@ First, we get our `forceUpdate()` callback:
 
 ```jsx
 // get the forceUpdate() callback by calling the useForceUpdate() hook
-const forceUpdate = useForceUpdate()
+const forceUpdate = useForceUpdate();
 ```
 
 <figcaption>
@@ -251,7 +251,7 @@ Now, let's grab a `ref` to a _pseudo-instance-variable_ counter, initialized to 
 ```jsx
 // let's retain some counting state without useState()... with refs!
 // initialize the ref.current value to 0
-const renderCount = React.useRef(0)
+const renderCount = React.useRef(0);
 ```
 
 <figcaption>
@@ -263,8 +263,8 @@ Using our handy dandy ~~notebook 📕~~ `React.useEffect()` guide from Ryan Flor
 ```jsx
 // add one to the render count ref's current value on each render
 React.useEffect(() => {
-  renderCount.current += 1
-}) // don't pass any dependency array here, not even empty list []
+  renderCount.current += 1;
+}); // don't pass any dependency array here, not even empty list []
 ```
 
 <figcaption>
@@ -276,8 +276,8 @@ A simple click handler is necessary for the `<button>`:
 ```jsx
 // When I click, you... don't click, just force the update!
 const onClick = React.useCallback(() => {
-  forceUpdate()
-}, [forceUpdate])
+  forceUpdate();
+}, [forceUpdate]);
 ```
 
 <figcaption>
@@ -295,7 +295,7 @@ return (
     </button>
     <div>Render count: {renderCount.current}</div>
   </>
-)
+);
 ```
 
 <figcaption>

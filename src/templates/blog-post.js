@@ -1,7 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import { Link, graphql } from 'gatsby';
-import Image from 'gatsby-image';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import {
@@ -52,18 +51,21 @@ function BlogPost({ data, location, pageContext }) {
             <Tags list={post.fields.tags} />
           </header>
           <div ref={postRef}>
-            <Image
-              css={css`
-                margin-bottom: 2rem;
-              `}
-              alt={post.fields.hero.alt}
-              fluid={post.fields.hero.src.childImageSharp.fluid}
-            />
-            <figcaption
-              dangerouslySetInnerHTML={{
-                __html: post.fields.hero.caption,
-              }}
-            />
+            <figure>
+              <img
+                css={css`
+                  margin-bottom: 2rem;
+                `}
+                alt={post.fields.hero.alt}
+                src={post.fields.hero.src.publicURL}
+                loading="lazy"
+              />
+              <figcaption
+                dangerouslySetInnerHTML={{
+                  __html: post.fields.hero.caption,
+                }}
+              />
+            </figure>
             <div
               css={css`
                 margin: 0 auto;
@@ -132,7 +134,7 @@ export const pageQuery = graphql`
         tags
         hero {
           src {
-            ...heroImage800
+            publicURL
           }
           alt
           caption

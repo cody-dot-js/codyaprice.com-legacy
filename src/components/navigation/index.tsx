@@ -24,10 +24,6 @@ function Navigation({ ...otherProps }) {
   const activeBreakpoint = React.useContext(ActiveBreakpointContext);
   const isDesktop = activeBreakpoint === 'desktop';
 
-  const allowInteraction = css`
-    pointer-events: auto;
-  `;
-
   return (
     <nav
       css={css`
@@ -40,11 +36,11 @@ function Navigation({ ...otherProps }) {
       `}
       {...otherProps}
     >
-      <AuthorAvatarLink to="/" css={allowInteraction} />
+      <AuthorAvatarLink to="/" />
       {isDesktop ? (
-        <DesktopNavigation routes={routes} css={allowInteraction} />
+        <DesktopNavigation routes={routes} />
       ) : (
-        <MobileNavigation routes={routes} css={allowInteraction} />
+        <MobileNavigation routes={routes} />
       )}
     </nav>
   );

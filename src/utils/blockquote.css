@@ -1,16 +1,1 @@
-blockquote {
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 1rem;
-  padding-left: 2rem;
-  padding-right: 1rem;
-  padding-top: 1rem;
-  margin-bottom: 2rem;
-  font-size: 1.25rem;
-  line-height: 2rem;
-  background: hsla(0, 0%, 0%, 0.03);
-  color: hsla(0, 0%, 0%, 0.69);
-  /* border-left: 0.20833rem solid hsla(0, 0%, 0%, 0.2); */
-  border-left: 0.25rem solid #a44fb6;
-}
+blockquote 
