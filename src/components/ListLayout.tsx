@@ -55,7 +55,6 @@ function ListLayout({
           <h1
             css={css`
               margin: 0;
-              pointer-events: auto;
             `}
           >
             <Link
@@ -69,13 +68,7 @@ function ListLayout({
               {title}
             </Link>
           </h1>
-          <div
-            css={css`
-              pointer-events: auto;
-            `}
-          >
-            {headerContent}
-          </div>
+          {headerContent}
         </header>
         <MDXProvider components={{}}>{children}</MDXProvider>
       </div>

@@ -12,8 +12,8 @@ tags:
   - Dynamic Languages
 hero:
   src: ./images/hero-image.jpg
-  alt: "Photo by Clément H on Unsplash"
-  caption: "Photo by [Clément H](https://unsplash.com/@clemhlrdt) on [Unsplash](https://unsplash.com/s/photos/javascript-plant)"
+  alt: 'Photo by Clément H on Unsplash'
+  caption: 'Photo by [Clément H](https://unsplash.com/@clemhlrdt) on [Unsplash](https://unsplash.com/s/photos/javascript-plant)'
 ---
 
 import ListLengthExample from "./components/ListLengthExample"
@@ -31,22 +31,22 @@ Well, let's take a gander in `${insertYourFavoriteJavascriptConsole}` (I'll run 
 When `computedValue` is _truthy_:
 
 ```js
-let computedValue = true
-let result = computedValue && "One Truthy Boi"
-console.log(result) // "One Truthy Boi"
+let computedValue = true;
+let result = computedValue && 'One Truthy Boi';
+console.log(result); // "One Truthy Boi"
 ```
 
 Versus when `computedValue` is _falsey_:
 
 ```js
-let computedValue = false
-let result = computedValue && "One Truthy Boi"
-console.log(result) // false
+let computedValue = false;
+let result = computedValue && 'One Truthy Boi';
+console.log(result); // false
 ```
 
 And to prove it, a screenshot of it running:
 
-![Console output of running the above code snippets.](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0012-sometruthyvar-a-new-post-on-boolean-coercion/images/console-output.png)
+![Console output of running the above code snippets.](https://d1jubymwibgxp.cloudfront.net/blog/0012-sometruthyvar-a-new-post-on-boolean-coercion/images/console-output.png)
 
 <figcaption>
   Console output of running the above code snippets.
@@ -90,7 +90,7 @@ Falsey things:
 
 But here's the kicker: in `C`, boolean expressions are _just that_: boolean, one of two values.
 
-![You can tell that it's a boolean because of the way that it is.](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0012-sometruthyvar-a-new-post-on-boolean-coercion/images/boolean.png)
+![You can tell that it's a boolean because of the way that it is.](https://d1jubymwibgxp.cloudfront.net/blog/0012-sometruthyvar-a-new-post-on-boolean-coercion/images/boolean.png)
 
 <figcaption>
   You can tell that it's a boolean because of the way that it is.
@@ -113,23 +113,23 @@ But, the astute reader will notice that, for the typical dynamically-typed langu
 Let's look at a quick example:
 
 ```js
-const leftHandSide = "some value here"
-const rightHandSide = "One Truthy Boi"
+const leftHandSide = 'some value here';
+const rightHandSide = 'One Truthy Boi';
 
-const result = leftHandSide && rightHandSide
+const result = leftHandSide && rightHandSide;
 // result = "One Truthy Boi"
 ```
 
 In this case, the dynamically-typed runtime is _coercing_ the left-hand side of the boolean expression into a boolean value, like:
 
 ```js
-const leftHandSide = "some value here"
-const rightHandSide = "One Truthy Boi"
+const leftHandSide = 'some value here';
+const rightHandSide = 'One Truthy Boi';
 
 if (Boolean(leftHandSide) === true) {
-  return rightHandSide
+  return rightHandSide;
 } else {
-  return false
+  return false;
 }
 ```
 
@@ -161,16 +161,16 @@ This is also why, in [React](https://reactjs.org/docs/conditional-rendering.html
 
 ```jsx
 function Example() {
-  const [showGreeting, setShowGreeting] = React.useState(false)
+  const [showGreeting, setShowGreeting] = React.useState(false);
 
   return (
     <div>
       <button type="button" onClick={() => setShowGreeting(!showGreeting)}>
-        {showGreeting ? "Hide greeting" : "Show greeting"}
+        {showGreeting ? 'Hide greeting' : 'Show greeting'}
       </button>
       {showGreeting && <p>Hello there! 👋</p>}
     </div>
-  )
+  );
 }
 ```
 
@@ -187,14 +187,14 @@ Have a look for yourself below 👀:
 
 ```jsx
 function Example() {
-  const [list, setList] = React.useState([])
+  const [list, setList] = React.useState([]);
 
   function addItem() {
-    setList(list.concat(list.length + 1))
+    setList(list.concat(list.length + 1));
   }
 
   function clearList() {
-    setList([])
+    setList([]);
   }
 
   return (
@@ -214,7 +214,7 @@ function Example() {
         </ul>
       )}
     </div>
-  )
+  );
 }
 ```
 

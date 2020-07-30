@@ -34,7 +34,6 @@ function Bio({ ...props }) {
           color: #fff;
           margin-top: 1rem;
           text-align: center;
-          pointer-events: auto;
         `}
       >
         Hey y'all&nbsp;
@@ -53,14 +52,13 @@ function Bio({ ...props }) {
           max-height: 40rem;
           min-height: 20rem;
           min-width: 20rem;
-          pointer-events: auto;
         `}
         alt={author}
         src="/profile-pic.png"
+        loading="lazy"
       />
       <section
         css={css`
-          pointer-events: auto;
         `}
       >
         <h2

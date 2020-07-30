@@ -1,7 +1,7 @@
 ---
 title: Stop Testing Implementation Details
-date: "2019-08-08T17:00:00"
-description: "Yes, even you, object oriented peeps. 🐤😉"
+date: '2019-08-08T17:00:00'
+description: 'Yes, even you, object oriented peeps. 🐤😉'
 categories:
   - Web Development
   - Testing
@@ -16,7 +16,7 @@ redirect_from:
 hero:
   src: ./images/hero-image.png
   alt: The writing is on the wall, Photo by Startup Stock Photos from Pexels
-  caption: "The writing is on the wall [Photo by Startup Stock Photos from Pexels](https://www.pexels.com/photo/man-wearing-black-and-white-stripe-shirt-looking-at-white-printer-papers-on-the-wall-212286/)"
+  caption: 'The writing is on the wall [Photo by Startup Stock Photos from Pexels](https://www.pexels.com/photo/man-wearing-black-and-white-stripe-shirt-looking-at-white-printer-papers-on-the-wall-212286/)'
 ---
 
 > This was originally posted on [Medium on August 8, 2019](https://medium.com/@dev.cprice/stop-testing-implementation-details-77a3528336af)
@@ -41,7 +41,7 @@ and it makes it difficult to test implementation details, unlike enzyme which
 often encourages it. **In this article, this second point is what I want to
 focus on.**
 
-![Kent C. Dodds on Twitter: "The more your tests resemble the way your software is used, the more confidence they can give you."](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0002-stop-testing-implementation-details/images/kcd-test-resemble-use.png)
+![Kent C. Dodds on Twitter: "The more your tests resemble the way your software is used, the more confidence they can give you."](https://d1jubymwibgxp.cloudfront.net/blog/0002-stop-testing-implementation-details/images/kcd-test-resemble-use.png)
 
 <figcaption>Kent C. Dodds on Twitter: "The more your tests resemble the way your software is used, the more confidence they can give you."</figcaption>
 
@@ -71,7 +71,7 @@ idea for an awesome application which runs in an embedded environment. A key
 feature of your application is that you can multiply two numbers. It’s
 imperative that you get to market quickly so you can get paid.
 
-![Gotta go fast!](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0002-stop-testing-implementation-details/images/gotta-go-fast.gif)
+![Gotta go fast!](https://d1jubymwibgxp.cloudfront.net/blog/0002-stop-testing-implementation-details/images/gotta-go-fast.gif)
 
 <figcaption>Gotta go fast!</figcaption>
 
@@ -83,14 +83,14 @@ numbers using loops and addition:
 
 ```js
 function multiply(a, b) {
-  let acc = 0
-  const sign = Math.sign(b)
-  const N = Math.abs(b)
+  let acc = 0;
+  const sign = Math.sign(b);
+  const N = Math.abs(b);
   for (let i = 0; i < N; ++i) {
-    acc += a
+    acc += a;
   }
 
-  return acc
+  return acc;
 }
 ```
 
@@ -100,67 +100,67 @@ You’re a sane developer who follows TDD, so you write some tests for this as
 well.
 
 ```js
-import multiply from "./multiply"
+import multiply from './multiply';
 
-test("given any number and 0, it returns 0 regardless of order", () => {
-  const a = 0
-  const b = 1
-  const expected = 0
+test('given any number and 0, it returns 0 regardless of order', () => {
+  const a = 0;
+  const b = 1;
+  const expected = 0;
 
-  let result = multiply(a, b)
-  expect(result).toEqual(expected)
+  let result = multiply(a, b);
+  expect(result).toEqual(expected);
 
-  result = multiply(b, a)
-  expect(result).toEqual(expected)
-})
+  result = multiply(b, a);
+  expect(result).toEqual(expected);
+});
 
-test("given any number and 1, it returns the other number regardless of order", () => {
-  const a = 5
-  const b = 1
-  const expected = 5
+test('given any number and 1, it returns the other number regardless of order', () => {
+  const a = 5;
+  const b = 1;
+  const expected = 5;
 
-  let result = multiply(a, b)
-  expect(result).toEqual(expected)
+  let result = multiply(a, b);
+  expect(result).toEqual(expected);
 
-  result = multiply(b, a)
-  expect(result).toEqual(expected)
-})
+  result = multiply(b, a);
+  expect(result).toEqual(expected);
+});
 
-test("given any two positive numbers, it returns the positive expected result regardless of order", () => {
-  const a = 5
-  const b = 2
-  const expected = 10
+test('given any two positive numbers, it returns the positive expected result regardless of order', () => {
+  const a = 5;
+  const b = 2;
+  const expected = 10;
 
-  let result = multiply(a, b)
-  expect(result).toEqual(expected)
+  let result = multiply(a, b);
+  expect(result).toEqual(expected);
 
-  result = multiply(b, a)
-  expect(result).toEqual(expected)
-})
+  result = multiply(b, a);
+  expect(result).toEqual(expected);
+});
 
-test("given one positive and one negative number, it returns the negative expected result regardless of order", () => {
-  const a = 2
-  const b = -10
-  const expected = -20
+test('given one positive and one negative number, it returns the negative expected result regardless of order', () => {
+  const a = 2;
+  const b = -10;
+  const expected = -20;
 
-  let result = multiply(a, b)
-  expect(result).toEqual(expected)
+  let result = multiply(a, b);
+  expect(result).toEqual(expected);
 
-  result = multiply(b, a)
-  expect(result).toEqual(expected)
-})
+  result = multiply(b, a);
+  expect(result).toEqual(expected);
+});
 
-test("given any two negative numbers, it returns the positive expected result regardless of order", () => {
-  const a = -3
-  const b = -4
-  const expected = 12
+test('given any two negative numbers, it returns the positive expected result regardless of order', () => {
+  const a = -3;
+  const b = -4;
+  const expected = 12;
 
-  let result = multiply(a, b)
-  expect(result).toEqual(expected)
+  let result = multiply(a, b);
+  expect(result).toEqual(expected);
 
-  result = multiply(b, a)
-  expect(result).toEqual(expected)
-})
+  result = multiply(b, a);
+  expect(result).toEqual(expected);
+});
 ```
 
 <figcaption>Testing multiplication module</figcaption>
@@ -207,7 +207,7 @@ operator!
 
 ```js
 function multiply(a, b) {
-  return a * b
+  return a * b;
 }
 ```
 

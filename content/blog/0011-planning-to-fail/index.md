@@ -11,8 +11,8 @@ tags:
   - Quarterly Planning
 hero:
   src: ./images/hero-image.jpg
-  alt: "Photo by Med Badr Chemmaoui on Unsplash"
-  caption: "Photo by [M]ed Badr Chemmaoui](https://unsplash.com/@medbadrc) on [Unsplash](https://unsplash.com/s/photos/plan)"
+  alt: 'Photo by Med Badr Chemmaoui on Unsplash'
+  caption: 'Photo by [M]ed Badr Chemmaoui](https://unsplash.com/@medbadrc) on [Unsplash](https://unsplash.com/s/photos/plan)'
 ---
 
 > Planning may be valuable, but the plan is worthless the moment it is created.

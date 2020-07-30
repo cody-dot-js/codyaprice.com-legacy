@@ -13,8 +13,8 @@ tags:
   - Writing
 hero:
   src: ./images/hero-image.jpg
-  alt: "Photo by Helloquence on Unsplash"
-  caption: "Photo by [Helloquence](https://unsplash.com/@helloquence) on [Unsplash](https://unsplash.com/s/photos/site)"
+  alt: 'Photo by Helloquence on Unsplash'
+  caption: 'Photo by [Helloquence](https://unsplash.com/@helloquence) on [Unsplash](https://unsplash.com/s/photos/site)'
 ---
 
 And no, this ain't a 'going away' post, y'all.

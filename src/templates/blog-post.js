@@ -58,6 +58,7 @@ function BlogPost({ data, location, pageContext }) {
                 `}
                 alt={post.fields.hero.alt}
                 src={post.fields.hero.src.publicURL}
+                loading="lazy"
               />
               <figcaption
                 dangerouslySetInnerHTML={{

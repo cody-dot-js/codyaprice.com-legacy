@@ -92,7 +92,7 @@ foo = hash["foo"]
 
 The answer?
 
-![Example: Hash access using a string when the key is a symbol](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0009-indifferent-with-ruby-hashes/images/example-hash-access-using-a-string-when-key-is-a-symbol.png)
+![Example: Hash access using a string when the key is a symbol](https://d1jubymwibgxp.cloudfront.net/blog/0009-indifferent-with-ruby-hashes/images/example-hash-access-using-a-string-when-key-is-a-symbol.png)
 
 <figcaption>
   Example: Hash access using a string when the key is a symbol
@@ -105,20 +105,20 @@ Coming from JavaScript land, objects have [shorthand property names](https://dev
 
 ```js
 const hash = {
-  foo: "bar",
-}
+  foo: 'bar',
+};
 
 // accessing with object destructuring works
-let { foo } = hash
+let { foo } = hash;
 
 // as does with a string works
-foo = hash["foo"]
+foo = hash['foo'];
 
 // as does named property access
-foo = hash.foo
+foo = hash.foo;
 ```
 
-![Example: Node object access](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0009-indifferent-with-ruby-hashes/images/example-node-object-access.png)
+![Example: Node object access](https://d1jubymwibgxp.cloudfront.net/blog/0009-indifferent-with-ruby-hashes/images/example-node-object-access.png)
 
 <figcaption>
   Example: Node object access
@@ -128,11 +128,11 @@ Keep in mind that I've purposefully left out ES2015 [Symbols](https://developer.
 Mainly, they don't coerce to strings easily.
 And, when converting them to strings using `.toString()`, for example, they produce `"Symbol(<VALUE>)"`, e.g.:
 
-![Example: Demonstrating JS Symbols](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0009-indifferent-with-ruby-hashes/images/example-demonstrating-js-symbols.png)
+![Example: Demonstrating JS Symbols](https://d1jubymwibgxp.cloudfront.net/blog/0009-indifferent-with-ruby-hashes/images/example-demonstrating-js-symbols.png)
 
 > What do you want Cody?
 
-![I'll tell you what I want, what I really really want!](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0009-indifferent-with-ruby-hashes/images/ill-tell-you-what-i-want.gif)
+![I'll tell you what I want, what I really really want!](https://d1jubymwibgxp.cloudfront.net/blog/0009-indifferent-with-ruby-hashes/images/ill-tell-you-what-i-want.gif)
 
 <figcaption>
   I'll tell you what I want, what I really really want!
@@ -166,7 +166,7 @@ hash = {}.with_indifferent_access
 
 Here it is in action:
 
-![Example: Using the Rails Hash With Indifferent Access Extension](https://devcprice-codyaprice-assets.s3-us-west-2.amazonaws.com/blog/0009-indifferent-with-ruby-hashes/images/example-hash-with-indifferent-access.png)
+![Example: Using the Rails Hash With Indifferent Access Extension](https://d1jubymwibgxp.cloudfront.net/blog/0009-indifferent-with-ruby-hashes/images/example-hash-with-indifferent-access.png)
 
 <figcaption>
   Example: Using the Rails Hash With Indifferent Access Extension

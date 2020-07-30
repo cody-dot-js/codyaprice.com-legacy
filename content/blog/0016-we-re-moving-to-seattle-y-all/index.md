@@ -11,8 +11,8 @@ tags:
   - Reflection
 hero:
   src: ./images/hero-image.jpg
-  alt: "Seattle skyline behind evergreen trees. Photo by Luca Micheli on Unsplash"
-  caption: "Seattle skyline behind evergreen trees. Photo by [Luca Micheli](https://unsplash.com/@lucamicheli) on [Unsplash](https://unsplash.com/s/photos/seattle)"
+  alt: 'Seattle skyline behind evergreen trees. Photo by Luca Micheli on Unsplash'
+  caption: 'Seattle skyline behind evergreen trees. Photo by [Luca Micheli](https://unsplash.com/@lucamicheli) on [Unsplash](https://unsplash.com/s/photos/seattle)'
 ---
 
 I've been teasing this on my socials over the past couple of weeks.

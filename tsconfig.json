@@ -9,7 +9,7 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "noUnusedLocals": false,
-    "allowJs": true,
+    "allowJs": true
   },
   "exclude": ["node_modules/*", "public", ".cache", "static", "gatsby-utils"]
 }

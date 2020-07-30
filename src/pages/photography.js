@@ -7,9 +7,7 @@ function PhotographyPage({ location }) {
   return (
     <PostLayout location={location} title="Photography">
       <SEO title="Photography" />
-      <p>
-        Photography portfolio coming soon..
-      </p>
+      <p>Photography portfolio coming soon..</p>
     </PostLayout>
   );
 }
