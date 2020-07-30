@@ -57,10 +57,7 @@ function Bio({ ...props }) {
         src="/profile-pic.png"
         loading="lazy"
       />
-      <section
-        css={css`
-        `}
-      >
+      <section css={css``}>
         <h2
           css={css`
             text-align: center;
