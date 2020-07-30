@@ -74,9 +74,7 @@ function ListLayout({
               {title}
             </Link>
           </h1>
-          <div>
-            {headerContent}
-          </div>
+          <div>{headerContent}</div>
         </header>
         <MDXProvider components={shortcodes}>{children}</MDXProvider>
       </div>
