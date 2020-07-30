@@ -2,8 +2,14 @@ import React, { ReactNode, RefObject } from 'react';
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
+import { Img } from './mdx';
 
 import Layout from './Layout';
+
+const shortcodes = {
+  img: Img,
+  Img,
+};
 
 interface Props {
   children: ReactNode;
@@ -68,9 +74,11 @@ function ListLayout({
               {title}
             </Link>
           </h1>
-          {headerContent}
+          <div>
+            {headerContent}
+          </div>
         </header>
-        <MDXProvider components={{}}>{children}</MDXProvider>
+        <MDXProvider components={shortcodes}>{children}</MDXProvider>
       </div>
     </Layout>
   );
