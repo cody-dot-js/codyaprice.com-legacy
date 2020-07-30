@@ -59,7 +59,6 @@ function PostLayout({
           <h1
             css={css`
               margin: 0;
-              pointer-events: auto;
             `}
           >
             <Link
@@ -77,7 +76,6 @@ function PostLayout({
         <Card
           css={css`
             background-color: #fff;
-            pointer-events: auto;
             max-width: 50rem;
             margin: 0 auto;
             padding: 1rem 1.5rem;

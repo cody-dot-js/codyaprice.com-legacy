@@ -18,7 +18,6 @@ function PortfolioIndex({ data }: Props) {
       <hr />
       <section
         css={css`
-          pointer-events: auto;
           max-width: 50rem;
           margin: 0 auto;
         `}

@@ -10,7 +10,7 @@ interface Props {
 
 const focusedStyle = css`
   color: #fff;
-  background-color: #3d84a8;
+  background-color: #ff3864;
   box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.38);
 `;
 
@@ -37,15 +37,15 @@ function Tag({ slug, children, ...otherProps }: Props) {
       {...otherProps}
     >
       <Badge
-        color="#3d84a8"
+        color="#ff3864"
         css={css`
           ${isFocused ? { ...focusedStyle } : ''}
           transition: all 0.125s ease-in-out;
 
           :hover {
             color: #fff;
-            background-color: #3d84a8;
-            box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.38);
+            background-color: #ff3864;
+            box-shadow: 0 0.25rem 0.5rem 0 #ff3864;
           }
         `}
       >

@@ -32,7 +32,6 @@ function PostCard({
       css={css`
         background-color: #fff;
         display: block;
-        pointer-events: auto;
 
         ${mediaQueries.desktop} {
           display: grid;
