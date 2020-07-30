@@ -49,7 +49,6 @@ function Bio({ ...props }) {
           display: block;
           margin: 0 auto;
           margin-bottom: 1rem;
-          max-width: 40rem;
           max-height: 40rem;
           min-height: 20rem;
           min-width: 20rem;
