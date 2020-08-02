@@ -1,26 +1,7 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react';
 import { css } from '@emotion/core';
-import { useStaticQuery, graphql } from 'gatsby';
 
 function Bio({ ...props }) {
-  const data = useStaticQuery(graphql`
-    query BioQuery {
-      site {
-        siteMetadata {
-          author
-        }
-      }
-    }
-  `);
-
-  const { author } = data.site.siteMetadata;
   return (
     <div
       css={css`
@@ -53,7 +34,7 @@ function Bio({ ...props }) {
           min-height: 20rem;
           min-width: 20rem;
         `}
-        alt={author}
+        alt="Cody A. Price"
         src="/profile-pic.png"
         loading="lazy"
       />
