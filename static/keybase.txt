@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/dev_cprice
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://codyaprice.com
+  * I am dev_cprice (https://keybase.io/dev_cprice) on keybase.
+  * I have a public key ASBN14I0cXviIEHRaR8rjPqhjTTL-MSlNmZE1LLZFSXjJgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01204dd78234717be22041d1691f2b8cfaa18d34cbf8c4a5366644d4b2d91525e3260a",
+      "host": "keybase.io",
+      "kid": "01204dd78234717be22041d1691f2b8cfaa18d34cbf8c4a5366644d4b2d91525e3260a",
+      "uid": "c1c3e361d0e4dd6b3fbf0dd96d62b719",
+      "username": "dev_cprice"
+    },
+    "merkle_root": {
+      "ctime": 1601345059,
+      "hash": "4b7ea9970cbd133481e9ec9ef7be89a0d28a91c33313e6a52e71497d932739064c04a96e01ebb683edc0bd28c86bb467c7002b73940fbef8fe7cc08eda0f839d",
+      "hash_meta": "aea55d8008dfe31ba724b949ab8266b539219a7105eb259a4607f8523921afbd",
+      "seqno": 17696466
+    },
+    "service": {
+      "entropy": "MJrFOsS0ldxr5rAyKB1uCj3f",
+      "hostname": "codyaprice.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.5.1"
+  },
+  "ctime": 1601345072,
+  "expire_in": 504576000,
+  "prev": "7b5bf18bad671f74c85649194a31b9b0fa7a786431e2938b273ca5ba0314fdd8",
+  "seqno": 10,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgTdeCNHF74iBB0WkfK4z6oY00y/jEpTZmRNSy2RUl4yYKp3BheWxvYWTESpcCCsQge1vxi61nH3TIVkkZSjG5sPp6eGQx4pOLJzylugMU/djEIEQo7uudfcea6SVnwW0gmR8OsmvWTdZFqxLGhDR8FcYYAgHCo3NpZ8RAYzSTtlpzUhfKGQKhB1aDkptnkefQzw8XPPeJaG3q/6rDpkj7Ip92BBeV2VZLOb02k45tjk6qCyRERID9uGW+DqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIGYISKmLn1EVZO+HNxhsXaFAQV0JU5yXglU3U6xE38rio3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/dev_cprice
+
+==================================================================
