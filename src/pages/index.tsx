@@ -3,6 +3,7 @@ import { css } from '@emotion/core';
 import { graphql } from 'gatsby';
 
 import { Bio, Layout, SEO, PostCard } from '../components';
+import { RemoteImage } from '../components/remote-asset/RemoteImage';
 
 interface Props {
   data: any; // eslint-disable-line @typescript-eslint/no-explicit-any
@@ -14,6 +15,7 @@ function PortfolioIndex({ data }: Props) {
   return (
     <Layout>
       <SEO title="Cody Price's Portfolio Site" />
+      <RemoteImage />
       <Bio />
       <hr />
       <section
