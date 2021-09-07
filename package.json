@@ -42,7 +42,7 @@
     "react-particles-js": "^3.3.0",
     "react-typography": "^0.16.19",
     "remark": "^12.0.1",
-    "remark-html": "^12.0.0",
+    "remark-html": "^13.0.2",
     "typography": "^0.16.19"
   },
   "devDependencies": {
